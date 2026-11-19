@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
-import { useLanguage } from '../context/LanguageContext';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
+import { useLanguage } from '@/context/LanguageContext';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function MobileMenu({ visible, onClose }) {

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router';
-import { useLanguage } from '../context/LanguageContext';
-import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../layouts/Header';
-import { FooterSection } from '../layouts/Footer';
-import { BackToTop } from '../components/BackToTop';
-import { GradientText } from '../components/GradientText';
-import { AnimatedReveal } from '../components/AnimatedReveal';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
+import { useLanguage } from '@/context/LanguageContext';
+import { useResponsive } from '@/hooks/useResponsive';
+import { HeaderNav } from '@/layouts/Header';
+import { FooterSection } from '@/layouts/Footer';
+import { BackToTop } from '@/components/BackToTop';
+import { GradientText } from '@/components/GradientText';
+import { AnimatedReveal } from '@/components/AnimatedReveal';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
 
 const TOC_ITEMS = [
   { id: 'pendahuluan', number: '1', title: 'Pendahuluan' },

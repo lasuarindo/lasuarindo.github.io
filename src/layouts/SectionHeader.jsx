@@ -1,5 +1,5 @@
 import React from 'react';
-import { Colors } from '../constants/theme';
+import { Colors } from '@/constants/theme';
 
 export function SectionHeader({
   badge,

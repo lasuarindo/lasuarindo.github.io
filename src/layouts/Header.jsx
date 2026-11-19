@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router';
-import { useLanguage } from '../context/LanguageContext';
-import { MobileMenu } from './MobileMenu';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
-import logoImg from '../assets/images/logoHD-rmv.png';
+import { useLanguage } from '@/context/LanguageContext';
+import { MobileMenu } from '@/layouts/MobileMenu';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
+import logoImg from '@/assets/images/logoHD-rmv.png';
 
 export function Header() {
   const navigate = useNavigate();

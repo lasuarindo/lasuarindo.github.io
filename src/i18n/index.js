@@ -1,19 +1,19 @@
 import i18n from 'i18next';
 import { initReactI18next, useTranslation } from 'react-i18next';
 
-import idCommon from './locales/id/common.json';
-import idHome from './locales/id/home.json';
-import idAbout from './locales/id/about.json';
-import idServices from './locales/id/services.json';
-import idContact from './locales/id/contact.json';
-import idPrivacy from './locales/id/privacy.json';
+import idCommon from '@/i18n/locales/id/common.json';
+import idHome from '@/i18n/locales/id/home.json';
+import idAbout from '@/i18n/locales/id/about.json';
+import idServices from '@/i18n/locales/id/services.json';
+import idContact from '@/i18n/locales/id/contact.json';
+import idPrivacy from '@/i18n/locales/id/privacy.json';
 
-import enCommon from './locales/en/common.json';
-import enHome from './locales/en/home.json';
-import enAbout from './locales/en/about.json';
-import enServices from './locales/en/services.json';
-import enContact from './locales/en/contact.json';
-import enPrivacy from './locales/en/privacy.json';
+import enCommon from '@/i18n/locales/en/common.json';
+import enHome from '@/i18n/locales/en/home.json';
+import enAbout from '@/i18n/locales/en/about.json';
+import enServices from '@/i18n/locales/en/services.json';
+import enContact from '@/i18n/locales/en/contact.json';
+import enPrivacy from '@/i18n/locales/en/privacy.json';
 
 export const resources = {
   id: {

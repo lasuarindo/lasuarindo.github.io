@@ -1,17 +1,17 @@
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext';
-import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../layouts/Header';
-import { FooterSection } from '../layouts/Footer';
-import { BackToTop } from '../components/BackToTop';
-import { AnimatedReveal } from '../components/AnimatedReveal';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
+import { useLanguage } from '@/context/LanguageContext';
+import { useResponsive } from '@/hooks/useResponsive';
+import { HeaderNav } from '@/layouts/Header';
+import { FooterSection } from '@/layouts/Footer';
+import { BackToTop } from '@/components/BackToTop';
+import { AnimatedReveal } from '@/components/AnimatedReveal';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
 
-import heroBgImg from '../assets/images/header_new_HD.png';
-import tentangKamiImg from '../assets/images/tentang_kami.png';
-import pendiriImg from '../assets/images/pendiri.png';
-import komisarisImg from '../assets/images/komisaris.png';
+import heroBgImg from '@/assets/images/header_new_HD.png';
+import tentangKamiImg from '@/assets/images/tentang_kami.png';
+import pendiriImg from '@/assets/images/pendiri.png';
+import komisarisImg from '@/assets/images/komisaris.png';
 
 const RED = '#b12600';
 const GRAY = '#5f5e5e';

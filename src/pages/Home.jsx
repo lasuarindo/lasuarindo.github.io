@@ -1,18 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { useLanguage } from '../context/LanguageContext';
-import { HeaderNav } from '../layouts/Header';
-import { FooterSection } from '../layouts/Footer';
-import { BackToTop } from '../components/BackToTop';
-import { GradientText } from '../components/GradientText';
-import { AnimatedReveal } from '../components/AnimatedReveal';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
+import { useLanguage } from '@/context/LanguageContext';
+import { HeaderNav } from '@/layouts/Header';
+import { FooterSection } from '@/layouts/Footer';
+import { BackToTop } from '@/components/BackToTop';
+import { GradientText } from '@/components/GradientText';
+import { AnimatedReveal } from '@/components/AnimatedReveal';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
 
-import heroBgImg from '../assets/images/header_new_HD.png';
-import kemitraanImg from '../assets/images/kemitraan_beranda_HD2.png';
+import heroBgImg from '@/assets/images/header_new_HD.png';
+import kemitraanImg from '@/assets/images/kemitraan_beranda_HD2.png';
 
-import { useResponsive } from '../hooks/useResponsive';
+import { useResponsive } from '@/hooks/useResponsive';
 
 const BENTO_COLUMNS = [[0, 4], [1, 5], [2], [3, 6]];
 

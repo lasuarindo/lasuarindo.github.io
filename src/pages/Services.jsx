@@ -1,26 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { useLanguage } from '../context/LanguageContext';
-import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../layouts/Header';
-import { FooterSection } from '../layouts/Footer';
-import { BackToTop } from '../components/BackToTop';
-import { GradientText } from '../components/GradientText';
-import { AnimatedReveal } from '../components/AnimatedReveal';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
+import { useLanguage } from '@/context/LanguageContext';
+import { useResponsive } from '@/hooks/useResponsive';
+import { HeaderNav } from '@/layouts/Header';
+import { FooterSection } from '@/layouts/Footer';
+import { BackToTop } from '@/components/BackToTop';
+import { GradientText } from '@/components/GradientText';
+import { AnimatedReveal } from '@/components/AnimatedReveal';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
 
-import heroBgImg from '../assets/images/header_new_HD.png';
-import propertiHeroImg from '../assets/images/layanan_properti_hero.png';
-import layananEkosistemImg from '../assets/images/Layanan_dan_ekosistem.png';
-import mediaKreatifImg from '../assets/images/layanan_media_kreatif.png';
-import teknologiImg from '../assets/images/layanan_tekonologi.png';
-import teknologiGridImg from '../assets/images/layanan_teknologi_grid.png';
-import vamosImg from '../assets/images/layanan_vamos_sinergi.png';
-import proyekPropertiImg from '../assets/images/proyek_masadepan_properti.png';
-import proyekTeknologiImg from '../assets/images/proyek_masadepan_teknologi.png';
-import proyekEkosistemImg from '../assets/images/proyek_masadepan_ekosistem.png';
-import proyekKarbonImg from '../assets/images/proyek_masadepan_karbon.png';
+import heroBgImg from '@/assets/images/header_new_HD.png';
+import propertiHeroImg from '@/assets/images/layanan_properti_hero.png';
+import layananEkosistemImg from '@/assets/images/Layanan_dan_ekosistem.png';
+import mediaKreatifImg from '@/assets/images/layanan_media_kreatif.png';
+import teknologiImg from '@/assets/images/layanan_tekonologi.png';
+import teknologiGridImg from '@/assets/images/layanan_teknologi_grid.png';
+import vamosImg from '@/assets/images/layanan_vamos_sinergi.png';
+import proyekPropertiImg from '@/assets/images/proyek_masadepan_properti.png';
+import proyekTeknologiImg from '@/assets/images/proyek_masadepan_teknologi.png';
+import proyekEkosistemImg from '@/assets/images/proyek_masadepan_ekosistem.png';
+import proyekKarbonImg from '@/assets/images/proyek_masadepan_karbon.png';
 
 const FOOTER_GALLERY = [
   propertiHeroImg,

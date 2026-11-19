@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
-import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../layouts/Header';
-import { FooterSection } from '../layouts/Footer';
-import { BackToTop } from '../components/BackToTop';
-import { GradientText } from '../components/GradientText';
-import { AnimatedReveal } from '../components/AnimatedReveal';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
+import { useLanguage } from '@/context/LanguageContext';
+import { useResponsive } from '@/hooks/useResponsive';
+import { HeaderNav } from '@/layouts/Header';
+import { FooterSection } from '@/layouts/Footer';
+import { BackToTop } from '@/components/BackToTop';
+import { GradientText } from '@/components/GradientText';
+import { AnimatedReveal } from '@/components/AnimatedReveal';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
 
-import heroBgImg from '../assets/images/Header_hero_section_beranda.png';
+import heroBgImg from '@/assets/images/Header_hero_section_beranda.png';
 
 const ADDRESS_MAPS_URL =
   'https://maps.google.com/?q=Jl.+Tamblong+No.46,+Kb.+Pisang,+Kec.+Sumur+Bandung,+Kota+Bandung,+Jawa+Barat+40112';

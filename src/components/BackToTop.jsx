@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Icon } from './Icon';
+import { Icon } from '@/components/Icon';
 
 export function BackToTop({ showOffset = 400 }) {
   const [visible, setVisible] = useState(false);

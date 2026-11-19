@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-import { useLanguage } from '../context/LanguageContext';
-import { Icon } from '../components/Icon';
-import { Colors } from '../constants/theme';
-import logoImg from '../assets/images/logoHD-rmv.png';
+import { useLanguage } from '@/context/LanguageContext';
+import { Icon } from '@/components/Icon';
+import { Colors } from '@/constants/theme';
+import logoImg from '@/assets/images/logoHD-rmv.png';
 
 const WEBSITE_URL = 'https://www.lasuarindo.co.id';
 const INSTAGRAM_URL = 'https://www.instagram.com/lasuarindogroup';
