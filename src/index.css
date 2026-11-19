@@ -122,6 +122,28 @@ input, textarea, select, button {
   50% { transform: translateY(-8px); }
 }
 
+@keyframes route-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Route Loading Indicator (React.lazy fallback)
+   ============================================ */
+.route-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(177, 38, 0, 0.15);
+  border-top-color: #b12600;
+  border-radius: 50%;
+  animation: route-spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-spinner {
+    animation: none;
+  }
+}
+
 /* ============================================
    Scroll Reveal System (IntersectionObserver)
    ============================================ */

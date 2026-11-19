@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router';
 import { LanguageProvider } from './context/LanguageContext';
 import { RootLayout } from './layouts/RootLayout';
-import { Home } from './pages/Home';
-import { AboutUs } from './pages/AboutUs';
-import { Services } from './pages/Services';
-import { Contact } from './pages/Contact';
-import { PrivacyPolicy } from './pages/PrivacyPolicy';
+
+// Pages are code-split so the initial bundle only ships the shell.
+// Each module uses named exports, so map them to `default` for React.lazy.
+const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
+const AboutUs = lazy(() => import('./pages/AboutUs').then((m) => ({ default: m.AboutUs })));
+const Services = lazy(() => import('./pages/Services').then((m) => ({ default: m.Services })));
+const Contact = lazy(() => import('./pages/Contact').then((m) => ({ default: m.Contact })));
+const PrivacyPolicy = lazy(() =>
+  import('./pages/PrivacyPolicy').then((m) => ({ default: m.PrivacyPolicy })),
+);
 
 const router = createBrowserRouter([
   {
