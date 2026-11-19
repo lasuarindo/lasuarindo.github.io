@@ -17,32 +17,32 @@ export default defineConfig({
         codeSplitting: {
           groups: [
             {
-              name: 'react-vendor',
+              name: 'vendor/react',
               test: /node_modules[\\/](react|react-dom|scheduler)[\\/]/,
               priority: 20,
             },
             {
-              name: 'motion',
+              name: 'vendor/motion',
               test: /node_modules[\\/]motion(-dom|-utils)?[\\/]/,
               priority: 15,
             },
             {
-              name: 'router',
+              name: 'vendor/router',
               test: /node_modules[\\/]react-router[\\/]/,
               priority: 15,
             },
             {
-              name: 'i18n',
+              name: 'vendor/i18n',
               test: /node_modules[\\/](i18next|react-i18next)[\\/]/,
               priority: 15,
             },
             {
-              name: 'icons',
+              name: 'vendor/icons',
               test: /node_modules[\\/](lucide-react|@icons-pack)[\\/]/,
               priority: 15,
             },
             {
-              name: 'vendor',
+              name: 'vendor/common',
               test: /node_modules[\\/]/,
               priority: 10,
             },
