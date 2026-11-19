@@ -1,3 +1,4 @@
+import path from 'node:path'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
@@ -7,6 +8,11 @@ import { defineConfig } from 'vite'
 // Rolldown's deprecated `advancedChunks`, which is ignored if both are set).
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': path.resolve(import.meta.dirname, './src'),
+    },
+  },
   build: {
     rolldownOptions: {
       output: {
