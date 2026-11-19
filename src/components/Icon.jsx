@@ -1,5 +1,33 @@
 import React from 'react';
 import * as LucideIcons from 'lucide-react';
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconBrandX,
+  IconBrandYoutube,
+  IconBrandWhatsapp,
+  IconBrandTiktok,
+  IconBrandGoogle,
+  IconBrandGithub,
+} from '@tabler/icons-react';
+
+export * as TablerIcons from '@tabler/icons-react';
+
+// Map of social & brand names to Tabler brand icons
+const BRAND_MAP = {
+  facebook: IconBrandFacebook,
+  instagram: IconBrandInstagram,
+  linkedin: IconBrandLinkedin,
+  twitter: IconBrandTwitter,
+  x: IconBrandX,
+  youtube: IconBrandYoutube,
+  whatsapp: IconBrandWhatsapp,
+  tiktok: IconBrandTiktok,
+  google: IconBrandGoogle,
+  github: IconBrandGithub,
+};
 
 // Comprehensive map of all icon names used across the project to Lucide icon components
 const LUCIDE_MAP = {
@@ -108,6 +136,8 @@ export function Icon({ name, size = 24, color = 'currentColor', className = '', 
   const normalizedKey = rawKey.toLowerCase().replace(/-/g, '_');
 
   const IconComponent =
+    BRAND_MAP[normalizedKey] ||
+    BRAND_MAP[rawKey] ||
     LUCIDE_MAP[normalizedKey] ||
     LUCIDE_MAP[rawKey] ||
     LucideIcons[rawKey] ||

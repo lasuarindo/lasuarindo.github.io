@@ -100,10 +100,10 @@ const VAMOS_TAGS = [
 ];
 
 const VAMOS_SOCIALS = [
-  { icon: 'public', label: 'Facebook' },
-  { icon: 'tag', label: 'Twitter' },
-  { icon: 'photo_camera', label: 'Instagram' },
-  { icon: 'work', label: 'LinkedIn' },
+  { icon: 'facebook', label: 'Facebook' },
+  { icon: 'twitter', label: 'Twitter' },
+  { icon: 'instagram', label: 'Instagram' },
+  { icon: 'linkedin', label: 'LinkedIn' },
 ];
 
 const PROJECTS = [

@@ -19,8 +19,8 @@ const MAP_EMBED_URL =
 
 const SOCIALS = [
   { label: 'Website', icon: 'language', url: 'https://www.lasuarindo.co.id' },
-  { label: 'Instagram', icon: 'photo_camera', url: 'https://www.instagram.com/lasuarindogroup' },
-  { label: 'LinkedIn', icon: 'work' },
+  { label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/lasuarindogroup' },
+  { label: 'LinkedIn', icon: 'linkedin' },
   { label: 'Email', icon: 'mail', url: 'mailto:contact@lasuarindo.co.id' },
 ];
 

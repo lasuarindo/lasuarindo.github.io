@@ -9,17 +9,7 @@ const WEBSITE_URL = 'https://www.lasuarindo.co.id';
 const INSTAGRAM_URL = 'https://www.instagram.com/lasuarindogroup';
 const EMAIL_URL = 'mailto:contact@lasuarindo.co.id';
 
-function InstagramIcon({ size = 18, color = 'currentColor' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-    </svg>
-  );
-}
-
-function SocialButton({ label, url, icon, isInstagram = false }) {
+function SocialButton({ label, url, icon }) {
   const [hovered, setHovered] = useState(false);
   return (
     <a
@@ -43,7 +33,7 @@ function SocialButton({ label, url, icon, isInstagram = false }) {
         transition: 'all 0.2s ease',
       }}
     >
-      {isInstagram ? <InstagramIcon size={18} color={hovered ? '#ffffff' : '#d1d5db'} /> : <Icon name={icon} size={18} />}
+      <Icon name={icon} size={18} />
     </a>
   );
 }
@@ -198,8 +188,8 @@ export function Footer({ variant = 'default', gallery = [] }) {
             {/* Social Links */}
             <div style={{ display: 'flex', gap: '12px' }}>
               <SocialButton label="Website" url={WEBSITE_URL} icon="language" />
-              <SocialButton label="Instagram" url={INSTAGRAM_URL} isInstagram />
-              <SocialButton label="LinkedIn" url="https://www.linkedin.com" icon="work" />
+              <SocialButton label="Instagram" url={INSTAGRAM_URL} icon="instagram" />
+              <SocialButton label="LinkedIn" url="https://www.linkedin.com" icon="linkedin" />
               <SocialButton label="Email" url={EMAIL_URL} icon="mail" />
             </div>
           </div>
