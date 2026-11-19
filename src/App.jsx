@@ -1,57 +1,67 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router';
 import { LanguageProvider } from './context/LanguageContext';
-import { RouterProvider, usePathname, useRouter } from './router/Router';
-import { Beranda } from './pages/Beranda';
-import { TentangKami } from './pages/TentangKami';
-import { Layanan } from './pages/Layanan';
-import { Kontak } from './pages/Kontak';
-import { KebijakanPrivasi } from './pages/KebijakanPrivasi';
+import { RootLayout } from './layouts/RootLayout';
+import { Home } from './pages/Home';
+import { AboutUs } from './pages/AboutUs';
+import { Services } from './pages/Services';
+import { Contact } from './pages/Contact';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 
-function AppRoutes() {
-  const pathname = usePathname();
-  const { replace } = useRouter();
-
-  // Normalize path (handle trailing slashes and hashes)
-  const cleanPath = pathname.replace(/\/+$/, '') || '/';
-
-  // Backward compatibility: redirect legacy Indonesian URLs to English URLs
-  useEffect(() => {
-    const legacyRedirects = {
-      '/tentang-kami': '/about-us',
-      '/layanan': '/services',
-      '/kontak': '/contact',
-      '/kebijakan-privasi': '/privacy-policy',
-    };
-    if (legacyRedirects[cleanPath]) {
-      replace(legacyRedirects[cleanPath]);
-    }
-  }, [cleanPath, replace]);
-
-  switch (cleanPath) {
-    case '/about-us':
-    case '/tentang-kami':
-      return <TentangKami />;
-    case '/services':
-    case '/layanan':
-      return <Layanan />;
-    case '/contact':
-    case '/kontak':
-      return <Kontak />;
-    case '/privacy-policy':
-    case '/kebijakan-privasi':
-      return <KebijakanPrivasi />;
-    case '/':
-    default:
-      return <Beranda />;
-  }
-}
+const router = createBrowserRouter([
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/about-us',
+        element: <AboutUs />,
+      },
+      {
+        path: '/services',
+        element: <Services />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+      {
+        path: '/privacy-policy',
+        element: <PrivacyPolicy />,
+      },
+      // Backward compatibility redirects for legacy Indonesian routes
+      {
+        path: '/tentang-kami',
+        element: <Navigate to="/about-us" replace />,
+      },
+      {
+        path: '/layanan',
+        element: <Navigate to="/services" replace />,
+      },
+      {
+        path: '/kontak',
+        element: <Navigate to="/contact" replace />,
+      },
+      {
+        path: '/kebijakan-privasi',
+        element: <Navigate to="/privacy-policy" replace />,
+      },
+      // Fallback
+      {
+        path: '*',
+        element: <Navigate to="/" replace />,
+      },
+    ],
+  },
+]);
 
 export default function App() {
   return (
     <LanguageProvider>
-      <RouterProvider>
-        <AppRoutes />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </LanguageProvider>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useRouter } from '../router/Router';
+import { useNavigate } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../components/HeaderNav';
-import { FooterSection } from '../components/FooterSection';
+import { HeaderNav } from '../layouts/Header';
+import { FooterSection } from '../layouts/Footer';
 import { BackToTop } from '../components/BackToTop';
 import { GradientText } from '../components/GradientText';
 import { AnimatedReveal } from '../components/AnimatedReveal';
@@ -127,8 +127,8 @@ function GradientDivider({ center = false }) {
   );
 }
 
-export function Layanan() {
-  const router = useRouter();
+export function Services() {
+  const navigate = useNavigate();
   const { language, t } = useLanguage();
   const { width, isLg, isMd, isSm, isMobile, contentWidth } = useResponsive();
 
@@ -256,7 +256,7 @@ export function Layanan() {
             <AnimatedReveal animation="up" delay={400}>
               <button
                 type="button"
-                onClick={() => router.push('/contact')}
+                onClick={() => navigate('/contact')}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -1080,3 +1080,6 @@ export function Layanan() {
     </div>
   );
 }
+
+export const Layanan = Services;
+export default Services;

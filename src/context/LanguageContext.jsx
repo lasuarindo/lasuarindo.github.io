@@ -1,36 +1,31 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { translations } from '../i18n/translations';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import i18n, { resources, useAppLanguage } from '../i18n';
 
 const LanguageContext = createContext({
   language: 'id',
   setLanguage: () => {},
   toggleLanguage: () => {},
-  t: translations.id,
+  t: resources.id.translation,
 });
 
-const STORAGE_KEY = 'lasuarindo_lang_pref';
-
 export function LanguageProvider({ children }) {
-  const [language, setLanguageState] = useState('id');
+  const [currentLang, setCurrentLang] = useState(() => i18n.language || 'id');
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      try {
-        const saved = window.localStorage.getItem(STORAGE_KEY);
-        if (saved === 'id' || saved === 'en') {
-          setLanguageState(saved);
-        }
-      } catch {
-        // ignore storage error
-      }
-    }
+    const handleLanguageChanged = (lng) => {
+      setCurrentLang(lng);
+    };
+    i18n.on('languageChanged', handleLanguageChanged);
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
   }, []);
 
   const setLanguage = (lang) => {
-    setLanguageState(lang);
-    if (typeof window !== 'undefined' && window.localStorage) {
+    i18n.changeLanguage(lang);
+    if (typeof window !== 'undefined') {
       try {
-        window.localStorage.setItem(STORAGE_KEY, lang);
+        localStorage.setItem('lasuarindo_lang_pref', lang);
       } catch {
         // ignore
       }
@@ -38,22 +33,18 @@ export function LanguageProvider({ children }) {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'id' ? 'en' : 'id');
+    setLanguage(currentLang === 'id' ? 'en' : 'id');
   };
 
-  const t = translations[language] || translations.id;
+  const t = resources[currentLang]?.translation || resources.id.translation;
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language: currentLang, setLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
 export function useLanguage() {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
+  return useContext(LanguageContext);
 }

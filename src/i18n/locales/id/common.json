@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "contact": "Kontak",
+    "cta": "Bermitra Dengan Kami",
+    "language": "Bahasa"
+  },
+  "footer": {
+    "tagline": "Membangun Bisnis, Menciptakan Dampak. Sebuah ekosistem teknologi kreatif dan gaya hidup yang terintegrasi.",
+    "sectors": "Sektor",
+    "quickLinks": "Tautan Cepat",
+    "legal": "Legalitas",
+    "privacyPolicy": "Kebijakan Privasi",
+    "terms": "Syarat Layanan",
+    "investorRelations": "Hubungan Investor",
+    "globalOffice": "Kantor Global",
+    "contactUs": "Hubungi Kami",
+    "copyright": "PT Lasuarindo Group. Hak Cipta Dilindungi.",
+    "creativeEcosystem": "Ekosistem Kreatif"
+  }
+}

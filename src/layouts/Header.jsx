@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter, usePathname, Link } from '../router/Router';
+import { Link, useNavigate, useLocation } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import { MobileMenu } from './MobileMenu';
-import { Icon } from './Icon';
+import { Icon } from '../components/Icon';
 import { Colors } from '../constants/theme';
 import logoImg from '../assets/images/logoHD-rmv.png';
 
-export function HeaderNav() {
-  const router = useRouter();
-  const pathname = usePathname();
+export function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const pathname = location.pathname;
   const { language, setLanguage, t } = useLanguage();
 
   const [scrolled, setScrolled] = useState(false);
@@ -135,7 +136,7 @@ export function HeaderNav() {
             })}
           </nav>
 
-          {/* Desktop Right: Lang Switcher & CTA (flex: 1, justify-end matching react_native) */}
+          {/* Desktop Right: Lang Switcher & CTA */}
           <div
             className="desktop-only"
             style={{
@@ -206,7 +207,7 @@ export function HeaderNav() {
             {/* CTA Button */}
             <button
               type="button"
-              onClick={() => router.push('/contact')}
+              onClick={() => navigate('/contact')}
               onMouseEnter={() => setCtaHover(true)}
               onMouseLeave={() => setCtaHover(false)}
               style={{
@@ -299,8 +300,12 @@ export function HeaderNav() {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       <MobileMenu visible={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
 }
+
+// Backward compatibility alias
+export const HeaderNav = Header;
+export default Header;

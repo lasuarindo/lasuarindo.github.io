@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../components/HeaderNav';
-import { FooterSection } from '../components/FooterSection';
+import { HeaderNav } from '../layouts/Header';
+import { FooterSection } from '../layouts/Footer';
 import { BackToTop } from '../components/BackToTop';
 import { GradientText } from '../components/GradientText';
 import { AnimatedReveal } from '../components/AnimatedReveal';
@@ -38,7 +38,7 @@ function GradientDivider({ center = false }) {
   );
 }
 
-export function Kontak() {
+export function Contact() {
   const { language, t } = useLanguage();
   const { isDesktop, isTablet, isMobile, isSmallMobile, isMd, width } = useResponsive();
 
@@ -942,3 +942,6 @@ export function Kontak() {
     </div>
   );
 }
+
+export const Kontak = Contact;
+export default Contact;

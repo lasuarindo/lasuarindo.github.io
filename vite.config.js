@@ -5,10 +5,6 @@ import { defineConfig } from 'vite'
 // Rolldown (Vite 8's built-in bundler) — vendor code splitting via
 // output.codeSplitting.groups (replacement for Rollup manualChunks and for
 // Rolldown's deprecated `advancedChunks`, which is ignored if both are set).
-// Groups whose modules are not imported yet (e.g. motion, router, i18n,
-// icons) simply emit no chunk until the app starts using them.
-// NOTE: @tailwindcss/vite is registered but inert — no app CSS imports
-// 'tailwindcss' yet. See src/tailwind.css before activating.
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {

@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Partner With Us",
+    "language": "Language"
+  },
+  "footer": {
+    "tagline": "Building Business, Creating Impact. An integrated creative technology and lifestyle ecosystem.",
+    "sectors": "Sectors",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "investorRelations": "Investor Relations",
+    "globalOffice": "Global Office",
+    "contactUs": "Contact Us",
+    "copyright": "PT Lasuarindo Group. All Rights Reserved.",
+    "creativeEcosystem": "Creative Ecosystem"
+  }
+}

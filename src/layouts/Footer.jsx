@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useRouter, Link } from '../router/Router';
+import { Link } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
-import { Icon } from './Icon';
+import { Icon } from '../components/Icon';
 import { Colors } from '../constants/theme';
 import logoImg from '../assets/images/logoHD-rmv.png';
 
@@ -48,10 +48,9 @@ function SocialButton({ label, url, icon, isInstagram = false }) {
   );
 }
 
-export function FooterSection({ variant = 'default', gallery = [] }) {
-  const router = useRouter();
+export function Footer({ variant = 'default', gallery = [] }) {
   const { language, t } = useLanguage();
-  const isLayanan = variant === 'layanan';
+  const isServices = variant === 'services' || variant === 'layanan';
 
   const sectorList = [
     t.home.sectors.property.title,
@@ -73,15 +72,15 @@ export function FooterSection({ variant = 'default', gallery = [] }) {
       style={{
         backgroundColor: '#111313',
         color: '#f0f1f1',
-        paddingTop: isLayanan && gallery.length ? 0 : '60px',
+        paddingTop: isServices && gallery.length ? 0 : '60px',
         paddingBottom: '32px',
         borderTop: `4px solid ${Colors.primary}`,
         position: 'relative',
         zIndex: 20,
       }}
     >
-      {/* Gallery Section on Layanan Page */}
-      {isLayanan && gallery.length > 0 && (
+      {/* Gallery Section on Services Page */}
+      {isServices && gallery.length > 0 && (
         <div style={{ backgroundColor: '#111313', paddingTop: '32px', marginBottom: '32px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
@@ -199,12 +198,13 @@ export function FooterSection({ variant = 'default', gallery = [] }) {
             {/* Social Links */}
             <div style={{ display: 'flex', gap: '12px' }}>
               <SocialButton label="Website" url={WEBSITE_URL} icon="language" />
-              <SocialButton label="Instagram" url={INSTAGRAM_URL} isInstagram={true} />
+              <SocialButton label="Instagram" url={INSTAGRAM_URL} isInstagram />
+              <SocialButton label="LinkedIn" url="https://www.linkedin.com" icon="work" />
               <SocialButton label="Email" url={EMAIL_URL} icon="mail" />
             </div>
           </div>
 
-          {/* Col 2: Sektor */}
+          {/* Col 2: Sektor Bisnis */}
           <div>
             <h4
               style={{
@@ -255,11 +255,22 @@ export function FooterSection({ variant = 'default', gallery = [] }) {
             >
               {t.footer.contactUs}
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                <Icon name="location_on" size={18} color={Colors.primary} style={{ marginTop: '2px' }} />
+                <span
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                    color: '#9ca3af',
+                  }}
+                >
+                  Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112
+                </span>
+              </div>
               <a
-                href={WEBSITE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contact@lasuarindo.co.id"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -268,23 +279,7 @@ export function FooterSection({ variant = 'default', gallery = [] }) {
                   textDecoration: 'none',
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '14px',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = Colors.primary)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
-              >
-                <Icon name="language" size={18} color={Colors.primary} />
-                <span>www.lasuarindo.co.id</span>
-              </a>
-              <a
-                href={EMAIL_URL}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  color: '#9ca3af',
-                  textDecoration: 'none',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '14px',
+                  transition: 'color 0.2s',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = Colors.primary)}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
@@ -384,3 +379,7 @@ export function FooterSection({ variant = 'default', gallery = [] }) {
     </footer>
   );
 }
+
+// Backward compatibility alias
+export const FooterSection = Footer;
+export default Footer;

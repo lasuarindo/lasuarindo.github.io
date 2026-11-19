@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useRouter, Link } from '../router/Router';
+import { useNavigate, Link } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
 import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../components/HeaderNav';
-import { FooterSection } from '../components/FooterSection';
+import { HeaderNav } from '../layouts/Header';
+import { FooterSection } from '../layouts/Footer';
 import { BackToTop } from '../components/BackToTop';
 import { GradientText } from '../components/GradientText';
 import { AnimatedReveal } from '../components/AnimatedReveal';
@@ -21,8 +21,8 @@ const TOC_ITEMS = [
   { id: 'perubahan-kebijakan', number: '8', title: 'Perubahan Kebijakan' },
 ];
 
-export function KebijakanPrivasi() {
-  const router = useRouter();
+export function PrivacyPolicy() {
+  const navigate = useNavigate();
   const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState('pendahuluan');
   const { isDesktop, isMd, contentWidth } = useResponsive();
@@ -982,7 +982,7 @@ export function KebijakanPrivasi() {
                   <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: Colors.secondary, marginTop: '24px' }}>
                     Untuk menggunakan hak-hak Anda, silakan hubungi kami melalui{' '}
                     <span
-                      onClick={() => router.push('/contact')}
+                      onClick={() => navigate('/contact')}
                       style={{ color: Colors.primary, fontWeight: 700, cursor: 'pointer' }}
                     >
                       Halaman Kontak
@@ -1056,3 +1056,6 @@ export function KebijakanPrivasi() {
     </div>
   );
 }
+
+export const KebijakanPrivasi = PrivacyPolicy;
+export default PrivacyPolicy;

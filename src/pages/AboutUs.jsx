@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useResponsive } from '../hooks/useResponsive';
-import { HeaderNav } from '../components/HeaderNav';
-import { FooterSection } from '../components/FooterSection';
+import { HeaderNav } from '../layouts/Header';
+import { FooterSection } from '../layouts/Footer';
 import { BackToTop } from '../components/BackToTop';
 import { AnimatedReveal } from '../components/AnimatedReveal';
 import { Icon } from '../components/Icon';
@@ -33,7 +33,7 @@ function Stars() {
   );
 }
 
-export function TentangKami() {
+export function AboutUs() {
   const { language, t } = useLanguage();
   const { isLg, isMd, isMobile, isSmallMobile } = useResponsive();
 
@@ -871,3 +871,6 @@ export function TentangKami() {
     </div>
   );
 }
+
+export const TentangKami = AboutUs;
+export default AboutUs;

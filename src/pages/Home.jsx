@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from '../router/Router';
+import React from 'react';
+import { useNavigate } from 'react-router';
 import { useLanguage } from '../context/LanguageContext';
-import { HeaderNav } from '../components/HeaderNav';
-import { FooterSection } from '../components/FooterSection';
+import { HeaderNav } from '../layouts/Header';
+import { FooterSection } from '../layouts/Footer';
 import { BackToTop } from '../components/BackToTop';
 import { GradientText } from '../components/GradientText';
 import { AnimatedReveal } from '../components/AnimatedReveal';
@@ -16,8 +16,8 @@ import { useResponsive } from '../hooks/useResponsive';
 
 const BENTO_COLUMNS = [[0, 4], [1, 5], [2], [3, 6]];
 
-export function Beranda() {
-  const router = useRouter();
+export function Home() {
+  const navigate = useNavigate();
   const { t } = useLanguage();
   const { isDesktop, isTablet, isMobile, isSmallMobile, isMd, width, contentWidth } = useResponsive();
 
@@ -96,7 +96,7 @@ export function Beranda() {
           paddingBottom: isDesktop ? '40px' : '35px',
         }}
       >
-        {/* Background Image with 0.4 opacity as in react_native */}
+        {/* Background Image with 0.4 opacity */}
         <div
           style={{
             position: 'absolute',
@@ -223,7 +223,7 @@ export function Beranda() {
               >
                 <button
                   type="button"
-                  onClick={() => router.push('/services')}
+                  onClick={() => navigate('/services')}
                   style={{
                     backgroundColor: '#b12600',
                     padding: isDesktop ? '13px 26px' : '11px 22px',
@@ -244,7 +244,7 @@ export function Beranda() {
 
                 <button
                   type="button"
-                  onClick={() => router.push('/about-us')}
+                  onClick={() => navigate('/about-us')}
                   style={{
                     border: '1.5px solid #ffffff',
                     padding: isDesktop ? '13px 26px' : '11px 22px',
@@ -490,7 +490,7 @@ export function Beranda() {
             </div>
           </AnimatedReveal>
 
-          {/* Bento Grid: 4 columns on desktop matching BENTO_COLUMNS exactly */}
+          {/* Bento Grid: 4 columns on desktop */}
           {isDesktop ? (
             <div
               style={{
@@ -876,7 +876,7 @@ export function Beranda() {
                 <AnimatedReveal key={link.title} animation="left" delay={link.delay}>
                   <button
                     type="button"
-                    onClick={() => router.push('/contact')}
+                    onClick={() => navigate('/contact')}
                     style={{
                       width: '100%',
                       display: 'flex',
@@ -941,3 +941,6 @@ export function Beranda() {
     </div>
   );
 }
+
+export const Beranda = Home;
+export default Home;

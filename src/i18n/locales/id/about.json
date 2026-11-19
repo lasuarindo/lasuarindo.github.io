@@ -1,0 +1,37 @@
+{
+  "heroTitle1": "SIAPA",
+  "heroTitle2": "KAMI",
+  "lead1": "Lasuarindo Group",
+  "lead2": "adalah perusahaan terintegrasi yang bergerak di berbagai sektor strategis.",
+  "body": "Kami berfokus pada inovasi, pertumbuhan berkelanjutan, dan memberikan nilai tambah bagi masyarakat dan mitra bisnis kami melalui ekosistem yang solid dan kolaboratif.",
+  "features": {
+    "integrated": { "title": "BISNIS\nTERINTEGRASI", "desc": "Satu visi, berbagai solusi." },
+    "sectors": { "title": "SEKTOR\nSTRATEGIS", "desc": "Fokus pada sektor yang bertumbuh." },
+    "innovation": { "title": "BERBASIS\nINOVASI", "desc": "Inovasi untuk dampak nyata." },
+    "impact": { "title": "DAMPAK\nPOSITIF", "desc": "Manfaat bagi masyarakat." }
+  },
+  "valuesHeading1": "NILAI-NILAI",
+  "valuesHeading2": "KAMI",
+  "valuesSub": "Prinsip yang membimbing setiap langkah dan keputusan kami.",
+  "values": [
+    "Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan dan keputusan.",
+    "Kami terus berinovasi dan beradaptasi untuk menciptakan solusi yang relevan dan bernilai.",
+    "Kami percaya bahwa kolaborasi yang kuat menciptakan hasil yang lebih besar dan berkelanjutan.",
+    "Kami berkomitmen memberikan kualitas terbaik dan terus mendorong diri untuk melampaui standar.",
+    "Kami berfokus pada kebutuhan pelanggan dan berupaya memberikan pengalaman terbaik.",
+    "Kami peduli terhadap lingkungan dan masyarakat dengan mengedepankan keberlanjutan."
+  ],
+  "visionHeading": "VISI & MISI",
+  "visionTitle": "Visi Kami",
+  "visionDesc": "Menjadi grup bisnis terdepan yang terintegrasi, inovatif, dan berdaya saing global demi menciptakan masa depan yang lebih baik dan berkelanjutan.",
+  "missionTitle": "Misi Kami",
+  "missions": [
+    "Mengembangkan portofolio bisnis yang tangguh dan terdiversifikasi di berbagai sektor.",
+    "Mendorong transformasi digital dan adopsi inovasi di seluruh lini operasional.",
+    "Menciptakan nilai jangka panjang bagi para pemegang saham, mitra kerja, dan masyarakat.",
+    "Menerapkan tata kelola perusahaan yang baik dan bertanggung jawab sosial serta lingkungan."
+  ],
+  "networkHeading1": "JARINGAN",
+  "networkHeading2": "KAMI",
+  "networkSub": "Kemitraan dan keanggotaan institusional strategis."
+}
