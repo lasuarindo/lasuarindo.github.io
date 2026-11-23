@@ -1,6 +1,12 @@
 import React, { Suspense, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
-import { Colors } from '@/constants/theme';
+import { useStrings } from '@/i18n/useStrings';
+import idCommon from '@/i18n/locales/id/common.json';
+import enCommon from '@/i18n/locales/en/common.json';
+import { Header } from '@/layouts/Header';
+import { Footer } from '@/layouts/Footer';
+import { BackToTop } from '@/components/BackToTop';
+import { RouteFallback } from '@/components/RouteFallback';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -12,34 +18,27 @@ function ScrollToTop() {
   return null;
 }
 
-// Shown inside the <Outlet /> slot while a lazily loaded page chunk arrives,
-// so the surrounding chrome is never torn down.
-function RouteFallback() {
-  return (
-    <div
-      role="status"
-      aria-live="polite"
-      aria-label="Memuat halaman"
-      style={{
-        minHeight: '60vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: Colors.background,
-      }}
-    >
-      <span className="route-spinner" aria-hidden="true" />
-    </div>
-  );
-}
-
+// Single source of chrome: header, main landmark, footer and back-to-top live
+// here so individual pages only render their own content. The footer is
+// route-aware (it shows the services gallery on /services by itself).
 export function RootLayout() {
+  const t = useStrings({ id: idCommon, en: enCommon });
+  const location = useLocation();
+
   return (
     <>
       <ScrollToTop />
-      <Suspense fallback={<RouteFallback />}>
-        <Outlet />
-      </Suspense>
+      <a href="#main" className="skip-link">
+        {t.skipLink}
+      </a>
+      <Header />
+      <main id="main" key={location.pathname}>
+        <Suspense fallback={<RouteFallback />}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
+      <BackToTop />
     </>
   );
 }

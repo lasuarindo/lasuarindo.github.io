@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router';
-import { useLanguage } from '@/context/LanguageContext';
 import { useResponsive } from '@/hooks/useResponsive';
-import { HeaderNav } from '@/layouts/Header';
-import { FooterSection } from '@/layouts/Footer';
-import { BackToTop } from '@/components/BackToTop';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
 import { Icon } from '@/components/Icon';
@@ -23,7 +19,6 @@ const TOC_ITEMS = [
 
 export function PrivacyPolicy() {
   const navigate = useNavigate();
-  const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState('pendahuluan');
   const { isDesktop, isMd, contentWidth } = useResponsive();
 
@@ -42,8 +37,6 @@ export function PrivacyPolicy() {
 
   return (
     <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
-      <HeaderNav />
-
       {/* ================= HERO SECTION ================= */}
       <section
         style={{
@@ -1051,8 +1044,6 @@ export function PrivacyPolicy() {
         </div>
       </section>
 
-      <FooterSection />
-      <BackToTop />
     </div>
   );
 }

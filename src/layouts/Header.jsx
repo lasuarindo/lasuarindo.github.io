@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router';
 import { useLanguage } from '@/context/LanguageContext';
+import { useStrings } from '@/i18n/useStrings';
+import idCommon from '@/i18n/locales/id/common.json';
+import enCommon from '@/i18n/locales/en/common.json';
 import { MobileMenu } from '@/layouts/MobileMenu';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
@@ -10,7 +13,8 @@ export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
+  const t = useStrings({ id: idCommon, en: enCommon });
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);

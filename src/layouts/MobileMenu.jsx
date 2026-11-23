@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import { useLanguage } from '@/context/LanguageContext';
+import { useStrings } from '@/i18n/useStrings';
+import idCommon from '@/i18n/locales/id/common.json';
+import enCommon from '@/i18n/locales/en/common.json';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
 import { motion, AnimatePresence } from 'motion/react';
@@ -9,7 +12,8 @@ export function MobileMenu({ visible, onClose }) {
   const navigate = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
+  const t = useStrings({ id: idCommon, en: enCommon });
 
   useEffect(() => {
     if (visible) {

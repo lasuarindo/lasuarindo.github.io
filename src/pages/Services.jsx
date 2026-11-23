@@ -1,35 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { useLanguage } from '@/context/LanguageContext';
 import { useResponsive } from '@/hooks/useResponsive';
-import { HeaderNav } from '@/layouts/Header';
-import { FooterSection } from '@/layouts/Footer';
-import { BackToTop } from '@/components/BackToTop';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
 
 import heroBgImg from '@/assets/images/header_new_HD.png';
-import propertiHeroImg from '@/assets/images/layanan_properti_hero.png';
-import layananEkosistemImg from '@/assets/images/Layanan_dan_ekosistem.png';
-import mediaKreatifImg from '@/assets/images/layanan_media_kreatif.png';
-import teknologiImg from '@/assets/images/layanan_tekonologi.png';
-import teknologiGridImg from '@/assets/images/layanan_teknologi_grid.png';
-import vamosImg from '@/assets/images/layanan_vamos_sinergi.png';
-import proyekPropertiImg from '@/assets/images/proyek_masadepan_properti.png';
-import proyekTeknologiImg from '@/assets/images/proyek_masadepan_teknologi.png';
-import proyekEkosistemImg from '@/assets/images/proyek_masadepan_ekosistem.png';
-import proyekKarbonImg from '@/assets/images/proyek_masadepan_karbon.png';
-
-const FOOTER_GALLERY = [
-  propertiHeroImg,
-  mediaKreatifImg,
-  teknologiImg,
-  proyekEkosistemImg,
-  vamosImg,
-  layananEkosistemImg,
-];
+import propertiHeroImg from '@/assets/images/service_property_hero.png';
+import layananEkosistemImg from '@/assets/images/services_ecosystem.png';
+import teknologiImg from '@/assets/images/service_technology.png';
+import teknologiGridImg from '@/assets/images/service_technology_grid.png';
+import vamosImg from '@/assets/images/service_vamos_synergy.png';
+import proyekPropertiImg from '@/assets/images/future_project_property.png';
+import proyekTeknologiImg from '@/assets/images/future_project_technology.png';
+import proyekEkosistemImg from '@/assets/images/future_project_ecosystem.png';
+import proyekKarbonImg from '@/assets/images/future_project_carbon.png';
 
 const PROPERTY_FEATURES = [
   {
@@ -129,7 +115,6 @@ function GradientDivider({ center = false }) {
 
 export function Services() {
   const navigate = useNavigate();
-  const { language, t } = useLanguage();
   const { width, isLg, isMd, isSm, isMobile, contentWidth } = useResponsive();
 
   const h1Size = isMd ? 64 : Math.max(28, Math.min(42, Math.floor(contentWidth / 7.2)));
@@ -138,8 +123,6 @@ export function Services() {
 
   return (
     <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
-      <HeaderNav />
-
       {/* ============================================
            1. HERO SECTION
           ============================================ */}
@@ -1074,9 +1057,6 @@ export function Services() {
         </div>
       </section>
 
-      {/* 7. Footer Khusus Layanan with gallery */}
-      <FooterSection variant="layanan" gallery={FOOTER_GALLERY} />
-      <BackToTop />
     </div>
   );
 }

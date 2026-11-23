@@ -19,5 +19,15 @@
     "contactUs": "Contact Us",
     "copyright": "PT Lasuarindo Group. All Rights Reserved.",
     "creativeEcosystem": "Creative Ecosystem"
+  },
+  "skipLink": "Skip to main content",
+  "loader": {
+    "title": "Loading page",
+    "hint": "Please wait a moment…"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you are looking for is unavailable or has been moved.",
+    "backHome": "Back to Home"
   }
 }

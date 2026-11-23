@@ -19,5 +19,15 @@
     "contactUs": "Hubungi Kami",
     "copyright": "PT Lasuarindo Group. Hak Cipta Dilindungi.",
     "creativeEcosystem": "Ekosistem Kreatif"
+  },
+  "skipLink": "Lewati ke konten utama",
+  "loader": {
+    "title": "Memuat halaman",
+    "hint": "Mohon tunggu sebentar…"
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "message": "Halaman yang Anda cari tidak tersedia atau telah dipindahkan.",
+    "backHome": "Kembali ke Beranda"
   }
 }

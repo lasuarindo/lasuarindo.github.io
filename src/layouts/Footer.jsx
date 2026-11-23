@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { useLanguage } from '@/context/LanguageContext';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
 import logoImg from '@/assets/images/logoHD-rmv.png';
+import { footerGallery } from '@/data/footerGallery';
+import { sectors, localized } from '@/data/sectors';
+import { useStrings } from '@/i18n/useStrings';
+import idCommon from '@/i18n/locales/id/common.json';
+import enCommon from '@/i18n/locales/en/common.json';
 
 const WEBSITE_URL = 'https://www.lasuarindo.co.id';
 const INSTAGRAM_URL = 'https://www.instagram.com/lasuarindogroup';
@@ -38,16 +43,23 @@ function SocialButton({ label, url, icon }) {
   );
 }
 
-export function Footer({ variant = 'default', gallery = [] }) {
-  const { language, t } = useLanguage();
-  const isServices = variant === 'services' || variant === 'layanan';
+export function Footer() {
+  const { language } = useLanguage();
+  const t = useStrings({ id: idCommon, en: enCommon });
+  const { pathname } = useLocation();
+  // Route-aware: the creative-ecosystem gallery only appears on the Services page.
+  const isServices = pathname === '/services' || pathname.startsWith('/services/');
+  const gallery = isServices ? footerGallery : [];
 
   const sectorList = [
-    t.home.sectors.property.title,
-    t.home.sectors.investment.title,
-    t.home.sectors.technology.title,
-    t.home.sectors.commerce.title,
-    `${t.home.sectors.creative.title} & ${t.home.sectors.media.title}`,
+    localized(sectors.find((s) => s.key === 'property').title, language),
+    localized(sectors.find((s) => s.key === 'investment').title, language),
+    localized(sectors.find((s) => s.key === 'technology').title, language),
+    localized(sectors.find((s) => s.key === 'commerce').title, language),
+    `${localized(sectors.find((s) => s.key === 'creative').title, language)} & ${localized(
+      sectors.find((s) => s.key === 'media').title,
+      language,
+    )}`,
   ];
 
   const legalList = [

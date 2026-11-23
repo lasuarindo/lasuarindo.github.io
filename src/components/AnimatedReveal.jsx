@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-
-export { AnimatePresence, motion };
+import { motion } from 'motion/react';
 
 export function AnimatedReveal({
   children,
@@ -10,8 +8,22 @@ export function AnimatedReveal({
   hover = 'none',
   style = {},
   className = '',
+  disabled = false,
   ...props
 }) {
+  if (disabled) {
+    const hoverClass =
+      hover === 'lift' ? 'hover-lift' : hover === 'scale' ? 'hover-scale' : '';
+    return (
+      <div
+        className={`${hoverClass} ${className}`.trim()}
+        style={style}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
   const getVariants = () => {
     switch (animation) {
       case 'left':

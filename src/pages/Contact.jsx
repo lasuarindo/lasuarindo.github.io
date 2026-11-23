@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useResponsive } from '@/hooks/useResponsive';
-import { HeaderNav } from '@/layouts/Header';
-import { FooterSection } from '@/layouts/Footer';
-import { BackToTop } from '@/components/BackToTop';
+import { useStrings } from '@/i18n/useStrings';
+import idContact from '@/i18n/locales/id/contact.json';
+import enContact from '@/i18n/locales/en/contact.json';
+import idHome from '@/i18n/locales/id/home.json';
+import enHome from '@/i18n/locales/en/home.json';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
 
-import heroBgImg from '@/assets/images/Header_hero_section_beranda.png';
+import heroBgImg from '@/assets/images/header_hero_home.png';
 
 const ADDRESS_MAPS_URL =
   'https://maps.google.com/?q=Jl.+Tamblong+No.46,+Kb.+Pisang,+Kec.+Sumur+Bandung,+Kota+Bandung,+Jawa+Barat+40112';
@@ -39,7 +41,8 @@ function GradientDivider({ center = false }) {
 }
 
 export function Contact() {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
+  const t = useStrings({ id: { contact: idContact, home: idHome }, en: { contact: enContact, home: enHome } });
   const { isDesktop, isTablet, isMobile, isSmallMobile, isMd, width } = useResponsive();
 
   const [nama, setNama] = useState('');
@@ -114,8 +117,6 @@ export function Contact() {
 
   return (
     <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
-      <HeaderNav />
-
       {/* ================= HERO BANNER ================= */}
       <section
         style={{
@@ -937,8 +938,6 @@ export function Contact() {
         </div>
       </section>
 
-      <FooterSection />
-      <BackToTop />
     </div>
   );
 }

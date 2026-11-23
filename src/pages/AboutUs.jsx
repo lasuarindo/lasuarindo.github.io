@@ -1,15 +1,15 @@
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useResponsive } from '@/hooks/useResponsive';
-import { HeaderNav } from '@/layouts/Header';
-import { FooterSection } from '@/layouts/Footer';
-import { BackToTop } from '@/components/BackToTop';
+import { useStrings } from '@/i18n/useStrings';
+import idAbout from '@/i18n/locales/id/about.json';
+import enAbout from '@/i18n/locales/en/about.json';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
 
 import heroBgImg from '@/assets/images/header_new_HD.png';
-import tentangKamiImg from '@/assets/images/tentang_kami.png';
+import tentangKamiImg from '@/assets/images/about_us.png';
 import pendiriImg from '@/assets/images/pendiri.png';
 import komisarisImg from '@/assets/images/komisaris.png';
 
@@ -34,7 +34,8 @@ function Stars() {
 }
 
 export function AboutUs() {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
+  const t = useStrings({ id: { about: idAbout }, en: { about: enAbout } });
   const { isLg, isMd, isMobile, isSmallMobile } = useResponsive();
 
   const heroFeatures = [
@@ -48,8 +49,6 @@ export function AboutUs() {
 
   return (
     <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
-      <HeaderNav />
-
       {/* ============================================
            1. SIAPA KAMI
           ============================================ */}
@@ -866,8 +865,6 @@ export function AboutUs() {
         </div>
       </section>
 
-      <FooterSection />
-      <BackToTop />
     </div>
   );
 }
