@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/i18n/language.js';
 import { useResponsive } from '@/hooks/useResponsive';
 import { useStrings } from '@/i18n/useStrings';
 import idAbout from '@/i18n/locales/id/about.json';

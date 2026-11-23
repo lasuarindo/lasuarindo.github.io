@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import { useStrings } from '@/i18n/useStrings';
+import { LanguageProvider } from '@/i18n/LanguageProvider';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { Header } from '@/layouts/Header';
@@ -26,7 +27,7 @@ export function RootLayout() {
   const location = useLocation();
 
   return (
-    <>
+    <LanguageProvider>
       <ScrollToTop />
       <a href="#main" className="skip-link">
         {t.skipLink}
@@ -39,7 +40,7 @@ export function RootLayout() {
       </main>
       <Footer />
       <BackToTop />
-    </>
+    </LanguageProvider>
   );
 }
 

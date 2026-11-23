@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/i18n/language.js';
 import { sectors, localized } from '@/data/sectors';
 import { useStrings } from '@/i18n/useStrings';
 import idHome from '@/i18n/locales/id/home.json';

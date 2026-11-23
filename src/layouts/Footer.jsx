@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/i18n/language.js';
 import { Icon } from '@/components/Icon';
 import { Colors } from '@/constants/theme';
 import logoImg from '@/assets/images/logoHD-rmv.png';

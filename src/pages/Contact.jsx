@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/i18n/language.js';
 import { useResponsive } from '@/hooks/useResponsive';
 import { useStrings } from '@/i18n/useStrings';
 import idContact from '@/i18n/locales/id/contact.json';

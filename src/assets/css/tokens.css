@@ -8,6 +8,9 @@
   --color-secondary: #5f5e5e;
   --color-background: #f9f9f9;
   --color-on-background: #1a1c1c;
+  --color-surface: #f9f9f9;
+  --color-surface-container-low: #f3f3f4;
+  --color-surface-container-lowest: #ffffff;
   --color-inverse-surface: #2f3131;
   --color-inverse-on-surface: #f0f1f1;
 
