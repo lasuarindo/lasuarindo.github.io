@@ -3,10 +3,16 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
+// Base path for the production build. Defaults to '/' for local dev/preview;
+// the GitHub Pages workflow sets BASE_PATH ( '/' for *.github.io user sites,
+// '/<repo>/' for project sites).
+const base = process.env.BASE_PATH || '/'
+
 // Rolldown (Vite 8's built-in bundler) — vendor code splitting via
 // output.codeSplitting.groups (replacement for Rollup manualChunks and for
 // Rolldown's deprecated `advancedChunks`, which is ignored if both are set).
 export default defineConfig({
+  base,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
