@@ -293,14 +293,14 @@ function ServicesProjects() {
 
 export function Services() {
   return (
-    <div className="page">
+    <>
       <ServicesHero />
       <ServicesProperty />
       <ServicesMedia />
       <ServicesTechnology />
       <ServicesVamos />
       <ServicesProjects />
-    </div>
+    </>
   );
 }
 

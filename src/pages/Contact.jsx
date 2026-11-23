@@ -262,12 +262,12 @@ function ContactPartnership() {
 
 export function Contact() {
   return (
-    <div className="page">
+    <>
       <ContactHero />
       <ContactFormSection />
       <ContactMap />
       <ContactPartnership />
-    </div>
+    </>
   );
 }
 

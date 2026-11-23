@@ -232,14 +232,14 @@ function AboutNetwork() {
 
 export function AboutUs() {
   return (
-    <div className="page">
+    <>
       <AboutHero />
       <AboutValues />
       <AboutStrengths />
       <AboutFounder />
       <AboutCommissioner />
       <AboutNetwork />
-    </div>
+    </>
   );
 }
 

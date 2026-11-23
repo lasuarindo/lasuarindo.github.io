@@ -291,10 +291,10 @@ function PrivacyContent() {
 
 export function PrivacyPolicy() {
   return (
-    <div className="page">
+    <>
       <PrivacyHero />
       <PrivacyContent />
-    </div>
+    </>
   );
 }
 
