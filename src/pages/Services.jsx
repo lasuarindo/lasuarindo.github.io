@@ -16,9 +16,6 @@ import proyekTeknologiImg from '@/assets/images/future_project_technology.png';
 import proyekEkosistemImg from '@/assets/images/future_project_ecosystem.png';
 import proyekKarbonImg from '@/assets/images/future_project_carbon.png';
 
-const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
-const DISPLAY_FONT = 'font-[var(--font-display)]';
-const BODY_FONT = 'font-[var(--font-body)]';
 
 const PROPERTY_FEATURES = [
   { icon: 'location_city', title: 'Perencanaan Tata Kota', desc: 'Perencanaan komprehensif untuk kawasan hunian modern.' },
@@ -72,26 +69,26 @@ function ServicesHero() {
       <div className="absolute inset-0 z-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url(${heroBgImg})` }} />
       <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_right,rgba(17,19,19,0.9)_0%,rgba(17,19,19,0.6)_50%,rgba(17,19,19,0)_100%)]" />
       <div className="absolute inset-0 z-[2] bg-[linear-gradient(to_top,rgba(17,19,19,0.8)_0%,rgba(17,19,19,0)_50%,rgba(17,19,19,0.3)_100%)]" />
-      <div className={`relative z-10 ${CONTAINER}`}>
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6">
         <div className="max-w-[672px]">
           <AnimatedReveal animation="fade" delay={0}>
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.1)] px-4 py-1.5">
               <Icon name="business" size={14} color="#ffb4a3" />
-              <span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[1.2px] text-[#ffb4a3]`}>Lasuarindo Group</span>
+              <span className="font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.2px] text-[#ffb4a3]">Lasuarindo Group</span>
             </div>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={100}>
-            <h1 className={`m-0 mb-6 ${DISPLAY_FONT} text-[28px] font-bold leading-[35px] text-white sm:text-[34px] sm:leading-[43px] md:text-[64px] md:leading-[80px]`}>
+            <h1 className="m-0 mb-6 font-[var(--font-display)] text-[28px] font-bold leading-[35px] text-white sm:text-[34px] sm:leading-[43px] md:text-[64px] md:leading-[80px]">
               Membangun Masa<br />Depan di <GradientText>Industri</GradientText><br /><GradientText>Kunci</GradientText>
             </h1>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={200}>
-            <p className={`mb-10 max-w-[512px] ${BODY_FONT} text-[18px] leading-[29px] text-[rgba(255,255,255,0.7)]`}>
+            <p className="mb-10 max-w-[512px] font-[var(--font-body)] text-[18px] leading-[29px] text-[rgba(255,255,255,0.7)]">
               Lasuarindo Group menghadirkan ekosistem bisnis terpadu yang mendorong pertumbuhan, inovasi, dan dampak nyata di sektor-sektor strategis Indonesia.
             </p>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={400}>
-            <Link to="/contact" className={`inline-flex cursor-pointer items-center gap-2 rounded-lg bg-[var(--color-primary)] px-8 py-4 ${DISPLAY_FONT} text-[16px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transition-all hover:bg-[var(--color-primary-container)]`}>
+            <Link to="/contact" className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-[var(--color-primary)] px-8 py-4 font-[var(--font-display)] text-[16px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transition-all hover:bg-[var(--color-primary-container)]">
               <span>Bermitra Dengan Kami</span><Icon name="arrow_forward" size={20} color="#ffffff" />
             </Link>
           </AnimatedReveal>
@@ -111,19 +108,19 @@ function ServicesProperty() {
         <AnimatedReveal animation="up" delay={0}>
           <div className="grid grid-cols-1 overflow-hidden rounded-[24px] border border-[rgba(228,190,181,0.2)] bg-[var(--color-surface-container-lowest)] shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1)] lg:grid-cols-[1.2fr_1fr]">
             <div className="flex flex-col justify-center p-8 max-[767px]:px-4 max-[767px]:py-5 lg:px-12 lg:py-10">
-              <span className={`mb-[10px] block ${DISPLAY_FONT} text-[13px] font-bold uppercase leading-[18px] tracking-[1.5px] text-[var(--color-primary)]`}>PROPERTI</span>
-              <h3 className={`mb-4 ${DISPLAY_FONT} text-[26px] font-bold leading-[34px] text-[var(--color-on-background)] max-[767px]:text-[22px] max-[767px]:leading-[30px]`}>MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK</h3>
-              <p className={`mb-6 ${BODY_FONT} text-[15px] leading-6 text-[var(--color-secondary)]`}>Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.</p>
+              <span className="mb-[10px] block font-[var(--font-display)] text-[13px] font-bold uppercase leading-[18px] tracking-[1.5px] text-[var(--color-primary)]">PROPERTI</span>
+              <h3 className="mb-4 font-[var(--font-display)] text-[26px] font-bold leading-[34px] text-[var(--color-on-background)] max-[767px]:text-[22px] max-[767px]:leading-[30px]">MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK</h3>
+              <p className="mb-6 font-[var(--font-body)] text-[15px] leading-6 text-[var(--color-secondary)]">Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.</p>
               <div className="mb-7 grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
                 {PROPERTY_FEATURES.map((item) => (
                   <div key={item.title} className="flex flex-col gap-2">
                     <div className="flex h-[42px] w-[42px] items-center justify-center rounded-[10px] bg-[rgba(177,38,0,0.1)]"><Icon name={item.icon} size={22} color="#b12600" /></div>
-                    <h4 className={`m-0 mb-1 ${DISPLAY_FONT} text-[14px] font-bold leading-5 text-[var(--color-on-background)]`}>{item.title}</h4>
-                    <p className={`m-0 ${BODY_FONT} text-[12px] leading-[18px] text-[var(--color-secondary)]`}>{item.desc}</p>
+                    <h4 className="m-0 mb-1 font-[var(--font-display)] text-[14px] font-bold leading-5 text-[var(--color-on-background)]">{item.title}</h4>
+                    <p className="m-0 font-[var(--font-body)] text-[12px] leading-[18px] text-[var(--color-secondary)]">{item.desc}</p>
                   </div>
                 ))}
               </div>
-              <div className="inline-flex items-center gap-2 self-start rounded-full border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.08)] px-4 py-2"><Icon name="trending_up" size={16} color="#b12600" /><span className={`${DISPLAY_FONT} text-[14px] font-bold text-[var(--color-primary)]`}>Proyek Terkini</span></div>
+              <div className="inline-flex items-center gap-2 self-start rounded-full border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.08)] px-4 py-2"><Icon name="trending_up" size={16} color="#b12600" /><span className="font-[var(--font-display)] text-[14px] font-bold text-[var(--color-primary)]">Proyek Terkini</span></div>
             </div>
             <div className="flex min-h-[400px] flex-col gap-1 max-[767px]:min-h-[260px]">
               <div className="min-h-[200px] flex-1 overflow-hidden"><img src={propertiHeroImg} alt="Properti" className="block h-full w-full object-cover" /></div>
@@ -143,10 +140,10 @@ function ServicesMedia() {
       <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
           <div className="mx-auto mb-16 text-center">
-            <h2 className={`mb-2 ${DISPLAY_FONT} text-[48px] font-bold leading-[58px] text-[var(--color-on-background)] max-[767px]:text-[32px] max-[767px]:leading-[40px]`}>MEDIA <span className="text-[var(--color-primary)]">KREATIF</span></h2>
-            <p className={`mb-4 ${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.4px] text-[var(--color-secondary)]`}>DI BALIK LAYAR, CERITA, PENGARUH & MEDIA</p>
+            <h2 className="mb-2 font-[var(--font-display)] text-[48px] font-bold leading-[58px] text-[var(--color-on-background)] max-[767px]:text-[32px] max-[767px]:leading-[40px]">MEDIA <span className="text-[var(--color-primary)]">KREATIF</span></h2>
+            <p className="mb-4 font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[1.4px] text-[var(--color-secondary)]">DI BALIK LAYAR, CERITA, PENGARUH & MEDIA</p>
             <GradientDivider center />
-            <p className={`mx-auto max-w-[672px] ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.</p>
+            <p className="mx-auto max-w-[672px] font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.</p>
           </div>
         </AnimatedReveal>
         <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 max-[767px]:grid-cols-1 lg:grid-cols-3">
@@ -155,12 +152,12 @@ function ServicesMedia() {
               <div className="box-border flex h-full flex-col justify-between rounded-2xl border border-[rgba(228,190,181,0.2)] bg-[var(--color-surface-container-lowest)] p-8 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
                 <div>
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(177,38,0,0.1)]"><Icon name={card.icon} size={36} color="#b12600" /></div>
-                  <h3 className={`mb-1 ${DISPLAY_FONT} text-[28px] font-bold text-[var(--color-on-background)]`}>{card.title}</h3>
-                  <span className={`mb-4 block ${DISPLAY_FONT} text-[12px] font-bold uppercase tracking-[1.2px] text-[var(--color-primary)]`}>{card.tag}</span>
-                  <p className={`mb-6 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>{card.desc}</p>
+                  <h3 className="mb-1 font-[var(--font-display)] text-[28px] font-bold text-[var(--color-on-background)]">{card.title}</h3>
+                  <span className="mb-4 block font-[var(--font-display)] text-[12px] font-bold uppercase tracking-[1.2px] text-[var(--color-primary)]">{card.tag}</span>
+                  <p className="mb-6 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{card.desc}</p>
                 </div>
                 <div className="flex flex-col gap-3">
-                  {card.items.map((item) => (<div key={item} className="flex items-center gap-2"><Icon name="check_circle" size={16} color="#b12600" /><span className={`${BODY_FONT} text-[14px] text-[var(--color-secondary)]`}>{item}</span></div>))}
+                  {card.items.map((item) => (<div key={item} className="flex items-center gap-2"><Icon name="check_circle" size={16} color="#b12600" /><span className="font-[var(--font-body)] text-[14px] text-[var(--color-secondary)]">{item}</span></div>))}
                 </div>
               </div>
             </AnimatedReveal>
@@ -168,7 +165,7 @@ function ServicesMedia() {
         </div>
         <AnimatedReveal animation="up" delay={400}>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <span className={`${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.2px] text-[var(--color-secondary)]`}>Platform Kami:</span>
+            <span className="font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[1.2px] text-[var(--color-secondary)]">Platform Kami:</span>
             <div className="flex gap-4">
               {PLATFORM_ICONS.map((icon) => (<div key={icon} className="flex h-10 w-10 items-center justify-center rounded-[20px] bg-[var(--color-surface-container-high)]"><Icon name={icon} size={20} color="#5f5e5e" /></div>))}
             </div>
@@ -187,19 +184,19 @@ function ServicesTechnology() {
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <AnimatedReveal animation="left" delay={100}>
             <div>
-              <span className={`mb-[10px] block ${DISPLAY_FONT} text-[13px] font-bold uppercase leading-[18px] tracking-[1.5px] text-[var(--color-primary)]`}>TEKNOLOGI</span>
-              <h3 className={`mb-2 ${DISPLAY_FONT} text-[32px] font-bold leading-[42px] text-white max-[767px]:text-[24px] max-[767px]:leading-[32px]`}>MELINDUNGI MEREK MELALUI INOVASI</h3>
+              <span className="mb-[10px] block font-[var(--font-display)] text-[13px] font-bold uppercase leading-[18px] tracking-[1.5px] text-[var(--color-primary)]">TEKNOLOGI</span>
+              <h3 className="mb-2 font-[var(--font-display)] text-[32px] font-bold leading-[42px] text-white max-[767px]:text-[24px] max-[767px]:leading-[32px]">MELINDUNGI MEREK MELALUI INOVASI</h3>
               <GradientDivider />
-              <p className={`mb-8 ${BODY_FONT} text-[18px] leading-[29px] text-[rgba(255,255,255,0.7)]`}>Lasuarindo Group membangun fondasi digital yang kuat melalui layanan teknologi terdepan. Dari pengembangan perangkat lunak hingga infrastruktur cloud, kami menghadirkan solusi yang cerdas, aman, dan berkelanjutan untuk mendorong transformasi digital bisnis Anda.</p>
+              <p className="mb-8 font-[var(--font-body)] text-[18px] leading-[29px] text-[rgba(255,255,255,0.7)]">Lasuarindo Group membangun fondasi digital yang kuat melalui layanan teknologi terdepan. Dari pengembangan perangkat lunak hingga infrastruktur cloud, kami menghadirkan solusi yang cerdas, aman, dan berkelanjutan untuk mendorong transformasi digital bisnis Anda.</p>
               <div className="flex flex-col gap-4">
                 {TECH_CARDS.map((item) => (
                   <AnimatedReveal key={item.title} animation="up" delay={200} hover="lift">
                     <div className="rounded-xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] p-5 backdrop-blur-[8px]">
                       <div className="mb-3 flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[rgba(177,38,0,0.2)]"><Icon name={item.icon} size={20} color="#ffb4a3" /></div>
-                        <h4 className={`m-0 ${DISPLAY_FONT} text-[14px] font-bold text-white`}>{item.title}</h4>
+                        <h4 className="m-0 font-[var(--font-display)] text-[14px] font-bold text-white">{item.title}</h4>
                       </div>
-                      <p className={`m-0 ${BODY_FONT} text-[12px] leading-5 text-[rgba(255,255,255,0.6)]`}>{item.desc}</p>
+                      <p className="m-0 font-[var(--font-body)] text-[12px] leading-5 text-[rgba(255,255,255,0.6)]">{item.desc}</p>
                     </div>
                   </AnimatedReveal>
                 ))}
@@ -232,11 +229,11 @@ function ServicesVamos() {
           </AnimatedReveal>
           <AnimatedReveal animation="right" delay={200}>
             <div>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.08)] px-4 py-1.5"><Icon name="handshake" size={14} color="#ffb4a3" /><span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[1.2px] text-[#ffb4a3]`}>Olahraga dan Gaya hidup</span></div>
-              <h2 className={`mb-4 ${DISPLAY_FONT} text-[34px] font-bold leading-[42px] text-white max-[767px]:text-[26px] max-[767px]:leading-[34px] lg:text-[40px] lg:leading-[48px]`}>VAMOS PADELON <GradientText>SINERGI</GradientText></h2>
-              <p className={`mb-8 ${BODY_FONT} text-[16px] leading-[26px] text-[rgba(255,255,255,0.7)]`}>Vamos Padelon Sinergi (VPS) adalah sarana olahraga padel berkualitas dengan fasilitas modern, nyaman, dan berstandar profesional untuk semua kalangan.</p>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.08)] px-4 py-1.5"><Icon name="handshake" size={14} color="#ffb4a3" /><span className="font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.2px] text-[#ffb4a3]">Olahraga dan Gaya hidup</span></div>
+              <h2 className="mb-4 font-[var(--font-display)] text-[34px] font-bold leading-[42px] text-white max-[767px]:text-[26px] max-[767px]:leading-[34px] lg:text-[40px] lg:leading-[48px]">VAMOS PADELON <GradientText>SINERGI</GradientText></h2>
+              <p className="mb-8 font-[var(--font-body)] text-[16px] leading-[26px] text-[rgba(255,255,255,0.7)]">Vamos Padelon Sinergi (VPS) adalah sarana olahraga padel berkualitas dengan fasilitas modern, nyaman, dan berstandar profesional untuk semua kalangan.</p>
               <div className="mb-8 flex flex-wrap gap-3">
-                {VAMOS_TAGS.map((tag) => (<div key={tag.label} className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-4 py-2"><Icon name={tag.icon} size={16} color="#ffb4a3" /><span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[0.5px] text-white`}>{tag.label}</span></div>))}
+                {VAMOS_TAGS.map((tag) => (<div key={tag.label} className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-4 py-2"><Icon name={tag.icon} size={16} color="#ffb4a3" /><span className="font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[0.5px] text-white">{tag.label}</span></div>))}
               </div>
               <div className="flex gap-3">
                 {VAMOS_SOCIALS.map((s) => (<div key={s.label} className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-[18px] bg-[rgba(255,255,255,0.08)]"><Icon name={s.icon} size={18} color="rgba(255,255,255,0.6)" /></div>))}
@@ -256,9 +253,9 @@ function ServicesProjects() {
       <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
           <div className="mx-auto mb-16 text-center">
-            <h2 className={`mb-2 ${DISPLAY_FONT} text-[38px] font-bold leading-[48px] text-[var(--color-on-background)] max-[767px]:text-[28px] max-[767px]:leading-[36px] lg:text-[48px] lg:leading-[58px] lg:whitespace-nowrap`}>PROYEK <span className="text-[var(--color-primary)]">MASA DEPAN</span> KAMI</h2>
+            <h2 className="mb-2 font-[var(--font-display)] text-[38px] font-bold leading-[48px] text-[var(--color-on-background)] max-[767px]:text-[28px] max-[767px]:leading-[36px] lg:text-[48px] lg:leading-[58px] lg:whitespace-nowrap">PROYEK <span className="text-[var(--color-primary)]">MASA DEPAN</span> KAMI</h2>
             <GradientDivider center />
-            <p className={`mx-auto max-w-[672px] ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Inilah proyek-proyek strategis yang kami kembangkan untuk membangun masa depan yang lebih baik dan berkelanjutan.</p>
+            <p className="mx-auto max-w-[672px] font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Inilah proyek-proyek strategis yang kami kembangkan untuk membangun masa depan yang lebih baik dan berkelanjutan.</p>
           </div>
         </AnimatedReveal>
         <div className="grid grid-cols-2 gap-4 max-[767px]:grid-cols-1 lg:grid-cols-4">
@@ -268,8 +265,8 @@ function ServicesProjects() {
                 <img src={item.image} alt={item.title} className="block h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.2)_50%,transparent_100%)]" />
                 <div className="absolute bottom-0 left-0 right-0 z-[2] p-6">
-                  <div className="mb-2 inline-block rounded-full bg-[var(--color-primary)] px-3 py-1"><span className={`${DISPLAY_FONT} text-[10px] font-bold uppercase tracking-[1px] text-white`}>{item.tag}</span></div>
-                  <h3 className={`m-0 ${DISPLAY_FONT} text-[20px] font-bold leading-[26px] text-white`}>{item.title}</h3>
+                  <div className="mb-2 inline-block rounded-full bg-[var(--color-primary)] px-3 py-1"><span className="font-[var(--font-display)] text-[10px] font-bold uppercase tracking-[1px] text-white">{item.tag}</span></div>
+                  <h3 className="m-0 font-[var(--font-display)] text-[20px] font-bold leading-[26px] text-white">{item.title}</h3>
                 </div>
               </div>
             </AnimatedReveal>

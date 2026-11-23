@@ -15,7 +15,6 @@ const TOC_ITEMS = [
   { id: 'perubahan-kebijakan', number: '8', title: 'Perubahan Kebijakan' },
 ];
 
-const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
 const DISPLAY_FONT = 'font-[var(--font-display)]';
 const BODY_FONT = 'font-[var(--font-body)]';
 
@@ -25,31 +24,31 @@ function PrivacyHero() {
     <section className="relative overflow-hidden bg-[var(--color-inverse-surface)] pb-20 pt-[110px]">
       <div className="pointer-events-none absolute left-0 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(177,38,0,0.1)] blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[400px] translate-x-[133px] translate-y-[133px] rounded-full bg-[rgba(177,38,0,0.08)] blur-[100px]" />
-      <div className={`${CONTAINER} relative z-10`}>
+      <div className="mx-auto w-full max-w-[1280px] px-6 relative z-10">
         <div className="max-w-[768px]">
           <AnimatedReveal animation="fade" delay={0}>
             <div className="mb-8 flex flex-row items-center gap-2">
-              <Link to="/" className={`${BODY_FONT} text-[16px] text-[rgba(226,226,222,0.7)] no-underline`}>Beranda</Link>
+              <Link to="/" className="font-[var(--font-body)] text-[16px] text-[rgba(226,226,222,0.7)] no-underline">Beranda</Link>
               <Icon name="chevron_right" size={18} color="rgba(226, 226, 222, 0.4)" />
-              <span className={`${BODY_FONT} text-[16px] text-[var(--color-primary-fixed-dim)]`}>Kebijakan Privasi</span>
+              <span className="font-[var(--font-body)] text-[16px] text-[var(--color-primary-fixed-dim)]">Kebijakan Privasi</span>
             </div>
           </AnimatedReveal>
           <AnimatedReveal animation="fade" delay={100}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(228,190,181,0.3)] bg-[rgba(243,243,244,0.1)] px-4 py-1.5">
               <Icon name="verified_user" size={16} color="#ffb4a3" />
-              <span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[1.2px] text-[var(--color-primary-fixed-dim)]`}>Perlindungan Data</span>
+              <span className="font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.2px] text-[var(--color-primary-fixed-dim)]">Perlindungan Data</span>
             </div>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={200}>
-            <h1 className={`mb-6 ${DISPLAY_FONT} text-[36px] font-bold leading-[1.15] text-[var(--color-on-primary)] md:text-[48px] lg:text-[72px]`}>KEBIJAKAN<br /><GradientText>PRIVASI</GradientText></h1>
+            <h1 className="mb-6 font-[var(--font-display)] text-[36px] font-bold leading-[1.15] text-[var(--color-on-primary)] md:text-[48px] lg:text-[72px]">KEBIJAKAN<br /><GradientText>PRIVASI</GradientText></h1>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={300}>
-            <p className={`m-0 mb-8 ${BODY_FONT} text-[18px] leading-[29px] text-[var(--color-surface-variant)]`}>Komitmen kami dalam melindungi dan menghormati privasi Anda sebagai bagian dari integritas bisnis kami.</p>
+            <p className="m-0 mb-8 font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-surface-variant)]">Komitmen kami dalam melindungi dan menghormati privasi Anda sebagai bagian dari integritas bisnis kami.</p>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={400}>
             <div className="flex flex-row items-center gap-3">
               <Icon name="update" size={20} color="#ffb4a3" />
-              <span className={`${BODY_FONT} text-[16px] text-[rgba(226,226,222,0.7)]`}>Terakhir diperbarui: 12 Agustus 2026</span>
+              <span className="font-[var(--font-body)] text-[16px] text-[rgba(226,226,222,0.7)]">Terakhir diperbarui: 12 Agustus 2026</span>
             </div>
           </AnimatedReveal>
         </div>
@@ -80,11 +79,11 @@ function PrivacyContent() {
 
   return (
     <section className="section section--surface">
-      <div className={`flex flex-col items-start gap-12 lg:flex-row ${CONTAINER}`}>
+      <div className="flex flex-col items-start gap-12 lg:flex-row mx-auto w-full max-w-[1280px] px-6">
         {/* Sidebar */}
         <div className="static mb-12 w-full self-start lg:sticky lg:top-[100px] lg:mb-0 lg:w-[300px]">
           <div className="rounded-2xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-            <h3 className={`mb-4 ${DISPLAY_FONT} text-[22px] font-semibold text-[var(--color-on-background)]`}>Daftar Isi</h3>
+            <h3 className="mb-4 font-[var(--font-display)] text-[22px] font-semibold text-[var(--color-on-background)]">Daftar Isi</h3>
             <div className="mb-6 h-1 w-16 rounded-[2px] bg-[linear-gradient(to_right,#b12600,#ffb68b)]" />
             <div className="flex flex-col gap-1.5">
               {TOC_ITEMS.map((item) => {
@@ -108,9 +107,9 @@ function PrivacyContent() {
               <div>
                 <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="description" size={28} color="#b12600" /></div><h2 className={headingStyle}>Pendahuluan</h2></div>
                 <div className="mb-6 rounded-lg border-l-4 border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] p-6">
-                  <p className={`m-0 ${BODY_FONT} text-[18px] leading-[29px] text-[var(--color-secondary)]`}>Kebijakan Privasi ini menjelaskan bagaimana{' '}<strong className="font-bold text-[var(--color-on-background)]">PT Lasuarindo Group</strong>{' '}"Perusahaan", "kami", atau "kita" mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat Anda mengunjungi situs web kami di{' '}<span className="font-semibold text-[var(--color-primary)]">www.lasuarindo.co.id</span>{' '}atau berinteraksi dengan layanan kami.</p>
+                  <p className="m-0 font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-secondary)]">Kebijakan Privasi ini menjelaskan bagaimana{' '}<strong className="font-bold text-[var(--color-on-background)]">PT Lasuarindo Group</strong>{' '}"Perusahaan", "kami", atau "kita" mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat Anda mengunjungi situs web kami di{' '}<span className="font-semibold text-[var(--color-primary)]">www.lasuarindo.co.id</span>{' '}atau berinteraksi dengan layanan kami.</p>
                 </div>
-                <p className={`m-0 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Sebagai perusahaan bisnis & investasi terpadu yang bergerak di sektor Properti, Investasi, Teknologi, Perdagangan, Kreatif & Media, serta Pariwisata, kami memahami pentingnya menjaga kepercayaan Anda. Kebijakan ini berlaku untuk seluruh unit bisnis dan anak perusahaan dalam lingkup Lasuarindo Group.</p>
+                <p className="m-0 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Sebagai perusahaan bisnis & investasi terpadu yang bergerak di sektor Properti, Investasi, Teknologi, Perdagangan, Kreatif & Media, serta Pariwisata, kami memahami pentingnya menjaga kepercayaan Anda. Kebijakan ini berlaku untuk seluruh unit bisnis dan anak perusahaan dalam lingkup Lasuarindo Group.</p>
               </div>
             </AnimatedReveal>
           </div>
@@ -125,14 +124,14 @@ function PrivacyContent() {
                 <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                   <AnimatedReveal animation="up" delay={150} hover="lift">
                     <div className="box-border h-full rounded-xl border border-[rgba(228,190,181,0.5)] bg-[var(--color-surface-container-lowest)] p-8">
-                      <div className="mb-4 flex flex-row items-center gap-3"><Icon name="person" size={22} color="#b12600" /><h4 className={`m-0 ${DISPLAY_FONT} text-[18px] font-semibold text-[var(--color-on-background)]`}>Data Pribadi</h4></div>
-                      <div className="flex flex-col gap-3">{['Nama lengkap', 'Alamat email', 'Nomor telepon', 'Nama perusahaan / organisasi'].map((text) => (<div key={text} className="flex flex-row items-center gap-2"><Icon name="check_circle" size={18} color="#b12600" /><span className={`${BODY_FONT} text-[15px] text-[var(--color-secondary)]`}>{text}</span></div>))}</div>
+                      <div className="mb-4 flex flex-row items-center gap-3"><Icon name="person" size={22} color="#b12600" /><h4 className="m-0 font-[var(--font-display)] text-[18px] font-semibold text-[var(--color-on-background)]">Data Pribadi</h4></div>
+                      <div className="flex flex-col gap-3">{['Nama lengkap', 'Alamat email', 'Nomor telepon', 'Nama perusahaan / organisasi'].map((text) => (<div key={text} className="flex flex-row items-center gap-2"><Icon name="check_circle" size={18} color="#b12600" /><span className="font-[var(--font-body)] text-[15px] text-[var(--color-secondary)]">{text}</span></div>))}</div>
                     </div>
                   </AnimatedReveal>
                   <AnimatedReveal animation="up" delay={250} hover="lift">
                     <div className="box-border h-full rounded-xl border border-[rgba(228,190,181,0.5)] bg-[var(--color-surface-container-lowest)] p-8">
-                      <div className="mb-4 flex flex-row items-center gap-3"><Icon name="devices" size={22} color="#b12600" /><h4 className={`m-0 ${DISPLAY_FONT} text-[18px] font-semibold text-[var(--color-on-background)]`}>Data Teknis</h4></div>
-                      <div className="flex flex-col gap-3">{['Alamat IP dan jenis perangkat', 'Jenis browser dan versinya', 'Halaman yang dikunjungi dan waktu akses', 'Data cookie dan identifikasi perangkat'].map((text) => (<div key={text} className="flex flex-row items-center gap-2"><Icon name="check_circle" size={18} color="#b12600" /><span className={`${BODY_FONT} text-[15px] text-[var(--color-secondary)]`}>{text}</span></div>))}</div>
+                      <div className="mb-4 flex flex-row items-center gap-3"><Icon name="devices" size={22} color="#b12600" /><h4 className="m-0 font-[var(--font-display)] text-[18px] font-semibold text-[var(--color-on-background)]">Data Teknis</h4></div>
+                      <div className="flex flex-col gap-3">{['Alamat IP dan jenis perangkat', 'Jenis browser dan versinya', 'Halaman yang dikunjungi dan waktu akses', 'Data cookie dan identifikasi perangkat'].map((text) => (<div key={text} className="flex flex-row items-center gap-2"><Icon name="check_circle" size={18} color="#b12600" /><span className="font-[var(--font-body)] text-[15px] text-[var(--color-secondary)]">{text}</span></div>))}</div>
                     </div>
                   </AnimatedReveal>
                 </div>
@@ -156,7 +155,7 @@ function PrivacyContent() {
                   <AnimatedReveal key={item.title} animation="up" delay={100 * (i + 1)}>
                     <div className="flex flex-row items-start gap-4 rounded-xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-5">
                       <Icon name={item.icon} size={24} color="#b12600" />
-                      <div className="flex-1"><h4 className={`m-0 mb-1 ${DISPLAY_FONT} text-[16px] font-semibold text-[var(--color-on-background)]`}>{item.title}</h4><p className={`m-0 ${BODY_FONT} text-[15px] leading-[23px] text-[var(--color-secondary)]`}>{item.desc}</p></div>
+                      <div className="flex-1"><h4 className="m-0 mb-1 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{item.title}</h4><p className="m-0 font-[var(--font-body)] text-[15px] leading-[23px] text-[var(--color-secondary)]">{item.desc}</p></div>
                     </div>
                   </AnimatedReveal>
                 ))}</div>
@@ -171,7 +170,7 @@ function PrivacyContent() {
               <div>
                 <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="shield" size={28} color="#b12600" /></div><h2 className={headingStyle}>Perlindungan Data</h2></div>
                 <div className="mb-6 rounded-lg border-l-4 border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] p-6">
-                  <p className={`m-0 ${BODY_FONT} text-[18px] leading-[29px] text-[var(--color-secondary)]`}>Kami berkomitmen menjaga keamanan data Anda dengan menerapkan langkah-langkah teknis dan organisasi yang sesuai dengan standar industri.</p>
+                  <p className="m-0 font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-secondary)]">Kami berkomitmen menjaga keamanan data Anda dengan menerapkan langkah-langkah teknis dan organisasi yang sesuai dengan standar industri.</p>
                 </div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">{[
                   { icon: 'lock', title: 'Enkripsi SSL/TLS', desc: 'Seluruh transmisi data melalui protokol terenkripsi.' },
@@ -181,8 +180,8 @@ function PrivacyContent() {
                   <AnimatedReveal key={card.title} animation="up" delay={100 * (idx + 1)} hover="lift">
                     <div className="box-border flex h-full flex-col items-center rounded-xl border border-[rgba(228,190,181,0.5)] bg-[var(--color-surface-container-lowest)] p-8 text-center">
                       <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[rgba(177,38,0,0.1)]"><Icon name={card.icon} size={28} color="#b12600" /></div>
-                      <h4 className={`m-0 mb-2 ${DISPLAY_FONT} text-[16px] font-semibold text-[var(--color-on-background)]`}>{card.title}</h4>
-                      <p className={`m-0 ${BODY_FONT} text-[14px] leading-[22px] text-[var(--color-secondary)]`}>{card.desc}</p>
+                      <h4 className="m-0 mb-2 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{card.title}</h4>
+                      <p className="m-0 font-[var(--font-body)] text-[14px] leading-[22px] text-[var(--color-secondary)]">{card.desc}</p>
                     </div>
                   </AnimatedReveal>
                 ))}</div>
@@ -205,7 +204,7 @@ function PrivacyContent() {
                   <AnimatedReveal key={item.title} animation="up" delay={100 * (i + 1)}>
                     <div className="flex flex-row items-start gap-4 rounded-xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-5">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(177,38,0,0.1)]"><Icon name={item.icon} size={20} color="#b12600" /></div>
-                      <div className="flex-1"><h4 className={`m-0 mb-1 ${DISPLAY_FONT} text-[16px] font-semibold text-[var(--color-on-background)]`}>{item.title}</h4><p className={`m-0 ${BODY_FONT} text-[15px] leading-[23px] text-[var(--color-secondary)]`}>{item.desc}</p></div>
+                      <div className="flex-1"><h4 className="m-0 mb-1 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{item.title}</h4><p className="m-0 font-[var(--font-body)] text-[15px] leading-[23px] text-[var(--color-secondary)]">{item.desc}</p></div>
                     </div>
                   </AnimatedReveal>
                 ))}</div>
@@ -221,7 +220,7 @@ function PrivacyContent() {
                 <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="cookie" size={28} color="#b12600" /></div><h2 className={headingStyle}>Cookie & Teknologi Pelacakan</h2></div>
                 <p className={bodyStyle}>Situs web kami menggunakan cookie dan teknologi pelacakan serupa untuk meningkatkan pengalaman browsing Anda. Berikut jenis cookie yang kami gunakan:</p>
                 <div className="w-full overflow-hidden rounded-xl border border-[rgba(228,190,181,0.5)]">
-                  <div className={`flex flex-row border-b border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-high)] px-6 py-4 ${DISPLAY_FONT} text-[16px] font-semibold text-[var(--color-on-background)]`}><span className="flex-[1.2]">Jenis Cookie</span><span className="flex-[2]">Tujuan</span><span className="flex-1">Durasi</span></div>
+                  <div className="flex flex-row border-b border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-high)] px-6 py-4 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]"><span className="flex-[1.2]">Jenis Cookie</span><span className="flex-[2]">Tujuan</span><span className="flex-1">Durasi</span></div>
                   {[
                     { type: 'Cookie Esensial', purpose: 'Diperlukan untuk fungsionalitas dasar situs web', duration: 'Sesi' },
                     { type: 'Cookie Analitik', purpose: 'Membantu kami memahami interaksi pengunjung', duration: '1 tahun' },
@@ -234,7 +233,7 @@ function PrivacyContent() {
                     </div>
                   ))}
                 </div>
-                <p className={`m-0 mt-6 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Anda dapat mengatur preferensi cookie melalui pengaturan browser Anda. Perlu diketahui bahwa menonaktifkan cookie tertentu dapat memengaruhi fungsionalitas situs web.</p>
+                <p className="m-0 mt-6 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Anda dapat mengatur preferensi cookie melalui pengaturan browser Anda. Perlu diketahui bahwa menonaktifkan cookie tertentu dapat memengaruhi fungsionalitas situs web.</p>
               </div>
             </AnimatedReveal>
           </div>
@@ -257,11 +256,11 @@ function PrivacyContent() {
                   <AnimatedReveal key={right.title} animation="up" delay={80 * (rIdx + 1)} hover="lift">
                     <div className="box-border flex h-full flex-row items-start gap-3 rounded-xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-4">
                       <Icon name={right.icon} size={22} color="#b12600" />
-                      <div className="flex-1"><h4 className={`m-0 mb-1 ${DISPLAY_FONT} text-[15px] font-semibold text-[var(--color-on-background)]`}>{right.title}</h4><p className={`m-0 ${BODY_FONT} text-[14px] leading-[20px] text-[var(--color-secondary)]`}>{right.desc}</p></div>
+                      <div className="flex-1"><h4 className="m-0 mb-1 font-[var(--font-display)] text-[15px] font-semibold text-[var(--color-on-background)]">{right.title}</h4><p className="m-0 font-[var(--font-body)] text-[14px] leading-[20px] text-[var(--color-secondary)]">{right.desc}</p></div>
                     </div>
                   </AnimatedReveal>
                 ))}</div>
-                <p className={`m-0 mt-6 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Untuk menggunakan hak-hak Anda, silakan hubungi kami melalui{' '}<Link to="/contact" className="cursor-pointer font-bold text-[var(--color-primary)] no-underline">Halaman Kontak</Link>. Kami akan merespons permintaan Anda dalam waktu{' '}<strong className="font-bold text-[var(--color-on-background)]">14 hari kerja</strong>.</p>
+                <p className="m-0 mt-6 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Untuk menggunakan hak-hak Anda, silakan hubungi kami melalui{' '}<Link to="/contact" className="cursor-pointer font-bold text-[var(--color-primary)] no-underline">Halaman Kontak</Link>. Kami akan merespons permintaan Anda dalam waktu{' '}<strong className="font-bold text-[var(--color-on-background)]">14 hari kerja</strong>.</p>
               </div>
             </AnimatedReveal>
           </div>
@@ -273,8 +272,8 @@ function PrivacyContent() {
               <div>
                 <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="history" size={28} color="#b12600" /></div><h2 className={headingStyle}>Perubahan Kebijakan</h2></div>
                 <div className="mb-6 rounded-lg border-l-4 border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] p-6">
-                  <p className={`mb-4 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Kami berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Perubahan signifikan akan diberitahukan melalui pemberitahuan yang jelas di situs web kami.</p>
-                  <p className={`m-0 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Kami menyarankan Anda untuk meninjau halaman ini secara berkala agar tetap memahami kebijakan terbaru kami. Penggunaan berkelanjutan atas layanan kami setelah perubahan dipublikasikan merupakan bentuk penerimaan Anda terhadap kebijakan yang diperbarui.</p>
+                  <p className="mb-4 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Kami berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Perubahan signifikan akan diberitahukan melalui pemberitahuan yang jelas di situs web kami.</p>
+                  <p className="m-0 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">Kami menyarankan Anda untuk meninjau halaman ini secara berkala agar tetap memahami kebijakan terbaru kami. Penggunaan berkelanjutan atas layanan kami setelah perubahan dipublikasikan merupakan bentuk penerimaan Anda terhadap kebijakan yang diperbarui.</p>
                 </div>
               </div>
             </AnimatedReveal>

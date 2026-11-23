@@ -46,18 +46,18 @@ function ContactHero() {
     <section className="relative overflow-hidden bg-[var(--color-inverse-surface)] pb-[80px] pt-[96px] lg:pb-[112px] lg:pt-[110px]">
       <img src={heroBgImg} alt="" aria-hidden="true" className="absolute inset-0 z-0 h-full w-full object-cover opacity-30" />
       <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,rgba(47,49,49,0)_0%,rgba(47,49,49,0.5)_60%,#2f3131_100%)]" />
-      <div className={`relative z-10 ${CONTAINER}`}>
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6">
         <AnimatedReveal animation="up" delay={0} disabled>
-          <span className={`mb-[14px] block ${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[1.5px] text-[#ffb4a3]`}>{t.contact.badge}</span>
+          <span className="mb-[14px] block font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.5px] text-[#ffb4a3]">{t.contact.badge}</span>
         </AnimatedReveal>
         <AnimatedReveal animation="up" delay={60} disabled>
-          <h1 className={`m-0 mb-[18px] ${DISPLAY_FONT} text-[40px] font-bold leading-[1.12] text-white lg:text-[56px]`}>
+          <h1 className="m-0 mb-[18px] font-[var(--font-display)] text-[40px] font-bold leading-[1.12] text-white lg:text-[56px]">
             {t.contact.heroTitle1}<br />
             <GradientText>{t.contact.heroTitle2}</GradientText>
           </h1>
         </AnimatedReveal>
         <AnimatedReveal animation="up" delay={120} disabled>
-          <p className={`m-0 max-w-[672px] ${BODY_FONT} text-[18px] leading-[29px] text-[var(--color-surface-variant)]`}>{t.contact.heroSubtitle}</p>
+          <p className="m-0 max-w-[672px] font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-surface-variant)]">{t.contact.heroSubtitle}</p>
         </AnimatedReveal>
       </div>
     </section>
@@ -101,7 +101,7 @@ function ContactFormSection() {
           {/* Left Info Column */}
           <AnimatedReveal animation="left" delay={100}>
             <div>
-              <h2 className={`mb-[10px] ${DISPLAY_FONT} text-[28px] font-bold leading-[34px] text-[var(--color-on-background)] lg:text-[34px] lg:leading-[40px]`}>
+              <h2 className="mb-[10px] font-[var(--font-display)] text-[28px] font-bold leading-[34px] text-[var(--color-on-background)] lg:text-[34px] lg:leading-[40px]">
                 {language === 'en' ? 'CONTACT ' : 'INFORMASI '}<span className="text-[var(--color-primary)]">{language === 'en' ? 'INFO' : 'KONTAK'}</span>
               </h2>
               <GradientDivider />
@@ -111,14 +111,14 @@ function ContactFormSection() {
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.addressTitle}</h4>
                     <p className={INFO_TEXT}>Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112, Indonesia</p>
-                    <span className={`mt-[2px] block ${BODY_FONT} text-[14px] leading-5 text-[rgba(95,94,94,0.7)]`}>{language === 'en' ? 'Bandung City Area' : 'Area Kota Bandung'}</span>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{language === 'en' ? 'Bandung City Area' : 'Area Kota Bandung'}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-[14px]">
                   <div className={INFO_ICON_BOX}><Icon name="mail" size={24} color="#b12600" /></div>
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.emailTitle}</h4>
-                    <a href="mailto:contact@lasuarindo.co.id" className={`${BODY_FONT} text-[14px] leading-5 text-[var(--color-secondary)] no-underline`}>contact@lasuarindo.co.id</a>
+                    <a href="mailto:contact@lasuarindo.co.id" className="font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)] no-underline">contact@lasuarindo.co.id</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-[14px]">
@@ -126,12 +126,12 @@ function ContactFormSection() {
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.hoursTitle}</h4>
                     <p className={INFO_TEXT}>{t.contact.hoursDesc}</p>
-                    <span className={`mt-[2px] block ${BODY_FONT} text-[14px] leading-5 text-[rgba(95,94,94,0.7)]`}>{language === 'en' ? 'Saturday - Sunday: Closed' : 'Sabtu - Minggu: Tutup'}</span>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{language === 'en' ? 'Saturday - Sunday: Closed' : 'Sabtu - Minggu: Tutup'}</span>
                   </div>
                 </div>
               </div>
               <div className="mt-7 border-t border-[rgba(228,190,181,0.3)] pt-5">
-                <h4 className={`mb-3 ${DISPLAY_FONT} text-[15px] font-bold leading-[22px] text-[var(--color-on-background)]`}>{t.contact.socialHeading}</h4>
+                <h4 className="mb-3 font-[var(--font-display)] text-[15px] font-bold leading-[22px] text-[var(--color-on-background)]">{t.contact.socialHeading}</h4>
                 <div className="flex gap-3">
                   {SOCIALS.map((s) => (
                     <a key={s.label} href={s.url || '#'} target="_blank" rel="noopener noreferrer" aria-label={s.label}
@@ -147,8 +147,8 @@ function ContactFormSection() {
           {/* Right Form Column */}
           <AnimatedReveal animation="right" delay={100}>
             <div className="rounded-2xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-6 shadow-[0_20px_25px_rgba(0,0,0,0.1),0_8px_10px_rgba(0,0,0,0.1)] max-[767px]:p-5 lg:p-7">
-              <h3 className={`m-0 mb-1 ${DISPLAY_FONT} text-[24px] font-bold leading-[30px] text-[var(--color-on-background)]`}>{t.contact.formTitle}</h3>
-              <p className={`m-0 mb-5 ${BODY_FONT} text-[14px] leading-5 text-[var(--color-secondary)]`}>
+              <h3 className="m-0 mb-1 font-[var(--font-display)] text-[24px] font-bold leading-[30px] text-[var(--color-on-background)]">{t.contact.formTitle}</h3>
+              <p className="m-0 mb-5 font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)]">
                 {language === 'en' ? 'Fill out the form below and our team will get in touch with you within 24 hours.' : 'Isi formulir di bawah ini dan tim kami akan menghubungi Anda dalam waktu 1x24 jam.'}
               </p>
               {status.message && (
@@ -201,7 +201,7 @@ function ContactMap() {
       <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
           <div className="mb-12 text-center">
-            <h2 className={`mb-4 ${DISPLAY_FONT} text-[30px] font-bold text-[var(--color-on-background)] md:text-[40px]`}>LOKASI <span className="text-[var(--color-primary)]">KAMI</span></h2>
+            <h2 className="mb-4 font-[var(--font-display)] text-[30px] font-bold text-[var(--color-on-background)] md:text-[40px]">LOKASI <span className="text-[var(--color-primary)]">KAMI</span></h2>
             <GradientDivider center />
           </div>
           <div className="h-[450px] overflow-hidden rounded-2xl border border-[rgba(228,190,181,0.3)] bg-white shadow-[0_20px_25px_rgba(0,0,0,0.1),0_8px_10px_rgba(0,0,0,0.1)] max-[767px]:h-[320px]">
@@ -225,13 +225,13 @@ function ContactPartnership() {
 
   return (
     <section className="section--dark py-20 max-[767px]:py-14">
-      <div className={`grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ${CONTAINER}`}>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto w-full max-w-[1280px] px-6">
         {partnerCards.map((card, i) => (
           <AnimatedReveal key={card.title} animation="up" delay={100 * (i + 1)} hover="lift">
             <div className="box-border flex h-full flex-col items-center rounded-2xl border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-8 text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(177,38,0,0.2)]"><Icon name={card.icon} size={36} color="#ffb4a3" /></div>
-              <h3 className={`mb-3 ${DISPLAY_FONT} text-[28px] font-bold leading-9 text-[var(--color-on-primary)]`}>{card.title}</h3>
-              <p className={`m-0 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-surface-variant)]`}>{card.desc}</p>
+              <h3 className="mb-3 font-[var(--font-display)] text-[28px] font-bold leading-9 text-[var(--color-on-primary)]">{card.title}</h3>
+              <p className="m-0 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-surface-variant)]">{card.desc}</p>
             </div>
           </AnimatedReveal>
         ))}
