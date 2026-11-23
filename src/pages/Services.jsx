@@ -4,7 +4,6 @@ import { useResponsive } from '@/hooks/useResponsive';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
 import { Icon } from '@/components/Icon';
-import { Colors } from '@/constants/theme';
 
 import heroBgImg from '@/assets/images/header_new_HD.png';
 import propertiHeroImg from '@/assets/images/service_property_hero.png';
@@ -16,6 +15,10 @@ import proyekPropertiImg from '@/assets/images/future_project_property.png';
 import proyekTeknologiImg from '@/assets/images/future_project_technology.png';
 import proyekEkosistemImg from '@/assets/images/future_project_ecosystem.png';
 import proyekKarbonImg from '@/assets/images/future_project_carbon.png';
+
+const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
+const DISPLAY_FONT = 'font-[var(--font-display)]';
+const BODY_FONT = 'font-[var(--font-body)]';
 
 const PROPERTY_FEATURES = [
   { icon: 'location_city', title: 'Perencanaan Tata Kota', desc: 'Perencanaan komprehensif untuk kawasan hunian modern.' },
@@ -59,41 +62,37 @@ const PROJECTS = [
 ];
 
 function GradientDivider({ center = false }) {
-  return <div style={{ width: '64px', height: '4px', borderRadius: '2px', background: 'linear-gradient(to right, #b12600, #ffb68b)', margin: center ? '0 auto 20px auto' : '0 0 20px 0' }} />;
+  return <div className={`h-1 w-16 rounded-[2px] bg-[linear-gradient(to_right,#b12600,#ffb68b)] ${center ? 'mx-auto mb-5' : 'mb-5'}`} />;
 }
 
 // --- 1. Hero ---
 function ServicesHero() {
-  const { isLg, isMd, contentWidth } = useResponsive();
-  const h1Size = isMd ? 64 : Math.max(28, Math.min(42, Math.floor(contentWidth / 7.2)));
-  const h1LineHeight = Math.round(h1Size * 1.25);
-
   return (
-    <section style={{ position: 'relative', backgroundColor: '#111313', minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center', paddingTop: isLg ? '150px' : '110px', paddingBottom: isLg ? '160px' : '128px', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: `url(${heroBgImg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 }} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to right, rgba(17, 19, 19, 0.9) 0%, rgba(17, 19, 19, 0.6) 50%, rgba(17, 19, 19, 0) 100%)' }} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(to top, rgba(17, 19, 19, 0.8) 0%, rgba(17, 19, 19, 0) 50%, rgba(17, 19, 19, 0.3) 100%)' }} />
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10, width: '100%' }}>
-        <div style={{ maxWidth: '672px' }}>
+    <section className="relative flex min-h-[calc(100vh-80px)] items-center overflow-hidden bg-[#111313] pb-[128px] pt-[110px] lg:pb-[160px] lg:pt-[150px]">
+      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url(${heroBgImg})` }} />
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_right,rgba(17,19,19,0.9)_0%,rgba(17,19,19,0.6)_50%,rgba(17,19,19,0)_100%)]" />
+      <div className="absolute inset-0 z-[2] bg-[linear-gradient(to_top,rgba(17,19,19,0.8)_0%,rgba(17,19,19,0)_50%,rgba(17,19,19,0.3)_100%)]" />
+      <div className={`relative z-10 ${CONTAINER}`}>
+        <div className="max-w-[672px]">
           <AnimatedReveal animation="fade" delay={0}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '999px', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)', marginBottom: '32px' }}>
-              <Icon name="business" size={14} color={Colors.primaryFixedDim} />
-              <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '1.2px', textTransform: 'uppercase', color: Colors.primaryFixedDim }}>Lasuarindo Group</span>
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.1)] px-4 py-1.5">
+              <Icon name="business" size={14} color="#ffb4a3" />
+              <span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[1.2px] text-[#ffb4a3]`}>Lasuarindo Group</span>
             </div>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={100}>
-            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: `${h1Size}px`, lineHeight: `${h1LineHeight}px`, color: '#ffffff', marginBottom: '24px' }}>
+            <h1 className={`m-0 mb-6 ${DISPLAY_FONT} text-[28px] font-bold leading-[35px] text-white sm:text-[34px] sm:leading-[43px] md:text-[64px] md:leading-[80px]`}>
               Membangun Masa<br />Depan di <GradientText>Industri</GradientText><br /><GradientText>Kunci</GradientText>
             </h1>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={200}>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: '29px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '40px', maxWidth: '512px' }}>
+            <p className={`mb-10 max-w-[512px] ${BODY_FONT} text-[18px] leading-[29px] text-[rgba(255,255,255,0.7)]`}>
               Lasuarindo Group menghadirkan ekosistem bisnis terpadu yang mendorong pertumbuhan, inovasi, dan dampak nyata di sektor-sektor strategis Indonesia.
             </p>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={400}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: Colors.primary, padding: '16px 32px', borderRadius: '8px', color: Colors.onPrimary, fontFamily: 'Montserrat, sans-serif', fontSize: '16px', fontWeight: 700, cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', transition: 'all 0.2s', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = Colors.primaryContainer)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = Colors.primary)}>
-              <span>Bermitra Dengan Kami</span><Icon name="arrow_forward" size={20} color={Colors.onPrimary} />
+            <Link to="/contact" className={`inline-flex cursor-pointer items-center gap-2 rounded-lg bg-[var(--color-primary)] px-8 py-4 ${DISPLAY_FONT} text-[16px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transition-all hover:bg-[var(--color-primary-container)]`}>
+              <span>Bermitra Dengan Kami</span><Icon name="arrow_forward" size={20} color="#ffffff" />
             </Link>
           </AnimatedReveal>
         </div>
@@ -104,32 +103,31 @@ function ServicesHero() {
 
 // --- 2. Properti ---
 function ServicesProperty() {
-  const { isLg, isMobile, contentWidth } = useResponsive();
-  const propertyPadding = isLg ? '40px 48px' : isMobile ? '20px 16px' : '32px';
+  const { isMobile } = useResponsive();
 
   return (
     <section className={`section section--sm section--surface${isMobile ? ' section--sm-mobile' : ''}`}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+      <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
-          <div style={{ backgroundColor: Colors.surfaceContainerLowest, borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)', border: '1px solid rgba(228, 190, 181, 0.2)', display: 'grid', gridTemplateColumns: isLg ? '1.2fr 1fr' : '1fr' }}>
-            <div style={{ padding: propertyPadding, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '13px', lineHeight: '18px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: Colors.primary, marginBottom: '10px', display: 'block' }}>PROPERTI</span>
-              <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: isMobile ? '22px' : '26px', lineHeight: isMobile ? '30px' : '34px', color: Colors.onBackground, marginBottom: '16px' }}>MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK</h3>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', lineHeight: '24px', color: Colors.secondary, marginBottom: '24px' }}>Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.</p>
-              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: '16px', marginBottom: '28px' }}>
+          <div className="grid grid-cols-1 overflow-hidden rounded-[24px] border border-[rgba(228,190,181,0.2)] bg-[var(--color-surface-container-lowest)] shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1)] lg:grid-cols-[1.2fr_1fr]">
+            <div className="flex flex-col justify-center p-8 max-[767px]:px-4 max-[767px]:py-5 lg:px-12 lg:py-10">
+              <span className={`mb-[10px] block ${DISPLAY_FONT} text-[13px] font-bold uppercase leading-[18px] tracking-[1.5px] text-[var(--color-primary)]`}>PROPERTI</span>
+              <h3 className={`mb-4 ${DISPLAY_FONT} text-[26px] font-bold leading-[34px] text-[var(--color-on-background)] max-[767px]:text-[22px] max-[767px]:leading-[30px]`}>MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK</h3>
+              <p className={`mb-6 ${BODY_FONT} text-[15px] leading-6 text-[var(--color-secondary)]`}>Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.</p>
+              <div className="mb-7 grid grid-cols-3 gap-4 max-[767px]:grid-cols-1">
                 {PROPERTY_FEATURES.map((item) => (
-                  <div key={item.title} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', backgroundColor: 'rgba(177, 38, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={item.icon} size={22} color={Colors.primary} /></div>
-                    <h4 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '14px', lineHeight: '20px', fontWeight: 700, color: Colors.onBackground, margin: '0 0 4px 0' }}>{item.title}</h4>
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', lineHeight: '18px', color: Colors.secondary, margin: 0 }}>{item.desc}</p>
+                  <div key={item.title} className="flex flex-col gap-2">
+                    <div className="flex h-[42px] w-[42px] items-center justify-center rounded-[10px] bg-[rgba(177,38,0,0.1)]"><Icon name={item.icon} size={22} color="#b12600" /></div>
+                    <h4 className={`m-0 mb-1 ${DISPLAY_FONT} text-[14px] font-bold leading-5 text-[var(--color-on-background)]`}>{item.title}</h4>
+                    <p className={`m-0 ${BODY_FONT} text-[12px] leading-[18px] text-[var(--color-secondary)]`}>{item.desc}</p>
                   </div>
                 ))}
               </div>
-              <div style={{ alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '999px', backgroundColor: 'rgba(177, 38, 0, 0.08)', border: '1px solid rgba(177, 38, 0, 0.2)' }}><Icon name="trending_up" size={16} color={Colors.primary} /><span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '14px', fontWeight: 700, color: Colors.primary }}>Proyek Terkini</span></div>
+              <div className="inline-flex items-center gap-2 self-start rounded-full border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.08)] px-4 py-2"><Icon name="trending_up" size={16} color="#b12600" /><span className={`${DISPLAY_FONT} text-[14px] font-bold text-[var(--color-primary)]`}>Proyek Terkini</span></div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', minHeight: isMobile ? '260px' : '400px' }}>
-              <div style={{ flex: 1, minHeight: '200px', overflow: 'hidden' }}><img src={propertiHeroImg} alt="Properti" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
-              <div style={{ flex: 1, minHeight: '200px', overflow: 'hidden' }}><img src={layananEkosistemImg} alt="Layanan Ekosistem" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
+            <div className="flex min-h-[400px] flex-col gap-1 max-[767px]:min-h-[260px]">
+              <div className="min-h-[200px] flex-1 overflow-hidden"><img src={propertiHeroImg} alt="Properti" className="block h-full w-full object-cover" /></div>
+              <div className="min-h-[200px] flex-1 overflow-hidden"><img src={layananEkosistemImg} alt="Layanan Ekosistem" className="block h-full w-full object-cover" /></div>
             </div>
           </div>
         </AnimatedReveal>
@@ -140,41 +138,39 @@ function ServicesProperty() {
 
 // --- 3. Media Kreatif ---
 function ServicesMedia() {
-  const { isLg, isMobile, contentWidth } = useResponsive();
-
   return (
     <section className="section section--surface-low">
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+      <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
-          <div style={{ textAlign: 'center', margin: '0 auto 64px auto' }}>
-            <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: isMobile ? '32px' : '48px', lineHeight: isMobile ? '40px' : '58px', color: Colors.onBackground, marginBottom: '8px' }}>MEDIA <span style={{ color: Colors.primary }}>KREATIF</span></h2>
-            <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '14px', fontWeight: 700, letterSpacing: '1.4px', textTransform: 'uppercase', color: Colors.secondary, marginBottom: '16px' }}>DI BALIK LAYAR, CERITA, PENGARUH & MEDIA</p>
+          <div className="mx-auto mb-16 text-center">
+            <h2 className={`mb-2 ${DISPLAY_FONT} text-[48px] font-bold leading-[58px] text-[var(--color-on-background)] max-[767px]:text-[32px] max-[767px]:leading-[40px]`}>MEDIA <span className="text-[var(--color-primary)]">KREATIF</span></h2>
+            <p className={`mb-4 ${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.4px] text-[var(--color-secondary)]`}>DI BALIK LAYAR, CERITA, PENGARUH & MEDIA</p>
             <GradientDivider center />
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: Colors.secondary, maxWidth: '672px', margin: '0 auto' }}>Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.</p>
+            <p className={`mx-auto max-w-[672px] ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.</p>
           </div>
         </AnimatedReveal>
-        <div style={{ display: 'grid', gridTemplateColumns: isLg ? 'repeat(3, 1fr)' : isMobile ? '1fr' : 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px', marginBottom: '48px' }}>
+        <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 max-[767px]:grid-cols-1 lg:grid-cols-3">
           {MEDIA_CARDS.map((card) => (
             <AnimatedReveal key={card.title} animation="up" delay={card.delay} hover="lift">
-              <div style={{ backgroundColor: Colors.surfaceContainerLowest, padding: '32px', borderRadius: '16px', border: '1px solid rgba(228, 190, 181, 0.2)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+              <div className="box-border flex h-full flex-col justify-between rounded-2xl border border-[rgba(228,190,181,0.2)] bg-[var(--color-surface-container-lowest)] p-8 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
                 <div>
-                  <div style={{ width: '64px', height: '64px', borderRadius: '16px', backgroundColor: 'rgba(177, 38, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}><Icon name={card.icon} size={36} color={Colors.primary} /></div>
-                  <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '28px', color: Colors.onBackground, marginBottom: '4px' }}>{card.title}</h3>
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '12px', fontWeight: 700, letterSpacing: '1.2px', textTransform: 'uppercase', color: Colors.primary, display: 'block', marginBottom: '16px' }}>{card.tag}</span>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: Colors.secondary, marginBottom: '24px' }}>{card.desc}</p>
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(177,38,0,0.1)]"><Icon name={card.icon} size={36} color="#b12600" /></div>
+                  <h3 className={`mb-1 ${DISPLAY_FONT} text-[28px] font-bold text-[var(--color-on-background)]`}>{card.title}</h3>
+                  <span className={`mb-4 block ${DISPLAY_FONT} text-[12px] font-bold uppercase tracking-[1.2px] text-[var(--color-primary)]`}>{card.tag}</span>
+                  <p className={`mb-6 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>{card.desc}</p>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  {card.items.map((item) => (<div key={item} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Icon name="check_circle" size={16} color={Colors.primary} /><span style={{ fontFamily: 'Inter, sans-serif', fontSize: '14px', color: Colors.secondary }}>{item}</span></div>))}
+                <div className="flex flex-col gap-3">
+                  {card.items.map((item) => (<div key={item} className="flex items-center gap-2"><Icon name="check_circle" size={16} color="#b12600" /><span className={`${BODY_FONT} text-[14px] text-[var(--color-secondary)]`}>{item}</span></div>))}
                 </div>
               </div>
             </AnimatedReveal>
           ))}
         </div>
         <AnimatedReveal animation="up" delay={400}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '14px', color: Colors.secondary, textTransform: 'uppercase', letterSpacing: '1.2px' }}>Platform Kami:</span>
-            <div style={{ display: 'flex', gap: '16px' }}>
-              {PLATFORM_ICONS.map((icon) => (<div key={icon} style={{ width: '40px', height: '40px', borderRadius: '20px', backgroundColor: Colors.surfaceContainerHigh, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={icon} size={20} color={Colors.secondary} /></div>))}
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <span className={`${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.2px] text-[var(--color-secondary)]`}>Platform Kami:</span>
+            <div className="flex gap-4">
+              {PLATFORM_ICONS.map((icon) => (<div key={icon} className="flex h-10 w-10 items-center justify-center rounded-[20px] bg-[var(--color-surface-container-high)]"><Icon name={icon} size={20} color="#5f5e5e" /></div>))}
             </div>
           </div>
         </AnimatedReveal>
@@ -185,27 +181,25 @@ function ServicesMedia() {
 
 // --- 4. Teknologi (Dark) ---
 function ServicesTechnology() {
-  const { isLg, isMobile } = useResponsive();
-
   return (
     <section className="section section--dark section--relative">
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: isLg ? '1fr 1fr' : '1fr', gap: '64px', alignItems: 'center' }}>
+      <div className={CONTAINER}>
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <AnimatedReveal animation="left" delay={100}>
             <div>
-              <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '13px', lineHeight: '18px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: Colors.primary, marginBottom: '10px', display: 'block' }}>TEKNOLOGI</span>
-              <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: isMobile ? '24px' : '32px', lineHeight: isMobile ? '32px' : '42px', color: '#ffffff', marginBottom: '8px' }}>MELINDUNGI MEREK MELALUI INOVASI</h3>
+              <span className={`mb-[10px] block ${DISPLAY_FONT} text-[13px] font-bold uppercase leading-[18px] tracking-[1.5px] text-[var(--color-primary)]`}>TEKNOLOGI</span>
+              <h3 className={`mb-2 ${DISPLAY_FONT} text-[32px] font-bold leading-[42px] text-white max-[767px]:text-[24px] max-[767px]:leading-[32px]`}>MELINDUNGI MEREK MELALUI INOVASI</h3>
               <GradientDivider />
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: '29px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '32px' }}>Lasuarindo Group membangun fondasi digital yang kuat melalui layanan teknologi terdepan. Dari pengembangan perangkat lunak hingga infrastruktur cloud, kami menghadirkan solusi yang cerdas, aman, dan berkelanjutan untuk mendorong transformasi digital bisnis Anda.</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <p className={`mb-8 ${BODY_FONT} text-[18px] leading-[29px] text-[rgba(255,255,255,0.7)]`}>Lasuarindo Group membangun fondasi digital yang kuat melalui layanan teknologi terdepan. Dari pengembangan perangkat lunak hingga infrastruktur cloud, kami menghadirkan solusi yang cerdas, aman, dan berkelanjutan untuk mendorong transformasi digital bisnis Anda.</p>
+              <div className="flex flex-col gap-4">
                 {TECH_CARDS.map((item) => (
                   <AnimatedReveal key={item.title} animation="up" delay={200} hover="lift">
-                    <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '12px', padding: '20px', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', backgroundColor: 'rgba(177, 38, 0, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name={item.icon} size={20} color={Colors.primaryFixedDim} /></div>
-                        <h4 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '14px', color: '#ffffff', margin: 0 }}>{item.title}</h4>
+                    <div className="rounded-xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] p-5 backdrop-blur-[8px]">
+                      <div className="mb-3 flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[rgba(177,38,0,0.2)]"><Icon name={item.icon} size={20} color="#ffb4a3" /></div>
+                        <h4 className={`m-0 ${DISPLAY_FONT} text-[14px] font-bold text-white`}>{item.title}</h4>
                       </div>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', lineHeight: '20px', color: 'rgba(255, 255, 255, 0.6)', margin: 0 }}>{item.desc}</p>
+                      <p className={`m-0 ${BODY_FONT} text-[12px] leading-5 text-[rgba(255,255,255,0.6)]`}>{item.desc}</p>
                     </div>
                   </AnimatedReveal>
                 ))}
@@ -213,12 +207,12 @@ function ServicesTechnology() {
             </div>
           </AnimatedReveal>
           <AnimatedReveal animation="right" delay={200}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                <div style={{ height: isMobile ? '130px' : '200px', borderRadius: '12px', overflow: 'hidden' }}><img src={teknologiImg} alt="Teknologi" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
-                <div style={{ height: isMobile ? '130px' : '200px', borderRadius: '12px', overflow: 'hidden' }}><img src={teknologiGridImg} alt="Teknologi Grid" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
+            <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="h-[200px] overflow-hidden rounded-xl max-[767px]:h-[130px]"><img src={teknologiImg} alt="Teknologi" className="block h-full w-full object-cover" /></div>
+                <div className="h-[200px] overflow-hidden rounded-xl max-[767px]:h-[130px]"><img src={teknologiGridImg} alt="Teknologi Grid" className="block h-full w-full object-cover" /></div>
               </div>
-              <div style={{ height: isMobile ? '180px' : '280px', borderRadius: '12px', overflow: 'hidden' }}><img src={proyekTeknologiImg} alt="Digital Hub" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
+              <div className="h-[280px] overflow-hidden rounded-xl max-[767px]:h-[180px]"><img src={proyekTeknologiImg} alt="Digital Hub" className="block h-full w-full object-cover" /></div>
             </div>
           </AnimatedReveal>
         </div>
@@ -229,25 +223,23 @@ function ServicesTechnology() {
 
 // --- 5. Vamos Padelon ---
 function ServicesVamos() {
-  const { isLg, isMobile, isMd } = useResponsive();
-
   return (
-    <section style={{ backgroundColor: '#1a1c1e', padding: '80px 0', overflow: 'hidden' }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: isLg ? '1fr 1fr' : '1fr', gap: isMobile ? '32px' : '64px', alignItems: 'center' }}>
+    <section className="overflow-hidden bg-[#1a1c1e] py-20">
+      <div className={CONTAINER}>
+        <div className="grid grid-cols-1 items-center gap-16 max-[767px]:gap-8 lg:grid-cols-2">
           <AnimatedReveal animation="up" delay={100} hover="scale">
-            <div style={{ height: isMobile ? '260px' : '400px', borderRadius: '24px', overflow: 'hidden', backgroundColor: '#27292a', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2)' }}><img src={vamosImg} alt="Vamos Padelon Sinergi" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
+            <div className="h-[400px] overflow-hidden rounded-[24px] bg-[#27292a] shadow-[0_20px_25px_-5px_rgba(0,0,0,0.2)] max-[767px]:h-[260px]"><img src={vamosImg} alt="Vamos Padelon Sinergi" className="block h-full w-full object-cover" /></div>
           </AnimatedReveal>
           <AnimatedReveal animation="right" delay={200}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '999px', backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '24px' }}><Icon name="handshake" size={14} color={Colors.primaryFixedDim} /><span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '12px', fontWeight: 600, color: Colors.primaryFixedDim, textTransform: 'uppercase', letterSpacing: '1.2px' }}>Olahraga dan Gaya hidup</span></div>
-              <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: isMobile ? '26px' : isMd ? '34px' : '40px', lineHeight: isMobile ? '34px' : isMd ? '42px' : '48px', color: '#ffffff', marginBottom: '16px' }}>VAMOS PADELON <GradientText>SINERGI</GradientText></h2>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '32px' }}>Vamos Padelon Sinergi (VPS) adalah sarana olahraga padel berkualitas dengan fasilitas modern, nyaman, dan berstandar profesional untuk semua kalangan.</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '32px' }}>
-                {VAMOS_TAGS.map((tag) => (<div key={tag.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '999px', backgroundColor: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)' }}><Icon name={tag.icon} size={16} color={Colors.primaryFixedDim} /><span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#ffffff' }}>{tag.label}</span></div>))}
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.08)] px-4 py-1.5"><Icon name="handshake" size={14} color="#ffb4a3" /><span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[1.2px] text-[#ffb4a3]`}>Olahraga dan Gaya hidup</span></div>
+              <h2 className={`mb-4 ${DISPLAY_FONT} text-[34px] font-bold leading-[42px] text-white max-[767px]:text-[26px] max-[767px]:leading-[34px] lg:text-[40px] lg:leading-[48px]`}>VAMOS PADELON <GradientText>SINERGI</GradientText></h2>
+              <p className={`mb-8 ${BODY_FONT} text-[16px] leading-[26px] text-[rgba(255,255,255,0.7)]`}>Vamos Padelon Sinergi (VPS) adalah sarana olahraga padel berkualitas dengan fasilitas modern, nyaman, dan berstandar profesional untuk semua kalangan.</p>
+              <div className="mb-8 flex flex-wrap gap-3">
+                {VAMOS_TAGS.map((tag) => (<div key={tag.label} className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-4 py-2"><Icon name={tag.icon} size={16} color="#ffb4a3" /><span className={`${DISPLAY_FONT} text-[12px] font-semibold uppercase tracking-[0.5px] text-white`}>{tag.label}</span></div>))}
               </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                {VAMOS_SOCIALS.map((s) => (<div key={s.label} style={{ width: '36px', height: '36px', borderRadius: '18px', backgroundColor: 'rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}><Icon name={s.icon} size={18} color="rgba(255, 255, 255, 0.6)" /></div>))}
+              <div className="flex gap-3">
+                {VAMOS_SOCIALS.map((s) => (<div key={s.label} className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-[18px] bg-[rgba(255,255,255,0.08)]"><Icon name={s.icon} size={18} color="rgba(255,255,255,0.6)" /></div>))}
               </div>
             </div>
           </AnimatedReveal>
@@ -259,27 +251,25 @@ function ServicesVamos() {
 
 // --- 6. Proyek Masa Depan ---
 function ServicesProjects() {
-  const { isLg, isMd, isMobile } = useResponsive();
-
   return (
     <section className="section section--surface">
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+      <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
-          <div style={{ textAlign: 'center', margin: '0 auto 64px auto' }}>
-            <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: isMobile ? '28px' : isMd ? '38px' : '48px', lineHeight: isMobile ? '36px' : isMd ? '48px' : '58px', color: Colors.onBackground, marginBottom: '8px', whiteSpace: isLg ? 'nowrap' : 'normal' }}>PROYEK <span style={{ color: Colors.primary }}>MASA DEPAN</span> KAMI</h2>
+          <div className="mx-auto mb-16 text-center">
+            <h2 className={`mb-2 ${DISPLAY_FONT} text-[38px] font-bold leading-[48px] text-[var(--color-on-background)] max-[767px]:text-[28px] max-[767px]:leading-[36px] lg:text-[48px] lg:leading-[58px] lg:whitespace-nowrap`}>PROYEK <span className="text-[var(--color-primary)]">MASA DEPAN</span> KAMI</h2>
             <GradientDivider center />
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: Colors.secondary, maxWidth: '672px', margin: '0 auto' }}>Inilah proyek-proyek strategis yang kami kembangkan untuk membangun masa depan yang lebih baik dan berkelanjutan.</p>
+            <p className={`mx-auto max-w-[672px] ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`}>Inilah proyek-proyek strategis yang kami kembangkan untuk membangun masa depan yang lebih baik dan berkelanjutan.</p>
           </div>
         </AnimatedReveal>
-        <div style={{ display: 'grid', gridTemplateColumns: isLg ? 'repeat(4, 1fr)' : isMobile ? '1fr' : 'repeat(2, 1fr)', gap: '16px' }}>
+        <div className="grid grid-cols-2 gap-4 max-[767px]:grid-cols-1 lg:grid-cols-4">
           {PROJECTS.map((item) => (
             <AnimatedReveal key={item.title} animation="up" delay={item.delay} hover="scale">
-              <div style={{ position: 'relative', height: '360px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#1a1c1e', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
-                <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '24px', zIndex: 2 }}>
-                  <div style={{ display: 'inline-block', padding: '4px 12px', borderRadius: '999px', backgroundColor: Colors.primary, marginBottom: '8px' }}><span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '10px', fontWeight: 700, color: '#ffffff', letterSpacing: '1px', textTransform: 'uppercase' }}>{item.tag}</span></div>
-                  <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '20px', lineHeight: '26px', color: '#ffffff', margin: 0 }}>{item.title}</h3>
+              <div className="relative h-[360px] overflow-hidden rounded-2xl bg-[#1a1c1e] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]">
+                <img src={item.image} alt={item.title} className="block h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.2)_50%,transparent_100%)]" />
+                <div className="absolute bottom-0 left-0 right-0 z-[2] p-6">
+                  <div className="mb-2 inline-block rounded-full bg-[var(--color-primary)] px-3 py-1"><span className={`${DISPLAY_FONT} text-[10px] font-bold uppercase tracking-[1px] text-white`}>{item.tag}</span></div>
+                  <h3 className={`m-0 ${DISPLAY_FONT} text-[20px] font-bold leading-[26px] text-white`}>{item.title}</h3>
                 </div>
               </div>
             </AnimatedReveal>
