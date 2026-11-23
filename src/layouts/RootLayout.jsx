@@ -32,7 +32,7 @@ export function RootLayout() {
         {t.skipLink}
       </a>
       <Header />
-      <main id="main" key={location.pathname}>
+      <main id="main" className="page" key={location.pathname}>
         <Suspense fallback={<RouteFallback />}>
           <Outlet />
         </Suspense>

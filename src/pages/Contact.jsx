@@ -116,7 +116,7 @@ export function Contact() {
   ];
 
   return (
-    <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="page">
       {/* ================= HERO BANNER ================= */}
       <section
         style={{

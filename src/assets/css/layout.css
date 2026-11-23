@@ -18,3 +18,47 @@
     }
   }
 }
+
+/* Page-level layout helpers (used by RootLayout <main> and page root divs). */
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+}
+
+.page--dark {
+  background-color: var(--color-inverse-surface);
+}
+
+@media (max-width: 768px) {
+  .section--sm-mobile {
+    padding: 48px 0;
+  }
+}
+
+/* Section-level layout helpers (used by <section> inside pages). */
+.section {
+  padding: 80px 0;
+}
+
+.section--sm {
+  padding: 64px 0;
+}
+
+.section--surface {
+  background-color: var(--color-surface);
+}
+
+.section--surface-low {
+  background-color: var(--color-surface-container-low);
+}
+
+.section--dark {
+  background-color: var(--color-inverse-surface);
+  color: #ffffff;
+}
+
+.section--relative {
+  position: relative;
+  overflow: hidden;
+}

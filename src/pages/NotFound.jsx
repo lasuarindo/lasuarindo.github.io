@@ -9,7 +9,7 @@ export function NotFound() {
   const t = useStrings({ id: idCommon, en: enCommon });
 
   return (
-    <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="page">
       <section
         style={{
           minHeight: '70vh',

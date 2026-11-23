@@ -36,7 +36,7 @@ export function PrivacyPolicy() {
   };
 
   return (
-    <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="page">
       {/* ================= HERO SECTION ================= */}
       <section
         style={{
@@ -191,7 +191,7 @@ export function PrivacyPolicy() {
       </section>
 
       {/* ================= TABLE OF CONTENTS + ARTICLES ================= */}
-      <section style={{ backgroundColor: Colors.surface, padding: '80px 0' }}>
+      <section className="section section--surface">
         <div
           style={{
             maxWidth: '1280px',

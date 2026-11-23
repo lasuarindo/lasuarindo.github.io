@@ -48,7 +48,7 @@ export function AboutUs() {
   const valuesIcons = ['shield', 'lightbulb', 'groups', 'workspace_premium', 'favorite', 'eco'];
 
   return (
-    <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="page">
       {/* ============================================
            1. SIAPA KAMI
           ============================================ */}
@@ -254,7 +254,7 @@ export function AboutUs() {
       {/* ============================================
            2. NILAI KAMI
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surfaceContainerLow, padding: '64px 0' }}>
+      <section className="section section--sm section--surface-low">
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <AnimatedReveal animation="up" delay={0}>
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -349,7 +349,7 @@ export function AboutUs() {
       {/* ============================================
            3. NILAI KAMI, KEKUATAN KAMI
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surface, padding: '64px 0' }}>
+      <section className="section section--sm section--surface">
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <AnimatedReveal animation="up" delay={0}>
             <div
@@ -460,7 +460,7 @@ export function AboutUs() {
       {/* ============================================
            4. PESAN PENDIRI
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surfaceContainerLow, padding: '64px 0' }}>
+      <section className="section section--sm section--surface-low">
         <div
           style={{
             maxWidth: '1280px',
@@ -630,7 +630,7 @@ export function AboutUs() {
       {/* ============================================
            5. PESAN KOMISARIS
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surface, padding: '64px 0' }}>
+      <section className="section section--sm section--surface">
         <div
           style={{
             maxWidth: '1280px',

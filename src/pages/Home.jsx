@@ -113,7 +113,7 @@ function HomeEcosystem() {
   }));
 
   return (
-    <section style={{ backgroundColor: Colors.surface, padding: '80px 0' }}>
+    <section className="section section--surface">
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
         <AnimatedReveal animation="up" delay={0}>
           <div style={{ maxWidth: '672px', marginBottom: '50px' }}>
@@ -189,7 +189,7 @@ function HomeJourney() {
   ];
 
   return (
-    <section style={{ backgroundColor: Colors.inverseSurface, padding: '80px 0', position: 'relative', overflow: 'hidden' }}>
+    <section className="section section--dark section--relative">
       {isDesktop && (
         <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '50%', zIndex: 1 }}>
           <img src={kemitraanImg} alt="Kemitraan Lasuarindo" style={{ width: '100%', height: '100%', objectFit: 'cover', borderTopLeftRadius: '48px', borderBottomLeftRadius: '48px', display: 'block' }} />
@@ -233,7 +233,7 @@ function HomeJourney() {
 
 export function Home() {
   return (
-    <div style={{ backgroundColor: Colors.inverseSurface, minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="page page--dark">
       <HomeHero />
       <HomeEcosystem />
       <HomeJourney />

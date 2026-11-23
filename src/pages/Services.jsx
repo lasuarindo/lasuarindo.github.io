@@ -122,7 +122,7 @@ export function Services() {
   const propertyPadding = isLg ? '40px 48px' : isMobile ? '20px 16px' : '32px';
 
   return (
-    <div style={{ backgroundColor: Colors.background, minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="page">
       {/* ============================================
            1. HERO SECTION
           ============================================ */}
@@ -270,7 +270,7 @@ export function Services() {
       {/* ============================================
            2. PROPERTI SECTION
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surface, padding: isMobile ? '48px 0' : '64px 0' }}>
+      <section className={`section section--sm section--surface${isMobile ? ' section--sm-mobile' : ''}`}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <AnimatedReveal animation="up" delay={0}>
             <div
@@ -440,7 +440,7 @@ export function Services() {
       {/* ============================================
            3. MEDIA KREATIF SECTION
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surfaceContainerLow, padding: '80px 0' }}>
+      <section className="section section--surface-low">
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <AnimatedReveal animation="up" delay={0}>
             <div style={{ textAlign: 'center', margin: '0 auto 64px auto' }}>
@@ -635,7 +635,7 @@ export function Services() {
       {/* ============================================
            4. TEKNOLOGI SECTION (DARK)
           ============================================ */}
-      <section style={{ backgroundColor: Colors.inverseSurface, padding: '80px 0', overflow: 'hidden' }}>
+      <section className="section section--dark section--relative">
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <div
             style={{
@@ -933,7 +933,7 @@ export function Services() {
       {/* ============================================
            6. PROYEK MASA DEPAN KAMI
           ============================================ */}
-      <section style={{ backgroundColor: Colors.surface, padding: '80px 0' }}>
+      <section className="section section--surface">
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <AnimatedReveal animation="up" delay={0}>
             <div style={{ textAlign: 'center', margin: '0 auto 64px auto' }}>
