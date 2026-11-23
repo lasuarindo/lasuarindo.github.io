@@ -1,5 +1,4 @@
 import React from 'react';
-import { Colors } from '@/constants/theme';
 
 export function SectionHeader({
   badge,
@@ -12,76 +11,31 @@ export function SectionHeader({
   const isCenter = align === 'center';
 
   return (
-    <div
-      style={{
-        marginBottom: '32px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: isCenter ? 'center' : 'flex-start',
-        textAlign: isCenter ? 'center' : 'left',
-      }}
-    >
+    <div className={`mb-8 flex flex-col ${isCenter ? 'items-center text-center' : 'items-start text-left'}`}>
       {badge ? (
         <div
-          style={{
-            display: 'inline-block',
-            padding: '5px 14px',
-            borderRadius: '999px',
-            backgroundColor: darkTheme ? 'rgba(255, 255, 255, 0.1)' : 'rgba(177, 38, 0, 0.08)',
-            border: `1px solid ${darkTheme ? 'rgba(255, 180, 163, 0.3)' : 'rgba(177, 38, 0, 0.2)'}`,
-            marginBottom: '14px',
-            fontSize: '11px',
-            fontFamily: 'Montserrat, sans-serif',
-            fontWeight: 600,
-            letterSpacing: '1.5px',
-            color: darkTheme ? Colors.primaryFixedDim : Colors.primary,
-            textTransform: 'uppercase',
-          }}
+          className={`inline-block rounded-full border px-[14px] py-[5px] mb-[14px] text-[11px] font-[var(--font-display)] font-semibold tracking-[1.5px] uppercase ${darkTheme ? 'bg-[rgba(255,255,255,0.1)] border-[rgba(255,180,163,0.3)] text-[var(--color-primary-fixed-dim)]' : 'bg-[rgba(177,38,0,0.08)] border-[rgba(177,38,0,0.2)] text-[var(--color-primary)]'}`}
         >
           {badge}
         </div>
       ) : null}
 
       <h2
-        style={{
-          fontFamily: 'Montserrat, sans-serif',
-          fontWeight: 700,
-          fontSize: '32px',
-          lineHeight: 1.25,
-          color: darkTheme ? '#ffffff' : Colors.onBackground,
-          margin: 0,
-          marginBottom: '14px',
-          letterSpacing: '-0.5px',
-        }}
+        className={`m-0 mb-[14px] font-[var(--font-display)] text-[32px] font-bold leading-[1.25] tracking-[-0.5px] ${darkTheme ? 'text-white' : 'text-[var(--color-on-background)]'}`}
       >
         {titlePrimary}{' '}
         {titleSecondary ? (
-          <span style={{ color: Colors.primary }}>{titleSecondary}</span>
+          <span className="text-[var(--color-primary)]">{titleSecondary}</span>
         ) : null}
       </h2>
 
       <div
-        className="section-divider"
-        style={{
-          width: '56px',
-          height: '4px',
-          borderRadius: '2px',
-          background: 'linear-gradient(to right, #b12600, #ffb68b)',
-          marginBottom: '16px',
-          alignSelf: isCenter ? 'center' : 'flex-start',
-        }}
+        className={`section-divider mb-4 h-1 w-14 rounded-[2px] bg-[linear-gradient(to_right,#b12600,#ffb68b)] ${isCenter ? 'self-center' : 'self-start'}`}
       />
 
       {subtitle ? (
         <p
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '16px',
-            lineHeight: 1.6,
-            color: darkTheme ? 'rgba(240, 241, 241, 0.85)' : Colors.secondary,
-            margin: 0,
-            maxWidth: '680px',
-          }}
+          className={`m-0 max-w-[680px] font-[var(--font-body)] text-[16px] leading-[1.6] ${darkTheme ? 'text-[rgba(240,241,241,0.85)]' : 'text-[var(--color-secondary)]'}`}
         >
           {subtitle}
         </p>

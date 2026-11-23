@@ -6,7 +6,6 @@ import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { MobileMenu } from '@/layouts/MobileMenu';
 import { Icon } from '@/components/Icon';
-import { Colors } from '@/constants/theme';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 
 export function Header() {
@@ -17,7 +16,6 @@ export function Header() {
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [ctaHover, setCtaHover] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,97 +37,30 @@ export function Header() {
   return (
     <>
       <header
-        className={`glass-nav ${scrolled ? 'scrolled' : ''}`}
-        style={{
-          position: 'sticky',
-          top: 0,
-          width: '100%',
-          zIndex: 80,
-          backgroundColor: scrolled ? 'rgba(249, 249, 249, 0.96)' : 'rgba(249, 249, 249, 0.88)',
-          borderBottom: '1px solid rgba(228, 190, 181, 0.35)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          boxShadow: scrolled ? '0 4px 24px rgba(0, 0, 0, 0.08)' : 'none',
-          transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
-        }}
+        className={`glass-nav ${scrolled ? 'scrolled' : ''} sticky top-0 z-[80] w-full border-b border-[rgba(228,190,181,0.35)] bg-[rgba(249,249,249,0.88)] backdrop-blur-[16px]`}
       >
-        <div
-          style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '16px clamp(14px, 3vw, 32px)',
-          }}
-        >
+        <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-[clamp(14px,3vw,32px)] py-4">
           {/* Logo (flex: 1 matching react_native) */}
-          <Link
-            to="/"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              textDecoration: 'none',
-              flex: 1,
-            }}
-          >
-            <img
-              src={logoImg}
-              alt="PT. LASUARINDO Logo"
-              style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
-            />
-            <span
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(15px, 2.2vw, 20px)',
-                lineHeight: '28px',
-                letterSpacing: '-0.2px',
-                color: Colors.onSurface,
-                whiteSpace: 'nowrap',
-              }}
-            >
+          <Link to="/" className="flex flex-1 items-center gap-3 no-underline">
+            <img src={logoImg} alt="PT. LASUARINDO Logo" className="h-10 w-auto object-contain" />
+            <span className="whitespace-nowrap font-[var(--font-display)] text-[clamp(15px,2.2vw,20px)] font-bold leading-7 tracking-[-0.2px] text-[var(--color-on-surface)]">
               LASUARINDO GROUP
             </span>
           </Link>
 
           {/* Desktop Nav (flex: 2, centered matching react_native) */}
-          <nav
-            className="desktop-only"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '40px',
-              flex: 2,
-            }}
-          >
+          <nav className="desktop-only flex flex-[2] items-center justify-center gap-10">
             {MENU.map((item) => {
               const active = isActive(item.href);
               return (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="nav-link-item"
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    letterSpacing: '1.2px',
-                    textTransform: 'uppercase',
-                    textDecoration: 'none',
-                    color: active ? Colors.primary : Colors.secondary,
-                    paddingBottom: '4px',
-                    borderBottom: active ? `2px solid ${Colors.primary}` : '2px solid transparent',
-                    transition: 'color 0.2s ease, border-color 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!active) e.currentTarget.style.color = Colors.primary;
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!active) e.currentTarget.style.color = Colors.secondary;
-                  }}
+                  className={`nav-link-item border-b-2 pb-1 font-[var(--font-display)] text-[12px] font-bold uppercase tracking-[1.2px] no-underline transition-[color,border-color] duration-200 ${
+                    active
+                      ? 'border-[var(--color-primary)] text-[var(--color-primary)]'
+                      : 'border-transparent text-[var(--color-secondary)] hover:text-[var(--color-primary)]'
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -138,68 +69,29 @@ export function Header() {
           </nav>
 
           {/* Desktop Right: Lang Switcher & CTA */}
-          <div
-            className="desktop-only"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-              gap: '16px',
-              flex: 1,
-            }}
-          >
+          <div className="desktop-only flex flex-1 items-center justify-end gap-4">
             {/* Language Switcher */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                border: '1px solid rgba(228, 190, 181, 0.45)',
-                borderRadius: '999px',
-                padding: '3px',
-              }}
-            >
+            <div className="flex items-center rounded-full border border-[rgba(228,190,181,0.45)] bg-[rgba(255,255,255,0.85)] p-[3px]">
               <button
                 type="button"
                 onClick={() => setLanguage('id')}
-                style={{
-                  padding: '4px 10px',
-                  borderRadius: '999px',
-                  border: 'none',
-                  backgroundColor: language === 'id' ? Colors.primary : 'transparent',
-                  color: language === 'id' ? '#ffffff' : Colors.secondary,
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s, color 0.2s',
-                }}
+                className={`cursor-pointer rounded-full border-none px-[10px] py-1 font-[var(--font-display)] text-[11px] font-bold transition-colors duration-200 ${
+                  language === 'id'
+                    ? 'bg-[var(--color-primary)] text-white'
+                    : 'bg-transparent text-[var(--color-secondary)]'
+                }`}
               >
                 ID
               </button>
-              <div
-                style={{
-                  width: '1px',
-                  height: '12px',
-                  backgroundColor: 'rgba(228, 190, 181, 0.5)',
-                  margin: '0 1px',
-                }}
-              />
+              <div className="mx-px h-3 w-px bg-[rgba(228,190,181,0.5)]" />
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                style={{
-                  padding: '4px 10px',
-                  borderRadius: '999px',
-                  border: 'none',
-                  backgroundColor: language === 'en' ? Colors.primary : 'transparent',
-                  color: language === 'en' ? '#ffffff' : Colors.secondary,
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s, color 0.2s',
-                }}
+                className={`cursor-pointer rounded-full border-none px-[10px] py-1 font-[var(--font-display)] text-[11px] font-bold transition-colors duration-200 ${
+                  language === 'en'
+                    ? 'bg-[var(--color-primary)] text-white'
+                    : 'bg-transparent text-[var(--color-secondary)]'
+                }`}
               >
                 EN
               </button>
@@ -208,73 +100,35 @@ export function Header() {
             {/* CTA Button */}
             <Link
               to="/contact"
-              onMouseEnter={() => setCtaHover(true)}
-              onMouseLeave={() => setCtaHover(false)}
-              style={{
-                backgroundColor: ctaHover ? Colors.primaryContainer : Colors.primary,
-                color: Colors.onPrimary,
-                border: 'none',
-                padding: '10px 22px',
-                borderRadius: '8px',
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                boxShadow: '0 4px 14px rgba(177, 38, 0, 0.25)',
-                transition: 'background-color 0.2s ease, transform 0.15s ease',
-                transform: ctaHover ? 'translateY(-1px)' : 'none',
-                textDecoration: 'none',
-                display: 'inline-block',
-              }}
+              className="inline-block cursor-pointer rounded-lg border-none bg-[var(--color-primary)] px-[22px] py-[10px] font-[var(--font-display)] text-[13px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-[var(--color-primary-container)]"
             >
               {t.nav.cta}
             </Link>
           </div>
 
           {/* Mobile Right: Lang & Hamburger */}
-          <div className="mobile-only" style={{ display: 'none', alignItems: 'center', gap: '10px' }}>
+          <div className="mobile-only items-center gap-[10px]">
             {/* Quick Lang Switch */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                border: '1px solid rgba(228, 190, 181, 0.45)',
-                borderRadius: '999px',
-                padding: '2px',
-              }}
-            >
+            <div className="flex items-center rounded-full border border-[rgba(228,190,181,0.45)] bg-[rgba(255,255,255,0.85)] p-0.5">
               <button
                 type="button"
                 onClick={() => setLanguage('id')}
-                style={{
-                  padding: '3px 8px',
-                  borderRadius: '999px',
-                  border: 'none',
-                  backgroundColor: language === 'id' ? Colors.primary : 'transparent',
-                  color: language === 'id' ? '#ffffff' : Colors.secondary,
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '10px',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                }}
+                className={`cursor-pointer rounded-full border-none px-2 py-[3px] font-[var(--font-display)] text-[10px] font-bold ${
+                  language === 'id'
+                    ? 'bg-[var(--color-primary)] text-white'
+                    : 'bg-transparent text-[var(--color-secondary)]'
+                }`}
               >
                 ID
               </button>
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                style={{
-                  padding: '3px 8px',
-                  borderRadius: '999px',
-                  border: 'none',
-                  backgroundColor: language === 'en' ? Colors.primary : 'transparent',
-                  color: language === 'en' ? '#ffffff' : Colors.secondary,
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '10px',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                }}
+                className={`cursor-pointer rounded-full border-none px-2 py-[3px] font-[var(--font-display)] text-[10px] font-bold ${
+                  language === 'en'
+                    ? 'bg-[var(--color-primary)] text-white'
+                    : 'bg-transparent text-[var(--color-secondary)]'
+                }`}
               >
                 EN
               </button>
@@ -285,16 +139,7 @@ export function Header() {
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-label="Buka menu"
-              style={{
-                background: 'none',
-                border: 'none',
-                color: Colors.onSurface,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                padding: '6px',
-              }}
+              className="flex cursor-pointer items-center justify-center border-none bg-transparent p-[6px] text-[var(--color-on-surface)]"
             >
               <Icon name="menu" size={28} />
             </button>

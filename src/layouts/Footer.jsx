@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { Icon } from '@/components/Icon';
@@ -13,30 +13,22 @@ import enCommon from '@/i18n/locales/en/common.json';
 const WEBSITE_URL = 'https://www.lasuarindo.co.id';
 const INSTAGRAM_URL = 'https://www.instagram.com/lasuarindogroup';
 const EMAIL_URL = 'mailto:contact@lasuarindo.co.id';
+const YEAR = new Date().getFullYear();
+
+const CONTAINER = 'mx-auto max-w-[1280px] px-6';
+const DISPLAY_FONT = 'font-[var(--font-display)]';
+const BODY_FONT = 'font-[var(--font-body)]';
+const FOOTER_HEADING = `${DISPLAY_FONT} mb-5 text-[14px] font-bold uppercase tracking-[1px] text-white`;
+const FOOTER_LINK = `${BODY_FONT} text-[14px] text-[#9ca3af] no-underline transition-colors duration-200 hover:text-[var(--color-primary)]`;
 
 function SocialButton({ label, url, icon }) {
-  const [hovered, setHovered] = useState(false);
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        width: '36px',
-        height: '36px',
-        borderRadius: '18px',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        border: `1px solid ${hovered ? Colors.primary : 'rgba(255, 255, 255, 0.2)'}`,
-        backgroundColor: 'transparent',
-        color: hovered ? '#ffffff' : '#d1d5db',
-        textDecoration: 'none',
-        transition: 'all 0.2s ease',
-      }}
+      className="inline-flex h-9 w-9 items-center justify-center rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-transparent text-[#d1d5db] no-underline transition-all duration-200 hover:border-[var(--color-primary)] hover:text-white"
     >
       <Icon name={icon} size={18} />
     </a>
@@ -71,72 +63,28 @@ export function Footer() {
 
   return (
     <footer
-      style={{
-        backgroundColor: '#111313',
-        color: '#f0f1f1',
-        paddingTop: isServices && gallery.length ? 0 : '60px',
-        paddingBottom: '32px',
-        borderTop: `4px solid ${Colors.primary}`,
-        position: 'relative',
-        zIndex: 20,
-      }}
+      className={`relative z-20 border-t-4 border-t-[var(--color-primary)] bg-[#111313] pb-8 text-[#f0f1f1] ${
+        isServices && gallery.length ? 'pt-0' : 'pt-[60px]'
+      }`}
     >
       {/* Gallery Section on Services Page */}
       {isServices && gallery.length > 0 && (
-        <div style={{ backgroundColor: '#111313', paddingTop: '32px', marginBottom: '32px' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <div
-                style={{
-                  width: '4px',
-                  height: '24px',
-                  borderRadius: '2px',
-                  backgroundColor: Colors.primary,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '14px',
-                  letterSpacing: '1.12px',
-                  color: Colors.primary,
-                  textTransform: 'uppercase',
-                }}
-              >
+        <div className="mb-8 bg-[#111313] pt-8">
+          <div className={CONTAINER}>
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-[24px] w-[4px] rounded-[2px] bg-[var(--color-primary)]" />
+              <span className={`${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.12px] text-[var(--color-primary)]`}>
                 {t.footer.creativeEcosystem}
               </span>
             </div>
 
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-                gap: '3px',
-              }}
-            >
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-[3px]">
               {gallery.map((imgSrc, i) => (
                 <div
                   key={i}
-                  className="img-zoom"
-                  style={{
-                    borderRadius: '4px',
-                    overflow: 'hidden',
-                    aspectRatio: '16/10',
-                    backgroundColor: '#2a2c2c',
-                  }}
+                  className="img-zoom aspect-[16/10] overflow-hidden rounded-[4px] bg-[#2a2c2c]"
                 >
-                  <img
-                    src={imgSrc}
-                    alt=""
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block',
-                      opacity: 0.7,
-                    }}
-                  />
+                  <img src={imgSrc} alt="" className="block h-full w-full object-cover opacity-70" />
                 </div>
               ))}
             </div>
@@ -145,60 +93,27 @@ export function Footer() {
       )}
 
       {/* Main 4-Column Footer */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '40px',
-            marginBottom: '48px',
-          }}
-        >
+      <div className={CONTAINER}>
+        <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-10">
           {/* Col 1: Brand Info */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-              <img src={logoImg} alt="Lasuarindo" style={{ height: '36px', width: 'auto' }} />
-              <span
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 800,
-                  fontSize: '18px',
-                  letterSpacing: '0.5px',
-                  color: '#ffffff',
-                }}
-              >
+            <div className="mb-3 flex items-center gap-3">
+              <img src={logoImg} alt="Lasuarindo" className="h-[36px] w-auto" />
+              <span className={`${DISPLAY_FONT} text-[18px] font-extrabold tracking-[0.5px] text-white`}>
                 LASUARINDO
               </span>
             </div>
-            <p
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '1px',
-                color: Colors.primary,
-                marginBottom: '14px',
-                textTransform: 'uppercase',
-              }}
-            >
+            <p className={`${DISPLAY_FONT} mb-[14px] text-[11px] font-semibold uppercase tracking-[1px] text-[var(--color-primary)]`}>
               {language === 'en'
                 ? 'CREATIVE TECHNOLOGY & LIFESTYLE GROUP'
                 : 'GRUP TEKNOLOGI KREATIF GAYA HIDUP'}
             </p>
-            <p
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '14px',
-                lineHeight: 1.6,
-                color: '#9ca3af',
-                marginBottom: '24px',
-              }}
-            >
+            <p className={`${BODY_FONT} mb-6 text-[14px] leading-[1.6] text-[#9ca3af]`}>
               {t.footer.tagline}
             </p>
 
             {/* Social Links */}
-            <div style={{ display: 'flex', gap: '12px' }}>
+            <div className="flex gap-3">
               <SocialButton label="Website" url={WEBSITE_URL} icon="language" />
               <SocialButton label="Instagram" url={INSTAGRAM_URL} icon="instagram" />
               <SocialButton label="LinkedIn" url="https://www.linkedin.com" icon="linkedin" />
@@ -208,34 +123,12 @@ export function Footer() {
 
           {/* Col 2: Sektor Bisnis */}
           <div>
-            <h4
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: '14px',
-                letterSpacing: '1px',
-                color: '#ffffff',
-                marginBottom: '20px',
-                textTransform: 'uppercase',
-              }}
-            >
+            <h4 className={FOOTER_HEADING}>
               {t.footer.sectors}
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div className="flex flex-col gap-3">
               {sectorList.map((item) => (
-                <Link
-                  key={item}
-                  to="/services"
-                  style={{
-                    color: '#9ca3af',
-                    textDecoration: 'none',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    transition: 'color 0.2s',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = Colors.primary)}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
-                >
+                <Link key={item} to="/services" className={FOOTER_LINK}>
                   {item}
                 </Link>
               ))}
@@ -244,48 +137,17 @@ export function Footer() {
 
           {/* Col 3: Hubungi Kami */}
           <div>
-            <h4
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: '14px',
-                letterSpacing: '1px',
-                color: '#ffffff',
-                marginBottom: '20px',
-                textTransform: 'uppercase',
-              }}
-            >
+            <h4 className={FOOTER_HEADING}>
               {t.footer.contactUs}
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                <Icon name="location_on" size={18} color={Colors.primary} style={{ marginTop: '2px' }} />
-                <span
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#9ca3af',
-                  }}
-                >
+            <div className="flex flex-col gap-[14px]">
+              <div className="flex items-start gap-[10px]">
+                <Icon name="location_on" size={18} color={Colors.primary} className="mt-[2px]" />
+                <span className={`${BODY_FONT} text-[14px] leading-5 text-[#9ca3af]`}>
                   Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112
                 </span>
               </div>
-              <a
-                href="mailto:contact@lasuarindo.co.id"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  color: '#9ca3af',
-                  textDecoration: 'none',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '14px',
-                  transition: 'color 0.2s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = Colors.primary)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
-              >
+              <a href="mailto:contact@lasuarindo.co.id" className={`${FOOTER_LINK} flex items-center gap-[10px]`}>
                 <Icon name="mail" size={18} color={Colors.primary} />
                 <span>contact@lasuarindo.co.id</span>
               </a>
@@ -294,46 +156,17 @@ export function Footer() {
 
           {/* Col 4: Legalitas */}
           <div>
-            <h4
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: '14px',
-                letterSpacing: '1px',
-                color: '#ffffff',
-                marginBottom: '20px',
-                textTransform: 'uppercase',
-              }}
-            >
+            <h4 className={FOOTER_HEADING}>
               {t.footer.legal}
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div className="flex flex-col gap-3">
               {legalList.map((item) =>
                 item.path ? (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    style={{
-                      color: '#9ca3af',
-                      textDecoration: 'none',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '14px',
-                      transition: 'color 0.2s',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = Colors.primary)}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
-                  >
+                  <Link key={item.label} to={item.path} className={FOOTER_LINK}>
                     {item.label}
                   </Link>
                 ) : (
-                  <span
-                    key={item.label}
-                    style={{
-                      color: '#6b7280',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '14px',
-                    }}
-                  >
+                  <span key={item.label} className={`${BODY_FONT} text-[14px] text-[#6b7280]`}>
                     {item.label}
                   </span>
                 )
@@ -343,35 +176,11 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright bar */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            paddingTop: '28px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '16px',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '13px',
-              color: '#9ca3af',
-            }}
-          >
-            © {new Date().getFullYear()} {t.footer.copyright}
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-t-[rgba(255,255,255,0.1)] pt-[28px]">
+          <span className={`${BODY_FONT} text-[13px] text-[#9ca3af]`}>
+            © {YEAR} {t.footer.copyright}
           </span>
-          <span
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.5px',
-              color: Colors.primaryFixedDim,
-            }}
-          >
+          <span className={`${DISPLAY_FONT} text-[12px] font-semibold tracking-[0.5px] text-[var(--color-primary-fixed-dim)]`}>
             {language === 'en'
               ? '#CreativeTechnologyLifestyleGroup'
               : '#GrupTeknologiKreatifGayaHidup'}

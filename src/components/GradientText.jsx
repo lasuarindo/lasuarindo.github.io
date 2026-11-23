@@ -1,23 +1,14 @@
 import React from 'react';
 
 export function GradientText({ children, style = {}, reverse = false, className = '' }) {
-  const gradient = reverse
-    ? 'linear-gradient(135deg, #ffb68b 0%, #b12600 100%)'
-    : 'linear-gradient(135deg, #b12600 0%, #ffb68b 100%)';
+  const gradientClass = reverse
+    ? 'bg-[linear-gradient(135deg,#ffb68b_0%,#b12600_100%)]'
+    : 'bg-[linear-gradient(135deg,#b12600_0%,#ffb68b_100%)]';
 
   return (
     <span
-      className={`text-gradient ${className}`}
-      style={{
-        backgroundImage: gradient,
-        WebkitBackgroundImage: gradient,
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        color: 'transparent',
-        display: 'inline-block',
-        ...style,
-      }}
+      className={`text-gradient inline-block bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] ${gradientClass} ${className}`}
+      style={style}
     >
       {children}
     </span>

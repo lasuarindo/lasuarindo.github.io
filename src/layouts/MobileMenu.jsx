@@ -5,7 +5,6 @@ import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { Icon } from '@/components/Icon';
-import { Colors } from '@/constants/theme';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function MobileMenu({ visible, onClose }) {
@@ -43,15 +42,7 @@ export function MobileMenu({ visible, onClose }) {
   return (
     <AnimatePresence>
       {visible && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 100,
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-        >
+        <div className="fixed inset-0 z-[100] flex justify-end">
           {/* Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -59,13 +50,7 @@ export function MobileMenu({ visible, onClose }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-              backdropFilter: 'blur(4px)',
-              WebkitBackdropFilter: 'blur(4px)',
-            }}
+            className="absolute inset-0 bg-[rgba(0,0,0,0.6)] backdrop-blur-[4px]"
           />
 
           {/* Slide-out Drawer */}
@@ -74,60 +59,25 @@ export function MobileMenu({ visible, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            style={{
-              position: 'relative',
-              width: '85%',
-              maxWidth: '320px',
-              height: '100%',
-              backgroundColor: '#ffffff',
-              boxShadow: '-8px 0 30px rgba(0, 0, 0, 0.25)',
-              display: 'flex',
-              flexDirection: 'column',
-              zIndex: 101,
-            }}
+            className="relative z-[101] flex h-full w-[85%] max-w-[320px] flex-col bg-white shadow-[-8px_0_30px_rgba(0,0,0,0.25)]"
           >
             {/* Drawer Header */}
-            <div
-              style={{
-                padding: '20px 24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                borderBottom: '1px solid #f0f0f0',
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 800,
-                  fontSize: '18px',
-                  letterSpacing: '0.5px',
-                  color: Colors.primary,
-                }}
-              >
+            <div className="flex items-center justify-between border-b border-[#f0f0f0] px-6 py-5">
+              <span className="font-[var(--font-display)] text-[18px] font-extrabold tracking-[0.5px] text-[var(--color-primary)]">
                 LASUARINDO
               </span>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Tutup menu"
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: Colors.onSurface,
-                  padding: '4px',
-                }}
+                className="flex cursor-pointer items-center justify-center border-none bg-transparent p-1 text-[var(--color-on-surface)]"
               >
                 <Icon name="close" size={28} />
               </button>
             </div>
 
             {/* Navigation Items */}
-            <div style={{ flex: 1, padding: '24px 16px', overflowY: 'auto' }}>
+            <div className="flex-1 overflow-y-auto px-4 py-6">
               {MENU_ITEMS.map((item) => {
                 const active = isActive(item.href);
                 return (
@@ -135,29 +85,16 @@ export function MobileMenu({ visible, onClose }) {
                     key={item.href}
                     type="button"
                     onClick={() => go(item.href)}
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '16px',
-                      padding: '14px 16px',
-                      borderRadius: '12px',
-                      marginBottom: '8px',
-                      border: 'none',
-                      backgroundColor: active ? 'rgba(177, 38, 0, 0.08)' : 'transparent',
-                      color: active ? Colors.primary : Colors.onBackground,
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      fontFamily: 'Montserrat, sans-serif',
-                      fontSize: '15px',
-                      fontWeight: active ? 700 : 600,
-                      transition: 'background-color 0.2s ease',
-                    }}
+                    className={`mb-2 flex w-full cursor-pointer items-center gap-4 rounded-xl border-none px-4 py-[14px] text-left font-[var(--font-display)] text-[15px] transition-colors duration-200 ${
+                      active
+                        ? 'bg-[rgba(177,38,0,0.08)] font-bold text-[var(--color-primary)]'
+                        : 'bg-transparent font-semibold text-[var(--color-on-background)]'
+                    }`}
                   >
                     <Icon
                       name={item.icon}
                       size={22}
-                      color={active ? Colors.primary : Colors.secondary}
+                      color={active ? '#b12600' : '#5f5e5e'}
                     />
                     <span>{item.label}</span>
                   </button>
@@ -166,68 +103,31 @@ export function MobileMenu({ visible, onClose }) {
             </div>
 
             {/* Drawer Footer: Language & CTA */}
-            <div
-              style={{
-                padding: '16px 24px 28px 24px',
-                borderTop: '1px solid rgba(228, 190, 181, 0.25)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                marginTop: 'auto',
-              }}
-            >
+            <div className="mt-auto flex flex-col gap-4 border-t border-[rgba(228,190,181,0.25)] px-6 pb-7 pt-4">
               <div>
-                <div
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    letterSpacing: '1px',
-                    textTransform: 'uppercase',
-                    color: Colors.secondary,
-                    marginBottom: '10px',
-                  }}
-                >
+                <div className="mb-[10px] font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1px] text-[var(--color-secondary)]">
                   {t.nav.language}
                 </div>
-                <div style={{ display: 'flex', gap: '8px' }}>
+                <div className="flex gap-2">
                   <button
                     type="button"
                     onClick={() => setLanguage('id')}
-                    style={{
-                      flex: 1,
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      border: `1px solid ${language === 'id' ? Colors.primary : 'rgba(228, 190, 181, 0.4)'}`,
-                      backgroundColor: language === 'id' ? Colors.primary : '#fafafa',
-                      color: language === 'id' ? '#ffffff' : Colors.onSurface,
-                      fontFamily: 'Montserrat, sans-serif',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      textAlign: 'center',
-                      transition: 'all 0.2s ease',
-                    }}
+                    className={`flex-1 cursor-pointer rounded-lg border px-3 py-2 text-center font-[var(--font-display)] text-[12px] font-semibold transition-all duration-200 ${
+                      language === 'id'
+                        ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white'
+                        : 'border-[rgba(228,190,181,0.4)] bg-[#fafafa] text-[var(--color-on-surface)]'
+                    }`}
                   >
                     🇮🇩 Indonesia
                   </button>
                   <button
                     type="button"
                     onClick={() => setLanguage('en')}
-                    style={{
-                      flex: 1,
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      border: `1px solid ${language === 'en' ? Colors.primary : 'rgba(228, 190, 181, 0.4)'}`,
-                      backgroundColor: language === 'en' ? Colors.primary : '#fafafa',
-                      color: language === 'en' ? '#ffffff' : Colors.onSurface,
-                      fontFamily: 'Montserrat, sans-serif',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      textAlign: 'center',
-                      transition: 'all 0.2s ease',
-                    }}
+                    className={`flex-1 cursor-pointer rounded-lg border px-3 py-2 text-center font-[var(--font-display)] text-[12px] font-semibold transition-all duration-200 ${
+                      language === 'en'
+                        ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white'
+                        : 'border-[rgba(228,190,181,0.4)] bg-[#fafafa] text-[var(--color-on-surface)]'
+                    }`}
                   >
                     🇬🇧 English
                   </button>
@@ -238,21 +138,7 @@ export function MobileMenu({ visible, onClose }) {
               <button
                 type="button"
                 onClick={() => go('/contact')}
-                style={{
-                  width: '100%',
-                  padding: '12px 24px',
-                  borderRadius: '8px',
-                  backgroundColor: Colors.primary,
-                  color: '#ffffff',
-                  border: 'none',
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '14px',
-                  cursor: 'pointer',
-                  textAlign: 'center',
-                  boxShadow: '0 4px 14px rgba(177, 38, 0, 0.25)',
-                  transition: 'background-color 0.2s ease',
-                }}
+                className="w-full cursor-pointer rounded-lg border-none bg-[var(--color-primary)] px-6 py-3 text-center font-[var(--font-display)] text-[14px] font-bold text-white shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-colors duration-200"
               >
                 {t.nav.cta}
               </button>
