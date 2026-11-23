@@ -1,0 +1,20 @@
+@layer components {
+  /* Responsive visibility helpers. */
+  @media (max-width: 1023px) {
+    .desktop-only {
+      display: none !important;
+    }
+    .mobile-only {
+      display: flex !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .desktop-only {
+      display: flex !important;
+    }
+    .mobile-only {
+      display: none !important;
+    }
+  }
+}

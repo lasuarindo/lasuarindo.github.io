@@ -1,0 +1,16 @@
+/* Design tokens. */
+:root {
+  --color-primary: #b12600;
+  --color-primary-container: #d83910;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #ffdad2;
+  --color-primary-fixed-dim: #ffb4a3;
+  --color-secondary: #5f5e5e;
+  --color-background: #f9f9f9;
+  --color-on-background: #1a1c1c;
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f0f1f1;
+
+  --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
