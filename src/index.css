@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Design tokens and the base reset. */
+/* Design tokens (generated from constants/theme.js) and the base reset. */
 @import "./assets/css/tokens.css";
 @import "./assets/css/base.css";
 
