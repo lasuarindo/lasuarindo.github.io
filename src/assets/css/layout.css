@@ -22,7 +22,7 @@
 /* Page-level layout helpers (used by RootLayout <main> and page root divs). */
 .page {
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--color-background);
 }
 
