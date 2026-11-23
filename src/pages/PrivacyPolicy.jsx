@@ -85,7 +85,7 @@ function PrivacyContent() {
     <section className="section section--surface">
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', flexDirection: isDesktop ? 'row' : 'column', gap: '48px', alignItems: 'flex-start' }}>
         {/* Sidebar */}
-        <AnimatedReveal animation="left" delay={100} style={{ width: isDesktop ? '300px' : '100%', marginBottom: isDesktop ? 0 : '48px', position: isDesktop ? 'sticky' : 'static', top: isDesktop ? '100px' : 'auto', alignSelf: 'flex-start' }}>
+        <div style={{ width: isDesktop ? '300px' : '100%', marginBottom: isDesktop ? 0 : '48px', position: isDesktop ? 'sticky' : 'static', top: isDesktop ? '100px' : 'auto', alignSelf: 'flex-start' }}>
           <div style={{ backgroundColor: Colors.surfaceContainerLowest, padding: '24px', borderRadius: '16px', border: '1px solid rgba(228, 190, 181, 0.3)', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)' }}>
             <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '22px', color: Colors.onBackground, marginBottom: '16px' }}>Daftar Isi</h3>
             <div style={{ width: '64px', height: '4px', borderRadius: '2px', background: 'linear-gradient(to right, #b12600, #ffb68b)', marginBottom: '24px' }} />
@@ -101,7 +101,7 @@ function PrivacyContent() {
               })}
             </div>
           </div>
-        </AnimatedReveal>
+        </div>
 
         {/* Articles */}
         <div style={{ flex: 1, width: '100%' }}>
