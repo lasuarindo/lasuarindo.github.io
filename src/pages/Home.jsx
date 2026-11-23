@@ -14,6 +14,7 @@ import { useResponsive } from '@/hooks/useResponsive';
 
 const BENTO_COLUMNS = [[0, 4], [1, 5], [2], [3, 6]];
 
+const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
 const BODY_FONT = 'font-[var(--font-body)]';
 
 function useHomeStrings() {

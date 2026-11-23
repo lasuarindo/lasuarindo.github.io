@@ -14,6 +14,7 @@ import komisarisImg from '@/assets/images/komisaris.png';
 
 const RED = '#b12600';
 const GRAY = '#5f5e5e';
+const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
 
 
 const NETWORK = [

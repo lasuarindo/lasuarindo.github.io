@@ -16,6 +16,7 @@ import proyekTeknologiImg from '@/assets/images/future_project_technology.png';
 import proyekEkosistemImg from '@/assets/images/future_project_ecosystem.png';
 import proyekKarbonImg from '@/assets/images/future_project_carbon.png';
 
+const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
 
 const PROPERTY_FEATURES = [
   { icon: 'location_city', title: 'Perencanaan Tata Kota', desc: 'Perencanaan komprehensif untuk kawasan hunian modern.' },
