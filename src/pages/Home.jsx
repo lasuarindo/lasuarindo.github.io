@@ -8,12 +8,15 @@ import enHome from '@/i18n/locales/en/home.json';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
 import { Icon } from '@/components/Icon';
-import { Colors } from '@/constants/theme';
 import heroBgImg from '@/assets/images/header_new_HD.png';
 import kemitraanImg from '@/assets/images/partnership_home_hd.png';
 import { useResponsive } from '@/hooks/useResponsive';
 
 const BENTO_COLUMNS = [[0, 4], [1, 5], [2], [3, 6]];
+
+const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
+const DISPLAY_FONT = 'font-[var(--font-display)]';
+const BODY_FONT = 'font-[var(--font-body)]';
 
 function useHomeStrings() {
   return useStrings({ id: { home: idHome }, en: { home: enHome } });
@@ -22,22 +25,21 @@ function useHomeStrings() {
 // --- Hero ---
 function HomeHero() {
   const t = useHomeStrings();
-  const { isDesktop, isTablet, isSmallMobile } = useResponsive();
-  const heroTitleSize = isDesktop ? 62 : isTablet ? 46 : isSmallMobile ? 28 : 34;
+  const { isDesktop } = useResponsive();
 
   return (
-    <section style={{ position: 'relative', backgroundColor: Colors.inverseSurface, overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: isDesktop ? '105px' : isTablet ? '100px' : '95px', paddingBottom: isDesktop ? '40px' : '35px' }}>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0, backgroundImage: `url(${heroBgImg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.4 }} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, rgba(47, 49, 49, 0) 0%, rgba(47, 49, 49, 0.5) 60%, #2f3131 100%)' }} />
-      <div style={{ position: 'relative', zIndex: 10, maxWidth: '1280px', width: '100%', margin: '0 auto', padding: '0 24px', display: isDesktop ? 'flex' : 'block', flexDirection: 'row', alignItems: 'center', gap: '24px' }}>
-        <div style={{ flex: isDesktop ? '1.25' : '1', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: isDesktop ? '14px' : '12px' }}>
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--color-inverse-surface)] pb-[35px] pt-[95px] md:pt-[100px] lg:flex lg:flex-row lg:pb-[40px] lg:pt-[105px]">
+      <div className="absolute inset-0 z-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url(${heroBgImg})` }} />
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,rgba(47,49,49,0)_0%,rgba(47,49,49,0.5)_60%,#2f3131_100%)]" />
+      <div className={`relative z-10 block lg:flex lg:flex-row lg:items-center lg:gap-6 ${CONTAINER}`}>
+        <div className="flex flex-1 flex-col items-start gap-3 lg:flex-[1.25] lg:gap-[14px]">
           <AnimatedReveal animation="fade" delay={0} disabled>
-            <div style={{ padding: isDesktop ? '7px 18px' : '6px 16px', backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 180, 163, 0.3)', borderRadius: '999px' }}>
-              <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '12.5px' : '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ffb4a3' }}>{t.home.badge}</span>
+            <div className="rounded-full border border-[rgba(255,180,163,0.3)] bg-[rgba(255,255,255,0.08)] px-4 py-1.5 lg:px-[18px] lg:py-[7px]">
+              <span className={`${DISPLAY_FONT} text-[11px] font-semibold uppercase tracking-[1.5px] text-[#ffb4a3] lg:text-[12.5px]`}>{t.home.badge}</span>
             </div>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={60} disabled>
-            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: `${heroTitleSize}px`, lineHeight: `${Math.round(heroTitleSize * 1.12)}px`, color: '#ffffff', margin: 0, letterSpacing: isDesktop ? '-1px' : '0' }}>
+            <h1 className={`m-0 ${DISPLAY_FONT} text-[34px] font-bold leading-[38px] tracking-normal text-white max-[379px]:text-[28px] max-[379px]:leading-[31px] md:text-[46px] md:leading-[52px] lg:text-[62px] lg:leading-[69px] lg:tracking-[-1px]`}>
               {t.home.heroTitle1}<br />
               <GradientText>{t.home.heroTitle2}</GradientText><br />
               {t.home.heroTitle3}<br />
@@ -45,47 +47,47 @@ function HomeHero() {
             </h1>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={120} disabled>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: isDesktop ? '18px' : '16px', lineHeight: isDesktop ? '29px' : '25px', color: isDesktop ? '#f0f0f0' : '#e2e2e2', maxWidth: isDesktop ? '560px' : '420px', marginTop: isDesktop ? '6px' : '4px', marginBottom: 0 }}>{t.home.heroSubtitle}</p>
+            <p className={`m-0 mt-1 ${BODY_FONT} max-w-[420px] text-[16px] leading-[25px] text-[#e2e2e2] lg:mt-[6px] lg:max-w-[560px] lg:text-[18px] lg:leading-[29px] lg:text-[#f0f0f0]`}>{t.home.heroSubtitle}</p>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={180} disabled>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: isDesktop ? '14px' : '12px', marginTop: isDesktop ? '18px' : '14px' }}>
-              <Link to="/services" style={{ backgroundColor: '#b12600', padding: isDesktop ? '13px 26px' : '11px 22px', borderRadius: '8px', color: '#ffffff', fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '15px' : '14px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', display: 'inline-block' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = Colors.primaryContainer)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#b12600')}>{t.home.exploreBtn}</Link>
-              <Link to="/about-us" style={{ border: '1.5px solid #ffffff', padding: isDesktop ? '13px 26px' : '11px 22px', borderRadius: '8px', backgroundColor: 'transparent', color: '#ffffff', fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '15px' : '14px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', display: 'inline-block' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>{t.home.visionBtn}</Link>
+            <div className="mt-[14px] flex flex-wrap gap-3 lg:mt-[18px] lg:gap-[14px]">
+              <Link to="/services" className={`inline-block rounded-lg bg-[#b12600] px-[22px] py-[11px] ${DISPLAY_FONT} text-[14px] font-bold text-white no-underline transition-all hover:bg-[var(--color-primary-container)] lg:px-[26px] lg:py-[13px] lg:text-[15px]`}>{t.home.exploreBtn}</Link>
+              <Link to="/about-us" className={`inline-block rounded-lg border-[1.5px] border-white bg-transparent px-[22px] py-[11px] ${DISPLAY_FONT} text-[14px] font-bold text-white no-underline transition-all hover:bg-[rgba(255,255,255,0.15)] lg:px-[26px] lg:py-[13px] lg:text-[15px]`}>{t.home.visionBtn}</Link>
             </div>
           </AnimatedReveal>
           {!isDesktop && (
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '12px', marginTop: '18px' }}>
-              <AnimatedReveal animation="scale" delay={220} style={{ flex: 1, minWidth: '140px' }}>
-                <div style={{ padding: '14px', borderRadius: '12px', backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(228, 190, 181, 0.2)' }}>
-                  <Icon name="groups" size={20} color="#ffb4a3" style={{ marginBottom: '8px' }} />
-                  <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '14px', color: '#ffffff', marginBottom: '4px', letterSpacing: '0.5px', fontWeight: 700 }}>{t.home.integrityTitle}</h3>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', lineHeight: '18px', color: 'rgba(226, 226, 222, 0.8)', margin: 0 }}>{t.home.integrityDesc}</p>
+            <div className="mt-[18px] flex flex-wrap gap-3">
+              <AnimatedReveal animation="scale" delay={220} className="min-w-[140px] flex-1">
+                <div className="rounded-xl border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-[14px]">
+                  <Icon name="groups" size={20} color="#ffb4a3" className="mb-2" />
+                  <h3 className={`mb-1 ${DISPLAY_FONT} text-[14px] font-bold tracking-[0.5px] text-white`}>{t.home.integrityTitle}</h3>
+                  <p className={`m-0 ${BODY_FONT} text-[12px] leading-[18px] text-[rgba(226,226,222,0.8)]`}>{t.home.integrityDesc}</p>
                 </div>
               </AnimatedReveal>
-              <AnimatedReveal animation="scale" delay={280} style={{ flex: 1, minWidth: '140px' }}>
-                <div style={{ padding: '14px', borderRadius: '12px', backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(228, 190, 181, 0.2)' }}>
-                  <Icon name="lightbulb" size={20} color="#ffb4a3" style={{ marginBottom: '8px' }} />
-                  <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '14px', color: '#ffffff', marginBottom: '4px', letterSpacing: '0.5px', fontWeight: 700 }}>{t.home.innovationTitle}</h3>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '12px', lineHeight: '18px', color: 'rgba(226, 226, 222, 0.8)', margin: 0 }}>{t.home.innovationDesc}</p>
+              <AnimatedReveal animation="scale" delay={280} className="min-w-[140px] flex-1">
+                <div className="rounded-xl border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-[14px]">
+                  <Icon name="lightbulb" size={20} color="#ffb4a3" className="mb-2" />
+                  <h3 className={`mb-1 ${DISPLAY_FONT} text-[14px] font-bold tracking-[0.5px] text-white`}>{t.home.innovationTitle}</h3>
+                  <p className={`m-0 ${BODY_FONT} text-[12px] leading-[18px] text-[rgba(226,226,222,0.8)]`}>{t.home.innovationDesc}</p>
                 </div>
               </AnimatedReveal>
             </div>
           )}
         </div>
         {isDesktop && (
-          <div style={{ flex: '1', display: 'flex', flexDirection: 'row', gap: '24px', justifyContent: 'flex-end', alignItems: 'center', zIndex: 10, paddingRight: '10px' }}>
-            <AnimatedReveal animation="scale" delay={100} style={{ flex: 1, maxWidth: '240px' }}>
-              <div style={{ padding: '20px', borderRadius: '14px', backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(228, 190, 181, 0.2)' }}>
-                <Icon name="groups" size={26} color="#ffb4a3" style={{ marginBottom: '10px' }} />
-                <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '19px', color: '#ffffff', marginBottom: '6px', letterSpacing: '0.5px', fontWeight: 700 }}>{t.home.integrityTitle}</h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', lineHeight: '20px', color: 'rgba(226, 226, 222, 0.8)', margin: 0 }}>{t.home.integrityDesc}</p>
+          <div className="z-10 flex flex-1 flex-row items-center justify-end gap-6 pr-[10px]">
+            <AnimatedReveal animation="scale" delay={100} className="max-w-[240px] flex-1">
+              <div className="rounded-[14px] border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-5">
+                <Icon name="groups" size={26} color="#ffb4a3" className="mb-[10px]" />
+                <h3 className={`mb-[6px] ${DISPLAY_FONT} text-[19px] font-bold tracking-[0.5px] text-white`}>{t.home.integrityTitle}</h3>
+                <p className={`m-0 ${BODY_FONT} text-[15px] leading-5 text-[rgba(226,226,222,0.8)]`}>{t.home.integrityDesc}</p>
               </div>
             </AnimatedReveal>
-            <AnimatedReveal animation="scale" delay={180} style={{ flex: 1, maxWidth: '240px', marginTop: '28px' }}>
-              <div style={{ padding: '20px', borderRadius: '14px', backgroundColor: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(228, 190, 181, 0.2)' }}>
-                <Icon name="lightbulb" size={26} color="#ffb4a3" style={{ marginBottom: '10px' }} />
-                <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '19px', color: '#ffffff', marginBottom: '6px', letterSpacing: '0.5px', fontWeight: 700 }}>{t.home.innovationTitle}</h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', lineHeight: '20px', color: 'rgba(226, 226, 222, 0.8)', margin: 0 }}>{t.home.innovationDesc}</p>
+            <AnimatedReveal animation="scale" delay={180} className="mt-7 max-w-[240px] flex-1">
+              <div className="rounded-[14px] border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-5">
+                <Icon name="lightbulb" size={26} color="#ffb4a3" className="mb-[10px]" />
+                <h3 className={`mb-[6px] ${DISPLAY_FONT} text-[19px] font-bold tracking-[0.5px] text-white`}>{t.home.innovationTitle}</h3>
+                <p className={`m-0 ${BODY_FONT} text-[15px] leading-5 text-[rgba(226,226,222,0.8)]`}>{t.home.innovationDesc}</p>
               </div>
             </AnimatedReveal>
           </div>
@@ -99,9 +101,7 @@ function HomeHero() {
 function HomeEcosystem() {
   const { language } = useLanguage();
   const t = useHomeStrings();
-  const { isDesktop, isMd, isTablet } = useResponsive();
-  const h2Size = isMd ? 52 : 36;
-  const h2LineHeight = isMd ? '60px' : '44px';
+  const { isDesktop } = useResponsive();
   const ecosystemItems = sectors.map((sector) => ({
     title: localized(sector.title, language),
     icon: sector.icon,
@@ -113,32 +113,32 @@ function HomeEcosystem() {
 
   return (
     <section className="section section--surface">
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+      <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
-          <div style={{ maxWidth: '672px', marginBottom: '50px' }}>
-            <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: `${h2Size}px`, lineHeight: h2LineHeight, color: Colors.onBackground, marginBottom: '14px' }}>{t.home.ecosystemHeading1}{' '}<span style={{ color: Colors.primary }}>{t.home.ecosystemHeading2}</span></h2>
-            <div style={{ width: '64px', height: '4px', borderRadius: '2px', background: 'linear-gradient(to right, #b12600, #ffb68b)', marginBottom: '20px' }} />
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '17px', lineHeight: '28px', color: Colors.secondary, margin: 0 }}>{t.home.ecosystemLead}</p>
+          <div className="mb-[50px] max-w-[672px]">
+            <h2 className={`mb-[14px] ${DISPLAY_FONT} text-[36px] font-bold leading-[44px] text-[var(--color-on-background)] md:text-[52px] md:leading-[60px]`}>{t.home.ecosystemHeading1}{' '}<span className="text-[var(--color-primary)]">{t.home.ecosystemHeading2}</span></h2>
+            <div className="mb-5 h-1 w-16 rounded-[2px] bg-[linear-gradient(to_right,#b12600,#ffb68b)]" />
+            <p className={`m-0 ${BODY_FONT} text-[17px] leading-[28px] text-[var(--color-secondary)]`}>{t.home.ecosystemLead}</p>
           </div>
         </AnimatedReveal>
         {isDesktop ? (
-          <div style={{ display: 'flex', flexDirection: 'row', gap: '24px', alignItems: 'stretch' }}>
+          <div className="flex flex-row items-stretch gap-6">
             {BENTO_COLUMNS.map((col, colIdx) => (
-              <div key={colIdx} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div key={colIdx} className="flex flex-1 flex-col gap-6">
                 {col.map((itemIdx) => {
                   const item = ecosystemItems[itemIdx];
                   const isTall = item.highlight;
                   return (
-                    <AnimatedReveal key={item.title} animation="up" delay={item.delay} hover="lift" style={{ flex: isTall ? 1 : 'none', display: 'flex', flexDirection: 'column' }}>
-                      <div style={{ backgroundColor: Colors.surfaceContainerLowest, padding: '32px', border: '1.5px solid rgba(228, 190, 181, 0.4)', borderRadius: '16px', overflow: 'hidden', position: 'relative', flex: isTall ? 1 : 'none', minHeight: isTall ? '520px' : 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                        {isTall && <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(240, 240, 240, 0.6) 0%, rgba(230, 230, 230, 0.9) 100%)', pointerEvents: 'none' }} />}
-                        <div style={{ position: 'relative', zIndex: 2 }}>
-                          <div style={{ width: '44px', height: '44px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '20px' }}><Icon name={item.icon} size={28} color={Colors.primary} /></div>
-                          <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '24px', lineHeight: '32px', color: Colors.onBackground, marginBottom: '12px', letterSpacing: '0.5px' }}>{item.title}</h3>
-                          <div style={{ width: '32px', height: '4px', backgroundColor: Colors.primary, marginBottom: '16px' }} />
-                          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', lineHeight: '25px', color: Colors.secondary, margin: 0, marginBottom: item.tag ? '32px' : 0 }}>{item.desc}</p>
+                    <AnimatedReveal key={item.title} animation="up" delay={item.delay} hover="lift" className={isTall ? 'flex flex-1 flex-col' : 'flex flex-col'}>
+                      <div className={`relative flex flex-col justify-between overflow-hidden rounded-2xl border-[1.5px] border-[rgba(228,190,181,0.4)] bg-[var(--color-surface-container-lowest)] p-8 ${isTall ? 'min-h-[520px] flex-1' : ''}`}>
+                        {isTall && <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(240,240,240,0.6)_0%,rgba(230,230,230,0.9)_100%)]" />}
+                        <div className="relative z-[2]">
+                          <div className="mb-5 flex h-11 w-11 items-center justify-start"><Icon name={item.icon} size={28} color="#b12600" /></div>
+                          <h3 className={`mb-3 ${DISPLAY_FONT} text-[24px] font-semibold leading-[32px] tracking-[0.5px] text-[var(--color-on-background)]`}>{item.title}</h3>
+                          <div className="mb-4 h-1 w-8 bg-[var(--color-primary)]" />
+                          <p className={`m-0 ${BODY_FONT} text-[15px] leading-[25px] text-[var(--color-secondary)] ${item.tag ? 'mb-8' : ''}`}>{item.desc}</p>
                         </div>
-                        {item.tag && <div style={{ position: 'relative', zIndex: 2, alignSelf: 'flex-start', backgroundColor: Colors.primary, padding: '6px 14px', borderRadius: '999px' }}><span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '11px', lineHeight: '14px', letterSpacing: '1.2px', textTransform: 'uppercase', color: '#ffffff' }}>{item.tag}</span></div>}
+                        {item.tag && <div className="relative z-[2] self-start rounded-full bg-[var(--color-primary)] px-[14px] py-[6px]"><span className={`${DISPLAY_FONT} text-[11px] font-semibold uppercase leading-[14px] tracking-[1.2px] text-white`}>{item.tag}</span></div>}
                       </div>
                     </AnimatedReveal>
                   );
@@ -147,26 +147,26 @@ function HomeEcosystem() {
             ))}
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: isTablet ? 'repeat(2, 1fr)' : '1fr', gap: '24px' }}>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {ecosystemItems.map((item) => (
               <AnimatedReveal key={item.title} animation="up" delay={item.delay} hover="lift">
-                <div style={{ backgroundColor: Colors.surfaceContainerLowest, padding: '32px', border: '1.5px solid rgba(228, 190, 181, 0.4)', borderRadius: '16px', overflow: 'hidden', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+                <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border-[1.5px] border-[rgba(228,190,181,0.4)] bg-[var(--color-surface-container-lowest)] p-8">
                   <div>
-                    <div style={{ width: '44px', height: '44px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '20px' }}><Icon name={item.icon} size={28} color={Colors.primary} /></div>
-                    <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '24px', lineHeight: '32px', color: Colors.onBackground, marginBottom: '12px', letterSpacing: '0.5px' }}>{item.title}</h3>
-                    <div style={{ width: '32px', height: '4px', backgroundColor: Colors.primary, marginBottom: '16px' }} />
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', lineHeight: '25px', color: Colors.secondary, margin: 0, marginBottom: item.tag ? '24px' : 0 }}>{item.desc}</p>
+                    <div className="mb-5 flex h-11 w-11 items-center justify-start"><Icon name={item.icon} size={28} color="#b12600" /></div>
+                    <h3 className={`mb-3 ${DISPLAY_FONT} text-[24px] font-semibold leading-[32px] tracking-[0.5px] text-[var(--color-on-background)]`}>{item.title}</h3>
+                    <div className="mb-4 h-1 w-8 bg-[var(--color-primary)]" />
+                    <p className={`m-0 ${BODY_FONT} text-[15px] leading-[25px] text-[var(--color-secondary)] ${item.tag ? 'mb-6' : ''}`}>{item.desc}</p>
                   </div>
-                  {item.tag && <div style={{ alignSelf: 'flex-start', backgroundColor: Colors.primary, padding: '6px 14px', borderRadius: '999px' }}><span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '11px', lineHeight: '14px', letterSpacing: '1.2px', textTransform: 'uppercase', color: '#ffffff' }}>{item.tag}</span></div>}
+                  {item.tag && <div className="self-start rounded-full bg-[var(--color-primary)] px-[14px] py-[6px]"><span className={`${DISPLAY_FONT} text-[11px] font-semibold uppercase leading-[14px] tracking-[1.2px] text-white`}>{item.tag}</span></div>}
                 </div>
               </AnimatedReveal>
             ))}
           </div>
         )}
         <AnimatedReveal animation="up" delay={200}>
-          <div style={{ marginTop: '64px', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '24px', lineHeight: '32px', color: Colors.onBackground, marginBottom: '8px', fontWeight: 700 }}><span style={{ color: Colors.primary, fontSize: '32px' }}>"</span>{'  '}{t.home.quoteText}{'  '}<span style={{ color: Colors.primary, fontSize: '32px' }}>"</span></p>
-            <h3 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '30px', lineHeight: '40px', color: Colors.onBackground, margin: 0 }}>{t.home.taglineMain1}{' '}<span style={{ color: Colors.primary }}>{t.home.taglineMain2}</span></h3>
+          <div className="mt-16 text-center">
+            <p className={`mb-2 ${DISPLAY_FONT} text-[24px] font-bold leading-[32px] text-[var(--color-on-background)]`}><span className="text-[32px] text-[var(--color-primary)]">"</span>{'  '}{t.home.quoteText}{'  '}<span className="text-[32px] text-[var(--color-primary)]">"</span></p>
+            <h3 className={`m-0 ${DISPLAY_FONT} text-[30px] font-semibold leading-[40px] text-[var(--color-on-background)]`}>{t.home.taglineMain1}{' '}<span className="text-[var(--color-primary)]">{t.home.taglineMain2}</span></h3>
           </div>
         </AnimatedReveal>
       </div>
@@ -177,9 +177,7 @@ function HomeEcosystem() {
 // --- Journey / Partnership ---
 function HomeJourney() {
   const t = useHomeStrings();
-  const { isDesktop, isMd } = useResponsive();
-  const h2Size = isMd ? 52 : 36;
-  const h2LineHeight = isMd ? '60px' : '44px';
+  const { isDesktop } = useResponsive();
   const partnershipLinks = [
     { title: t.home.strategicPartnership, icon: 'handshake', delay: 100 },
     { title: t.home.investorRelations, icon: 'trending_up', delay: 200 },
@@ -189,31 +187,31 @@ function HomeJourney() {
   return (
     <section className="section section--dark section--relative">
       {isDesktop && (
-        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '50%', zIndex: 1 }}>
-          <img src={kemitraanImg} alt="Kemitraan Lasuarindo" style={{ width: '100%', height: '100%', objectFit: 'cover', borderTopLeftRadius: '48px', borderBottomLeftRadius: '48px', display: 'block' }} />
+        <div className="absolute bottom-0 right-0 top-0 z-[1] w-1/2">
+          <img src={kemitraanImg} alt="Kemitraan Lasuarindo" className="block h-full w-full rounded-l-[48px] object-cover" />
         </div>
       )}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 2 }}>
-        <div style={{ maxWidth: isDesktop ? '576px' : '576px' }}>
+      <div className={`relative z-[2] ${CONTAINER}`}>
+        <div className="max-w-[576px]">
           <AnimatedReveal animation="up" delay={0}>
-            <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: `${h2Size}px`, lineHeight: h2LineHeight, color: '#ffffff', marginBottom: '14px' }}>{t.home.journeyHeading1}<br /><GradientText>{t.home.journeyHeading2}</GradientText></h2>
+            <h2 className={`mb-[14px] ${DISPLAY_FONT} text-[36px] font-bold leading-[44px] text-white md:text-[52px] md:leading-[60px]`}>{t.home.journeyHeading1}<br /><GradientText>{t.home.journeyHeading2}</GradientText></h2>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={100}>
-            <div style={{ width: '64px', height: '4px', backgroundColor: '#ffb4a3', marginBottom: '32px' }} />
+            <div className="mb-8 h-1 w-16 bg-[#ffb4a3]" />
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={200}>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: '29px', color: Colors.surfaceVariant, marginBottom: '24px' }}>{t.home.journeyLead}</p>
+            <p className={`mb-6 ${BODY_FONT} text-[18px] leading-[29px] text-[var(--color-surface-variant)]`}>{t.home.journeyLead}</p>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={300}>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: 'rgba(226, 226, 222, 0.8)', marginBottom: '40px' }}>{t.home.journeyBody}</p>
+            <p className={`mb-10 ${BODY_FONT} text-[16px] leading-[26px] text-[rgba(226,226,222,0.8)]`}>{t.home.journeyBody}</p>
           </AnimatedReveal>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+          <div className="mb-12 flex flex-col gap-4">
             {partnershipLinks.map((link) => (
               <AnimatedReveal key={link.title} animation="left" delay={link.delay}>
-                <Link to="/contact" style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px', padding: '16px 0', border: 'none', borderBottom: '1px solid rgba(228, 190, 181, 0.3)', backgroundColor: 'transparent', cursor: 'pointer', textAlign: 'left', transition: 'transform 0.2s ease', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateX(6px)')} onMouseLeave={(e) => (e.currentTarget.style.transform = 'none')}>
+                <Link to="/contact" className="flex w-full flex-row items-center gap-4 border-b border-[rgba(228,190,181,0.3)] bg-transparent py-4 text-left no-underline transition-transform hover:translate-x-[6px]">
                   <Icon name={link.icon} size={24} color="#ffb4a3" />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '18px', lineHeight: '26px', letterSpacing: '0.5px', textTransform: 'uppercase', color: '#ffffff', flex: 1 }}>{link.title}</span>
-                  <Icon name="arrow_forward" size={24} color={Colors.surfaceVariant} />
+                  <span className={`flex-1 ${DISPLAY_FONT} text-[18px] font-semibold uppercase leading-[26px] tracking-[0.5px] text-white`}>{link.title}</span>
+                  <Icon name="arrow_forward" size={24} color="#e2e2e2" />
                 </Link>
               </AnimatedReveal>
             ))}
@@ -221,8 +219,8 @@ function HomeJourney() {
         </div>
       </div>
       {!isDesktop && (
-        <div style={{ maxWidth: '1280px', margin: '32px auto 0 auto', padding: '0 24px' }}>
-          <img src={kemitraanImg} alt="Kemitraan Lasuarindo" style={{ width: '100%', aspectRatio: '16/9', maxHeight: '420px', borderRadius: '20px', objectFit: 'cover', display: 'block' }} />
+        <div className={`mx-auto mt-8 ${CONTAINER}`}>
+          <img src={kemitraanImg} alt="Kemitraan Lasuarindo" className="block aspect-[16/9] max-h-[420px] w-full rounded-[20px] object-cover" />
         </div>
       )}
     </section>
