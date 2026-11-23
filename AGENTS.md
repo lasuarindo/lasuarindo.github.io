@@ -1,3 +1,24 @@
+# AGENTS.md — lasuarindo.github.io
+
+## Project
+
+- Stack: React 19 + Vite 8 + Tailwind CSS 4 + React Router 7.
+- Source: `src/`, static assets: `public/`, docs (VitePress): `docs/`.
+- Commands: `npm run dev`, `npm run build`, `npm run lint` (oxlint), `npm run preview`, `npm run docs:dev`, `npm run docs:build`.
+- Structure: router `src/app/router.jsx`; chrome in `src/layouts/RootLayout.jsx`; i18n `src/context/LanguageContext.jsx` + `src/i18n/`; data `src/data/`; styling `src/assets/css/`.
+- i18n: 2 languages (`id`, `en`), storage key `lasuarindo-language`.
+- Deploy: GitHub Pages via `.github/workflows/deploy.yml` (base path derived automatically).
+- Note: page imagery is still large (optimisation deferred to the end); use `reducedMotion` for deterministic screenshots.
+
+## Restrictions
+
+- Do not commit secrets/`.env`.
+- Do not commit build artifacts (`dist/`, `docs/.vitepress/cache`, `docs/.vitepress/dist`).
+- Internal notes live in `.ignore/` (gitignored).
+- Follow the guardrails below.
+
+---
+
 # AGENTS.md: Agent Rules
 
 Safety-first rules for AI coding agents (OpenCode or any runtime that reads `AGENTS.md`).

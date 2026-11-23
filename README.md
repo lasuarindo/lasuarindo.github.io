@@ -1,16 +1,80 @@
-# React + Vite
+# Lasuarindo Group Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Company profile site for **PT Lasuarindo Group**, an integrated business and investment group. The site is bilingual (Indonesian and English) and deployed to GitHub Pages.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** with **React Router 7** (`react-router`) for routing
+- **Vite 8** for dev and build, with Rolldown vendor chunk splitting
+- **Tailwind CSS 4** for styling, plus a global stylesheet at `src/index.css`
+- **i18next** + **react-i18next** for internationalisation
+- **Oxlint** for linting
 
-## React Compiler
+Runtime libraries: `motion`, `lucide-react`, `@tabler/icons-react`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
 
-## Expanding the Oxlint configuration
+```bash
+npm run dev       # dev server
+npm run build     # production build
+npm run preview   # preview the build
+npm run lint      # lint with oxlint
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Project layout
+
+```
+src/
+├── App.jsx                 # createBrowserRouter + LanguageProvider
+├── main.jsx                # React entry
+├── index.css               # global stylesheet (design tokens + base)
+├── assets/images/          # page imagery
+├── components/             # AnimatedReveal, BackToTop, GradientText, Icon
+├── constants/theme.js      # shared colour tokens
+├── context/                # LanguageContext
+├── hooks/useResponsive.js  # responsive breakpoints
+├── i18n/                   # i18next setup + locales/id|en/*.json
+├── layouts/                # Header, Footer, MobileMenu, RootLayout, SectionHeader
+└── pages/                  # one file per route
+```
+
+Each page is a lazy route, so it ships as its own chunk and is fetched only when a visitor lands on that URL.
+
+## Routes
+
+| Path | Page |
+|---|---|
+| `/` | Home |
+| `/about-us` | About Us |
+| `/services` | Services |
+| `/contact` | Contact |
+| `/privacy-policy` | Privacy Policy |
+| `*` | Redirects to `/` |
+
+Legacy Indonesian paths redirect to their English equivalents: `/tentang-kami` → `/about-us`, `/layanan` → `/services`, `/kontak` → `/contact`, `/kebijakan-privasi` → `/privacy-policy`.
+
+## Internationalisation
+
+Two locales live in `src/i18n/locales/`: `id` and `en`. The active language is managed by `LanguageProvider` and stored in `localStorage`; Indonesian is the default and fallback.
+
+## Deploy to GitHub Pages
+
+`.github/workflows/deploy.yml` builds and deploys on every push to `main`, and can also be run manually from **Actions → Deploy to GitHub Pages → Run workflow**.
+
+The base path is derived from the repository name at build time:
+
+- a repository whose name ends in `.github.io` is served from `/`
+- any other repository is served from `/<repo>/`
+
+The current remote is `lasuarindo/lasuarindo.github.io`, so the site builds with `BASE_PATH=/` and is served at `https://lasuarindo.github.io/`.
+
+Pages needs to be enabled once: **Settings → Pages → Source: GitHub Actions**.
+
+Deep links such as `/about-us` keep working because the workflow copies `dist/index.html` to `dist/404.html`, which GitHub Pages serves for unknown paths as an SPA fallback.
+
+## Notes
+
+- `dist/` and `node_modules/` are gitignored build output.
+- Internal working notes live in `.ignore/` (gitignored, never committed).
+- Page imagery under `src/assets/images/` is currently large; asset optimisation is tracked as a separate improvement step.
+- See `AGENTS.md` for project conventions.
