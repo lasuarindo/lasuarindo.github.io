@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import { useResponsive } from '@/hooks/useResponsive';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
@@ -64,7 +64,6 @@ function GradientDivider({ center = false }) {
 
 // --- 1. Hero ---
 function ServicesHero() {
-  const navigate = useNavigate();
   const { isLg, isMd, contentWidth } = useResponsive();
   const h1Size = isMd ? 64 : Math.max(28, Math.min(42, Math.floor(contentWidth / 7.2)));
   const h1LineHeight = Math.round(h1Size * 1.25);
@@ -93,9 +92,9 @@ function ServicesHero() {
             </p>
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={400}>
-            <button type="button" onClick={() => navigate('/contact')} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: Colors.primary, padding: '16px 32px', borderRadius: '8px', border: 'none', color: Colors.onPrimary, fontFamily: 'Montserrat, sans-serif', fontSize: '16px', fontWeight: 700, cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', transition: 'all 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = Colors.primaryContainer)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = Colors.primary)}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: Colors.primary, padding: '16px 32px', borderRadius: '8px', color: Colors.onPrimary, fontFamily: 'Montserrat, sans-serif', fontSize: '16px', fontWeight: 700, cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', transition: 'all 0.2s', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = Colors.primaryContainer)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = Colors.primary)}>
               <span>Bermitra Dengan Kami</span><Icon name="arrow_forward" size={20} color={Colors.onPrimary} />
-            </button>
+            </Link>
           </AnimatedReveal>
         </div>
       </div>

@@ -19,19 +19,25 @@ function ScrollToTop() {
   return null;
 }
 
+function SkipLink() {
+  const t = useStrings({ id: idCommon, en: enCommon });
+  return (
+    <a href="#main" className="skip-link">
+      {t.skipLink}
+    </a>
+  );
+}
+
 // Single source of chrome: header, main landmark, footer and back-to-top live
 // here so individual pages only render their own content. The footer is
 // route-aware (it shows the services gallery on /services by itself).
 export function RootLayout() {
-  const t = useStrings({ id: idCommon, en: enCommon });
   const location = useLocation();
 
   return (
     <LanguageProvider>
       <ScrollToTop />
-      <a href="#main" className="skip-link">
-        {t.skipLink}
-      </a>
+      <SkipLink />
       <Header />
       <main id="main" className="page" key={location.pathname}>
         <Suspense fallback={<RouteFallback />}>

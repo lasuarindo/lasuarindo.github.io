@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
@@ -10,7 +10,6 @@ import { Colors } from '@/constants/theme';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 
 export function Header() {
-  const navigate = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
   const { language, setLanguage } = useLanguage();
@@ -42,10 +41,8 @@ export function Header() {
       <header
         className={`glass-nav ${scrolled ? 'scrolled' : ''}`}
         style={{
-          position: 'fixed',
+          position: 'sticky',
           top: 0,
-          left: 0,
-          right: 0,
           width: '100%',
           zIndex: 80,
           backgroundColor: scrolled ? 'rgba(249, 249, 249, 0.96)' : 'rgba(249, 249, 249, 0.88)',
@@ -209,9 +206,8 @@ export function Header() {
             </div>
 
             {/* CTA Button */}
-            <button
-              type="button"
-              onClick={() => navigate('/contact')}
+            <Link
+              to="/contact"
               onMouseEnter={() => setCtaHover(true)}
               onMouseLeave={() => setCtaHover(false)}
               style={{
@@ -227,10 +223,12 @@ export function Header() {
                 boxShadow: '0 4px 14px rgba(177, 38, 0, 0.25)',
                 transition: 'background-color 0.2s ease, transform 0.15s ease',
                 transform: ctaHover ? 'translateY(-1px)' : 'none',
+                textDecoration: 'none',
+                display: 'inline-block',
               }}
             >
               {t.nav.cta}
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Right: Lang & Hamburger */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router';
+import { Link } from 'react-router';
 import { useResponsive } from '@/hooks/useResponsive';
 import { GradientText } from '@/components/GradientText';
 import { AnimatedReveal } from '@/components/AnimatedReveal';
@@ -62,7 +62,6 @@ function PrivacyHero() {
 
 // --- TOC + Articles ---
 function PrivacyContent() {
-  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('pendahuluan');
   const { isDesktop, isMd } = useResponsive();
 
@@ -265,7 +264,7 @@ function PrivacyContent() {
                     </div>
                   </AnimatedReveal>
                 ))}</div>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: Colors.secondary, marginTop: '24px' }}>Untuk menggunakan hak-hak Anda, silakan hubungi kami melalui{' '}<span onClick={() => navigate('/contact')} style={{ color: Colors.primary, fontWeight: 700, cursor: 'pointer' }}>Halaman Kontak</span>. Kami akan merespons permintaan Anda dalam waktu{' '}<strong style={{ fontWeight: 700, color: Colors.onBackground }}>14 hari kerja</strong>.</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: '26px', color: Colors.secondary, marginTop: '24px' }}>Untuk menggunakan hak-hak Anda, silakan hubungi kami melalui{' '}<Link to="/contact" style={{ color: Colors.primary, fontWeight: 700, cursor: 'pointer', textDecoration: 'none' }}>Halaman Kontak</Link>. Kami akan merespons permintaan Anda dalam waktu{' '}<strong style={{ fontWeight: 700, color: Colors.onBackground }}>14 hari kerja</strong>.</p>
               </div>
             </AnimatedReveal>
           </div>

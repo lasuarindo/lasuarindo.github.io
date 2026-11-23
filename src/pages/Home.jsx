@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { sectors, localized } from '@/data/sectors';
 import { useStrings } from '@/i18n/useStrings';
@@ -21,7 +21,6 @@ function useHomeStrings() {
 
 // --- Hero ---
 function HomeHero() {
-  const navigate = useNavigate();
   const t = useHomeStrings();
   const { isDesktop, isTablet, isSmallMobile } = useResponsive();
   const heroTitleSize = isDesktop ? 62 : isTablet ? 46 : isSmallMobile ? 28 : 34;
@@ -50,8 +49,8 @@ function HomeHero() {
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={180} disabled>
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: isDesktop ? '14px' : '12px', marginTop: isDesktop ? '18px' : '14px' }}>
-              <button type="button" onClick={() => navigate('/services')} style={{ backgroundColor: '#b12600', padding: isDesktop ? '13px 26px' : '11px 22px', borderRadius: '8px', border: 'none', color: '#ffffff', fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '15px' : '14px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = Colors.primaryContainer)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#b12600')}>{t.home.exploreBtn}</button>
-              <button type="button" onClick={() => navigate('/about-us')} style={{ border: '1.5px solid #ffffff', padding: isDesktop ? '13px 26px' : '11px 22px', borderRadius: '8px', backgroundColor: 'transparent', color: '#ffffff', fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '15px' : '14px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>{t.home.visionBtn}</button>
+              <Link to="/services" style={{ backgroundColor: '#b12600', padding: isDesktop ? '13px 26px' : '11px 22px', borderRadius: '8px', color: '#ffffff', fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '15px' : '14px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', display: 'inline-block' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = Colors.primaryContainer)} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#b12600')}>{t.home.exploreBtn}</Link>
+              <Link to="/about-us" style={{ border: '1.5px solid #ffffff', padding: isDesktop ? '13px 26px' : '11px 22px', borderRadius: '8px', backgroundColor: 'transparent', color: '#ffffff', fontFamily: 'Montserrat, sans-serif', fontSize: isDesktop ? '15px' : '14px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', display: 'inline-block' }} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>{t.home.visionBtn}</Link>
             </div>
           </AnimatedReveal>
           {!isDesktop && (
@@ -177,7 +176,6 @@ function HomeEcosystem() {
 
 // --- Journey / Partnership ---
 function HomeJourney() {
-  const navigate = useNavigate();
   const t = useHomeStrings();
   const { isDesktop, isMd } = useResponsive();
   const h2Size = isMd ? 52 : 36;
@@ -212,11 +210,11 @@ function HomeJourney() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
             {partnershipLinks.map((link) => (
               <AnimatedReveal key={link.title} animation="left" delay={link.delay}>
-                <button type="button" onClick={() => navigate('/contact')} style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px', padding: '16px 0', border: 'none', borderBottom: '1px solid rgba(228, 190, 181, 0.3)', backgroundColor: 'transparent', cursor: 'pointer', textAlign: 'left', transition: 'transform 0.2s ease' }} onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateX(6px)')} onMouseLeave={(e) => (e.currentTarget.style.transform = 'none')}>
+                <Link to="/contact" style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px', padding: '16px 0', border: 'none', borderBottom: '1px solid rgba(228, 190, 181, 0.3)', backgroundColor: 'transparent', cursor: 'pointer', textAlign: 'left', transition: 'transform 0.2s ease', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateX(6px)')} onMouseLeave={(e) => (e.currentTarget.style.transform = 'none')}>
                   <Icon name={link.icon} size={24} color="#ffb4a3" />
                   <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '18px', lineHeight: '26px', letterSpacing: '0.5px', textTransform: 'uppercase', color: '#ffffff', flex: 1 }}>{link.title}</span>
                   <Icon name="arrow_forward" size={24} color={Colors.surfaceVariant} />
-                </button>
+                </Link>
               </AnimatedReveal>
             ))}
           </div>
