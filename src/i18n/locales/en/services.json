@@ -17,7 +17,8 @@
     { "icon": "apartment", "title": "Property Management", "desc": "Professional management for high-value assets." }
   ],
   "recentProject": "Recent Project",
-  "mediaHeading": "CREATIVE MEDIA",
+  "mediaHeadingLead": "CREATIVE",
+  "mediaHeadingAccent": "MEDIA",
   "mediaSubheading": "BEHIND THE SCENES, STORIES, INFLUENCE & MEDIA",
   "mediaDesc": "We deliver cutting-edge creative services integrated with modern business needs — from visual design to large-scale event production, all designed to deliver maximum impact.",
   "mediaCards": [
@@ -107,11 +108,5 @@
       { "icon": "restaurant", "name": "Cuanmie", "desc": "Food & beverage — mie yamin." },
       { "icon": "local_parking", "name": "SAA", "desc": "Parking & valet management." }
     ]
-  },
-  "propertyHeadingOld": "PROPERTY SECTOR",
-  "propertyDescOld": "Developing future-ready residential, commercial, and collaborative spaces designed for sustainability and long-term asset value.",
-  "techHeadingOld": "DIGITAL TECHNOLOGY",
-  "techDescOld": "Digital transformation, proprietary software development, and cloud computing infrastructure to power enterprise scaling.",
-  "mediaHeadingOld": "CREATIVE & MEDIA",
-  "mediaDescOld": "High-impact content production, integrated digital broadcasting, and brand positioning strategies that command market influence."
+  }
 }

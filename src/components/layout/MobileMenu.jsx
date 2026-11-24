@@ -4,7 +4,7 @@ import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
-import { Icon } from '@/components/Icon';
+import { Icon } from '@/components/ui/Icon';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function MobileMenu({ visible, onClose }) {

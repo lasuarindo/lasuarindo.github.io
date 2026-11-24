@@ -1,6 +1,6 @@
 # Services
 
-Route: `/services` — `src/pages/Services.jsx`.
+Route: `/services` — `src/pages/Services/Services.jsx`.
 
 Six sections:
 

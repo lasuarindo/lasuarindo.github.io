@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import { useResponsive } from '@/hooks/useResponsive';
-import { useStrings } from '@/i18n/useStrings';
-import idContact from '@/i18n/locales/id/contact.json';
-import enContact from '@/i18n/locales/en/contact.json';
-import idHome from '@/i18n/locales/id/home.json';
-import enHome from '@/i18n/locales/en/home.json';
-import { GradientText } from '@/components/GradientText';
-import { AnimatedReveal } from '@/components/AnimatedReveal';
-import { Icon } from '@/components/Icon';
-import heroBgImg from '@/assets/images/header_hero_home.png';
-
-const MAP_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7983637172087!2d107.6119859!3d-6.9189088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6302dc3a29b%3A0x6002fef9a8f27807!2sJl.%20Tamblong%20No.46%2C%20Kb.%20Pisang%2C%20Kec.%20Sumur%20Bandung%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040112!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid';
+import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
+import { GradientDivider } from '@/components/ui/GradientDivider';
+import { Icon } from '@/components/ui/Icon';
+import { BODY_FONT, CONTAINER, DISPLAY_FONT } from '@/constants/layout';
+import { useContactStrings } from '../useContactStrings';
 
 const SOCIALS = [
   { label: 'Website', icon: 'language', url: 'https://www.lasuarindo.co.id' },
@@ -20,56 +12,13 @@ const SOCIALS = [
   { label: 'Email', icon: 'mail', url: 'mailto:contact@lasuarindo.co.id' },
 ];
 
-const CONTAINER = 'mx-auto w-full max-w-[1280px] px-6';
-const DISPLAY_FONT = 'font-[var(--font-display)]';
-const BODY_FONT = 'font-[var(--font-body)]';
 const INPUT_CLASS = 'box-border w-full rounded-lg border border-[var(--color-outline-variant)] bg-[var(--color-surface-container-low)] px-[14px] py-[10px] font-[var(--font-body)] text-[15px] text-[var(--color-on-background)] outline-none focus:border-[var(--color-primary)]';
 const LABEL_CLASS = 'mb-[6px] block font-[var(--font-display)] text-[12px] font-semibold uppercase leading-4 tracking-[0.35px] text-[var(--color-on-background)]';
 const INFO_ICON_BOX = 'flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(177,38,0,0.1)]';
 const INFO_TITLE = `m-0 mb-[2px] ${DISPLAY_FONT} text-[18px] font-bold leading-6 text-[var(--color-on-background)]`;
 const INFO_TEXT = `m-0 ${BODY_FONT} text-[14px] leading-5 text-[var(--color-secondary)]`;
 
-function GradientDivider({ center = false }) {
-  return <div className={`mb-5 h-1 w-16 rounded-[2px] bg-[linear-gradient(to_right,#b12600,#ffb68b)] ${center ? 'mx-auto' : ''}`} />;
-}
-
-function useContactStrings() {
-  const contactBundle = { id: { contact: idContact }, en: { contact: enContact } };
-  const homeBundle = { id: { home: idHome }, en: { home: enHome } };
-  return useStrings({
-    id: Object.assign({}, contactBundle.id, homeBundle.id),
-    en: Object.assign({}, contactBundle.en, homeBundle.en),
-  });
-}
-
-// --- Hero ---
-function ContactHero() {
-  const t = useContactStrings();
-
-  return (
-    <section className="relative overflow-hidden bg-[var(--color-inverse-surface)] pb-[80px] pt-[96px] lg:pb-[112px] lg:pt-[110px]">
-      <img src={heroBgImg} alt="" aria-hidden="true" className="absolute inset-0 z-0 h-full w-full object-cover opacity-30" />
-      <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,rgba(47,49,49,0)_0%,rgba(47,49,49,0.5)_60%,#2f3131_100%)]" />
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6">
-        <AnimatedReveal animation="up" delay={0} disabled>
-          <span className="mb-[14px] block font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.5px] text-[#ffb4a3]">{t.contact.badge}</span>
-        </AnimatedReveal>
-        <AnimatedReveal animation="up" delay={60} disabled>
-          <h1 className="m-0 mb-[18px] font-[var(--font-display)] text-[40px] font-bold leading-[1.12] text-white lg:text-[56px]">
-            {t.contact.heroTitle1}<br />
-            <GradientText>{t.contact.heroTitle2}</GradientText>
-          </h1>
-        </AnimatedReveal>
-        <AnimatedReveal animation="up" delay={120} disabled>
-          <p className="m-0 max-w-[672px] font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-surface-variant)]">{t.contact.heroSubtitle}</p>
-        </AnimatedReveal>
-      </div>
-    </section>
-  );
-}
-
-// --- Contact Info & Form ---
-function ContactFormSection() {
+export function ContactForm() {
   const t = useContactStrings();
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
@@ -190,64 +139,4 @@ function ContactFormSection() {
   );
 }
 
-// --- Map ---
-function ContactMap() {
-  const { isMobile } = useResponsive();
-  const t = useContactStrings();
-
-  return (
-    <section className="bg-[var(--color-surface-container-low)] py-20">
-      <div className={CONTAINER}>
-        <AnimatedReveal animation="up" delay={0}>
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 font-[var(--font-display)] text-[30px] font-bold text-[var(--color-on-background)] md:text-[40px]">{t.contact.locationHeading1}<span className="text-[var(--color-primary)]">{t.contact.locationHeading2}</span></h2>
-            <GradientDivider center />
-          </div>
-          <div className="h-[450px] overflow-hidden rounded-2xl border border-[rgba(228,190,181,0.3)] bg-white shadow-[0_20px_25px_rgba(0,0,0,0.1),0_8px_10px_rgba(0,0,0,0.1)] max-[767px]:h-[320px]">
-            <iframe src={MAP_EMBED_URL} width="100%" height={isMobile ? '320' : '450'} className="block border-0" allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Lokasi Kantor Lasuarindo Group" />
-          </div>
-        </AnimatedReveal>
-      </div>
-    </section>
-  );
-}
-
-// --- Partnership CTA ---
-function ContactPartnership() {
-  const t = useContactStrings();
-  const partnerCards = [
-    { icon: 'handshake', title: t.home.strategicPartnership, desc: t.contact.partnerCardsDesc.strategicPartnership },
-    { icon: 'trending_up', title: t.home.investorRelations, desc: t.contact.partnerCardsDesc.investorRelations },
-    { icon: 'group_add', title: t.home.collaboration, desc: t.contact.partnerCardsDesc.collaboration },
-  ];
-
-  return (
-    <section className="section--dark py-20 max-[767px]:py-14">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto w-full max-w-[1280px] px-6">
-        {partnerCards.map((card, i) => (
-          <AnimatedReveal key={card.title} animation="up" delay={100 * (i + 1)} hover="lift">
-            <div className="box-border flex h-full flex-col items-center rounded-2xl border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-8 text-center">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(177,38,0,0.2)]"><Icon name={card.icon} size={36} color="#ffb4a3" /></div>
-              <h3 className="mb-3 font-[var(--font-display)] text-[28px] font-bold leading-9 text-[var(--color-on-primary)]">{card.title}</h3>
-              <p className="m-0 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-surface-variant)]">{card.desc}</p>
-            </div>
-          </AnimatedReveal>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function Contact() {
-  return (
-    <>
-      <ContactHero />
-      <ContactFormSection />
-      <ContactMap />
-      <ContactPartnership />
-    </>
-  );
-}
-
-export const Kontak = Contact;
-export default Contact;
+export default ContactForm;

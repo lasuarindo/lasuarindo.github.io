@@ -4,10 +4,10 @@ import { useStrings } from '@/i18n/useStrings';
 import { LanguageProvider } from '@/i18n/LanguageProvider';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
-import { Header } from '@/layouts/Header';
-import { Footer } from '@/layouts/Footer';
-import { BackToTop } from '@/components/BackToTop';
-import { RouteFallback } from '@/components/RouteFallback';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { BackToTop } from '@/components/ui/BackToTop';
+import { RouteFallback } from '@/components/ui/RouteFallback';
 
 function ScrollToTop() {
   const { pathname } = useLocation();

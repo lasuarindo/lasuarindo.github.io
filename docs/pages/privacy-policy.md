@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Route: `/privacy-policy` — `src/pages/PrivacyPolicy.jsx`.
+Route: `/privacy-policy` — `src/pages/PrivacyPolicy/PrivacyPolicy.jsx`.
 
 - **Hero** — title and intro.
 - **Sticky table of contents** — a sidebar list of the eight articles. It is `position: sticky` only from the `lg` breakpoint (`lg:top-[100px]`); below that it stacks above the content.

@@ -1,6 +1,6 @@
 # Contact
 
-Route: `/contact` — `src/pages/Contact.jsx`.
+Route: `/contact` — `src/pages/Contact/Contact.jsx`.
 
 Four sections:
 

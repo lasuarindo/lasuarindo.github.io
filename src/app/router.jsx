@@ -1,17 +1,17 @@
 /* eslint-disable react/only-export-components */
 import React, { lazy } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router';
-import { RootLayout } from '@/layouts/RootLayout';
+import { RootLayout } from '@/components/layout/RootLayout';
 
 // Pages are code-split so the initial bundle only ships the shell.
 // Stored in const variables first for clarity; each page uses a default
 // export, so lazy() can load it directly (BMG-style).
-const Home = lazy(() => import('@/pages/Home.jsx'));
-const AboutUs = lazy(() => import('@/pages/AboutUs.jsx'));
-const Services = lazy(() => import('@/pages/Services.jsx'));
-const Contact = lazy(() => import('@/pages/Contact.jsx'));
-const PrivacyPolicy = lazy(() => import('@/pages/PrivacyPolicy.jsx'));
-const NotFound = lazy(() => import('@/pages/NotFound.jsx'));
+const Home = lazy(() => import('@/pages/Home/Home.jsx'));
+const AboutUs = lazy(() => import('@/pages/AboutUs/AboutUs.jsx'));
+const Services = lazy(() => import('@/pages/Services/Services.jsx'));
+const Contact = lazy(() => import('@/pages/Contact/Contact.jsx'));
+const PrivacyPolicy = lazy(() => import('@/pages/PrivacyPolicy/PrivacyPolicy.jsx'));
+const NotFound = lazy(() => import('@/pages/NotFound/NotFound.jsx'));
 
 // BASE_URL is '/' locally and for *.github.io user sites, '/<repo>/' for project
 // sites. React Router expects a basename without a trailing slash.

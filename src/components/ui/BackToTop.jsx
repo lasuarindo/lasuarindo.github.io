@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
-import { Icon } from '@/components/Icon';
+import { Icon } from '@/components/ui/Icon';
 
 export function BackToTop({ showOffset = 400 }) {
   const t = useStrings({ id: idCommon, en: enCommon });

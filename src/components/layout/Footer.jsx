@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
-import { Icon } from '@/components/Icon';
+import { Icon } from '@/components/ui/Icon';
 import { Colors } from '@/constants/theme';
+import { BODY_FONT, CONTAINER, DISPLAY_FONT } from '@/constants/layout';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 import { footerGallery } from '@/data/footerGallery';
-import { sectors, localized } from '@/data/sectors';
+import { sectors } from '@/data/sectors';
+import { localized } from '@/utils/localized';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
@@ -15,9 +17,6 @@ const INSTAGRAM_URL = 'https://www.instagram.com/lasuarindogroup';
 const EMAIL_URL = 'mailto:contact@lasuarindo.co.id';
 const YEAR = new Date().getFullYear();
 
-const CONTAINER = 'mx-auto max-w-[1280px] px-6';
-const DISPLAY_FONT = 'font-[var(--font-display)]';
-const BODY_FONT = 'font-[var(--font-body)]';
 const FOOTER_HEADING = `${DISPLAY_FONT} mb-5 text-[14px] font-bold uppercase tracking-[1px] text-white`;
 const FOOTER_LINK = `${BODY_FONT} text-[14px] text-[#9ca3af] no-underline transition-colors duration-200 hover:text-[var(--color-primary)]`;
 
@@ -187,6 +186,4 @@ export function Footer() {
   );
 }
 
-// Backward compatibility alias
-export const FooterSection = Footer;
 export default Footer;

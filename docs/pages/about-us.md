@@ -1,6 +1,6 @@
 # About Us
 
-Route: `/about-us` — `src/pages/AboutUs.jsx`.
+Route: `/about-us` — `src/pages/AboutUs/AboutUs.jsx`.
 
 Six sections:
 

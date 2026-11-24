@@ -1,17 +1,11 @@
 /**
  * Shared sector catalogue for the Home page ecosystem grid and the Footer.
- * Localized fields use { id, en } objects — pick with `localized()`.
+ * Localized fields use { id, en } objects — pick with `localized()` from
+ * `@/utils/localized`.
  *
  * This is the single source of truth for the seven business sectors, so adding
  * or renaming a sector only touches this file.
  */
-
-export function localized(value, language) {
-  if (value && typeof value === 'object' && !Array.isArray(value)) {
-    return value[language] ?? value.id ?? value.en ?? '';
-  }
-  return value;
-}
 
 export const sectors = [
   {

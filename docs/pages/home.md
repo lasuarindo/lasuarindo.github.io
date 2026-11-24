@@ -1,6 +1,6 @@
 # Home
 
-Route: `/` — `src/pages/Home.jsx`.
+Route: `/` — `src/pages/Home/Home.jsx`.
 
 The page composes three sections:
 

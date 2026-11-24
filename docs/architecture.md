@@ -32,7 +32,7 @@ Legacy Indonesian routes (`/tentang-kami`, `/layanan`, `/kontak`, `/kebijakan-pr
 
 ## Layout
 
-`RootLayout` (in `src/layouts/RootLayout.jsx`) renders:
+`RootLayout` (in `src/components/layout/RootLayout.jsx`) renders:
 
 - `LanguageProvider` around everything
 - `ScrollToTop`, which resets the scroll position on every pathname change

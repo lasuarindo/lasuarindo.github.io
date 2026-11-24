@@ -4,8 +4,8 @@ import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
-import { MobileMenu } from '@/layouts/MobileMenu';
-import { Icon } from '@/components/Icon';
+import { MobileMenu } from '@/components/layout/MobileMenu';
+import { Icon } from '@/components/ui/Icon';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 
 export function Header() {
@@ -153,6 +153,4 @@ export function Header() {
   );
 }
 
-// Backward compatibility alias
-export const HeaderNav = Header;
 export default Header;

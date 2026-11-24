@@ -17,7 +17,8 @@
     { "icon": "apartment", "title": "Manajemen Properti", "desc": "Pengelolaan profesional untuk aset bernilai tinggi." }
   ],
   "recentProject": "Proyek Terkini",
-  "mediaHeading": "MEDIA KREATIF",
+  "mediaHeadingLead": "MEDIA",
+  "mediaHeadingAccent": "KREATIF",
   "mediaSubheading": "DI BALIK LAYAR, CERITA, PENGARUH & MEDIA",
   "mediaDesc": "Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.",
   "mediaCards": [
@@ -107,11 +108,5 @@
       { "icon": "restaurant", "name": "Cuanmie", "desc": "Food & beverage — mie yamin." },
       { "icon": "local_parking", "name": "SAA", "desc": "Pengelolaan parkir & valet." }
     ]
-  },
-  "propertyHeadingOld": "SEKTOR PROPERTI",
-  "propertyDescOld": "Pengembangan kawasan hunian, komersial, dan ruang kerja masa depan yang berkelanjutan dan bernilai investasi tinggi.",
-  "techHeadingOld": "TEKNOLOGI DIGITAL",
-  "techDescOld": "Transformasi digital, pengembangan perangkat lunak, dan infrastruktur komputasi untuk akselerasi pertumbuhan bisnis.",
-  "mediaHeadingOld": "MEDIA & KREATIF",
-  "mediaDescOld": "Produksi konten, media digital terintegrasi, dan strategi komunikasi kreatif untuk membangun citra brand yang berdampak."
+  }
 }
