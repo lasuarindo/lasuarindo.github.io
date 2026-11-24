@@ -51,11 +51,13 @@ lasuarindo.github.io/
 │   │   ├── useStrings.js        # registers a page namespace, returns t
 │   │   └── locales/{id,en}/*.json
 │   ├── pages/                   # one folder per page: Page.jsx + sections/
-│   │   ├── Home/                # Home, AboutUs, Services, Contact,
-│   │   ├── AboutUs/             # PrivacyPolicy, NotFound
+│   │   ├── Home/
+│   │   ├── AboutUs/
 │   │   ├── Services/
 │   │   ├── Contact/
 │   │   ├── PrivacyPolicy/
+│   │   ├── Terms/
+│   │   ├── Faq/
 │   │   └── NotFound/
 │   └── utils/localized.js       # localized({ id, en }, language)
 ├── docs/                        # Rspress sources (flat .md pages + pages/)

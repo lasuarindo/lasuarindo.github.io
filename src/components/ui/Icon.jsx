@@ -159,6 +159,7 @@ const LUCIDE_MAP = {
   eco: Leaf,
   check_circle: CheckCircle2,
   info: Info,
+  help: CircleHelp,
   visibility: Eye,
   insights: LineChart,
   gavel: Gavel,

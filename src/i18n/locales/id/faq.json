@@ -1,0 +1,29 @@
+{
+  "badge": "Bantuan",
+  "heroTitle1": "PUSAT",
+  "heroTitle2": "FAQ",
+  "heroSubtitle": "Jawaban singkat atas pertanyaan yang sering diajukan tentang Lasuarindo Group.",
+  "items": [
+    {
+      "question": "Apa itu Lasuarindo Group?",
+      "answer": "Lasuarindo Group adalah perusahaan bisnis dan investasi terpadu yang bergerak di sektor properti, investasi, teknologi, perdagangan, kreatif & media, serta pariwisata."
+    },
+    {
+      "question": "Di mana lokasi kantor Lasuarindo Group?",
+      "answer": "Kantor kami berlokasi di Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112, Indonesia."
+    },
+    {
+      "question": "Bagaimana cara menghubungi Lasuarindo Group?",
+      "answer": "Anda dapat mengirim email ke contact@lasuarindo.co.id atau menggunakan formulir pada halaman Kontak."
+    },
+    {
+      "question": "Apakah Lasuarindo Group membuka peluang kemitraan?",
+      "answer": "Ya. Kami terbuka terhadap kolaborasi strategis dengan investor, wirausahawan, dan institusi. Silakan sampaikan proposal Anda melalui halaman Kontak."
+    },
+    {
+      "question": "Apakah formulir kontak dapat digunakan untuk pertanyaan umum?",
+      "answer": "Ya. Formulir kontak dapat digunakan untuk pertanyaan umum, permintaan informasi, maupun usulan kerja sama."
+    }
+  ],
+  "contactCta": "Hubungi Kami"
+}

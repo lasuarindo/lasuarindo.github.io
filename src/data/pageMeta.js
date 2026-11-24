@@ -64,6 +64,27 @@ export const pageMeta = {
         'Our commitment to protecting and respecting your privacy as part of our business integrity.',
     },
   },
+  terms: {
+    id: {
+      title: 'Syarat & Ketentuan — Lasuarindo Group',
+      description: 'Ketentuan penggunaan situs web Lasuarindo Group.',
+    },
+    en: {
+      title: 'Terms & Conditions — Lasuarindo Group',
+      description: 'Terms and conditions for using the Lasuarindo Group website.',
+    },
+  },
+  faq: {
+    id: {
+      title: 'Pusat FAQ — Lasuarindo Group',
+      description:
+        'Jawaban singkat atas pertanyaan yang sering diajukan tentang Lasuarindo Group.',
+    },
+    en: {
+      title: 'FAQ Center — Lasuarindo Group',
+      description: 'Quick answers to frequently asked questions about Lasuarindo Group.',
+    },
+  },
   notFound: {
     id: {
       title: 'Halaman Tidak Ditemukan — Lasuarindo Group',
@@ -85,6 +106,8 @@ export function resolvePageMetaKey(pathname) {
   if (pathname.startsWith('/privacy-policy') || pathname.startsWith('/kebijakan-privasi')) {
     return 'privacy';
   }
+  if (pathname.startsWith('/terms') || pathname.startsWith('/syarat-ketentuan')) return 'terms';
+  if (pathname.startsWith('/faq')) return 'faq';
   return 'notFound';
 }
 

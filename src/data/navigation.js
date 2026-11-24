@@ -13,11 +13,17 @@ export const mainNav = [
 
 export const ctaLink = { labelKey: 'nav.cta', href: '/contact' };
 
-export const footerLegal = [
+export const footerNav = [
+  { labelKey: 'nav.home', href: '/' },
+  { labelKey: 'nav.about', href: '/about-us' },
+  { labelKey: 'nav.services', href: '/services' },
+];
+
+export const footerHelp = [
+  { labelKey: 'footer.contactUs', href: '/contact' },
   { labelKey: 'footer.privacyPolicy', href: '/privacy-policy' },
-  { labelKey: 'footer.terms', href: null },
-  { labelKey: 'footer.investorRelations', href: '/contact' },
-  { labelKey: 'footer.globalOffice', href: '/contact' },
+  { labelKey: 'footer.terms', href: '/terms' },
+  { labelKey: 'footer.faq', href: '/faq' },
 ];
 
 export function isNavActive(pathname, href) {

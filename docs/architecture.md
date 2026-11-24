@@ -26,9 +26,11 @@ flowchart TD
 | `/services` | Services |
 | `/contact` | Contact |
 | `/privacy-policy` | Privacy Policy |
+| `/terms` | Terms & Conditions |
+| `/faq` | FAQ Center |
 | `*` | NotFound |
 
-Legacy Indonesian routes (`/tentang-kami`, `/layanan`, `/kontak`, `/kebijakan-privasi`) render `<Navigate replace />` to their English equivalents.
+Legacy Indonesian routes (`/tentang-kami`, `/layanan`, `/kontak`, `/kebijakan-privasi`, `/syarat-ketentuan`) render `<Navigate replace />` to their English equivalents.
 
 ## Layout
 

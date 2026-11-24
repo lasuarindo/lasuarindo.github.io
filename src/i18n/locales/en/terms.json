@@ -1,0 +1,39 @@
+{
+  "badge": "Legal",
+  "heroTitle1": "TERMS &",
+  "heroTitle2": "CONDITIONS",
+  "heroSubtitle": "Terms and conditions for using the Lasuarindo Group website.",
+  "lastUpdated": "Last updated:",
+  "lastUpdatedDate": "November 24, 2026",
+  "sections": [
+    {
+      "title": "Use of the Site",
+      "body": "This website is provided to share information about Lasuarindo Group, its business units, and services. By accessing this site, you are deemed to have read and accepted the applicable terms and conditions."
+    },
+    {
+      "title": "Intellectual Property",
+      "body": "All content, logos, brands, and materials displayed on this site are owned by Lasuarindo Group or the authorized parties and are protected by intellectual property law. Copying, modifying, or reusing them without written permission is prohibited."
+    },
+    {
+      "title": "Limitation of Liability",
+      "body": "The information on this site is provided as is. We do not guarantee that all information is always current, complete, or free from errors."
+    },
+    {
+      "title": "Third-Party Links",
+      "body": "This site may contain links to third-party websites. Those links are provided for your convenience, and we are not responsible for their content or privacy policies."
+    },
+    {
+      "title": "Governing Law",
+      "body": "These terms and conditions are governed by and construed in accordance with the laws of the Republic of Indonesia."
+    },
+    {
+      "title": "Changes to These Terms",
+      "body": "We may update these terms and conditions from time to time. Changes will be published on this page."
+    },
+    {
+      "title": "Contact",
+      "body": "If you have any questions about these terms and conditions, please contact us through the Contact page."
+    }
+  ],
+  "contactCta": "Contact Us"
+}

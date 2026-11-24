@@ -42,6 +42,8 @@ export default defineConfig({
             { text: 'Services', link: '/pages/services' },
             { text: 'Contact', link: '/pages/contact' },
             { text: 'Privacy Policy', link: '/pages/privacy-policy' },
+            { text: 'Terms & Conditions', link: '/pages/terms' },
+            { text: 'FAQ Center', link: '/pages/faq' },
           ],
         },
       ],

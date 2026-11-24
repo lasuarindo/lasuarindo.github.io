@@ -1,18 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router';
-import { useLanguage } from '@/i18n/language.js';
 import { Icon } from '@/components/ui/Icon';
 import { Colors } from '@/constants/theme';
 import { BODY_FONT, CONTAINER, DISPLAY_FONT } from '@/constants/layout';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 import { footerGallery } from '@/data/footerGallery';
-import { sectors } from '@/data/sectors';
-import { localized } from '@/utils/localized';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { company, formatAddress } from '@/data/company';
-import { footerLegal } from '@/data/navigation';
+import { footerHelp, footerNav } from '@/data/navigation';
 
 const YEAR = new Date().getFullYear();
 
@@ -34,28 +31,11 @@ function SocialButton({ label, url, icon }) {
 }
 
 export function Footer() {
-  const { language } = useLanguage();
   const t = useStrings({ id: idCommon, en: enCommon });
   const { pathname } = useLocation();
   // Route-aware: the creative-ecosystem gallery only appears on the Services page.
   const isServices = pathname === '/services' || pathname.startsWith('/services/');
   const gallery = isServices ? footerGallery : [];
-
-  const sectorList = [
-    localized(sectors.find((s) => s.key === 'property').title, language),
-    localized(sectors.find((s) => s.key === 'investment').title, language),
-    localized(sectors.find((s) => s.key === 'technology').title, language),
-    localized(sectors.find((s) => s.key === 'commerce').title, language),
-    `${localized(sectors.find((s) => s.key === 'creative').title, language)} & ${localized(
-      sectors.find((s) => s.key === 'media').title,
-      language,
-    )}`,
-  ];
-
-  const legalList = footerLegal.map((item) => ({
-    label: t(item.labelKey),
-    path: item.href,
-  }));
 
   return (
     <footer
@@ -88,11 +68,11 @@ export function Footer() {
         </div>
       )}
 
-      {/* Main 4-Column Footer */}
+      {/* Brand info + link columns */}
       <div className={CONTAINER}>
-        <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-10">
-          {/* Col 1: Brand Info */}
-          <div>
+        <div className="mb-12 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-24">
+          {/* Brand info */}
+          <div className="lg:max-w-[420px]">
             <div className="mb-3 flex items-center gap-3">
               <img src={logoImg} alt="Lasuarindo" className="h-[36px] w-auto" />
               <span className={`${DISPLAY_FONT} text-[18px] font-extrabold tracking-[0.5px] text-white`}>
@@ -114,57 +94,58 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Sektor Bisnis */}
-          <div>
-            <h4 className={FOOTER_HEADING}>
-              {t.footer.sectors}
-            </h4>
-            <div className="flex flex-col gap-3">
-              {sectorList.map((item) => (
-                <Link key={item} to="/services" className={FOOTER_LINK}>
-                  {item}
-                </Link>
-              ))}
+          {/* Link columns */}
+          <div className="grid grid-cols-2 gap-10">
+            {/* Navigation */}
+            <div>
+              <h4 className={FOOTER_HEADING}>
+                {t.footer.navigation}
+              </h4>
+              <div className="flex flex-col gap-3">
+                {footerNav.map((item) => (
+                  <Link key={item.href} to={item.href} className={FOOTER_LINK}>
+                    {t(item.labelKey)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Help */}
+            <div>
+              <h4 className={FOOTER_HEADING}>
+                {t.footer.help}
+              </h4>
+              <div className="flex flex-col gap-3">
+                {footerHelp.map((item) => (
+                  <Link key={item.href} to={item.href} className={FOOTER_LINK}>
+                    {t(item.labelKey)}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Col 3: Hubungi Kami */}
-          <div>
-            <h4 className={FOOTER_HEADING}>
+        {/* Contact section: address and email on their own row */}
+        <div className="mb-12 border-t border-t-[rgba(255,255,255,0.1)] pt-8">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-[240px_1fr] md:gap-10">
+            <h4 className={`${FOOTER_HEADING} md:mb-0`}>
               {t.footer.contactUs}
             </h4>
-            <div className="flex flex-col gap-[14px]">
-              <div className="flex items-start gap-[10px]">
+            <ul className="flex flex-col gap-[14px]">
+              <li className="flex items-start gap-[10px]">
                 <Icon name="location_on" size={18} color={Colors.primary} className="mt-[2px]" />
                 <span className={`${BODY_FONT} text-[14px] leading-5 text-[#9ca3af]`}>
                   {formatAddress()}
                 </span>
-              </div>
-              <a href={`mailto:${company.email}`} className={`${FOOTER_LINK} flex items-center gap-[10px]`}>
-                <Icon name="mail" size={18} color={Colors.primary} />
-                <span>{company.email}</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Col 4: Legalitas */}
-          <div>
-            <h4 className={FOOTER_HEADING}>
-              {t.footer.legal}
-            </h4>
-            <div className="flex flex-col gap-3">
-              {legalList.map((item) =>
-                item.path ? (
-                  <Link key={item.label} to={item.path} className={FOOTER_LINK}>
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span key={item.label} className={`${BODY_FONT} text-[14px] text-[#6b7280]`}>
-                    {item.label}
-                  </span>
-                )
-              )}
-            </div>
+              </li>
+              <li className="flex items-start gap-[10px]">
+                <Icon name="mail" size={18} color={Colors.primary} className="mt-[2px]" />
+                <a href={`mailto:${company.email}`} className={FOOTER_LINK}>
+                  {company.email}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

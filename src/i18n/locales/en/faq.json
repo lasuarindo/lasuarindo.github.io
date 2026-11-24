@@ -1,0 +1,29 @@
+{
+  "badge": "Help",
+  "heroTitle1": "FAQ",
+  "heroTitle2": "CENTER",
+  "heroSubtitle": "Quick answers to frequently asked questions about Lasuarindo Group.",
+  "items": [
+    {
+      "question": "What is Lasuarindo Group?",
+      "answer": "Lasuarindo Group is an integrated business and investment company operating in property, investment, technology, commerce, creative & media, and tourism."
+    },
+    {
+      "question": "Where is the Lasuarindo Group office?",
+      "answer": "Our office is located at Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112, Indonesia."
+    },
+    {
+      "question": "How do I contact Lasuarindo Group?",
+      "answer": "You can email contact@lasuarindo.co.id or use the form on the Contact page."
+    },
+    {
+      "question": "Does Lasuarindo Group welcome partnerships?",
+      "answer": "Yes. We are open to strategic collaborations with investors, entrepreneurs, and institutions. Please share your proposal through the Contact page."
+    },
+    {
+      "question": "Can the contact form be used for general inquiries?",
+      "answer": "Yes. The contact form can be used for general questions, information requests, and collaboration proposals."
+    }
+  ],
+  "contactCta": "Contact Us"
+}
