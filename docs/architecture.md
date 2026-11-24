@@ -30,8 +30,6 @@ flowchart TD
 | `/legal/term-condition` | Terms & Conditions |
 | `*` | NotFound |
 
-Legacy paths (`/privacy-policy`, `/terms`, `/kebijakan-privasi`, `/syarat-ketentuan`) and the Indonesian page aliases (`/tentang-kami`, `/layanan`, `/kontak`) render `<Navigate replace />` to their current equivalents.
-
 ## Layout
 
 `RootLayout` (in `src/components/layout/RootLayout.jsx`) renders:

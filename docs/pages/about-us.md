@@ -15,4 +15,3 @@ Six sections:
 
 - All copy comes from `about.json` (`{ about: ... }` bundle, id + en) via `useStrings`.
 - Headline pairs are split into keys (`heroTitle1`/`heroTitle2`, `valuesHeading1`/`valuesHeading2`) so the second half can be highlighted.
-- Legacy redirect: `/tentang-kami` → `/about-us`.

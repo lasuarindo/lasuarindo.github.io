@@ -53,8 +53,6 @@ Each page is a lazy route, so it ships as its own chunk and is fetched only when
 | `/legal/term-condition` | Terms & Conditions |
 | `*` | Redirects to `/` |
 
-Legacy paths redirect to their current equivalents: `/privacy-policy` and `/kebijakan-privasi` → `/legal/privacy-policy`; `/terms` and `/syarat-ketentuan` → `/legal/term-condition`; `/tentang-kami` → `/about-us`, `/layanan` → `/services`, `/kontak` → `/contact`.
-
 ## Internationalisation
 
 Two locales live in `src/i18n/locales/`: `id` and `en`. The active language is managed by `LanguageProvider` and stored in `localStorage`; Indonesian is the default and fallback.

@@ -100,23 +100,11 @@ export const pageMeta = {
 /** Map a pathname to a `pageMeta` key. Legacy routes resolve to their target. */
 export function resolvePageMetaKey(pathname) {
   if (pathname === '/') return 'home';
-  if (pathname.startsWith('/about-us') || pathname.startsWith('/tentang-kami')) return 'about';
-  if (pathname.startsWith('/services') || pathname.startsWith('/layanan')) return 'services';
-  if (pathname.startsWith('/contact') || pathname.startsWith('/kontak')) return 'contact';
-  if (
-    pathname.startsWith('/legal/privacy-policy') ||
-    pathname.startsWith('/privacy-policy') ||
-    pathname.startsWith('/kebijakan-privasi')
-  ) {
-    return 'privacy';
-  }
-  if (
-    pathname.startsWith('/legal/term-condition') ||
-    pathname.startsWith('/terms') ||
-    pathname.startsWith('/syarat-ketentuan')
-  ) {
-    return 'terms';
-  }
+  if (pathname.startsWith('/about-us')) return 'about';
+  if (pathname.startsWith('/services')) return 'services';
+  if (pathname.startsWith('/contact')) return 'contact';
+  if (pathname.startsWith('/legal/privacy-policy')) return 'privacy';
+  if (pathname.startsWith('/legal/term-condition')) return 'terms';
   if (pathname.startsWith('/faq')) return 'faq';
   return 'notFound';
 }

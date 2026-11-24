@@ -22,4 +22,3 @@ There is no network request and no backend endpoint.
 ## Notes
 
 - Copy comes from `contact.json` (`{ contact: ... }` bundle, id + en) via `useStrings`, including `subjects` and the three `partnerCardsDesc` entries.
-- Legacy redirect: `/kontak` → `/contact`.

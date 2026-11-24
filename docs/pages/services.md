@@ -15,4 +15,3 @@ Six sections:
 
 - The footer shows the "creative ecosystem" gallery only on this route (route-aware, catalogue in `src/data/footerGallery.js`).
 - All section copy comes from `services.json` (`{ services: ... }` bundle, id + en) via `useStrings`; the feature and card arrays (`propertyFeatures`, `mediaCards`, `techCards`, `vamosTags`, `projects`) are locale-driven too.
-- Legacy redirect: `/layanan` → `/services`.
