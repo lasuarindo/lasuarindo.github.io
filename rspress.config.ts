@@ -1,15 +1,18 @@
 import { defineConfig } from '@rspress/core'
+import rspressPluginMermaid from 'rspress-plugin-mermaid'
 
 export default defineConfig({
   root: 'docs',
   title: 'Lasuarindo Docs',
   lang: 'en',
+  plugins: [rspressPluginMermaid()],
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Introduction', link: '/introduction' },
       { text: 'Getting Started', link: '/getting-started' },
       { text: 'Structure', link: '/project-structure' },
+      { text: 'Brand', link: '/brand' },
     ],
     sidebar: {
       '/': [
@@ -27,6 +30,7 @@ export default defineConfig({
             { text: 'Architecture', link: '/architecture' },
             { text: 'Configuration', link: '/configuration' },
             { text: 'Styling', link: '/styling' },
+            { text: 'Brand', link: '/brand' },
             { text: 'Deployment', link: '/deployment' },
           ],
         },

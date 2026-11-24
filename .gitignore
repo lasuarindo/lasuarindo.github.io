@@ -24,7 +24,5 @@ dist-ssr
 *.sw?
 
 # Rspress generated output
-
-# Rspress generated output
 doc_build
 node_modules/.rspress

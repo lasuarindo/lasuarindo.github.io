@@ -1,9 +1,10 @@
 # Lasuarindo Docs
 
-Documentation for the PT Lasuarindo Group website project.
+Documentation for the PT Lasuarindo Group website.
 
-- **Stack:** React 19 + Vite 8 + Tailwind CSS 4 + React Router 7
-- **Languages:** Indonesian (default) and English
+- **App:** React 19 + Vite 8 + Tailwind CSS 4 + React Router 7
+- **i18n:** i18next + react-i18next, one locale bundle per page
+- **Docs:** Rspress v2 (`rspress.config.ts` at the repo root)
 - **Deploy:** GitHub Pages via GitHub Actions
 
-Use the sidebar to navigate.
+Start with [Introduction](/introduction), then [Getting Started](/getting-started).

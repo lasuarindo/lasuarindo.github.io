@@ -7,7 +7,7 @@ Documentation workflow for `docs/`. Load for any docs work. Replaces the old "Do
 - Current: **Rspress v2** (`@rspress/core`), config `rspress.config.ts` at repo root.
 - Scripts: `docs:dev`, `docs:build`, `docs:preview` → `rspress dev|build|preview docs`.
 - Build check: `npm run docs:build` (must exit 0, no broken links, no dead pages).
-- Import `defineConfig` from `@rspress/core` (v2); do not use `rspress/config` (v1) or VitePress config.
+- Import `defineConfig` from `@rspress/core` (v2). The v1 `rspress/config` entry point and legacy static-site docs configs do not apply.
 
 ## Scope
 
@@ -25,6 +25,7 @@ docs/project-structure.md
 docs/architecture.md
 docs/configuration.md
 docs/styling.md
+docs/brand.md
 docs/deployment.md
 docs/pages/{home,about-us,services,contact,privacy-policy}.md
 ```
