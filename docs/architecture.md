@@ -17,7 +17,7 @@ flowchart TD
 
 ## Routing
 
-`src/app/router.jsx` uses `createBrowserRouter` with a `basename` derived from `import.meta.env.BASE_URL` (trailing slashes stripped). Every page is lazy-loaded, so the initial bundle only ships the shell.
+`src/app/router.jsx` uses `createBrowserRouter` with a `basename` derived from `import.meta.env.BASE_URL` (trailing slashes stripped). The route table lives in `src/app/routes.jsx` and the lazy page imports in `src/app/pages.jsx`, so every code-split entry is visible in one place and the initial bundle only ships the shell.
 
 | Path | Page |
 |---|---|
@@ -41,6 +41,8 @@ Legacy Indonesian routes (`/tentang-kami`, `/layanan`, `/kontak`, `/kebijakan-pr
 - `<main id="main" class="page">` keyed by pathname, with `Suspense` + `RouteFallback`
 - `Footer` (route-aware: the creative-ecosystem gallery only shows on `/services`)
 - `BackToTop`
+
+`usePageMeta` (in `src/hooks/usePageMeta.js`) updates `document.title` plus the description and Open Graph tags from `src/data/pageMeta.js` whenever the route or language changes.
 
 Pages do not import chrome themselves.
 

@@ -85,28 +85,5 @@
   "futureProjectsDesc": "Sustainable initiatives and forward-looking ventures actively being pioneered within the Lasuarindo ecosystem.",
   "ecosystemBadge": "T46 Ecosystem",
   "ecosystemHeading": "T46 Business Ecosystem",
-  "ecosystemDesc": "Lasuarindo Group manages the T46 district as a connected business ecosystem — spanning investment, technology, culinary, and lifestyle — with consistent service standards across every unit.",
-  "ecosystemGroups": {
-    "managedLabel": "Directly Managed",
-    "managed": [
-      { "icon": "trending_up", "name": "PRO", "desc": "Investment & business ownership." },
-      { "icon": "domain", "name": "WIN", "desc": "T46 area & facility management." },
-      { "icon": "shield", "name": "AGT", "desc": "Technology & anti-counterfeiting solutions." },
-      { "icon": "storefront", "name": "IDR", "desc": "Food court & culinary tenant management." },
-      { "icon": "coffee", "name": "Lazura Koffie", "desc": "Coffee & F&B operations." },
-      { "icon": "spray_can", "name": "Asyihan", "desc": "Perfume & fragrance brand." }
-    ],
-    "partnershipLabel": "Partnerships",
-    "partnership": [
-      { "icon": "sports_tennis", "name": "VPS — Vamos Padelon", "desc": "Padel sports & lifestyle." },
-      { "icon": "gamepad_2", "name": "BMG — Royal HD Mahjong", "desc": "Entertainment & premium gaming." }
-    ],
-    "spacesLabel": "District Ecosystem",
-    "spaces": [
-      { "icon": "work", "name": "Bizencio Business Hub", "desc": "Business hub & creative space." },
-      { "icon": "sparkles", "name": "SARE", "desc": "Beauty & personal care." },
-      { "icon": "restaurant", "name": "Cuanmie", "desc": "Food & beverage — mie yamin." },
-      { "icon": "local_parking", "name": "SAA", "desc": "Parking & valet management." }
-    ]
-  }
+  "ecosystemDesc": "Lasuarindo Group manages the T46 district as a connected business ecosystem — spanning investment, technology, culinary, and lifestyle — with consistent service standards across every unit."
 }

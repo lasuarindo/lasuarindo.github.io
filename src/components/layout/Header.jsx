@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
-import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { MobileMenu } from '@/components/layout/MobileMenu';
 import { Icon } from '@/components/ui/Icon';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { ctaLink, isNavActive, mainNav } from '@/data/navigation';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 
 export function Header() {
   const location = useLocation();
   const pathname = location.pathname;
-  const { language, setLanguage } = useLanguage();
   const t = useStrings({ id: idCommon, en: enCommon });
 
   const [scrolled, setScrolled] = useState(false);
@@ -24,15 +24,6 @@ export function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
-
-  const MENU = [
-    { label: t.nav.home, href: '/' },
-    { label: t.nav.about, href: '/about-us' },
-    { label: t.nav.services, href: '/services' },
-    { label: t.nav.contact, href: '/contact' },
-  ];
 
   return (
     <>
@@ -50,8 +41,8 @@ export function Header() {
 
           {/* Desktop Nav (flex: 2, centered matching react_native) */}
           <nav className="desktop-only flex flex-[2] items-center justify-center gap-10">
-            {MENU.map((item) => {
-              const active = isActive(item.href);
+            {mainNav.map((item) => {
+              const active = isNavActive(pathname, item.href);
               return (
                 <Link
                   key={item.href}
@@ -62,7 +53,7 @@ export function Header() {
                       : 'border-transparent text-[var(--color-secondary)] hover:text-[var(--color-primary)]'
                   }`}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
               );
             })}
@@ -70,69 +61,20 @@ export function Header() {
 
           {/* Desktop Right: Lang Switcher & CTA */}
           <div className="desktop-only flex flex-1 items-center justify-end gap-4">
-            {/* Language Switcher */}
-            <div className="flex items-center rounded-full border border-[rgba(228,190,181,0.45)] bg-[rgba(255,255,255,0.85)] p-[3px]">
-              <button
-                type="button"
-                onClick={() => setLanguage('id')}
-                className={`cursor-pointer rounded-full border-none px-[10px] py-1 font-[var(--font-display)] text-[11px] font-bold transition-colors duration-200 ${
-                  language === 'id'
-                    ? 'bg-[var(--color-primary)] text-white'
-                    : 'bg-transparent text-[var(--color-secondary)]'
-                }`}
-              >
-                ID
-              </button>
-              <div className="mx-px h-3 w-px bg-[rgba(228,190,181,0.5)]" />
-              <button
-                type="button"
-                onClick={() => setLanguage('en')}
-                className={`cursor-pointer rounded-full border-none px-[10px] py-1 font-[var(--font-display)] text-[11px] font-bold transition-colors duration-200 ${
-                  language === 'en'
-                    ? 'bg-[var(--color-primary)] text-white'
-                    : 'bg-transparent text-[var(--color-secondary)]'
-                }`}
-              >
-                EN
-              </button>
-            </div>
+            <LanguageSwitcher variant="pill" />
 
             {/* CTA Button */}
             <Link
-              to="/contact"
+              to={ctaLink.href}
               className="inline-block cursor-pointer rounded-lg border-none bg-[var(--color-primary)] px-[22px] py-[10px] font-[var(--font-display)] text-[13px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-[var(--color-primary-container)]"
             >
-              {t.nav.cta}
+              {t(ctaLink.labelKey)}
             </Link>
           </div>
 
           {/* Mobile Right: Lang & Hamburger */}
           <div className="mobile-only items-center gap-[10px]">
-            {/* Quick Lang Switch */}
-            <div className="flex items-center rounded-full border border-[rgba(228,190,181,0.45)] bg-[rgba(255,255,255,0.85)] p-0.5">
-              <button
-                type="button"
-                onClick={() => setLanguage('id')}
-                className={`cursor-pointer rounded-full border-none px-2 py-[3px] font-[var(--font-display)] text-[10px] font-bold ${
-                  language === 'id'
-                    ? 'bg-[var(--color-primary)] text-white'
-                    : 'bg-transparent text-[var(--color-secondary)]'
-                }`}
-              >
-                ID
-              </button>
-              <button
-                type="button"
-                onClick={() => setLanguage('en')}
-                className={`cursor-pointer rounded-full border-none px-2 py-[3px] font-[var(--font-display)] text-[10px] font-bold ${
-                  language === 'en'
-                    ? 'bg-[var(--color-primary)] text-white'
-                    : 'bg-transparent text-[var(--color-secondary)]'
-                }`}
-              >
-                EN
-              </button>
-            </div>
+            <LanguageSwitcher variant="compact" />
 
             {/* Menu Hamburger Button */}
             <button

@@ -1,18 +1,25 @@
 import React from 'react';
+import { useLanguage } from '@/i18n/language.js';
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { GradientDivider } from '@/components/ui/GradientDivider';
 import { Icon } from '@/components/ui/Icon';
 import { CONTAINER } from '@/constants/layout';
+import { unitCategories } from '@/data/units';
+import { localized } from '@/utils/localized';
 import { useServicesStrings } from '../useServicesStrings';
 
 export function ServicesEcosystem() {
   const t = useServicesStrings();
+  const { language } = useLanguage();
 
-  const groups = [
-    { label: t.services.ecosystemGroups.managedLabel, items: t.services.ecosystemGroups.managed },
-    { label: t.services.ecosystemGroups.partnershipLabel, items: t.services.ecosystemGroups.partnership },
-    { label: t.services.ecosystemGroups.spacesLabel, items: t.services.ecosystemGroups.spaces },
-  ];
+  const groups = unitCategories.map((category) => ({
+    label: localized(category.label, language),
+    items: category.units.map((unit) => ({
+      name: unit.name,
+      icon: unit.icon,
+      desc: localized(unit.desc, language),
+    })),
+  }));
 
   return (
     <section className="section section--surface-low">

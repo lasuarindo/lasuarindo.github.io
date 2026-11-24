@@ -11,10 +11,9 @@ import { localized } from '@/utils/localized';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
+import { company, formatAddress } from '@/data/company';
+import { footerLegal } from '@/data/navigation';
 
-const WEBSITE_URL = 'https://www.lasuarindo.co.id';
-const INSTAGRAM_URL = 'https://www.instagram.com/lasuarindogroup';
-const EMAIL_URL = 'mailto:contact@lasuarindo.co.id';
 const YEAR = new Date().getFullYear();
 
 const FOOTER_HEADING = `${DISPLAY_FONT} mb-5 text-[14px] font-bold uppercase tracking-[1px] text-white`;
@@ -53,12 +52,10 @@ export function Footer() {
     )}`,
   ];
 
-  const legalList = [
-    { label: t.footer.privacyPolicy, path: '/privacy-policy' },
-    { label: t.footer.terms, path: null },
-    { label: t.footer.investorRelations, path: '/contact' },
-    { label: t.footer.globalOffice, path: '/contact' },
-  ];
+  const legalList = footerLegal.map((item) => ({
+    label: t(item.labelKey),
+    path: item.href,
+  }));
 
   return (
     <footer
@@ -111,10 +108,9 @@ export function Footer() {
 
             {/* Social Links */}
             <div className="flex gap-3">
-              <SocialButton label="Website" url={WEBSITE_URL} icon="language" />
-              <SocialButton label="Instagram" url={INSTAGRAM_URL} icon="instagram" />
-              <SocialButton label="LinkedIn" url="https://www.linkedin.com" icon="linkedin" />
-              <SocialButton label="Email" url={EMAIL_URL} icon="mail" />
+              {company.social.map((item) => (
+                <SocialButton key={item.label} label={item.label} url={item.url} icon={item.icon} />
+              ))}
             </div>
           </div>
 
@@ -141,12 +137,12 @@ export function Footer() {
               <div className="flex items-start gap-[10px]">
                 <Icon name="location_on" size={18} color={Colors.primary} className="mt-[2px]" />
                 <span className={`${BODY_FONT} text-[14px] leading-5 text-[#9ca3af]`}>
-                  Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112
+                  {formatAddress()}
                 </span>
               </div>
-              <a href="mailto:contact@lasuarindo.co.id" className={`${FOOTER_LINK} flex items-center gap-[10px]`}>
+              <a href={`mailto:${company.email}`} className={`${FOOTER_LINK} flex items-center gap-[10px]`}>
                 <Icon name="mail" size={18} color={Colors.primary} />
-                <span>contact@lasuarindo.co.id</span>
+                <span>{company.email}</span>
               </a>
             </div>
           </div>

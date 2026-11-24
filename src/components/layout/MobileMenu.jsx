@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
-import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { Icon } from '@/components/ui/Icon';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { ctaLink, isNavActive, mainNav } from '@/data/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function MobileMenu({ visible, onClose }) {
   const navigate = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
-  const { language, setLanguage } = useLanguage();
   const t = useStrings({ id: idCommon, en: enCommon });
 
   useEffect(() => {
@@ -29,15 +29,6 @@ export function MobileMenu({ visible, onClose }) {
     onClose();
     navigate(href);
   };
-
-  const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
-
-  const MENU_ITEMS = [
-    { label: t.nav.home, href: '/', icon: 'home' },
-    { label: t.nav.about, href: '/about-us', icon: 'info' },
-    { label: t.nav.services, href: '/services', icon: 'design_services' },
-    { label: t.nav.contact, href: '/contact', icon: 'mail' },
-  ];
 
   return (
     <AnimatePresence>
@@ -78,8 +69,8 @@ export function MobileMenu({ visible, onClose }) {
 
             {/* Navigation Items */}
             <div className="flex-1 overflow-y-auto px-4 py-6">
-              {MENU_ITEMS.map((item) => {
-                const active = isActive(item.href);
+              {mainNav.map((item) => {
+                const active = isNavActive(pathname, item.href);
                 return (
                   <button
                     key={item.href}
@@ -96,7 +87,7 @@ export function MobileMenu({ visible, onClose }) {
                       size={22}
                       color={active ? '#b12600' : '#5f5e5e'}
                     />
-                    <span>{item.label}</span>
+                    <span>{t(item.labelKey)}</span>
                   </button>
                 );
               })}
@@ -108,39 +99,16 @@ export function MobileMenu({ visible, onClose }) {
                 <div className="mb-[10px] font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1px] text-[var(--color-secondary)]">
                   {t.nav.language}
                 </div>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setLanguage('id')}
-                    className={`flex-1 cursor-pointer rounded-lg border px-3 py-2 text-center font-[var(--font-display)] text-[12px] font-semibold transition-all duration-200 ${
-                      language === 'id'
-                        ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white'
-                        : 'border-[rgba(228,190,181,0.4)] bg-[#fafafa] text-[var(--color-on-surface)]'
-                    }`}
-                  >
-                    🇮🇩 Indonesia
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setLanguage('en')}
-                    className={`flex-1 cursor-pointer rounded-lg border px-3 py-2 text-center font-[var(--font-display)] text-[12px] font-semibold transition-all duration-200 ${
-                      language === 'en'
-                        ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white'
-                        : 'border-[rgba(228,190,181,0.4)] bg-[#fafafa] text-[var(--color-on-surface)]'
-                    }`}
-                  >
-                    🇬🇧 English
-                  </button>
-                </div>
+                <LanguageSwitcher variant="drawer" />
               </div>
 
               {/* CTA Button */}
               <button
                 type="button"
-                onClick={() => go('/contact')}
+                onClick={() => go(ctaLink.href)}
                 className="w-full cursor-pointer rounded-lg border-none bg-[var(--color-primary)] px-6 py-3 text-center font-[var(--font-display)] text-[14px] font-bold text-white shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-colors duration-200"
               >
-                {t.nav.cta}
+                {t(ctaLink.labelKey)}
               </button>
             </div>
           </motion.div>

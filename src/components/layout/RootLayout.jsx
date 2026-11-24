@@ -8,6 +8,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BackToTop } from '@/components/ui/BackToTop';
 import { RouteFallback } from '@/components/ui/RouteFallback';
+import { resolvePageMetaKey } from '@/data/pageMeta';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +30,12 @@ function SkipLink() {
   );
 }
 
+function PageMeta() {
+  const { pathname } = useLocation();
+  usePageMeta(resolvePageMetaKey(pathname));
+  return null;
+}
+
 // Single source of chrome: header, main landmark, footer and back-to-top live
 // here so individual pages only render their own content. The footer is
 // route-aware (it shows the services gallery on /services by itself).
@@ -36,6 +44,7 @@ export function RootLayout() {
 
   return (
     <LanguageProvider>
+      <PageMeta />
       <ScrollToTop />
       <SkipLink />
       <Header />

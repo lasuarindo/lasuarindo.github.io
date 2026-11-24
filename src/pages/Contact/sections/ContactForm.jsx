@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
+import { useLanguage } from '@/i18n/language.js';
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { GradientDivider } from '@/components/ui/GradientDivider';
 import { Icon } from '@/components/ui/Icon';
 import { BODY_FONT, CONTAINER, DISPLAY_FONT } from '@/constants/layout';
+import { company, formatAddress } from '@/data/company';
+import { localized } from '@/utils/localized';
 import { useContactStrings } from '../useContactStrings';
-
-const SOCIALS = [
-  { label: 'Website', icon: 'language', url: 'https://www.lasuarindo.co.id' },
-  { label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/lasuarindogroup' },
-  { label: 'LinkedIn', icon: 'linkedin' },
-  { label: 'Email', icon: 'mail', url: 'mailto:contact@lasuarindo.co.id' },
-];
 
 const INPUT_CLASS = 'box-border w-full rounded-lg border border-[var(--color-outline-variant)] bg-[var(--color-surface-container-low)] px-[14px] py-[10px] font-[var(--font-body)] text-[15px] text-[var(--color-on-background)] outline-none focus:border-[var(--color-primary)]';
 const LABEL_CLASS = 'mb-[6px] block font-[var(--font-display)] text-[12px] font-semibold uppercase leading-4 tracking-[0.35px] text-[var(--color-on-background)]';
@@ -20,6 +16,7 @@ const INFO_TEXT = `m-0 ${BODY_FONT} text-[14px] leading-5 text-[var(--color-seco
 
 export function ContactForm() {
   const t = useContactStrings();
+  const { language } = useLanguage();
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
   const [perusahaan, setPerusahaan] = useState('');
@@ -57,7 +54,7 @@ export function ContactForm() {
                   <div className={INFO_ICON_BOX}><Icon name="location_on" size={24} color="#b12600" /></div>
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.addressTitle}</h4>
-                    <p className={INFO_TEXT}>{t.contact.addressDetail}</p>
+                    <p className={INFO_TEXT}>{formatAddress({ includeCountry: true })}</p>
                     <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{t.contact.addressArea}</span>
                   </div>
                 </div>
@@ -65,22 +62,22 @@ export function ContactForm() {
                   <div className={INFO_ICON_BOX}><Icon name="mail" size={24} color="#b12600" /></div>
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.emailTitle}</h4>
-                    <a href="mailto:contact@lasuarindo.co.id" className="font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)] no-underline">contact@lasuarindo.co.id</a>
+                    <a href={`mailto:${company.email}`} className="font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)] no-underline">{company.email}</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-[14px]">
                   <div className={INFO_ICON_BOX}><Icon name="schedule" size={24} color="#b12600" /></div>
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.hoursTitle}</h4>
-                    <p className={INFO_TEXT}>{t.contact.hoursDesc}</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{t.contact.hoursDetail}</span>
+                    <p className={INFO_TEXT}>{localized(company.hours.weekdays, language)}</p>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{localized(company.hours.weekend, language)}</span>
                   </div>
                 </div>
               </div>
               <div className="mt-7 border-t border-[rgba(228,190,181,0.3)] pt-5">
                 <h4 className="mb-3 font-[var(--font-display)] text-[15px] font-bold leading-[22px] text-[var(--color-on-background)]">{t.contact.socialHeading}</h4>
                 <div className="flex gap-3">
-                  {SOCIALS.map((s) => (
+                  {company.social.map((s) => (
                     <a key={s.label} href={s.url || '#'} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                       className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-[rgba(177,38,0,0.1)] text-[var(--color-primary)] no-underline transition-colors duration-200 hover:bg-[rgba(177,38,0,0.2)]">
                       <Icon name={s.icon} size={20} color="#b12600" />
