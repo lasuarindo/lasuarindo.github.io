@@ -5,7 +5,7 @@ Git operations, lock file, and GitHub Pages deploy workflow.
 ## Commits
 
 - Follow focused, one-logical-change commits. Commit messages in English.
-- Do not commit secrets, `.env`, build artifacts (`dist/`, `docs/.vitepress/dist|cache`, `docs/.rspress/`), or internal notes.
+- Do not commit secrets, `.env`, build artifacts (`dist/`, `doc_build/`), or internal notes.
 - Before push: show staged list, review `git diff --cached` for secrets/large files, confirm branch and message.
 
 ## Push / remote

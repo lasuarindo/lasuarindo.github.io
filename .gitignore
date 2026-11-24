@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# VitePress generated output
-docs/.vitepress/cache
-docs/.vitepress/dist
+# Rspress generated output
+
+# Rspress generated output
+doc_build
+node_modules/.rspress

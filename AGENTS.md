@@ -5,7 +5,7 @@
 - Stack: React 19 + Vite 8 + Tailwind CSS 4 + React Router 7 + i18next.
 - Layout: `src/` (app, components, data, hooks, i18n, layouts, pages, assets/css), `public/`, `docs/`, `.github/workflows/deploy.yml`.
 - Commands: `npm run dev`, `build`, `lint`, `preview`, `docs:dev`, `docs:build`, `docs:preview`.
-- Docs: VitePress active; Rspress installed, migration pending (see `.agents/rules/docs.md`).
+- Docs: **Rspress v2** (`@rspress/core`); config `rspress.config.ts` at repo root (see `.agents/rules/docs.md`).
 - Deploy: GitHub Pages via Actions; CI uses Node 22 / npm 10 — regenerate `package-lock.json` with `npx npm@10`.
 
 ## Skills
@@ -22,7 +22,7 @@ Index: `.agents/rules/index.md`. Leaves: `safety.md`, `workflow.md`, `docs.md`, 
 
 ## Restrictions
 
-- Never commit secrets/`.env`, build artifacts (`dist/`, `docs/.vitepress/dist|cache`, `docs/.rspress/`), or internal notes.
+- Never commit secrets/`.env`, build artifacts (`dist/`, `doc_build/`), or internal notes.
 - Do not push without an explicit request. Do not install new skills without approval.
 
 ---
