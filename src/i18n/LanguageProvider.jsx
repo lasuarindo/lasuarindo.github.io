@@ -1,39 +1,9 @@
 import { useEffect, useState } from 'react'
+import i18n, { STORAGE_KEY } from './index.js'
 import { LanguageContext } from './language.js'
 
-const STORAGE_KEY = 'lasuarindo-language'
-const LEGACY_KEYS = ['app_language', 'lasuarindo_lang_pref']
-
-function migrateLanguageKey() {
-  if (typeof window === 'undefined') return
-  try {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      for (const key of LEGACY_KEYS) {
-        const value = localStorage.getItem(key)
-        if (value === 'id' || value === 'en') {
-          localStorage.setItem(STORAGE_KEY, value)
-          break
-        }
-      }
-    }
-    for (const key of LEGACY_KEYS) {
-      localStorage.removeItem(key)
-    }
-  } catch {
-    // Ignore storage errors (private mode, etc.).
-  }
-}
-
-migrateLanguageKey()
-
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved === 'en' || saved === 'id') return saved
-    }
-    return 'id'
-  })
+  const [language, setLanguage] = useState(() => i18n.language.split('-')[0] || 'id')
 
   useEffect(() => {
     document.documentElement.lang = language
@@ -42,6 +12,8 @@ export function LanguageProvider({ children }) {
     } catch {
       // Ignore storage errors.
     }
+    // Keep i18next in sync so useStrings sees the same active language.
+    if (i18n.language !== language) i18n.changeLanguage(language)
   }, [language])
 
   return <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>
