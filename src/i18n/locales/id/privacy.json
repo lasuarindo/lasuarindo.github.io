@@ -1,5 +1,4 @@
 {
-  "badge": "Perlindungan Data",
   "title": "Kebijakan Privasi",
   "heroTitle1": "KEBIJAKAN",
   "heroTitle2": "PRIVASI",
@@ -9,81 +8,210 @@
   "breadcrumbHome": "Beranda",
   "breadcrumbPrivacy": "Kebijakan Privasi",
   "tocTitle": "Daftar Isi",
+  "partsLabel": "Bagian",
+  "ctaText": "Pertanyaan tentang Kebijakan Privasi?",
+  "ctaButton": "Hubungi Kami",
   "toc": [
-    { "id": "pendahuluan", "number": "1", "title": "Pendahuluan" },
-    { "id": "informasi-dikumpulkan", "number": "2", "title": "Informasi yang Dikumpulkan" },
-    { "id": "penggunaan-informasi", "number": "3", "title": "Penggunaan Informasi" },
-    { "id": "perlindungan-data", "number": "4", "title": "Perlindungan Data" },
-    { "id": "berbagi-data", "number": "5", "title": "Berbagi Data dengan Pihak Ketiga" },
-    { "id": "cookies", "number": "6", "title": "Cookie & Teknologi Pelacakan" },
-    { "id": "hak-pengguna", "number": "7", "title": "Hak-Hak Pengguna" },
-    { "id": "perubahan-kebijakan", "number": "8", "title": "Perubahan Kebijakan" }
+    {
+      "id": "introduction",
+      "number": "1",
+      "title": "Pendahuluan"
+    },
+    {
+      "id": "information-collected",
+      "number": "2",
+      "title": "Informasi yang Dikumpulkan"
+    },
+    {
+      "id": "information-usage",
+      "number": "3",
+      "title": "Penggunaan Informasi"
+    },
+    {
+      "id": "data-protection",
+      "number": "4",
+      "title": "Perlindungan Data"
+    },
+    {
+      "id": "data-sharing",
+      "number": "5",
+      "title": "Berbagi Data dengan Pihak Ketiga"
+    },
+    {
+      "id": "cookies",
+      "number": "6",
+      "title": "Cookie & Teknologi Pelacakan"
+    },
+    {
+      "id": "user-rights",
+      "number": "7",
+      "title": "Hak-Hak Pengguna"
+    },
+    {
+      "id": "policy-changes",
+      "number": "8",
+      "title": "Perubahan Kebijakan"
+    }
   ],
   "sections": {
-    "pendahuluan": {
+    "introduction": {
       "title": "Pendahuluan",
       "lead": "Kebijakan Privasi ini menjelaskan bagaimana PT Lasuarindo Group \"Perusahaan\", \"kami\", atau \"kita\" mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat Anda mengunjungi situs web kami di www.lasuarindo.co.id atau berinteraksi dengan layanan kami.",
       "body": "Sebagai perusahaan bisnis & investasi terpadu yang bergerak di sektor Properti, Investasi, Teknologi, Perdagangan, Kreatif & Media, serta Pariwisata, kami memahami pentingnya menjaga kepercayaan Anda. Kebijakan ini berlaku untuk seluruh unit bisnis dan anak perusahaan dalam lingkup Lasuarindo Group."
     },
-    "informasi": {
+    "information": {
       "title": "Informasi yang Kami Kumpulkan",
       "intro": "Kami dapat mengumpulkan dan memproses jenis informasi berikut:",
       "personalTitle": "Data Pribadi",
-      "personalItems": ["Nama lengkap", "Alamat email", "Nomor telepon", "Nama perusahaan / organisasi"],
+      "personalItems": [
+        "Nama lengkap",
+        "Alamat email",
+        "Nomor telepon",
+        "Nama perusahaan / organisasi"
+      ],
       "technicalTitle": "Data Teknis",
-      "technicalItems": ["Alamat IP dan jenis perangkat", "Jenis browser dan versinya", "Halaman yang dikunjungi dan waktu akses", "Data cookie dan identifikasi perangkat"]
+      "technicalItems": [
+        "Alamat IP dan jenis perangkat",
+        "Jenis browser dan versinya",
+        "Halaman yang dikunjungi dan waktu akses",
+        "Data cookie dan identifikasi perangkat"
+      ]
     },
-    "penggunaan": {
+    "usage": {
       "title": "Penggunaan Informasi",
       "intro": "Informasi yang kami kumpulkan digunakan untuk tujuan berikut:",
       "items": [
-        { "icon": "handshake", "title": "Layanan & Komunikasi", "desc": "Memproses pertanyaan, permintaan kemitraan, dan memberikan informasi mengenai layanan kami di seluruh sektor bisnis." },
-        { "icon": "insights", "title": "Peningkatan Layanan", "desc": "Menganalisis penggunaan situs web untuk meningkatkan pengalaman pengguna, konten, dan performa platform kami." },
-        { "icon": "gavel", "title": "Kepatuhan Hukum", "desc": "Memenuhi kewajiban hukum, regulasi, dan standar industri yang berlaku di Indonesia, termasuk UU No. 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP)." },
-        { "icon": "security", "title": "Keamanan", "desc": "Mendeteksi, mencegah, dan menangani aktivitas penipuan, penyalahgunaan, atau potensi ancaman keamanan terhadap layanan kami." }
+        {
+          "icon": "handshake",
+          "title": "Layanan & Komunikasi",
+          "desc": "Memproses pertanyaan, permintaan kemitraan, dan memberikan informasi mengenai layanan kami di seluruh sektor bisnis."
+        },
+        {
+          "icon": "insights",
+          "title": "Peningkatan Layanan",
+          "desc": "Menganalisis penggunaan situs web untuk meningkatkan pengalaman pengguna, konten, dan performa platform kami."
+        },
+        {
+          "icon": "gavel",
+          "title": "Kepatuhan Hukum",
+          "desc": "Memenuhi kewajiban hukum, regulasi, dan standar industri yang berlaku di Indonesia, termasuk UU No. 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP)."
+        },
+        {
+          "icon": "security",
+          "title": "Keamanan",
+          "desc": "Mendeteksi, mencegah, dan menangani aktivitas penipuan, penyalahgunaan, atau potensi ancaman keamanan terhadap layanan kami."
+        }
       ]
     },
-    "perlindungan": {
+    "protection": {
       "title": "Perlindungan Data",
       "intro": "Kami berkomitmen menjaga keamanan data Anda dengan menerapkan langkah-langkah teknis dan organisasi yang sesuai dengan standar industri.",
       "items": [
-        { "icon": "lock", "title": "Enkripsi SSL/TLS", "desc": "Seluruh transmisi data melalui protokol terenkripsi." },
-        { "icon": "admin_panel_settings", "title": "Kontrol Akses", "desc": "Akses data dibatasi hanya untuk personel yang berwenang." },
-        { "icon": "assessment", "title": "Audit Berkala", "desc": "Peninjauan keamanan secara rutin untuk menjaga integritas data." }
+        {
+          "icon": "lock",
+          "title": "Enkripsi SSL/TLS",
+          "desc": "Seluruh transmisi data melalui protokol terenkripsi."
+        },
+        {
+          "icon": "admin_panel_settings",
+          "title": "Kontrol Akses",
+          "desc": "Akses data dibatasi hanya untuk personel yang berwenang."
+        },
+        {
+          "icon": "assessment",
+          "title": "Audit Berkala",
+          "desc": "Peninjauan keamanan secara rutin untuk menjaga integritas data."
+        }
       ]
     },
-    "berbagi": {
+    "sharing": {
       "title": "Berbagi Data dengan Pihak Ketiga",
       "introPrefix": "Kami",
       "introHighlight": "tidak menjual",
       "introSuffix": "data pribadi Anda kepada pihak ketiga. Namun, kami dapat membagikan informasi Anda dalam keadaan terbatas berikut:",
       "items": [
-        { "icon": "apartment", "title": "Afiliasi & Anak Perusahaan", "desc": "Informasi dapat dibagikan kepada entitas dalam lingkup Lasuarindo Group untuk mendukung operasional bisnis terpadu." },
-        { "icon": "engineering", "title": "Penyedia Layanan Terpercaya", "desc": "Mitra layanan yang membantu kami dalam pengelolaan situs web, analitik, dan komunikasi — seluruhnya terikat perjanjian kerahasiaan." },
-        { "icon": "account_balance", "title": "Kewajiban Hukum", "desc": "Kami dapat mengungkapkan data jika diwajibkan oleh hukum, proses hukum, atau permintaan pemerintah yang berwenang." }
+        {
+          "icon": "apartment",
+          "title": "Afiliasi & Anak Perusahaan",
+          "desc": "Informasi dapat dibagikan kepada entitas dalam lingkup Lasuarindo Group untuk mendukung operasional bisnis terpadu."
+        },
+        {
+          "icon": "engineering",
+          "title": "Penyedia Layanan Terpercaya",
+          "desc": "Mitra layanan yang membantu kami dalam pengelolaan situs web, analitik, dan komunikasi — seluruhnya terikat perjanjian kerahasiaan."
+        },
+        {
+          "icon": "account_balance",
+          "title": "Kewajiban Hukum",
+          "desc": "Kami dapat mengungkapkan data jika diwajibkan oleh hukum, proses hukum, atau permintaan pemerintah yang berwenang."
+        }
       ]
     },
     "cookies": {
       "title": "Cookie & Teknologi Pelacakan",
       "intro": "Situs web kami menggunakan cookie dan teknologi pelacakan serupa untuk meningkatkan pengalaman browsing Anda. Berikut jenis cookie yang kami gunakan:",
-      "tableHeaders": ["Jenis Cookie", "Tujuan", "Durasi"],
-      "rows": [
-        { "type": "Cookie Esensial", "purpose": "Diperlukan untuk fungsionalitas dasar situs web", "duration": "Sesi" },
-        { "type": "Cookie Analitik", "purpose": "Membantu kami memahami interaksi pengunjung", "duration": "1 tahun" },
-        { "type": "Cookie Preferensi", "purpose": "Menyimpan pengaturan bahasa dan tampilan", "duration": "6 bulan" }
+      "tableHeaders": [
+        "Jenis Cookie",
+        "Tujuan",
+        "Durasi"
       ],
-      "outro": "Anda dapat mengatur preferensi cookie melalui pengaturan browser Anda. Perlu diketahui bahwa menonaktifkan cookie tertentu dapat memengaruhi fungsionalitas situs web."
+      "rows": [
+        {
+          "type": "Cookie Esensial",
+          "purpose": "Diperlukan untuk fungsionalitas dasar situs web",
+          "duration": "Sesi"
+        },
+        {
+          "type": "Cookie Analitik",
+          "purpose": "Membantu kami memahami interaksi pengunjung",
+          "duration": "1 tahun"
+        },
+        {
+          "type": "Cookie Preferensi",
+          "purpose": "Menyimpan pengaturan bahasa dan tampilan",
+          "duration": "6 bulan"
+        }
+      ],
+      "callout": {
+        "tone": "neutral",
+        "icon": "info",
+        "text": "Anda dapat mengatur preferensi cookie melalui pengaturan browser Anda. Perlu diketahui bahwa menonaktifkan cookie tertentu dapat memengaruhi fungsionalitas situs web."
+      }
     },
-    "hak": {
+    "rights": {
       "title": "Hak-Hak Pengguna",
       "intro": "Sesuai dengan UU No. 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP), Anda memiliki hak-hak berikut atas data pribadi Anda:",
       "items": [
-        { "icon": "visibility", "title": "Hak Akses", "desc": "Meminta salinan data pribadi yang kami simpan." },
-        { "icon": "edit", "title": "Hak Koreksi", "desc": "Meminta perbaikan data yang tidak akurat atau tidak lengkap." },
-        { "icon": "delete", "title": "Hak Penghapusan", "desc": "Meminta penghapusan data dalam kondisi tertentu." },
-        { "icon": "block", "title": "Hak Pembatasan", "desc": "Meminta pembatasan pemrosesan data Anda." },
-        { "icon": "file_download", "title": "Hak Portabilitas", "desc": "Meminta data Anda dalam format yang dapat dibaca mesin." },
-        { "icon": "cancel", "title": "Hak Keberatan", "desc": "Menolak pemrosesan data untuk tujuan tertentu." }
+        {
+          "icon": "visibility",
+          "title": "Hak Akses",
+          "desc": "Meminta salinan data pribadi yang kami simpan."
+        },
+        {
+          "icon": "edit",
+          "title": "Hak Koreksi",
+          "desc": "Meminta perbaikan data yang tidak akurat atau tidak lengkap."
+        },
+        {
+          "icon": "delete",
+          "title": "Hak Penghapusan",
+          "desc": "Meminta penghapusan data dalam kondisi tertentu."
+        },
+        {
+          "icon": "block",
+          "title": "Hak Pembatasan",
+          "desc": "Meminta pembatasan pemrosesan data Anda."
+        },
+        {
+          "icon": "file_download",
+          "title": "Hak Portabilitas",
+          "desc": "Meminta data Anda dalam format yang dapat dibaca mesin."
+        },
+        {
+          "icon": "cancel",
+          "title": "Hak Keberatan",
+          "desc": "Menolak pemrosesan data untuk tujuan tertentu."
+        }
       ],
       "outroPrefix": "Untuk menggunakan hak-hak Anda, silakan hubungi kami melalui",
       "outroLink": "Halaman Kontak",
@@ -91,10 +219,16 @@
       "outroHighlight": "14 hari kerja",
       "outroSuffix2": "."
     },
-    "perubahan": {
+    "changes": {
       "title": "Perubahan Kebijakan",
-      "body1": "Kami berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Perubahan signifikan akan diberitahukan melalui pemberitahuan yang jelas di situs web kami.",
-      "body2": "Kami menyarankan Anda untuk meninjau halaman ini secara berkala agar tetap memahami kebijakan terbaru kami. Penggunaan berkelanjutan atas layanan kami setelah perubahan dipublikasikan merupakan bentuk penerimaan Anda terhadap kebijakan yang diperbarui."
+      "callout": {
+        "tone": "brand",
+        "icon": "update",
+        "paragraphs": [
+          "Kami berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Perubahan signifikan akan diberitahukan melalui pemberitahuan yang jelas di situs web kami.",
+          "Kami menyarankan Anda untuk meninjau halaman ini secara berkala agar tetap memahami kebijakan terbaru kami. Penggunaan berkelanjutan atas layanan kami setelah perubahan dipublikasikan merupakan bentuk penerimaan Anda terhadap kebijakan yang diperbarui."
+        ]
+      }
     }
   },
   "introLead": "PT Lasuarindo Group menghargai dan berkomitmen melindungi privasi serta keamanan data pribadi Anda.",

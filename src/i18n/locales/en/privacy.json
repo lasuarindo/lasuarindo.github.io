@@ -1,5 +1,4 @@
 {
-  "badge": "Data Protection",
   "title": "Privacy Policy",
   "heroTitle1": "PRIVACY",
   "heroTitle2": "POLICY",
@@ -9,81 +8,210 @@
   "breadcrumbHome": "Home",
   "breadcrumbPrivacy": "Privacy Policy",
   "tocTitle": "Table of Contents",
+  "partsLabel": "Sections",
+  "ctaText": "Questions about this Privacy Policy?",
+  "ctaButton": "Contact Us",
   "toc": [
-    { "id": "pendahuluan", "number": "1", "title": "Introduction" },
-    { "id": "informasi-dikumpulkan", "number": "2", "title": "Information Collected" },
-    { "id": "penggunaan-informasi", "number": "3", "title": "Information Usage" },
-    { "id": "perlindungan-data", "number": "4", "title": "Data Protection" },
-    { "id": "berbagi-data", "number": "5", "title": "Sharing Data with Third Parties" },
-    { "id": "cookies", "number": "6", "title": "Cookies & Tracking Technologies" },
-    { "id": "hak-pengguna", "number": "7", "title": "User Rights" },
-    { "id": "perubahan-kebijakan", "number": "8", "title": "Policy Changes" }
+    {
+      "id": "introduction",
+      "number": "1",
+      "title": "Introduction"
+    },
+    {
+      "id": "information-collected",
+      "number": "2",
+      "title": "Information Collected"
+    },
+    {
+      "id": "information-usage",
+      "number": "3",
+      "title": "Information Usage"
+    },
+    {
+      "id": "data-protection",
+      "number": "4",
+      "title": "Data Protection"
+    },
+    {
+      "id": "data-sharing",
+      "number": "5",
+      "title": "Sharing Data with Third Parties"
+    },
+    {
+      "id": "cookies",
+      "number": "6",
+      "title": "Cookies & Tracking Technologies"
+    },
+    {
+      "id": "user-rights",
+      "number": "7",
+      "title": "User Rights"
+    },
+    {
+      "id": "policy-changes",
+      "number": "8",
+      "title": "Policy Changes"
+    }
   ],
   "sections": {
-    "pendahuluan": {
+    "introduction": {
       "title": "Introduction",
       "lead": "This Privacy Policy explains how PT Lasuarindo Group \"Company\", \"we\", or \"us\" collects, uses, stores, and protects your personal information when you visit our website at www.lasuarindo.co.id or interact with our services.",
       "body": "As an integrated business & investment company operating in Property, Investment, Technology, Commerce, Creative & Media, and Tourism sectors, we understand the importance of maintaining your trust. This policy applies to all business units and subsidiaries within Lasuarindo Group."
     },
-    "informasi": {
+    "information": {
       "title": "Information We Collect",
       "intro": "We may collect and process the following types of information:",
       "personalTitle": "Personal Data",
-      "personalItems": ["Full name", "Email address", "Phone number", "Company / organization name"],
+      "personalItems": [
+        "Full name",
+        "Email address",
+        "Phone number",
+        "Company / organization name"
+      ],
       "technicalTitle": "Technical Data",
-      "technicalItems": ["IP address and device type", "Browser type and version", "Pages visited and access time", "Cookie data and device identifiers"]
+      "technicalItems": [
+        "IP address and device type",
+        "Browser type and version",
+        "Pages visited and access time",
+        "Cookie data and device identifiers"
+      ]
     },
-    "penggunaan": {
+    "usage": {
       "title": "Information Usage",
       "intro": "The information we collect is used for the following purposes:",
       "items": [
-        { "icon": "handshake", "title": "Services & Communication", "desc": "Processing inquiries, partnership requests, and providing information about our services across all business sectors." },
-        { "icon": "insights", "title": "Service Improvement", "desc": "Analyzing website usage to improve user experience, content, and platform performance." },
-        { "icon": "gavel", "title": "Legal Compliance", "desc": "Complying with legal obligations, regulations, and industry standards applicable in Indonesia, including Law No. 27 of 2022 on Personal Data Protection (PDP Law)." },
-        { "icon": "security", "title": "Security", "desc": "Detecting, preventing, and addressing fraudulent activity, misuse, or potential security threats to our services." }
+        {
+          "icon": "handshake",
+          "title": "Services & Communication",
+          "desc": "Processing inquiries, partnership requests, and providing information about our services across all business sectors."
+        },
+        {
+          "icon": "insights",
+          "title": "Service Improvement",
+          "desc": "Analyzing website usage to improve user experience, content, and platform performance."
+        },
+        {
+          "icon": "gavel",
+          "title": "Legal Compliance",
+          "desc": "Complying with legal obligations, regulations, and industry standards applicable in Indonesia, including Law No. 27 of 2022 on Personal Data Protection (PDP Law)."
+        },
+        {
+          "icon": "security",
+          "title": "Security",
+          "desc": "Detecting, preventing, and addressing fraudulent activity, misuse, or potential security threats to our services."
+        }
       ]
     },
-    "perlindungan": {
+    "protection": {
       "title": "Data Protection",
       "intro": "We are committed to safeguarding your data security by implementing technical and organizational measures in accordance with industry standards.",
       "items": [
-        { "icon": "lock", "title": "SSL/TLS Encryption", "desc": "All data transmission through encrypted protocols." },
-        { "icon": "admin_panel_settings", "title": "Access Control", "desc": "Data access is restricted to authorized personnel only." },
-        { "icon": "assessment", "title": "Regular Audits", "desc": "Routine security reviews to maintain data integrity." }
+        {
+          "icon": "lock",
+          "title": "SSL/TLS Encryption",
+          "desc": "All data transmission through encrypted protocols."
+        },
+        {
+          "icon": "admin_panel_settings",
+          "title": "Access Control",
+          "desc": "Data access is restricted to authorized personnel only."
+        },
+        {
+          "icon": "assessment",
+          "title": "Regular Audits",
+          "desc": "Routine security reviews to maintain data integrity."
+        }
       ]
     },
-    "berbagi": {
+    "sharing": {
       "title": "Sharing Data with Third Parties",
       "introPrefix": "We",
       "introHighlight": "do not sell",
       "introSuffix": "your personal data to third parties. However, we may share your information under the following limited circumstances:",
       "items": [
-        { "icon": "apartment", "title": "Affiliates & Subsidiaries", "desc": "Information may be shared with entities within Lasuarindo Group to support integrated business operations." },
-        { "icon": "engineering", "title": "Trusted Service Providers", "desc": "Service partners who assist us in website management, analytics, and communication — all bound by confidentiality agreements." },
-        { "icon": "account_balance", "title": "Legal Obligations", "desc": "We may disclose data if required by law, legal process, or authorized government requests." }
+        {
+          "icon": "apartment",
+          "title": "Affiliates & Subsidiaries",
+          "desc": "Information may be shared with entities within Lasuarindo Group to support integrated business operations."
+        },
+        {
+          "icon": "engineering",
+          "title": "Trusted Service Providers",
+          "desc": "Service partners who assist us in website management, analytics, and communication — all bound by confidentiality agreements."
+        },
+        {
+          "icon": "account_balance",
+          "title": "Legal Obligations",
+          "desc": "We may disclose data if required by law, legal process, or authorized government requests."
+        }
       ]
     },
     "cookies": {
       "title": "Cookies & Tracking Technologies",
       "intro": "Our website uses cookies and similar tracking technologies to enhance your browsing experience. Below are the types of cookies we use:",
-      "tableHeaders": ["Cookie Type", "Purpose", "Duration"],
-      "rows": [
-        { "type": "Essential Cookies", "purpose": "Required for basic website functionality", "duration": "Session" },
-        { "type": "Analytics Cookies", "purpose": "Help us understand visitor interactions", "duration": "1 year" },
-        { "type": "Preference Cookies", "purpose": "Store language and display settings", "duration": "6 months" }
+      "tableHeaders": [
+        "Cookie Type",
+        "Purpose",
+        "Duration"
       ],
-      "outro": "You can manage cookie preferences through your browser settings. Please note that disabling certain cookies may affect website functionality."
+      "rows": [
+        {
+          "type": "Essential Cookies",
+          "purpose": "Required for basic website functionality",
+          "duration": "Session"
+        },
+        {
+          "type": "Analytics Cookies",
+          "purpose": "Help us understand visitor interactions",
+          "duration": "1 year"
+        },
+        {
+          "type": "Preference Cookies",
+          "purpose": "Store language and display settings",
+          "duration": "6 months"
+        }
+      ],
+      "callout": {
+        "tone": "neutral",
+        "icon": "info",
+        "text": "You can manage cookie preferences through your browser settings. Please note that disabling certain cookies may affect website functionality."
+      }
     },
-    "hak": {
+    "rights": {
       "title": "User Rights",
       "intro": "In accordance with Law No. 27 of 2022 on Personal Data Protection (PDP Law), you have the following rights over your personal data:",
       "items": [
-        { "icon": "visibility", "title": "Right to Access", "desc": "Request a copy of the personal data we hold." },
-        { "icon": "edit", "title": "Right to Correct", "desc": "Request correction of inaccurate or incomplete data." },
-        { "icon": "delete", "title": "Right to Erasure", "desc": "Request deletion of data under certain conditions." },
-        { "icon": "block", "title": "Right to Restrict", "desc": "Request restriction of your data processing." },
-        { "icon": "file_download", "title": "Right to Portability", "desc": "Request your data in a machine-readable format." },
-        { "icon": "cancel", "title": "Right to Object", "desc": "Object to data processing for certain purposes." }
+        {
+          "icon": "visibility",
+          "title": "Right to Access",
+          "desc": "Request a copy of the personal data we hold."
+        },
+        {
+          "icon": "edit",
+          "title": "Right to Correct",
+          "desc": "Request correction of inaccurate or incomplete data."
+        },
+        {
+          "icon": "delete",
+          "title": "Right to Erasure",
+          "desc": "Request deletion of data under certain conditions."
+        },
+        {
+          "icon": "block",
+          "title": "Right to Restrict",
+          "desc": "Request restriction of your data processing."
+        },
+        {
+          "icon": "file_download",
+          "title": "Right to Portability",
+          "desc": "Request your data in a machine-readable format."
+        },
+        {
+          "icon": "cancel",
+          "title": "Right to Object",
+          "desc": "Object to data processing for certain purposes."
+        }
       ],
       "outroPrefix": "To exercise your rights, please contact us via",
       "outroLink": "Contact Page",
@@ -91,10 +219,16 @@
       "outroHighlight": "14 business days",
       "outroSuffix2": "."
     },
-    "perubahan": {
+    "changes": {
       "title": "Policy Changes",
-      "body1": "We reserve the right to update this Privacy Policy at any time. Significant changes will be communicated through clear notices on our website.",
-      "body2": "We recommend that you review this page periodically to stay informed of our latest policies. Continued use of our services after changes are published constitutes your acceptance of the updated policy."
+      "callout": {
+        "tone": "brand",
+        "icon": "update",
+        "paragraphs": [
+          "We reserve the right to update this Privacy Policy at any time. Significant changes will be communicated through clear notices on our website.",
+          "We recommend that you review this page periodically to stay informed of our latest policies. Continued use of our services after changes are published constitutes your acceptance of the updated policy."
+        ]
+      }
     }
   },
   "introLead": "PT Lasuarindo Group respects and is strictly committed to protecting the privacy and confidentiality of your personal data.",

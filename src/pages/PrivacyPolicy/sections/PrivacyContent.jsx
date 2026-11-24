@@ -1,215 +1,348 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router';
-import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { Icon } from '@/components/ui/Icon';
-import { BODY_FONT, DISPLAY_FONT } from '@/constants/layout';
+import { BODY_FONT, CARD_CLASS, LIST_ITEM_CLASS } from '@/constants/layout';
+import { LegalLayout } from '@/components/legal/LegalLayout';
+import { LegalSection } from '@/components/legal/LegalSection';
+import { LegalCallout } from '@/components/legal/LegalCallout';
+import { LegalCta } from '@/components/legal/LegalCta';
+import { useActiveSection } from '@/hooks/useActiveSection';
 import { usePrivacyStrings } from '../usePrivacyStrings';
+
+const SECTION_ICONS = {
+  introduction: 'description',
+  'information-collected': 'storage',
+  'information-usage': 'settings_suggest',
+  'data-protection': 'shield',
+  'data-sharing': 'share',
+  cookies: 'cookie',
+  'user-rights': 'admin_panel_settings',
+  'policy-changes': 'history',
+};
+
+function InfoPanel({ icon, title, items }) {
+  return (
+    <div className={`${CARD_CLASS} p-6`}>
+      <div className="mb-4 flex items-center gap-2.5">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[rgba(177,38,0,0.08)]">
+          <Icon name={icon} size={17} color="#b12600" aria-hidden="true" />
+        </span>
+        <h3 className="m-0 font-[var(--font-display)] text-[16px] font-semibold leading-[1.3] text-[var(--color-on-background)]">
+          {title}
+        </h3>
+      </div>
+      <ul className="m-0 list-none space-y-2.5 p-0">
+        {items.map((text) => (
+          <li
+            key={text}
+            className="flex items-start gap-2 text-[15px] leading-[1.6] text-[var(--color-secondary)]"
+          >
+            <Icon name="check_circle" size={16} color="#b12600" className="mt-[3px]" aria-hidden="true" />
+            <span>{text}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function PrivacyContent() {
   const t = usePrivacyStrings();
-  const [activeSection, setActiveSection] = useState('pendahuluan');
-
-  const scrollToSection = (id) => {
-    setActiveSection(id);
-    const el = document.getElementById(id);
-    if (el) {
-      const yOffset = -90;
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
-  const sectionStyle = 'mb-12 scroll-mt-[100px]';
-  const dividerStyle = 'mb-12 h-px bg-[rgba(228,190,181,0.3)]';
-  const headingStyle = `m-0 ${DISPLAY_FONT} text-[28px] font-semibold leading-[36px] text-[var(--color-on-background)]`;
-  const bodyStyle = `mb-6 ${BODY_FONT} text-[16px] leading-[26px] text-[var(--color-secondary)]`;
-  const iconBoxStyle = 'flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(177,38,0,0.1)]';
-
   const sections = t.privacy.sections;
-  const tocItems = t.privacy.toc;
+
+  const toc = useMemo(
+    () =>
+      t.privacy.toc.map((item) => ({
+        id: item.id,
+        icon: SECTION_ICONS[item.id] || 'description',
+        title: item.title,
+      })),
+    [t.privacy.toc],
+  );
+  const ids = useMemo(() => toc.map((item) => item.id), [toc]);
+  const [activeId, , lockActive] = useActiveSection(ids);
 
   return (
-    <section className="section section--surface">
-      <div className="flex flex-col items-start gap-12 lg:flex-row mx-auto w-full max-w-[1280px] px-6">
-        {/* Sidebar */}
-        <div className="static mb-12 w-full self-start lg:sticky lg:top-[100px] lg:mb-0 lg:w-[300px]">
-          <div className="rounded-2xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-            <h3 className="mb-4 font-[var(--font-display)] text-[22px] font-semibold text-[var(--color-on-background)]">{t.privacy.tocTitle}</h3>
-            <div className="mb-6 h-1 w-16 rounded-[2px] bg-[linear-gradient(to_right,#b12600,#ffb68b)]" />
-            <div className="flex flex-col gap-1.5">
-              {tocItems.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <button key={item.id} type="button" onClick={() => scrollToSection(item.id)} className={`flex w-full cursor-pointer flex-row items-center gap-3 rounded-lg border-none px-3 py-2.5 text-left ${isActive ? 'bg-[rgba(177,38,0,0.08)]' : 'bg-transparent'}`}>
-                    <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${isActive ? 'bg-[var(--color-primary)]' : 'bg-[rgba(177,38,0,0.1)]'}`}><span className={`${DISPLAY_FONT} text-[12px] font-semibold ${isActive ? 'text-white' : 'text-[var(--color-primary)]'}`}>{item.number}</span></div>
-                    <span className={`flex-1 text-[14px] ${isActive ? `${DISPLAY_FONT} font-semibold text-[var(--color-primary)]` : `${BODY_FONT} font-normal text-[var(--color-secondary)]`}`}>{item.title}</span>
-                  </button>
-                );
-              })}
-            </div>
+    <LegalLayout
+      toc={toc}
+      activeId={activeId}
+      onNavigate={lockActive}
+      tocTitle={t.privacy.tocTitle}
+      partsLabel={t.privacy.partsLabel}
+    >
+      <div>
+        {/* 1. Pendahuluan */}
+        <LegalSection
+          id="introduction"
+          icon="description"
+          title={sections.introduction.title}
+        >
+          <div className="rounded-xl border border-[rgba(177,38,0,0.15)] bg-[rgba(177,38,0,0.04)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[18px] leading-[1.7] text-[var(--color-on-background)]`}>
+              {sections.introduction.lead}
+            </p>
           </div>
-        </div>
+          <p className={`${BODY_FONT} m-0 text-[16px] leading-[1.75] text-[var(--color-secondary)]`}>
+            {sections.introduction.body}
+          </p>
+        </LegalSection>
 
-        {/* Articles */}
-        <div className="w-full flex-1">
-          {/* 1. Pendahuluan */}
-          <div id="pendahuluan" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={0}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="description" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.pendahuluan.title}</h2></div>
-                <div className="mb-6 rounded-lg border-l-4 border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] p-6">
-                  <p className="m-0 font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-secondary)]">{sections.pendahuluan.lead}</p>
+        {/* 2. Informasi yang Kami Kumpulkan */}
+        <LegalSection
+          id="information-collected"
+          icon="storage"
+          title={sections.information.title}
+        >
+          <div className="rounded-xl border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.055)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[17px] leading-[1.7] text-[var(--color-on-background)]`}>
+              {sections.information.intro}
+            </p>
+          </div>
+          <div className="mt-2 grid gap-4 md:grid-cols-2">
+            <InfoPanel
+              icon="person"
+              title={sections.information.personalTitle}
+              items={sections.information.personalItems}
+            />
+            <InfoPanel
+              icon="devices"
+              title={sections.information.technicalTitle}
+              items={sections.information.technicalItems}
+            />
+          </div>
+        </LegalSection>
+
+        {/* 3. Penggunaan Informasi */}
+        <LegalSection
+          id="information-usage"
+          icon="settings_suggest"
+          title={sections.usage.title}
+        >
+          <div className="rounded-xl border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.055)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[17px] leading-[1.7] text-[var(--color-on-background)]`}>
+              {sections.usage.intro}
+            </p>
+          </div>
+          <ul className="mt-2 flex flex-col gap-2">
+            {sections.usage.items.map((item) => (
+              <li key={item.title} className={LIST_ITEM_CLASS}>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[rgba(177,38,0,0.08)]">
+                  <Icon name={item.icon} size={18} color="#b12600" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="m-0 font-[var(--font-display)] text-[15px] font-semibold leading-[1.4] text-[var(--color-on-background)]">
+                    {item.title}
+                  </h3>
+                  <p className={`${BODY_FONT} m-0 mt-1 text-[14px] leading-[1.65] text-[var(--color-secondary)]`}>
+                    {item.desc}
+                  </p>
                 </div>
-                <p className="m-0 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{sections.pendahuluan.body}</p>
-              </div>
-            </AnimatedReveal>
-          </div>
-          <div className={dividerStyle} />
+              </li>
+            ))}
+          </ul>
+        </LegalSection>
 
-          {/* 2. Informasi yang Kami Kumpulkan */}
-          <div id="informasi-dikumpulkan" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="storage" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.informasi.title}</h2></div>
-                <p className={bodyStyle}>{sections.informasi.intro}</p>
-                <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <AnimatedReveal animation="up" delay={150} hover="lift">
-                    <div className="box-border h-full rounded-xl border border-[rgba(228,190,181,0.5)] bg-[var(--color-surface-container-lowest)] p-8">
-                      <div className="mb-4 flex flex-row items-center gap-3"><Icon name="person" size={22} color="#b12600" /><h4 className="m-0 font-[var(--font-display)] text-[18px] font-semibold text-[var(--color-on-background)]">{sections.informasi.personalTitle}</h4></div>
-                      <div className="flex flex-col gap-3">{sections.informasi.personalItems.map((text) => (<div key={text} className="flex flex-row items-center gap-2"><Icon name="check_circle" size={18} color="#b12600" /><span className="font-[var(--font-body)] text-[15px] text-[var(--color-secondary)]">{text}</span></div>))}</div>
-                    </div>
-                  </AnimatedReveal>
-                  <AnimatedReveal animation="up" delay={250} hover="lift">
-                    <div className="box-border h-full rounded-xl border border-[rgba(228,190,181,0.5)] bg-[var(--color-surface-container-lowest)] p-8">
-                      <div className="mb-4 flex flex-row items-center gap-3"><Icon name="devices" size={22} color="#b12600" /><h4 className="m-0 font-[var(--font-display)] text-[18px] font-semibold text-[var(--color-on-background)]">{sections.informasi.technicalTitle}</h4></div>
-                      <div className="flex flex-col gap-3">{sections.informasi.technicalItems.map((text) => (<div key={text} className="flex flex-row items-center gap-2"><Icon name="check_circle" size={18} color="#b12600" /><span className="font-[var(--font-body)] text-[15px] text-[var(--color-secondary)]">{text}</span></div>))}</div>
-                    </div>
-                  </AnimatedReveal>
+        {/* 4. Perlindungan Data */}
+        <LegalSection
+          id="data-protection"
+          icon="shield"
+          title={sections.protection.title}
+        >
+          <div className="rounded-xl border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.055)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[17px] leading-[1.7] text-[var(--color-on-background)]`}>
+              {sections.protection.intro}
+            </p>
+          </div>
+          <div className="mt-2 grid gap-3 md:grid-cols-3">
+            {sections.protection.items.map((card, idx) => (
+              <div key={card.title} className={`${CARD_CLASS} p-5`}>
+                <div className="mb-3 flex items-start justify-between gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(177,38,0,0.08)]">
+                    <Icon name={card.icon} size={20} color="#b12600" aria-hidden="true" />
+                  </span>
+                  <span className="font-[var(--font-display)] text-[11px] font-bold tabular-nums text-[rgba(177,38,0,0.45)]">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
                 </div>
+                <h3 className="m-0 font-[var(--font-display)] text-[15px] font-semibold leading-[1.4] text-[var(--color-on-background)]">
+                  {card.title}
+                </h3>
+                <p className={`${BODY_FONT} m-0 mt-2 text-[14px] leading-[1.6] text-[var(--color-secondary)]`}>
+                  {card.desc}
+                </p>
               </div>
-            </AnimatedReveal>
+            ))}
           </div>
-          <div className={dividerStyle} />
+        </LegalSection>
 
-          {/* 3. Penggunaan Informasi */}
-          <div id="penggunaan-informasi" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="settings_suggest" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.penggunaan.title}</h2></div>
-                <p className={bodyStyle}>{sections.penggunaan.intro}</p>
-                <div className="flex flex-col gap-4">{sections.penggunaan.items.map((item, i) => (
-                  <AnimatedReveal key={item.title} animation="up" delay={100 * (i + 1)}>
-                    <div className="flex flex-row items-start gap-4 rounded-xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-5">
-                      <Icon name={item.icon} size={24} color="#b12600" />
-                      <div className="flex-1"><h4 className="m-0 mb-1 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{item.title}</h4><p className="m-0 font-[var(--font-body)] text-[15px] leading-[23px] text-[var(--color-secondary)]">{item.desc}</p></div>
-                    </div>
-                  </AnimatedReveal>
-                ))}</div>
-              </div>
-            </AnimatedReveal>
+        {/* 5. Berbagi Data */}
+        <LegalSection id="data-sharing" icon="share" title={sections.sharing.title}>
+          <div className="rounded-xl border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.055)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[17px] leading-[1.7] text-[var(--color-secondary)]`}>
+              {sections.sharing.introPrefix}{' '}
+              <strong className="font-bold text-[var(--color-on-background)]">
+                {sections.sharing.introHighlight}
+              </strong>{' '}
+              {sections.sharing.introSuffix}
+            </p>
           </div>
-          <div className={dividerStyle} />
-
-          {/* 4. Perlindungan Data */}
-          <div id="perlindungan-data" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="shield" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.perlindungan.title}</h2></div>
-                <div className="mb-6 rounded-lg border-l-4 border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] p-6">
-                  <p className="m-0 font-[var(--font-body)] text-[18px] leading-[29px] text-[var(--color-secondary)]">{sections.perlindungan.intro}</p>
+          <ul className="mt-2 flex flex-col gap-2">
+            {sections.sharing.items.map((item) => (
+              <li key={item.title} className={LIST_ITEM_CLASS}>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(177,38,0,0.08)]">
+                  <Icon name={item.icon} size={18} color="#b12600" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="m-0 font-[var(--font-display)] text-[15px] font-semibold leading-[1.4] text-[var(--color-on-background)]">
+                    {item.title}
+                  </h3>
+                  <p className={`${BODY_FONT} m-0 mt-1 text-[14px] leading-[1.65] text-[var(--color-secondary)]`}>
+                    {item.desc}
+                  </p>
                 </div>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">{sections.perlindungan.items.map((card, idx) => (
-                  <AnimatedReveal key={card.title} animation="up" delay={100 * (idx + 1)} hover="lift">
-                    <div className="box-border flex h-full flex-col items-center rounded-xl border border-[rgba(228,190,181,0.5)] bg-[var(--color-surface-container-lowest)] p-8 text-center">
-                      <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[rgba(177,38,0,0.1)]"><Icon name={card.icon} size={28} color="#b12600" /></div>
-                      <h4 className="m-0 mb-2 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{card.title}</h4>
-                      <p className="m-0 font-[var(--font-body)] text-[14px] leading-[22px] text-[var(--color-secondary)]">{card.desc}</p>
-                    </div>
-                  </AnimatedReveal>
-                ))}</div>
-              </div>
-            </AnimatedReveal>
-          </div>
-          <div className={dividerStyle} />
+              </li>
+            ))}
+          </ul>
+        </LegalSection>
 
-          {/* 5. Berbagi Data */}
-          <div id="berbagi-data" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="share" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.berbagi.title}</h2></div>
-                <p className={bodyStyle}>{sections.berbagi.introPrefix} <strong className="font-bold text-[var(--color-on-background)]">{sections.berbagi.introHighlight}</strong> {sections.berbagi.introSuffix}</p>
-                <div className="flex flex-col gap-4">{sections.berbagi.items.map((item, i) => (
-                  <AnimatedReveal key={item.title} animation="up" delay={100 * (i + 1)}>
-                    <div className="flex flex-row items-start gap-4 rounded-xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-5">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(177,38,0,0.1)]"><Icon name={item.icon} size={20} color="#b12600" /></div>
-                      <div className="flex-1"><h4 className="m-0 mb-1 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{item.title}</h4><p className="m-0 font-[var(--font-body)] text-[15px] leading-[23px] text-[var(--color-secondary)]">{item.desc}</p></div>
-                    </div>
-                  </AnimatedReveal>
-                ))}</div>
-              </div>
-            </AnimatedReveal>
+        {/* 6. Cookies */}
+        <LegalSection id="cookies" icon="cookie" title={sections.cookies.title}>
+          <div className="rounded-xl border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.055)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[17px] leading-[1.7] text-[var(--color-on-background)]`}>
+              {sections.cookies.intro}
+            </p>
           </div>
-          <div className={dividerStyle} />
-
-          {/* 6. Cookies */}
-          <div id="cookies" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="cookie" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.cookies.title}</h2></div>
-                <p className={bodyStyle}>{sections.cookies.intro}</p>
-                <div className="w-full overflow-hidden rounded-xl border border-[rgba(228,190,181,0.5)]">
-                  <div className="flex flex-row border-b border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-high)] px-6 py-4 font-[var(--font-display)] text-[16px] font-semibold text-[var(--color-on-background)]">{sections.cookies.tableHeaders.map((header, idx) => (
-                    <span key={header} className={idx === 0 ? 'flex-[1.2]' : idx === 1 ? 'flex-[2]' : 'flex-1'}>{header}</span>
-                  ))}</div>
-                  {sections.cookies.rows.map((row, rIdx) => (
-                    <div key={row.type} className={`flex flex-row px-6 py-4 ${BODY_FONT} text-[15px] ${rIdx < sections.cookies.rows.length - 1 ? 'border-b border-[rgba(228,190,181,0.2)]' : 'border-b-0'} ${rIdx % 2 === 1 ? 'bg-[var(--color-surface-container-lowest)]' : 'bg-white'}`}>
-                      <span className="flex-[1.2] font-semibold text-[var(--color-on-background)]">{row.type}</span>
-                      <span className="flex-[2] text-[var(--color-secondary)]">{row.purpose}</span>
-                      <span className="flex-1 text-[var(--color-secondary)]">{row.duration}</span>
-                    </div>
+          <div className="relative mt-2">
+            <div
+              role="region"
+              aria-label={sections.cookies.title}
+              tabIndex={0}
+              className="overflow-x-auto rounded-xl border border-[var(--color-outline-variant)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
+            >
+            <table className="w-full min-w-[560px] border-collapse text-left">
+              <thead className="bg-[var(--color-surface-container-low)]">
+                <tr>
+                  {sections.cookies.tableHeaders.map((header) => (
+                    <th
+                      key={header}
+                      scope="col"
+                      className="px-4 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--color-secondary)]"
+                    >
+                      {header}
+                    </th>
                   ))}
-                </div>
-                <p className="m-0 mt-6 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{sections.cookies.outro}</p>
-              </div>
-            </AnimatedReveal>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[var(--color-outline-variant)] bg-white">
+                {sections.cookies.rows.map((row) => (
+                  <tr
+                    key={row.type}
+                    className="transition-colors duration-150 hover:bg-[var(--color-surface-container-low)]"
+                  >
+                    <th
+                      scope="row"
+                      className="px-4 py-3 text-left text-[14px] font-semibold text-[var(--color-on-background)]"
+                    >
+                      {row.type}
+                    </th>
+                    <td className="px-4 py-3 text-[14px] text-[var(--color-secondary)]">
+                      {row.purpose}
+                    </td>
+                    <td className="px-4 py-3 text-[14px] text-[var(--color-secondary)]">
+                      {row.duration}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            </div>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-r-xl bg-[linear-gradient(to_left,white,rgba(255,255,255,0))] md:hidden"
+            />
           </div>
-          <div className={dividerStyle} />
+          <LegalCallout
+            tone={sections.cookies.callout.tone}
+            icon={sections.cookies.callout.icon}
+          >
+            {sections.cookies.callout.text}
+          </LegalCallout>
+        </LegalSection>
 
-          {/* 7. Hak Pengguna */}
-          <div id="hak-pengguna" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="admin_panel_settings" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.hak.title}</h2></div>
-                <p className={bodyStyle}>{sections.hak.intro}</p>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">{sections.hak.items.map((right, rIdx) => (
-                  <AnimatedReveal key={right.title} animation="up" delay={80 * (rIdx + 1)} hover="lift">
-                    <div className="box-border flex h-full flex-row items-start gap-3 rounded-xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-4">
-                      <Icon name={right.icon} size={22} color="#b12600" />
-                      <div className="flex-1"><h4 className="m-0 mb-1 font-[var(--font-display)] text-[15px] font-semibold text-[var(--color-on-background)]">{right.title}</h4><p className="m-0 font-[var(--font-body)] text-[14px] leading-[20px] text-[var(--color-secondary)]">{right.desc}</p></div>
-                    </div>
-                  </AnimatedReveal>
-                ))}</div>
-                <p className="m-0 mt-6 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{sections.hak.outroPrefix}{' '}<Link to="/contact" className="cursor-pointer font-bold text-[var(--color-primary)] no-underline">{sections.hak.outroLink}</Link>{sections.hak.outroSuffix1}{' '}<strong className="font-bold text-[var(--color-on-background)]">{sections.hak.outroHighlight}</strong>{sections.hak.outroSuffix2}</p>
-              </div>
-            </AnimatedReveal>
+        {/* 7. Hak Pengguna */}
+        <LegalSection
+          id="user-rights"
+          icon="admin_panel_settings"
+          title={sections.rights.title}
+        >
+          <div className="rounded-xl border border-[rgba(177,38,0,0.2)] bg-[rgba(177,38,0,0.055)] p-5">
+            <p className={`${BODY_FONT} m-0 text-[17px] leading-[1.7] text-[var(--color-on-background)]`}>
+              {sections.rights.intro}
+            </p>
           </div>
-          <div className={dividerStyle} />
-
-          {/* 8. Perubahan Kebijakan */}
-          <div id="perubahan-kebijakan" className={sectionStyle}>
-            <AnimatedReveal animation="up" delay={100}>
-              <div>
-                <div className="mb-6 flex flex-row items-center gap-4"><div className={iconBoxStyle}><Icon name="history" size={28} color="#b12600" /></div><h2 className={headingStyle}>{sections.perubahan.title}</h2></div>
-                <div className="mb-6 rounded-lg border-l-4 border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] p-6">
-                  <p className="mb-4 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{sections.perubahan.body1}</p>
-                  <p className="m-0 font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{sections.perubahan.body2}</p>
+          <div className="mt-2 grid gap-3 md:grid-cols-2">
+            {sections.rights.items.map((right) => (
+              <div
+                key={right.title}
+                className={`${CARD_CLASS} flex items-start gap-3 p-4`}
+              >
+                <Icon
+                  name={right.icon}
+                  size={18}
+                  color="#b12600"
+                  className="mt-[2px]"
+                  aria-hidden="true"
+                />
+                <div>
+                  <h3 className="m-0 font-[var(--font-display)] text-[14px] font-semibold leading-[1.4] text-[var(--color-on-background)]">
+                    {right.title}
+                  </h3>
+                  <p className={`${BODY_FONT} m-0 mt-1 text-[13.5px] leading-[1.55] text-[var(--color-secondary)]`}>
+                    {right.desc}
+                  </p>
                 </div>
               </div>
-            </AnimatedReveal>
+            ))}
           </div>
+          <p className={`${BODY_FONT} m-0 text-[15px] leading-[1.7] text-[var(--color-secondary)]`}>
+            {sections.rights.outroPrefix}{' '}
+            <Link
+              to="/contact"
+              className="font-semibold text-[var(--color-primary)] underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
+            >
+              {sections.rights.outroLink}
+            </Link>
+            {sections.rights.outroSuffix1}{' '}
+            <strong className="font-bold text-[var(--color-on-background)]">
+              {sections.rights.outroHighlight}
+            </strong>
+            {sections.rights.outroSuffix2}
+          </p>
+        </LegalSection>
+
+        {/* 8. Perubahan Kebijakan */}
+        <LegalSection
+          id="policy-changes"
+          icon="history"
+          title={sections.changes.title}
+        >
+          <LegalCallout
+            tone={sections.changes.callout.tone}
+            icon={sections.changes.callout.icon}
+          >
+            {sections.changes.callout.paragraphs.map((text, idx) => (
+              <p key={idx} className={`m-0 text-[15px] leading-[1.75] ${idx > 0 ? 'mt-3' : ''}`}>
+                {text}
+              </p>
+            ))}
+          </LegalCallout>
+        </LegalSection>
+
+        <div className="mt-16">
+          <LegalCta text={t.privacy.ctaText} buttonText={t.privacy.ctaButton} />
         </div>
       </div>
-    </section>
+    </LegalLayout>
   );
 }
 

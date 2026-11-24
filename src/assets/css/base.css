@@ -25,3 +25,10 @@ body {
 p, h1, h2, h3, h4, h5, h6, span {
   overflow-wrap: break-word;
 }
+
+/* Respect reduced-motion preferences for anchor navigation (legal TOC). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

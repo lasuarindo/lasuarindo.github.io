@@ -1,38 +1,217 @@
 {
-  "badge": "Legal",
   "heroTitle1": "SYARAT &",
   "heroTitle2": "KETENTUAN",
-  "heroSubtitle": "Ketentuan penggunaan situs web Lasuarindo Group.",
+  "heroSubtitle": "Ketentuan umum yang mengatur penggunaan situs web dan layanan Lasuarindo Group.",
   "lastUpdated": "Terakhir diperbarui:",
   "lastUpdatedDate": "24 November 2026",
+  "tocTitle": "Daftar Isi",
+  "partsLabel": "Bagian",
+  "ctaText": "Punya pertanyaan tentang Syarat & Ketentuan ini?",
   "sections": [
     {
-      "title": "Penggunaan Situs",
-      "body": "Situs web ini disediakan untuk memberikan informasi mengenai Lasuarindo Group, unit bisnis, dan layanan kami. Dengan mengakses situs ini, Anda dianggap telah membaca dan menyetujui syarat dan ketentuan yang berlaku."
+      "id": "acceptance",
+      "title": "Penerimaan Ketentuan",
+      "paragraphs": [
+        "Dengan mengakses, mengunjungi, atau menggunakan Situs, Anda menyatakan telah membaca, memahami, dan menyetujui Syarat & Ketentuan ini serta Kebijakan Privasi kami. Jika Anda tidak menyetujui salah satu bagian, mohon berhenti menggunakan Situs.",
+        "Jika Anda menggunakan Situs atas nama badan usaha atau pihak lain, Anda menyatakan memiliki kewenangan untuk mengikat pihak tersebut pada ketentuan ini.",
+        "Perusahaan dapat memperbarui ketentuan ini sewaktu-waktu. Versi terbaru berlaku sejak dipublikasikan pada halaman ini."
+      ]
     },
     {
-      "title": "Hak Kekayaan Intelektual",
-      "body": "Seluruh konten, logo, merek, dan materi yang ditampilkan di situs ini merupakan milik Lasuarindo Group atau pihak yang berwenang dan dilindungi oleh hukum kekayaan intelektual. Dilarang menyalin, mengubah, atau menggunakan kembali tanpa izin tertulis."
+      "id": "definitions",
+      "title": "Definisi",
+      "paragraphs": [
+        "Dalam ketentuan ini, istilah berikut memiliki arti sebagai berikut:"
+      ],
+      "definitions": [
+        {
+          "term": "Perusahaan",
+          "definition": "PT Lasuarindo Group, termasuk afiliasi, anak perusahaan, pejabat, direksi, karyawan, dan agen yang bertindak atas namanya.",
+          "icon": "business"
+        },
+        {
+          "term": "Situs",
+          "definition": "Situs web https://www.lasuarindo.co.id beserta seluruh halaman, subdomain, dan konten yang dikelola Perusahaan.",
+          "icon": "language"
+        },
+        {
+          "term": "Layanan",
+          "definition": "Seluruh informasi, konten, fitur, dan layanan yang disediakan melalui Situs.",
+          "icon": "design_services"
+        },
+        {
+          "term": "Pengguna",
+          "definition": "Setiap orang atau badan yang mengakses atau menggunakan Situs.",
+          "icon": "person"
+        },
+        {
+          "term": "Konten",
+          "definition": "Seluruh teks, gambar, logo, merek, video, audio, perangkat lunak, dan materi lain yang ditampilkan atau tersedia di Situs.",
+          "icon": "description"
+        },
+        {
+          "term": "Konten Pengguna",
+          "definition": "Materi yang dikirim, diunggah, atau ditransmisikan oleh Pengguna melalui Situs, termasuk melalui formulir kontak.",
+          "icon": "edit"
+        }
+      ]
     },
     {
-      "title": "Batasan Tanggung Jawab",
-      "body": "Informasi di situs ini disediakan sebagaimana adanya. Kami tidak menjamin bahwa seluruh informasi selalu mutakhir, lengkap, atau bebas dari kesalahan."
-    },
-    {
-      "title": "Tautan Pihak Ketiga",
-      "body": "Situs ini dapat memuat tautan ke situs web pihak ketiga. Tautan tersebut disediakan untuk kenyamanan Anda, dan kami tidak bertanggung jawab atas konten atau kebijakan privasi situs tersebut."
-    },
-    {
-      "title": "Hukum yang Berlaku",
-      "body": "Syarat dan ketentuan ini diatur dan ditafsirkan sesuai dengan hukum Republik Indonesia."
-    },
-    {
+      "id": "changes",
       "title": "Perubahan Ketentuan",
-      "body": "Kami dapat memperbarui syarat dan ketentuan ini dari waktu ke waktu. Perubahan akan dipublikasikan pada halaman ini."
+      "paragraphs": [
+        "Perusahaan dapat meninjau dan memperbarui ketentuan ini dari waktu ke waktu untuk mencerminkan perubahan layanan, hukum, atau kebutuhan bisnis.",
+        "Perubahan material akan diberitahukan melalui pemberitahuan yang wajar di Situs. Dengan melanjutkan penggunaan setelah perubahan berlaku, Anda dianggap menerima ketentuan yang diperbarui."
+      ],
+      "callout": {
+        "tone": "neutral",
+        "icon": "update",
+        "text": "Tanggal pembaruan tercantum pada bagian atas halaman ini."
+      }
     },
     {
+      "id": "use-of-site",
+      "title": "Penggunaan Situs",
+      "paragraphs": [
+        "Perusahaan memberikan izin kepada Anda untuk mengakses dan menggunakan Situs untuk keperluan informasi dan komunikasi yang sah, selama Anda mematuhi ketentuan ini.",
+        "Anda dilarang menggunakan Situs untuk tujuan yang melanggar hukum, melanggar hak pihak lain, atau mengganggu operasional Situs. Termasuk namun tidak terbatas pada:"
+      ],
+      "bullets": [
+        "menggunakan Situs untuk aktivitas ilegal, penipuan, atau pemalsuan;",
+        "menyalin, memodifikasi, atau mendistribusikan Konten tanpa izin tertulis;",
+        "mengakses sistem, data, atau akun lain tanpa otorisasi;",
+        "mengunggah kode berbahaya, malware, atau materi yang melanggar hukum;",
+        "melakukan scraping, crawling, atau pengambilan data secara otomatis tanpa izin;",
+        "meniru identitas Perusahaan, karyawan, atau pihak lain;",
+        "mengganggu ketersediaan, keamanan, atau integritas Situs."
+      ],
+      "callout": {
+        "tone": "brand",
+        "icon": "block",
+        "title": "Pembatasan Akses",
+        "text": "Perusahaan dapat membatasi atau menghentikan akses Anda jika dianggap melanggar ketentuan ini atau berisiko bagi Situs, pengguna lain, atau pihak ketiga."
+      }
+    },
+    {
+      "id": "accounts",
+      "title": "Akun dan Keamanan",
+      "paragraphs": [
+        "Sebagian layanan di Situs dapat memerlukan pendaftaran akun. Jika tersedia, Anda bertanggung jawab menjaga kerahasiaan kredensial dan membatasi akses ke akun Anda.",
+        "Anda wajib segera memberi tahu Perusahaan jika mengetahui atau menduga adanya penggunaan akun tanpa izin. Perusahaan dapat menangguhkan atau menutup akun yang digunakan secara tidak sah.",
+        "Perusahaan tidak meminta kata sandi atau kode verifikasi melalui email, telepon, atau saluran lain yang tidak resmi."
+      ]
+    },
+    {
+      "id": "intellectual-property",
+      "title": "Hak Kekayaan Intelektual",
+      "paragraphs": [
+        "Seluruh Konten dan hak kekayaan intelektual yang terkait merupakan milik Perusahaan atau pemberi lisensinya, kecuali dinyatakan lain. Hak tersebut dilindungi oleh hukum hak cipta, merek dagang, dan ketentuan lain yang berlaku.",
+        "Anda diberikan lisensi terbatas, tidak eksklusif, tidak dapat dipindahtangankan, dan dapat dibatalkan untuk mengakses dan menggunakan Situs sesuai ketentuan ini.",
+        "Tanpa izin tertulis dari Perusahaan, Anda tidak diperbolehkan:"
+      ],
+      "bullets": [
+        "menyalin, menerbitkan ulang, atau membuat karya turunan dari Konten;",
+        "menggunakan merek, logo, atau identitas Perusahaan untuk tujuan komersial;",
+        "menghapus atau mengubah pemberitahuan hak cipta atau kepemilikan."
+      ],
+      "callout": {
+        "tone": "neutral",
+        "icon": "mail",
+        "title": "Izin Penggunaan",
+        "text": "Permintaan izin penggunaan dapat disampaikan melalui halaman Kontak."
+      }
+    },
+    {
+      "id": "user-content",
+      "title": "Konten Pengguna",
+      "paragraphs": [
+        "Jika Anda mengirimkan Konten Pengguna melalui Situs, Anda tetap memiliki hak atas materi tersebut. Dengan mengirimkannya, Anda memberi Perusahaan lisensi non-eksklusif, bebas royalti, dan dapat dipindahtangankan untuk menggunakan, menyimpan, meninjau, dan menanggapi materi tersebut sepanjang diperlukan untuk menjalankan layanan.",
+        "Anda menyatakan memiliki hak atau izin yang diperlukan atas Konten Pengguna dan bahwa materi tersebut tidak melanggar hukum atau hak pihak ketiga.",
+        "Perusahaan dapat menghapus atau menolak Konten Pengguna yang dianggap melanggar ketentuan ini, berbahaya, atau tidak sesuai dengan tujuan Situs."
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "Privasi",
+      "paragraphs": [
+        "Penggunaan data pribadi diatur dalam Kebijakan Privasi kami. Dengan menggunakan Situs, Anda mengakui bahwa Perusahaan dapat mengumpulkan dan memproses data sesuai kebijakan tersebut.",
+        "Kami mendorong Anda membaca Kebijakan Privasi untuk memahami jenis data yang dikumpulkan, tujuan penggunaan, dan hak Anda."
+      ]
+    },
+    {
+      "id": "third-parties",
+      "title": "Tautan dan Layanan Pihak Ketiga",
+      "paragraphs": [
+        "Situs dapat memuat tautan ke situs web atau layanan pihak ketiga. Tautan tersebut disediakan untuk kenyamanan dan tidak menunjukkan pengesahan atau afiliasi.",
+        "Perusahaan tidak mengendalikan dan tidak bertanggung jawab atas konten, kebijakan privasi, atau praktik pihak ketiga. Anda menggunakan situs pihak ketiga atas risiko sendiri dan tunduk pada ketentuan mereka."
+      ]
+    },
+    {
+      "id": "disclaimer",
+      "title": "Penafian",
+      "paragraphs": [
+        "Situs dan Layanan disediakan sebagaimana adanya dan sebagaimana tersedia. Sejauh diizinkan oleh hukum, Perusahaan tidak memberikan jaminan, tersurat maupun tersirat, termasuk jaminan atas akurasi, kelengkapan, atau kesesuaian untuk tujuan tertentu.",
+        "Perusahaan tidak menjamin Situs akan selalu tersedia, bebas dari kesalahan, atau aman dari gangguan. Anda menggunakan Situs atas risiko sendiri.",
+        "Informasi di Situs dapat berubah tanpa pemberitahuan. Perusahaan tidak wajib memperbarui informasi yang sudah tidak berlaku."
+      ],
+      "numbered": true
+    },
+    {
+      "id": "limitation-of-liability",
+      "title": "Batasan Tanggung Jawab",
+      "paragraphs": [
+        "Sejauh diizinkan oleh hukum yang berlaku, Perusahaan, afiliasi, pejabat, karyawan, dan agen tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, konsekuensial, khusus, atau hukuman, termasuk kehilangan keuntungan, data, atau goodwill, yang timbul dari atau terkait dengan penggunaan Situs.",
+        "Batasan ini tidak berlaku untuk tanggung jawab yang tidak dapat dikecualikan atau dibatasi menurut hukum, termasuk kewajiban yang timbul dari kelalaian berat atau pelanggaran sengaja.",
+        "Jika hukum yang berlaku tidak mengizinkan pembatasan tertentu, ketentuan ini akan disesuaikan dengan batas minimum yang diizinkan."
+      ],
+      "numbered": true
+    },
+    {
+      "id": "indemnification",
+      "title": "Ganti Rugi",
+      "paragraphs": [
+        "Anda setuju untuk membela, mengganti rugi, dan membebaskan Perusahaan dari setiap klaim, tuntutan, kerugian, atau biaya, termasuk biaya hukum yang wajar, yang timbul dari pelanggaran Anda terhadap ketentuan ini atau penggunaan Situs yang melanggar hukum.",
+        "Kewajiban ini berlaku sejauh diizinkan oleh hukum dan tidak mengurangi hak perlindungan konsumen yang tidak dapat dikecualikan."
+      ]
+    },
+    {
+      "id": "suspension",
+      "title": "Penghentian dan Pembatasan Akses",
+      "paragraphs": [
+        "Perusahaan dapat menangguhkan atau menghentikan akses Anda ke Situs atau sebagian layanan, dengan atau tanpa pemberitahuan, jika terjadi pelanggaran, penggunaan berisiko, atau permintaan dari pihak berwenang.",
+        "Anda dapat berhenti menggunakan Situs kapan saja. Ketentuan yang secara alami harus tetap berlaku setelah penghentian, termasuk ketentuan kekayaan intelektual, penafian, batasan tanggung jawab, dan ganti rugi, tetap berlaku."
+      ]
+    },
+    {
+      "id": "governing-law",
+      "title": "Hukum yang Berlaku dan Penyelesaian Sengketa",
+      "paragraphs": [
+        "Ketentuan ini diatur oleh dan ditafsirkan sesuai hukum Republik Indonesia.",
+        "Jika timbul perselisihan, para pihak akan terlebih dahulu berupaya menyelesaikannya secara musyawarah untuk mencapai kesepakatan dalam waktu 30 (tiga puluh) hari kalender sejak pemberitahuan tertulis.",
+        "Jika musyawarah tidak mencapai kesepakatan, perselisihan akan diselesaikan melalui pengadilan yang berwenang di Indonesia sesuai hukum yang berlaku."
+      ],
+      "numbered": true
+    },
+    {
+      "id": "miscellaneous",
+      "title": "Ketentuan Lain-lain",
+      "paragraphs": [
+        "Jika ada bagian dari ketentuan ini yang dinyatakan tidak berlaku, bagian lainnya tetap berlaku.",
+        "Keterlambatan atau kelalaian Perusahaan dalam menegakkan hak tidak dianggap sebagai pelepasan hak.",
+        "Perusahaan dapat mengalihkan hak dan kewajiban berdasarkan ketentuan ini kepada afiliasi atau penerus, dengan tetap menghormati hak Anda.",
+        "Ketentuan ini merupakan keseluruhan kesepahaman antara Anda dan Perusahaan terkait penggunaan Situs dan menggantikan kesepakatan sebelumnya.",
+        "Versi bahasa Indonesia dan Inggris tersedia. Jika terdapat perbedaan penafsiran, versi bahasa Indonesia digunakan sebagai acuan utama.",
+        "Perubahan hukum atau keadaan di luar kendali wajar dapat memengaruhi kinerja Situs."
+      ],
+      "numbered": true
+    },
+    {
+      "id": "contact",
       "title": "Kontak",
-      "body": "Jika Anda memiliki pertanyaan mengenai syarat dan ketentuan ini, silakan hubungi kami melalui halaman Kontak."
+      "paragraphs": [
+        "Jika Anda memiliki pertanyaan tentang ketentuan ini, silakan hubungi kami melalui halaman Kontak atau email contact@lasuarindo.co.id.",
+        "Perusahaan akan meninjau pertanyaan Anda secara wajar dan menanggapinya sesuai kebutuhan."
+      ]
     }
   ],
   "contactCta": "Hubungi Kami"
