@@ -74,7 +74,7 @@ export function LegalLayout({ toc, activeId, onNavigate, tocTitle, partsLabel, c
 
   useEffect(() => () => cancelScrollAnimation(), []);
 
-  // Direct hash links (e.g. /terms#disclaimer) arrive before the lazy page has
+  // Direct hash links (e.g. /legal/term-condition#disclaimer) arrive before the lazy page has
   // rendered, so retry until the target exists and then jump to it.
   useEffect(() => {
     const hash = window.location.hash.slice(1);

@@ -21,8 +21,8 @@ export const footerNav = [
 
 export const footerHelp = [
   { labelKey: 'footer.contactUs', href: '/contact' },
-  { labelKey: 'footer.privacyPolicy', href: '/privacy-policy' },
-  { labelKey: 'footer.terms', href: '/terms' },
+  { labelKey: 'footer.privacyPolicy', href: '/legal/privacy-policy' },
+  { labelKey: 'footer.terms', href: '/legal/term-condition' },
   { labelKey: 'footer.faq', href: '/faq' },
 ];
 

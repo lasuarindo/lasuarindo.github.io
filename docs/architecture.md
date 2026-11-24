@@ -25,12 +25,12 @@ flowchart TD
 | `/about-us` | About Us |
 | `/services` | Services |
 | `/contact` | Contact |
-| `/privacy-policy` | Privacy Policy |
-| `/terms` | Terms & Conditions |
 | `/faq` | FAQ Center |
+| `/legal/privacy-policy` | Privacy Policy |
+| `/legal/term-condition` | Terms & Conditions |
 | `*` | NotFound |
 
-Legacy Indonesian routes (`/tentang-kami`, `/layanan`, `/kontak`, `/kebijakan-privasi`, `/syarat-ketentuan`) render `<Navigate replace />` to their English equivalents.
+Legacy paths (`/privacy-policy`, `/terms`, `/kebijakan-privasi`, `/syarat-ketentuan`) and the Indonesian page aliases (`/tentang-kami`, `/layanan`, `/kontak`) render `<Navigate replace />` to their current equivalents.
 
 ## Layout
 

@@ -103,10 +103,20 @@ export function resolvePageMetaKey(pathname) {
   if (pathname.startsWith('/about-us') || pathname.startsWith('/tentang-kami')) return 'about';
   if (pathname.startsWith('/services') || pathname.startsWith('/layanan')) return 'services';
   if (pathname.startsWith('/contact') || pathname.startsWith('/kontak')) return 'contact';
-  if (pathname.startsWith('/privacy-policy') || pathname.startsWith('/kebijakan-privasi')) {
+  if (
+    pathname.startsWith('/legal/privacy-policy') ||
+    pathname.startsWith('/privacy-policy') ||
+    pathname.startsWith('/kebijakan-privasi')
+  ) {
     return 'privacy';
   }
-  if (pathname.startsWith('/terms') || pathname.startsWith('/syarat-ketentuan')) return 'terms';
+  if (
+    pathname.startsWith('/legal/term-condition') ||
+    pathname.startsWith('/terms') ||
+    pathname.startsWith('/syarat-ketentuan')
+  ) {
+    return 'terms';
+  }
   if (pathname.startsWith('/faq')) return 'faq';
   return 'notFound';
 }

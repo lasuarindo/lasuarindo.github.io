@@ -48,10 +48,12 @@ Each page is a lazy route, so it ships as its own chunk and is fetched only when
 | `/about-us` | About Us |
 | `/services` | Services |
 | `/contact` | Contact |
-| `/privacy-policy` | Privacy Policy |
+| `/faq` | FAQ Center |
+| `/legal/privacy-policy` | Privacy Policy |
+| `/legal/term-condition` | Terms & Conditions |
 | `*` | Redirects to `/` |
 
-Legacy Indonesian paths redirect to their English equivalents: `/tentang-kami` → `/about-us`, `/layanan` → `/services`, `/kontak` → `/contact`, `/kebijakan-privasi` → `/privacy-policy`.
+Legacy paths redirect to their current equivalents: `/privacy-policy` and `/kebijakan-privasi` → `/legal/privacy-policy`; `/terms` and `/syarat-ketentuan` → `/legal/term-condition`; `/tentang-kami` → `/about-us`, `/layanan` → `/services`, `/kontak` → `/contact`.
 
 ## Internationalisation
 
