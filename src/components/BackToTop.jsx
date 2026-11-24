@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useStrings } from '@/i18n/useStrings';
+import idCommon from '@/i18n/locales/id/common.json';
+import enCommon from '@/i18n/locales/en/common.json';
 import { Icon } from '@/components/Icon';
 
 export function BackToTop({ showOffset = 400 }) {
+  const t = useStrings({ id: idCommon, en: enCommon });
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export function BackToTop({ showOffset = 400 }) {
       <button
         type="button"
         onClick={scrollToTop}
-        aria-label="Kembali ke atas"
+        aria-label={t.footer.backToTop}
         className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-[24px] border-0 bg-[var(--color-primary)] text-[var(--color-on-primary)] shadow-[0_4px_15px_rgba(177,38,0,0.35)] transition-[transform,translate,scale,background-color] duration-200 ease-[ease] hover:-translate-y-0.5 hover:scale-105 hover:bg-[var(--color-on-primary-fixed-variant)]"
       >
         <Icon name="keyboard-arrow-up" size={28} color="#ffffff" />

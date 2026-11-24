@@ -138,7 +138,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              aria-label="Buka menu"
+              aria-label={t.footer.openMenu}
               className="flex cursor-pointer items-center justify-center border-none bg-transparent p-[6px] text-[var(--color-on-surface)]"
             >
               <Icon name="menu" size={28} />

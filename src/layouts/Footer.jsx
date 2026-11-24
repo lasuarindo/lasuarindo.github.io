@@ -104,9 +104,7 @@ export function Footer() {
               </span>
             </div>
             <p className={`${DISPLAY_FONT} mb-[14px] text-[11px] font-semibold uppercase tracking-[1px] text-[var(--color-primary)]`}>
-              {language === 'en'
-                ? 'CREATIVE TECHNOLOGY & LIFESTYLE GROUP'
-                : 'GRUP TEKNOLOGI KREATIF GAYA HIDUP'}
+              {t.footer.brandSubline}
             </p>
             <p className={`${BODY_FONT} mb-6 text-[14px] leading-[1.6] text-[#9ca3af]`}>
               {t.footer.tagline}
@@ -181,9 +179,7 @@ export function Footer() {
             © {YEAR} {t.footer.copyright}
           </span>
           <span className={`${DISPLAY_FONT} text-[12px] font-semibold tracking-[0.5px] text-[var(--color-primary-fixed-dim)]`}>
-            {language === 'en'
-              ? '#CreativeTechnologyLifestyleGroup'
-              : '#GrupTeknologiKreatifGayaHidup'}
+            {t.footer.hashtag}
           </span>
         </div>
       </div>

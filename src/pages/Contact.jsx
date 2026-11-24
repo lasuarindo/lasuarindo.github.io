@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLanguage } from '@/i18n/language.js';
 import { useResponsive } from '@/hooks/useResponsive';
 import { useStrings } from '@/i18n/useStrings';
 import idContact from '@/i18n/locales/id/contact.json';
@@ -35,7 +34,12 @@ function GradientDivider({ center = false }) {
 }
 
 function useContactStrings() {
-  return useStrings({ id: { contact: idContact, home: idHome }, en: { contact: enContact, home: enHome } });
+  const contactBundle = { id: { contact: idContact }, en: { contact: enContact } };
+  const homeBundle = { id: { home: idHome }, en: { home: enHome } };
+  return useStrings({
+    id: Object.assign({}, contactBundle.id, homeBundle.id),
+    en: Object.assign({}, contactBundle.en, homeBundle.en),
+  });
 }
 
 // --- Hero ---
@@ -66,7 +70,6 @@ function ContactHero() {
 
 // --- Contact Info & Form ---
 function ContactFormSection() {
-  const { language } = useLanguage();
   const t = useContactStrings();
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
@@ -74,11 +77,6 @@ function ContactFormSection() {
   const [subjek, setSubjek] = useState('');
   const [pesan, setPesan] = useState('');
   const [status, setStatus] = useState({ type: '', message: '' });
-
-  const SUBJECTS =
-    language === 'en'
-      ? ['Strategic Partnership', 'Investor Relations', 'Project Collaboration', 'Technology Services', 'General Inquiries']
-      : ['Kemitraan Strategis', 'Hubungan Investor', 'Kolaborasi Proyek', 'Layanan Teknologi', 'Pertanyaan Umum'];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -102,7 +100,7 @@ function ContactFormSection() {
           <AnimatedReveal animation="left" delay={100}>
             <div>
               <h2 className="mb-[10px] font-[var(--font-display)] text-[28px] font-bold leading-[34px] text-[var(--color-on-background)] lg:text-[34px] lg:leading-[40px]">
-                {language === 'en' ? 'CONTACT ' : 'INFORMASI '}<span className="text-[var(--color-primary)]">{language === 'en' ? 'INFO' : 'KONTAK'}</span>
+                {t.contact.infoHeading1}<span className="text-[var(--color-primary)]">{t.contact.infoHeading2}</span>
               </h2>
               <GradientDivider />
               <div className="mt-5 flex flex-col gap-5">
@@ -110,8 +108,8 @@ function ContactFormSection() {
                   <div className={INFO_ICON_BOX}><Icon name="location_on" size={24} color="#b12600" /></div>
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.addressTitle}</h4>
-                    <p className={INFO_TEXT}>Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112, Indonesia</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{language === 'en' ? 'Bandung City Area' : 'Area Kota Bandung'}</span>
+                    <p className={INFO_TEXT}>{t.contact.addressDetail}</p>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{t.contact.addressArea}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-[14px]">
@@ -126,7 +124,7 @@ function ContactFormSection() {
                   <div>
                     <h4 className={INFO_TITLE}>{t.contact.hoursTitle}</h4>
                     <p className={INFO_TEXT}>{t.contact.hoursDesc}</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{language === 'en' ? 'Saturday - Sunday: Closed' : 'Sabtu - Minggu: Tutup'}</span>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{t.contact.hoursDetail}</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +147,7 @@ function ContactFormSection() {
             <div className="rounded-2xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-6 shadow-[0_20px_25px_rgba(0,0,0,0.1),0_8px_10px_rgba(0,0,0,0.1)] max-[767px]:p-5 lg:p-7">
               <h3 className="m-0 mb-1 font-[var(--font-display)] text-[24px] font-bold leading-[30px] text-[var(--color-on-background)]">{t.contact.formTitle}</h3>
               <p className="m-0 mb-5 font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)]">
-                {language === 'en' ? 'Fill out the form below and our team will get in touch with you within 24 hours.' : 'Isi formulir di bawah ini dan tim kami akan menghubungi Anda dalam waktu 1x24 jam.'}
+                {t.contact.formSubtitle}
               </p>
               {status.message && (
                 <div className={`mb-4 rounded-lg border px-4 py-3 font-[var(--font-body)] text-[14px] ${status.type === 'error' ? 'border-[#ba1a1a] bg-[rgba(186,26,26,0.1)] text-[#ba1a1a]' : 'border-[#10b981] bg-[rgba(16,185,129,0.1)] text-[#047857]'}`}>{status.message}</div>
@@ -173,7 +171,7 @@ function ContactFormSection() {
                   <label className={LABEL_CLASS}>{t.contact.subjectLabel}</label>
                   <select value={subjek} onChange={(e) => setSubjek(e.target.value)} className={INPUT_CLASS}>
                     <option value="">{t.contact.subjectPlaceholder}</option>
-                    {SUBJECTS.map((opt) => (<option key={opt} value={opt} className="text-[var(--color-on-background)]">{opt}</option>))}
+                    {t.contact.subjects.map((opt) => (<option key={opt} value={opt} className="text-[var(--color-on-background)]">{opt}</option>))}
                   </select>
                 </div>
                 <div>
@@ -195,13 +193,14 @@ function ContactFormSection() {
 // --- Map ---
 function ContactMap() {
   const { isMobile } = useResponsive();
+  const t = useContactStrings();
 
   return (
     <section className="bg-[var(--color-surface-container-low)] py-20">
       <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-[var(--font-display)] text-[30px] font-bold text-[var(--color-on-background)] md:text-[40px]">LOKASI <span className="text-[var(--color-primary)]">KAMI</span></h2>
+            <h2 className="mb-4 font-[var(--font-display)] text-[30px] font-bold text-[var(--color-on-background)] md:text-[40px]">{t.contact.locationHeading1}<span className="text-[var(--color-primary)]">{t.contact.locationHeading2}</span></h2>
             <GradientDivider center />
           </div>
           <div className="h-[450px] overflow-hidden rounded-2xl border border-[rgba(228,190,181,0.3)] bg-white shadow-[0_20px_25px_rgba(0,0,0,0.1),0_8px_10px_rgba(0,0,0,0.1)] max-[767px]:h-[320px]">
@@ -215,12 +214,11 @@ function ContactMap() {
 
 // --- Partnership CTA ---
 function ContactPartnership() {
-  const { language } = useLanguage();
   const t = useContactStrings();
   const partnerCards = [
-    { icon: 'handshake', title: t.home.strategicPartnership, desc: language === 'en' ? 'Build mutually rewarding collaboration and create lasting tangible impact together with us.' : 'Bangun kolaborasi yang saling menguntungkan dan menciptakan dampak nyata bersama kami.' },
-    { icon: 'trending_up', title: t.home.investorRelations, desc: language === 'en' ? 'Invest in an integrated, high-growth business ecosystem with sustainable potential.' : 'Investasikan di ekosistem bisnis yang terintegrasi dan terus berkembang.' },
-    { icon: 'group_add', title: t.home.collaboration, desc: language === 'en' ? 'Join our community of professionals and creators to execute impactful initiatives.' : 'Bergabunglah dengan komunitas profesional dan kreatif kami untuk proyek berdampak.' },
+    { icon: 'handshake', title: t.home.strategicPartnership, desc: t.contact.partnerCardsDesc.strategicPartnership },
+    { icon: 'trending_up', title: t.home.investorRelations, desc: t.contact.partnerCardsDesc.investorRelations },
+    { icon: 'group_add', title: t.home.collaboration, desc: t.contact.partnerCardsDesc.collaboration },
   ];
 
   return (

@@ -69,7 +69,7 @@ export function MobileMenu({ visible, onClose }) {
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="Tutup menu"
+                aria-label={t.footer.closeMenu}
                 className="flex cursor-pointer items-center justify-center border-none bg-transparent p-1 text-[var(--color-on-surface)]"
               >
                 <Icon name="close" size={28} />

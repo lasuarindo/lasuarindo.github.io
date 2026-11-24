@@ -1,16 +1,91 @@
 {
-  "badge": "Integrated Solutions",
-  "heroTitle1": "OUR",
-  "heroTitle2": "SERVICES",
-  "heroSubtitle": "Comprehensive solutions across diverse industries designed to accelerate enterprise growth and generate measurable, positive impact.",
+  "badge": "Lasuarindo Group",
+  "heroTitle1": "Building the",
+  "heroTitle2": "Future in",
+  "heroTitle3": "Key",
+  "heroTitle4": "Industries",
+  "heroSubtitle": "Lasuarindo Group presents an integrated business ecosystem driving growth, innovation, and real impact across Indonesia's strategic sectors.",
   "exploreBtn": "Learn More",
   "contactBtn": "Consult With Us",
-  "propertyHeading": "PROPERTY SECTOR",
-  "propertyDesc": "Developing future-ready residential, commercial, and collaborative spaces designed for sustainability and long-term asset value.",
-  "techHeading": "DIGITAL TECHNOLOGY",
-  "techDesc": "Digital transformation, proprietary software development, and cloud computing infrastructure to power enterprise scaling.",
-  "mediaHeading": "CREATIVE & MEDIA",
-  "mediaDesc": "High-impact content production, integrated digital broadcasting, and brand positioning strategies that command market influence.",
+  "partnerBtn": "Partner With Us",
+  "propertyLabel": "PROPERTY",
+  "propertyHeading": "DEVELOPING SPACES FOR A BETTER LIFE",
+  "propertyDesc": "We develop high-quality properties with modern architectural design, strategic locations, and ever-growing investment value. From residential housing to large-scale commercial projects, every project is designed to provide the highest comfort and satisfaction.",
+  "propertyFeatures": [
+    { "icon": "location_city", "title": "Urban Planning", "desc": "Comprehensive planning for modern residential areas." },
+    { "icon": "architecture", "title": "Design & Construction", "desc": "Innovative architecture with the highest quality standards." },
+    { "icon": "apartment", "title": "Property Management", "desc": "Professional management for high-value assets." }
+  ],
+  "recentProject": "Recent Project",
+  "mediaHeading": "CREATIVE MEDIA",
+  "mediaSubheading": "BEHIND THE SCENES, STORIES, INFLUENCE & MEDIA",
+  "mediaDesc": "We deliver cutting-edge creative services integrated with modern business needs — from visual design to large-scale event production, all designed to deliver maximum impact.",
+  "mediaCards": [
+    {
+      "icon": "public",
+      "title": "MSS",
+      "tag": "ONLINE MEDIA",
+      "desc": "Provides integrated digital media solutions to reach a broad and relevant audience.",
+      "items": ["Logo & Brand Identity", "News Portal", "Online Media", "Social Media"]
+    },
+    {
+      "icon": "photo_camera",
+      "title": "Arcadia Segara Cita",
+      "tag": "PRODUCTION HOUSE",
+      "desc": "Focuses on high-quality visual content production for commercial and entertainment needs.",
+      "items": ["Film Production", "Video and Music Production", "TVC and Commercials", "Script & Storytelling"]
+    },
+    {
+      "icon": "qr_code_2",
+      "title": "Berkah Media Gemilang",
+      "tag": "Outdoor Media",
+      "desc": "Provides outdoor media solutions and supporting services to build a strong and memorable brand.",
+      "items": ["Event Management", "Billboard", "Vidiotron", "Branding & Signage"]
+    }
+  ],
+  "ourPlatform": "Our Platforms",
+  "techLabel": "TECHNOLOGY",
+  "techHeading": "PROTECTING BRANDS THROUGH INNOVATION",
+  "techDesc": "Lasuarindo Group builds a strong digital foundation through cutting-edge technology services. From software development to cloud infrastructure, we deliver smart, secure, and sustainable solutions to drive your business digital transformation.",
+  "techCards": [
+    {
+      "icon": "router",
+      "title": "Authentic Guards Technology",
+      "desc": "Cutting-edge technology systems that protect products from counterfeiting and ensure authenticity through safe, fast, and trusted digital verification."
+    },
+    {
+      "icon": "view_in_ar",
+      "title": "Berkah Megah Abadi",
+      "desc": "Technology solutions to protect musicians and songwriters' copyrights from piracy and ensure they receive fair and transparent royalties."
+    }
+  ],
+  "vamosBadge": "Sports & Lifestyle",
+  "vamosHeading1": "VAMOS PADELON ",
+  "vamosHeading2": "SYNERGY",
+  "vamosDesc": "Vamos Padelon Sinergi (VPS) is a quality padel sports facility with modern, comfortable, and professional-standard amenities for everyone.",
+  "vamosTags": [
+    { "icon": "sports_tennis", "label": "premium padel court" },
+    { "icon": "storefront", "label": "pro shop" },
+    { "icon": "coffee", "label": "cafe and relaxation area" },
+    { "icon": "play_circle", "label": "Media" },
+    { "icon": "flight_takeoff", "label": "modern facilities" }
+  ],
+  "projectsHeading1": "OUR ",
+  "projectsHeading2": "FUTURE",
+  "projectsHeading3": " PROJECTS",
+  "projectsDesc": "These are the strategic projects we are developing to build a better and more sustainable future.",
+  "projects": [
+    { "tag": "Property", "title": "Premium Residential Area" },
+    { "tag": "Technology", "title": "Indonesia Digital Hub" },
+    { "tag": "Ecosystem", "title": "Integrated Business Ecosystem" },
+    { "tag": "Sustainability", "title": "Green Development Initiative" }
+  ],
   "futureProjects": "FUTURE PROJECTS",
-  "futureProjectsDesc": "Sustainable initiatives and forward-looking ventures actively being pioneered within the Lasuarindo ecosystem."
+  "futureProjectsDesc": "Sustainable initiatives and forward-looking ventures actively being pioneered within the Lasuarindo ecosystem.",
+  "propertyHeadingOld": "PROPERTY SECTOR",
+  "propertyDescOld": "Developing future-ready residential, commercial, and collaborative spaces designed for sustainability and long-term asset value.",
+  "techHeadingOld": "DIGITAL TECHNOLOGY",
+  "techDescOld": "Digital transformation, proprietary software development, and cloud computing infrastructure to power enterprise scaling.",
+  "mediaHeadingOld": "CREATIVE & MEDIA",
+  "mediaDescOld": "High-impact content production, integrated digital broadcasting, and brand positioning strategies that command market influence."
 }

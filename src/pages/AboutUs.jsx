@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLanguage } from '@/i18n/language.js';
 import { useResponsive } from '@/hooks/useResponsive';
 import { useStrings } from '@/i18n/useStrings';
 import idAbout from '@/i18n/locales/id/about.json';
@@ -115,7 +114,7 @@ function AboutValues() {
 
 // --- 3. Nilai Kami, Kekuatan Kami ---
 function AboutStrengths() {
-  const { language } = useLanguage();
+  const t = useAboutStrings();
 
   return (
     <section className="section section--sm section--surface">
@@ -126,8 +125,8 @@ function AboutStrengths() {
               <span className="font-[var(--font-display)] text-[40px] font-bold leading-[40px] text-[var(--color-primary)]">66</span>
               <div className="h-[2px] flex-1 bg-[linear-gradient(to_right,#b12600,rgba(177,38,0,0.1))]" />
             </div>
-            <h2 className="mb-[8px] font-[var(--font-display)] text-[32px] font-bold leading-[42px] text-[var(--color-on-background)]">{language === 'en' ? 'OUR VALUES, ' : 'NILAI KAMI, '}<span className="text-[var(--color-primary)]">{language === 'en' ? 'OUR STRENGTH' : 'KEKUATAN KAMI'}</span></h2>
-            <p className="mx-auto max-w-[700px] font-[var(--font-body)] text-[15px] leading-[25px] text-[var(--color-secondary)]">{language === 'en' ? 'These values are not just guidelines, but our steadfast commitment to grow, create impact, and inspire the future.' : 'Nilai-nilai ini bukan hanya pedoman, tetapi komitmen kami untuk terus tumbuh, memberi manfaat, dan menjadi inspirasi bagi masa depan.'}</p>
+            <h2 className="mb-[8px] font-[var(--font-display)] text-[32px] font-bold leading-[42px] text-[var(--color-on-background)]">{t.about.strengthsHeading1}<span className="text-[var(--color-primary)]">{t.about.strengthsHeading2}</span></h2>
+            <p className="mx-auto max-w-[700px] font-[var(--font-body)] text-[15px] leading-[25px] text-[var(--color-secondary)]">{t.about.strengthsBody}</p>
             <div className="my-[12px] flex w-full flex-row items-center gap-[16px]">
               <div className="h-[2px] flex-1 bg-[linear-gradient(to_right,rgba(177,38,0,0.1),#b12600)]" />
               <span className="font-[var(--font-display)] text-[40px] font-bold leading-[40px] text-[var(--color-primary)]">99</span>
@@ -141,7 +140,7 @@ function AboutStrengths() {
 
 // --- 4. Pesan Pendiri ---
 function AboutFounder() {
-  const { language } = useLanguage();
+  const t = useAboutStrings();
 
   return (
     <section className="section section--sm section--surface-low">
@@ -153,13 +152,13 @@ function AboutFounder() {
         </AnimatedReveal>
         <AnimatedReveal animation="right" delay={200} className="w-full lg:flex-[1.25]">
           <div className="flex flex-col justify-center">
-            <h2 className="mb-[10px] font-[var(--font-display)] text-[36px] font-bold leading-[42px] text-[var(--color-on-background)]">{language === 'en' ? "FOUNDER'S" : 'PESAN'}<br /><span className="text-[var(--color-primary)]">{language === 'en' ? 'MESSAGE' : 'PENDIRI'}</span></h2>
+            <h2 className="mb-[10px] font-[var(--font-display)] text-[36px] font-bold leading-[42px] text-[var(--color-on-background)]">{t.about.founderHeading1}<br /><span className="text-[var(--color-primary)]">{t.about.founderHeading2}</span></h2>
             <div className="mb-[24px] h-[4px] w-[44px] rounded-[2px] bg-[var(--color-primary)]" />
             <div className="rounded-[18px] border-l-4 border-l-[var(--color-primary)] bg-[var(--color-surface-container-lowest)] p-[32px] shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <div className="mb-[12px] font-[var(--font-display)] text-[24px] font-bold tracking-[1px] text-[var(--color-primary)]">99</div>
-              <p className="mb-[18px] font-[var(--font-body)] text-[15px] font-bold italic leading-[25px] text-[var(--color-on-background)]">{language === 'en' ? '"It is not about numbers, but about the meaning we build, the impact we generate, and the legacy we leave behind. Every step we take is an investment for generations to come."' : '"Ini bukan tentang angka, melainkan tentang makna yang kita bangun, memberi dampak, dan meninggalkan warisan. Setiap langkah yang kita ambil adalah investasi bagi generasi yang akan datang."'}</p>
-              <p className="mb-[14px] font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{language === 'en' ? 'For me, founding Lasuarindo Group was not merely about building a business — it is a journey of creating a purposeful ecosystem where individuals can flourish and contribute their finest work.' : 'Bagi saya, mendirikan Lasuarindo Group bukan sekadar membangun bisnis — ini adalah perjalanan membangun ekosistem yang bermakna, tempat setiap individu bisa tumbuh dan memberikan kontribusi terbaik mereka.'}</p>
-              <p className="m-0 font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{language === 'en' ? 'I believe great business starts from strong values — integrity, collaboration, and a relentless spirit to innovate for the greater good. With our visionary team, we are eager to elevate Lasuarindo Group to even higher heights.' : 'Saya percaya bahwa bisnis yang hebat dimulai dari nilai yang kuat — integritas, kolaborasi, dan semangat untuk terus berinovasi demi kebaikan yang lebih besar. Dengan tim yang luar biasa dan visi yang jelas, kami siap membawa Lasuarindo Group ke level yang lebih tinggi dan berdampak lebih luas.'}</p>
+              <p className="mb-[18px] font-[var(--font-body)] text-[15px] font-bold italic leading-[25px] text-[var(--color-on-background)]">{t.about.founderQuote}</p>
+              <p className="mb-[14px] font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{t.about.founderBody1}</p>
+              <p className="m-0 font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{t.about.founderBody2}</p>
             </div>
             <div className="mt-[18px] pl-[4px]">
               <h3 className="m-0 font-[var(--font-display)] text-[22px] font-bold text-[var(--color-on-background)]">Ryan Othink</h3>
@@ -174,20 +173,20 @@ function AboutFounder() {
 
 // --- 5. Pesan Komisaris ---
 function AboutCommissioner() {
-  const { language } = useLanguage();
+  const t = useAboutStrings();
 
   return (
     <section className="section section--sm section--surface">
       <div className="flex flex-col items-center gap-[36px] lg:flex-row lg:gap-[48px] mx-auto w-full max-w-[1280px] px-6">
         <AnimatedReveal animation="left" delay={100} className="w-full lg:flex-[1.25]">
           <div className="flex flex-col justify-center">
-            <h2 className="mb-[10px] font-[var(--font-display)] text-[36px] font-bold leading-[42px] text-[var(--color-on-background)]">{language === 'en' ? "COMMISSIONER'S" : 'PESAN'}<br /><span className="text-[var(--color-primary)]">{language === 'en' ? 'MESSAGE' : 'KOMISARIS'}</span></h2>
+            <h2 className="mb-[10px] font-[var(--font-display)] text-[36px] font-bold leading-[42px] text-[var(--color-on-background)]">{t.about.commissionerHeading1}<br /><span className="text-[var(--color-primary)]">{t.about.commissionerHeading2}</span></h2>
             <div className="mb-[24px] h-[4px] w-[44px] rounded-[2px] bg-[var(--color-primary)]" />
             <div className="rounded-[18px] border-l-4 border-l-[var(--color-primary)] bg-[var(--color-surface-container-lowest)] p-[32px] shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <div className="mb-[12px] font-[var(--font-display)] text-[24px] font-bold tracking-[1px] text-[var(--color-primary)]">99</div>
-              <p className="mb-[18px] font-[var(--font-body)] text-[15px] font-bold italic leading-[25px] text-[var(--color-on-background)]">{language === 'en' ? '"Trust is the bedrock of everything. Without uncompromising integrity and sincere commitment, any enterprise is merely a fragile edifice shaken by the tests of time."' : '"Kepercayaan adalah fondasi dari segalanya. Tanpa integritas yang kuat dan komitmen yang tulus, bisnis apapun hanya akan menjadi gedung tanpa pondasi yang mudah goyah oleh tantangan zaman."'}</p>
-              <p className="mb-[14px] font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{language === 'en' ? 'As Commissioner of Lasuarindo Group, I witness immense potential in each step we take forward. This is not just about growing a company — it is about ' : 'Sebagai Komisaris Lasuarindo Group, saya melihat potensi yang luar biasa dalam setiap langkah yang kami ambil bersama. Ini bukan hanya tentang membangun perusahaan — ini tentang '}<strong className="font-bold text-[var(--color-primary)]">{language === 'en' ? 'building a legacy' : 'membangun warisan'}</strong>{' '}{language === 'en' ? 'and' : 'dan'}{' '}<strong className="font-bold text-[var(--color-primary)]">{language === 'en' ? 'creating an ecosystem' : 'menciptakan ekosistem'}</strong>{' '}{language === 'en' ? 'that delivers true impact.' : 'yang memberikan dampak.'}</p>
-              <p className="m-0 font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{language === 'en' ? 'I am immensely proud of our team growth and unwavering devotion to the shared values we built. With visionary leadership and a committed team, I am confident Lasuarindo Group will continue thriving.' : 'Saya bangga menyaksikan pertumbuhan tim dan komitmen kami terhadap nilai-nilai yang telah kami bangun bersama. Dengan kepemimpinan yang visioner dan tim yang berdedikasi, saya yakin Lasuarindo Group akan terus berkembang dan memberikan kontribusi nyata.'}</p>
+              <p className="mb-[18px] font-[var(--font-body)] text-[15px] font-bold italic leading-[25px] text-[var(--color-on-background)]">{t.about.commissionerQuote}</p>
+              <p className="mb-[14px] font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{t.about.commissionerBody1}<strong className="font-bold text-[var(--color-primary)]">{t.about.commissionerHighlight1}</strong>{' '}{t.about.commissionerConnector1}{' '}<strong className="font-bold text-[var(--color-primary)]">{t.about.commissionerHighlight2}</strong>{' '}{t.about.commissionerConnector2}</p>
+              <p className="m-0 font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{t.about.commissionerBody2}</p>
             </div>
             <div className="mt-[18px] pl-[4px]">
               <h3 className="m-0 font-[var(--font-display)] text-[22px] font-bold text-[var(--color-on-background)]">Herawati</h3>
@@ -207,13 +206,13 @@ function AboutCommissioner() {
 
 // --- 6. Jaringan Strategis ---
 function AboutNetwork() {
-  const { language } = useLanguage();
+  const t = useAboutStrings();
 
   return (
     <section className="border-y border-[rgba(0,0,0,0.06)] bg-[var(--color-surface-container-low)] py-[36px]">
       <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
-          <div className="mb-[20px] text-center"><span className="font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.8px] text-[var(--color-secondary)]">{language === 'en' ? 'STRATEGIC NETWORK & COLLABORATION' : 'JARINGAN STRATEGIS & KOLABORASI'}</span></div>
+          <div className="mb-[20px] text-center"><span className="font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1.8px] text-[var(--color-secondary)]">{t.about.networkHeading}</span></div>
         </AnimatedReveal>
         <div className="flex flex-row flex-wrap items-center justify-center gap-[40px]">
           {NETWORK.map((item) => (

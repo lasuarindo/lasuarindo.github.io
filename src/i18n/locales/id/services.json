@@ -1,16 +1,91 @@
 {
-  "badge": "Solusi Terintegrasi",
-  "heroTitle1": "LAYANAN",
-  "heroTitle2": "KAMI",
-  "heroSubtitle": "Solusi komprehensif di berbagai sektor industri untuk mendorong pertumbuhan dan menciptakan dampak positif bagi bisnis Anda.",
+  "badge": "Lasuarindo Group",
+  "heroTitle1": "Membangun Masa",
+  "heroTitle2": "Depan di",
+  "heroTitle3": "Industri",
+  "heroTitle4": "Kunci",
+  "heroSubtitle": "Lasuarindo Group menghadirkan ekosistem bisnis terpadu yang mendorong pertumbuhan, inovasi, dan dampak nyata di sektor-sektor strategis Indonesia.",
   "exploreBtn": "Pelajari Lebih Lanjut",
   "contactBtn": "Konsultasi Sekarang",
-  "propertyHeading": "SEKTOR PROPERTI",
-  "propertyDesc": "Pengembangan kawasan hunian, komersial, dan ruang kerja masa depan yang berkelanjutan dan bernilai investasi tinggi.",
-  "techHeading": "TEKNOLOGI DIGITAL",
-  "techDesc": "Transformasi digital, pengembangan perangkat lunak, dan infrastruktur komputasi untuk akselerasi pertumbuhan bisnis.",
-  "mediaHeading": "MEDIA & KREATIF",
-  "mediaDesc": "Produksi konten, media digital terintegrasi, dan strategi komunikasi kreatif untuk membangun citra brand yang berdampak.",
+  "partnerBtn": "Bermitra Dengan Kami",
+  "propertyLabel": "PROPERTI",
+  "propertyHeading": "MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK",
+  "propertyDesc": "Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.",
+  "propertyFeatures": [
+    { "icon": "location_city", "title": "Perencanaan Tata Kota", "desc": "Perencanaan komprehensif untuk kawasan hunian modern." },
+    { "icon": "architecture", "title": "Desain & Konstruksi", "desc": "Arsitektur inovatif dengan standar kualitas tertinggi." },
+    { "icon": "apartment", "title": "Manajemen Properti", "desc": "Pengelolaan profesional untuk aset bernilai tinggi." }
+  ],
+  "recentProject": "Proyek Terkini",
+  "mediaHeading": "MEDIA KREATIF",
+  "mediaSubheading": "DI BALIK LAYAR, CERITA, PENGARUH & MEDIA",
+  "mediaDesc": "Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.",
+  "mediaCards": [
+    {
+      "icon": "public",
+      "title": "MSS",
+      "tag": "MEDIA ONLINE",
+      "desc": "Menyediakan solusi media digital terintegrasi untuk menjangkau audiens secara luas dan relevan.",
+      "items": ["Logo & Brand Identity", "Portal Berita", "Media Online", "Sosial Media"]
+    },
+    {
+      "icon": "photo_camera",
+      "title": "Arcadia Segara Cita",
+      "tag": "PRODUCTION HOUSE",
+      "desc": "Berfokus pada produksi konten visual berkualitas tinggi untuk kebutuhan komersial dan hiburan.",
+      "items": ["Pembuatan Film", "Pembuatan Video dan musik", "TVC dan iklan", "Script & Storytelling"]
+    },
+    {
+      "icon": "qr_code_2",
+      "title": "Berkah Media Gemilang",
+      "tag": "Media Luar Ruangan",
+      "desc": "Menyediakan solusi media luar ruang dan layanan pendukung untuk membangun brand yang kuat dan berkesan.",
+      "items": ["Event Management", "Bilboard", "Vidiotron", "branding & Signage"]
+    }
+  ],
+  "ourPlatform": "Platform Kami",
+  "techLabel": "TEKNOLOGI",
+  "techHeading": "MELINDUNGI MEREK MELALUI INOVASI",
+  "techDesc": "Lasuarindo Group membangun fondasi digital yang kuat melalui layanan teknologi terdepan. Dari pengembangan perangkat lunak hingga infrastruktur cloud, kami menghadirkan solusi yang cerdas, aman, dan berkelanjutan untuk mendorong transformasi digital bisnis Anda.",
+  "techCards": [
+    {
+      "icon": "router",
+      "title": "Authentic Guards Technology",
+      "desc": "Sistem teknologi terdepan yang melindungi produk dari pemalsuan dan memastikan keaslian melalui verifikasi digital yang aman, cepat, dan terpercaya."
+    },
+    {
+      "icon": "view_in_ar",
+      "title": "Berkah Megah Abadi",
+      "desc": "Solusi teknologi untuk melindungi hak cipta musisi dan pencipta lagu dari pembajakan serta memastikan mereka mendapatkan royalti yang adil dan transparan."
+    }
+  ],
+  "vamosBadge": "Olahraga dan Gaya hidup",
+  "vamosHeading1": "VAMOS PADELON ",
+  "vamosHeading2": "SINERGI",
+  "vamosDesc": "Vamos Padelon Sinergi (VPS) adalah sarana olahraga padel berkualitas dengan fasilitas modern, nyaman, dan berstandar profesional untuk semua kalangan.",
+  "vamosTags": [
+    { "icon": "sports_tennis", "label": "lapangan padel premium" },
+    { "icon": "storefront", "label": "pro shope" },
+    { "icon": "coffee", "label": "cafe dan area relaksasi" },
+    { "icon": "play_circle", "label": "Media" },
+    { "icon": "flight_takeoff", "label": "fasilitas modern" }
+  ],
+  "projectsHeading1": "PROYEK ",
+  "projectsHeading2": "MASA DEPAN",
+  "projectsHeading3": " KAMI",
+  "projectsDesc": "Inilah proyek-proyek strategis yang kami kembangkan untuk membangun masa depan yang lebih baik dan berkelanjutan.",
+  "projects": [
+    { "tag": "Properti", "title": "Kawasan Residensial Premium" },
+    { "tag": "Teknologi", "title": "Digital Hub Indonesia" },
+    { "tag": "Ekosistem", "title": "Ekosistem Bisnis Terpadu" },
+    { "tag": "Sustainability", "title": "Green Development Initiative" }
+  ],
   "futureProjects": "PROYEK MASA DEPAN",
-  "futureProjectsDesc": "Inisiatif berkelanjutan dan terobosan terbaru dalam ekosistem bisnis Lasuarindo Group."
+  "futureProjectsDesc": "Inisiatif berkelanjutan dan terobosan terbaru dalam ekosistem bisnis Lasuarindo Group.",
+  "propertyHeadingOld": "SEKTOR PROPERTI",
+  "propertyDescOld": "Pengembangan kawasan hunian, komersial, dan ruang kerja masa depan yang berkelanjutan dan bernilai investasi tinggi.",
+  "techHeadingOld": "TEKNOLOGI DIGITAL",
+  "techDescOld": "Transformasi digital, pengembangan perangkat lunak, dan infrastruktur komputasi untuk akselerasi pertumbuhan bisnis.",
+  "mediaHeadingOld": "MEDIA & KREATIF",
+  "mediaDescOld": "Produksi konten, media digital terintegrasi, dan strategi komunikasi kreatif untuk membangun citra brand yang berdampak."
 }
