@@ -82,6 +82,32 @@
   ],
   "futureProjects": "PROYEK MASA DEPAN",
   "futureProjectsDesc": "Inisiatif berkelanjutan dan terobosan terbaru dalam ekosistem bisnis Lasuarindo Group.",
+  "ecosystemBadge": "Ekosistem T46",
+  "ecosystemHeading": "Ekosistem Bisnis T46",
+  "ecosystemDesc": "Lasuarindo Group mengelola kawasan T46 sebagai ekosistem bisnis terpadu — dari investasi, teknologi, kuliner, hingga gaya hidup — dengan standar layanan yang konsisten di setiap unit.",
+  "ecosystemGroups": {
+    "managedLabel": "Dikelola Langsung",
+    "managed": [
+      { "icon": "trending_up", "name": "PRO", "desc": "Investasi & kepemilikan bisnis." },
+      { "icon": "domain", "name": "WIN", "desc": "Pengelolaan kawasan & fasilitas T46." },
+      { "icon": "shield", "name": "AGT", "desc": "Teknologi & perlindungan anti-pemalsuan." },
+      { "icon": "storefront", "name": "IDR", "desc": "Pengelolaan food court & tenant kuliner." },
+      { "icon": "coffee", "name": "Lazura Koffie", "desc": "Operasional kopi & F&B." },
+      { "icon": "spray_can", "name": "Asyihan", "desc": "Brand parfum & fragrance." }
+    ],
+    "partnershipLabel": "Kemitraan",
+    "partnership": [
+      { "icon": "sports_tennis", "name": "VPS — Vamos Padelon", "desc": "Olahraga padel & gaya hidup." },
+      { "icon": "gamepad_2", "name": "BMG — Royal HD Mahjong", "desc": "Hiburan & permainan premium." }
+    ],
+    "spacesLabel": "Ekosistem Kawasan",
+    "spaces": [
+      { "icon": "work", "name": "Bizencio Business Hub", "desc": "Business hub & creative space." },
+      { "icon": "sparkles", "name": "SARE", "desc": "Beauty & personal care." },
+      { "icon": "restaurant", "name": "Cuanmie", "desc": "Food & beverage — mie yamin." },
+      { "icon": "local_parking", "name": "SAA", "desc": "Pengelolaan parkir & valet." }
+    ]
+  },
   "propertyHeadingOld": "SEKTOR PROPERTI",
   "propertyDescOld": "Pengembangan kawasan hunian, komersial, dan ruang kerja masa depan yang berkelanjutan dan bernilai investasi tinggi.",
   "techHeadingOld": "TEKNOLOGI DIGITAL",

@@ -91,6 +91,11 @@ const LUCIDE_MAP = {
   qr_code: LucideIcons.QrCode,
   qr_code_2: LucideIcons.QrCode,
   view_in_ar: LucideIcons.Boxes,
+  spray_can: LucideIcons.SprayCan,
+  gamepad_2: LucideIcons.Gamepad2,
+  sparkles: LucideIcons.Sparkles,
+  restaurant: LucideIcons.UtensilsCrossed,
+  local_parking: LucideIcons.CircleParking,
 
   // Values, Security, Status & Legal
   verified_user: LucideIcons.ShieldCheck,
