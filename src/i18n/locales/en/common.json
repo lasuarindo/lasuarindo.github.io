@@ -16,6 +16,14 @@
     "navigation": "Navigation",
     "licence": "Licensing",
     "help": "Help",
+    "legalInfo": "Legal Information",
+    "address": "Address",
+    "more": "More",
+    "group": {
+      "company": "Company",
+      "partnership": "Partnership",
+      "legal": "Legal & Help"
+    },
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "faq": "FAQ Center",

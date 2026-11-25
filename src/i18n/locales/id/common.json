@@ -16,6 +16,14 @@
     "navigation": "Navigasi",
     "licence": "Legalitas",
     "help": "Bantuan",
+    "legalInfo": "Informasi Legal",
+    "address": "Alamat",
+    "more": "Lainnya",
+    "group": {
+      "company": "Perusahaan",
+      "partnership": "Kemitraan",
+      "legal": "Legal & Bantuan"
+    },
     "privacyPolicy": "Kebijakan Privasi",
     "terms": "Syarat & Ketentuan",
     "faq": "Pusat FAQ",
