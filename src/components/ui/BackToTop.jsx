@@ -29,10 +29,12 @@ export function BackToTop({ showOffset = 400 }) {
         type="button"
         onClick={scrollToTop}
         aria-label={t.footer.backToTop}
-        className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-[24px] border-0 bg-[var(--color-primary)] text-[var(--color-on-primary)] shadow-[0_4px_15px_rgba(177,38,0,0.35)] transition-[transform,translate,scale,background-color] duration-200 ease-[ease] hover:-translate-y-0.5 hover:scale-105 hover:bg-[var(--color-on-primary-fixed-variant)]"
+        className="btn btn--solid h-12 w-12 px-0"
       >
-        <Icon name="keyboard-arrow-up" size={28} color="#ffffff" />
+        <Icon name="keyboard-arrow-up" size={24} color="#ffffff" />
       </button>
     </div>
   );
 }
+
+export default BackToTop;

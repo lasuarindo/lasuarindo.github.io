@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 import { Icon } from '@/components/ui/Icon';
-import { Colors } from '@/constants/theme';
-import { BODY_FONT, CONTAINER, DISPLAY_FONT } from '@/constants/layout';
 import logoImg from '@/assets/images/logoHD-rmv.png';
 import { footerGallery } from '@/data/footerGallery';
 import { useStrings } from '@/i18n/useStrings';
@@ -10,11 +8,9 @@ import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { company, formatAddress } from '@/data/company';
 import { footerHelp, footerNav } from '@/data/navigation';
+import { paths } from '@/app/paths';
 
 const YEAR = new Date().getFullYear();
-
-const FOOTER_HEADING = `${DISPLAY_FONT} mb-5 text-[14px] font-bold uppercase tracking-[1px] text-white`;
-const FOOTER_LINK = `${BODY_FONT} text-[14px] text-[#9ca3af] no-underline transition-colors duration-200 hover:text-[var(--color-primary)]`;
 
 function SocialButton({ label, url, icon }) {
   return (
@@ -23,7 +19,7 @@ function SocialButton({ label, url, icon }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-transparent text-[#d1d5db] no-underline transition-all duration-200 hover:border-[var(--color-primary)] hover:text-white"
+      className="social-button"
     >
       <Icon name={icon} size={18} />
     </a>
@@ -33,91 +29,59 @@ function SocialButton({ label, url, icon }) {
 export function Footer() {
   const t = useStrings({ id: idCommon, en: enCommon });
   const { pathname } = useLocation();
-  // Route-aware: the creative-ecosystem gallery only appears on the Businesses page.
-  const isBusinesses = pathname === '/businesses' || pathname.startsWith('/businesses/');
+  // The quiet ecosystem strip belongs to the Businesses route only.
+  const isBusinesses = pathname === paths.businesses || pathname.startsWith(`${paths.businesses}/`);
   const gallery = isBusinesses ? footerGallery : [];
 
   return (
-    <footer
-      className={`relative z-20 border-t-4 border-t-[var(--color-primary)] bg-[#111313] pb-8 text-[#f0f1f1] ${
-        isBusinesses && gallery.length ? 'pt-0' : 'pt-[60px]'
-      }`}
-    >
-      {/* Gallery Section on Businesses Page */}
-      {isBusinesses && gallery.length > 0 && (
-        <div className="mb-8 bg-[#111313] pt-8">
-          <div className={CONTAINER}>
-            <div className="mb-5 flex items-center gap-3">
-              <div className="h-[24px] w-[4px] rounded-[2px] bg-[var(--color-primary)]" />
-              <span className={`${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.12px] text-[var(--color-primary-fixed-dim)]`}>
-                {t.footer.creativeEcosystem}
-              </span>
-            </div>
-
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-[3px]">
-              {gallery.map((imgSrc, i) => (
-                <div
-                  key={i}
-                  className="img-zoom aspect-[16/10] overflow-hidden rounded-[4px] bg-[#2a2c2c]"
-                >
-                  <img src={imgSrc} alt="" className="block h-full w-full object-cover opacity-70" />
-                </div>
+    <footer className="site-footer">
+      {gallery.length > 0 && (
+        <div className="border-b border-[var(--color-line)] py-10">
+          <div className="wrap">
+            <p className="eyebrow">{t.footer.creativeEcosystem}</p>
+            <div className="footer-gallery">
+              {gallery.map((src) => (
+                <img key={src} src={src} alt="" loading="lazy" />
               ))}
             </div>
           </div>
         </div>
       )}
 
-      {/* Brand info + link columns */}
-      <div className={CONTAINER}>
-        <div className="mb-12 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-24">
-          {/* Brand info */}
-          <div className="lg:max-w-[420px]">
-            <div className="mb-3 flex items-center gap-3">
-              <img src={logoImg} alt="Lasuarindo" className="h-[36px] w-auto" />
-              <span className={`${DISPLAY_FONT} text-[18px] font-extrabold tracking-[0.5px] text-white`}>
-                LASUARINDO
+      <div className="wrap pt-16 pb-24">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
+          <div>
+            <div className="flex items-center gap-3">
+              <img src={logoImg} alt="Lasuarindo" className="h-10 w-auto" />
+              <span className="font-[var(--font-display)] text-[18px] font-bold tracking-[-0.02em] text-[var(--color-ink)]">
+                LASUARINDO GROUP
               </span>
             </div>
-            <p className={`${DISPLAY_FONT} mb-[14px] text-[11px] font-semibold uppercase tracking-[1px] text-[var(--color-primary-fixed-dim)]`}>
-              {t.footer.brandSubline}
-            </p>
-            <p className={`${BODY_FONT} mb-6 text-[14px] leading-[1.6] text-[#9ca3af]`}>
-              {t.footer.tagline}
-            </p>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
+            <p className="eyebrow mb-3 mt-5">{t.footer.brandSubline}</p>
+            <p className="prose max-w-[46ch]">{t.footer.tagline}</p>
+            <div className="social-row mt-7">
               {company.social.map((item) => (
                 <SocialButton key={item.label} label={item.label} url={item.url} icon={item.icon} />
               ))}
             </div>
           </div>
 
-          {/* Link columns */}
-          <div className="grid grid-cols-2 gap-10">
-            {/* Navigation */}
+          <div className="grid grid-cols-2 gap-8">
             <div>
-              <h2 className={FOOTER_HEADING}>
-                {t.footer.navigation}
-              </h2>
-              <div className="flex flex-col gap-3">
+              <h2 className="footer-heading">{t.footer.navigation}</h2>
+              <div className="footer-list">
                 {footerNav.map((item) => (
-                  <Link key={item.href} to={item.href} className={FOOTER_LINK}>
+                  <Link key={item.href} to={item.href} className="footer-link">
                     {t(item.labelKey)}
                   </Link>
                 ))}
               </div>
             </div>
-
-            {/* Help */}
             <div>
-              <h2 className={FOOTER_HEADING}>
-                {t.footer.help}
-              </h2>
-              <div className="flex flex-col gap-3">
+              <h2 className="footer-heading">{t.footer.help}</h2>
+              <div className="footer-list">
                 {footerHelp.map((item) => (
-                  <Link key={item.href} to={item.href} className={FOOTER_LINK}>
+                  <Link key={item.href} to={item.href} className="footer-link">
                     {t(item.labelKey)}
                   </Link>
                 ))}
@@ -126,35 +90,27 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Contact section: address and email on their own row */}
-        <div className="mb-12 border-t border-t-[rgba(255,255,255,0.1)] pt-8">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-[240px_1fr] md:gap-10">
-            <h2 className={`${FOOTER_HEADING} md:mb-0`}>
-              {t.footer.contactUs}
-            </h2>
-            <ul className="flex flex-col gap-[14px]">
-              <li className="flex items-start gap-[10px]">
-                <Icon name="location_on" size={18} color={Colors.primary} className="mt-[2px]" />
-                <span className={`${BODY_FONT} text-[14px] leading-5 text-[#9ca3af]`}>
-                  {formatAddress()}
-                </span>
-              </li>
-              <li className="flex items-start gap-[10px]">
-                <Icon name="mail" size={18} color={Colors.primary} className="mt-[2px]" />
-                <a href={`mailto:${company.email}`} className={FOOTER_LINK}>
-                  {company.email}
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="footer-row mt-14">
+          <h2 className="footer-heading">{t.footer.contactUs}</h2>
+          <ul className="footer-list">
+            <li className="flex items-start gap-3 py-2">
+              <Icon name="location_on" size={18} className="mt-[3px] text-[var(--color-muted)]" />
+              <span className="prose">{formatAddress()}</span>
+            </li>
+            <li className="flex items-start gap-3 py-2">
+              <Icon name="mail" size={18} className="mt-[3px] text-[var(--color-muted)]" />
+              <a href={`mailto:${company.email}`} className="link-arrow">
+                {company.email}
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* Bottom copyright bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-t-[rgba(255,255,255,0.1)] pt-[28px]">
-          <span className={`${BODY_FONT} text-[13px] text-[#9ca3af]`}>
+        <div className="footer-legal mt-10">
+          <span className="font-[var(--font-body)] text-[13px] text-[var(--color-muted)]">
             © {YEAR} {t.footer.copyright}
           </span>
-          <span className={`${DISPLAY_FONT} text-[12px] font-semibold tracking-[0.5px] text-[var(--color-primary-fixed-dim)]`}>
+          <span className="font-[var(--font-display)] text-[12px] font-semibold tracking-[0.06em] text-[var(--color-muted)]">
             {t.footer.hashtag}
           </span>
         </div>
