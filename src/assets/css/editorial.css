@@ -532,24 +532,27 @@
 .timeline-embla {
   position: relative;
   overflow: hidden;
-  margin-inline: calc(-1 * var(--gutter));
-  padding-inline: var(--gutter);
-  padding-top: 20px;
+  width: 100%;
+  padding-top: 16px;
+  cursor: grab;
 }
+
+.timeline-embla:active { cursor: grabbing; }
 
 .timeline-embla::before {
   content: '';
   position: absolute;
-  top: 20px;
+  top: 16px;
   left: 0;
   right: 0;
   height: 2px;
   background: var(--color-line);
 }
 
-.timeline-embla__container { display: flex; gap: 36px; padding-top: 0; }
+.timeline-embla__container { display: flex; gap: 36px; }
 .timeline-embla__container .timeline-year { flex: 0 0 auto; min-width: 132px; }
-.timeline-embla__container .timeline-year__dot { top: -27px; }
+.timeline-embla__container .timeline-year__dot { top: -7px; }
+.timeline-year__label { display: block; margin-top: 14px; }
 .timeline-controls { display: flex; gap: 8px; margin-top: 12px; }
 .timeline-detail__rows { margin-top: 24px; border-top: var(--rule); }
 .timeline-detail__row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: var(--rule); }

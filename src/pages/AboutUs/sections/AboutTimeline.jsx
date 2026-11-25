@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Icon } from '@/components/ui/Icon';
@@ -11,9 +11,6 @@ import { CONTAINER } from '@/constants/layout';
 import { timelineDetails } from '@/data/timelineDetails';
 import { useAboutStrings } from '../useAboutStrings';
 
-const alignForIndex = (index, length) =>
-  index === 0 ? 'start' : index === length - 1 ? 'end' : 'center';
-
 /** Swipeable year selector; the latest year is selected by default. */
 export function AboutTimeline() {
   const t = useAboutStrings();
@@ -21,39 +18,47 @@ export function AboutTimeline() {
   const { language } = useLanguage();
   const items = t.about.timeline.items;
   const [active, setActive] = useState(items.length - 1);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'center', containScroll: false });
-  const aligning = useRef(false);
-  const ready = useRef(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'center',
+    containScroll: 'trimSnaps',
+    dragFree: true,
+  });
   const selected = items[active];
   const details = timelineDetails[selected.year]?.[language] || selected.details;
 
-  const scrollToYear = useCallback((index, jump = false) => {
+  const goToYear = useCallback((index, jump = false) => {
     if (!emblaApi) return;
-    emblaApi.reInit({ align: alignForIndex(index, items.length) });
     emblaApi.scrollTo(index, jump);
-  }, [emblaApi, items.length]);
+    setActive(index);
+  }, [emblaApi]);
 
+  // useEffect(() => {
+  //   if (!emblaApi) return undefined;
+  //   const sync = () => setActive(emblaApi.selectedScrollSnap());
+  //   emblaApi.on('select', sync);
+  //   const frame = requestAnimationFrame(() => goToYear(items.length - 1, true));
+  //   return () => {
+  //     cancelAnimationFrame(frame);
+  //     emblaApi.off('select', sync);
+  //   };
+  // }, [emblaApi, items.length, goToYear]);
+  
+  
   useEffect(() => {
     if (!emblaApi) return undefined;
-    const sync = () => {
-      const index = emblaApi.selectedScrollSnap();
-      setActive(index);
-      if (!ready.current || aligning.current) return;
-      aligning.current = true;
-      scrollToYear(index);
-      requestAnimationFrame(() => { aligning.current = false; });
-    };
-    emblaApi.on('select', sync);
-    const frame = requestAnimationFrame(() => {
-      scrollToYear(items.length - 1, true);
-      setActive(items.length - 1);
-      ready.current = true;
-    });
+    const frame = requestAnimationFrame(() => goToYear(items.length - 1, true));
     return () => {
       cancelAnimationFrame(frame);
-      emblaApi.off('select', sync);
     };
-  }, [emblaApi, items.length, scrollToYear]);
+  }, [emblaApi, items.length, goToYear]);
+
+  const step = (direction) => {
+    // const current = emblaApi?.selectedScrollSnap() ?? active;
+    const current = active;
+    
+    const next = Math.max(0, Math.min(items.length - 1, current + direction));
+    goToYear(next);
+  };
 
   return (
     <section className="section section--paper">
@@ -71,13 +76,10 @@ export function AboutTimeline() {
                   type="button"
                   className="timeline-year"
                   aria-pressed={active === index}
-                  onClick={() => {
-                    setActive(index);
-                    scrollToYear(index);
-                  }}
+                  onClick={() => goToYear(index)}
                 >
                   <span className="timeline-year__dot" aria-hidden="true" />
-                  {item.year}
+                  <span className="timeline-year__label">{item.year}</span>
                   {item.status === 'draft' ? <DraftBadge /> : null}
                 </button>
               ))}
@@ -85,10 +87,10 @@ export function AboutTimeline() {
           </div>
 
           <div className="timeline-controls">
-            <button type="button" onClick={() => emblaApi?.scrollPrev()} aria-label={common.carousel.previous} className="carousel__btn">
+            <button type="button" onClick={() => step(-1)} aria-label={common.carousel.previous} className="carousel__btn">
               <Icon name="chevron_left" size={20} color="#b12600" />
             </button>
-            <button type="button" onClick={() => emblaApi?.scrollNext()} aria-label={common.carousel.next} className="carousel__btn">
+            <button type="button" onClick={() => step(1)} aria-label={common.carousel.next} className="carousel__btn">
               <Icon name="chevron_right" size={20} color="#b12600" />
             </button>
           </div>
