@@ -16,6 +16,7 @@ import { getEcosystemByKey } from '@/data/ecosystems';
 import { unitCategories } from '@/data/units';
 import { company, formatAddress } from '@/data/company';
 import { useEcosystemsStrings } from './useEcosystemsStrings';
+import { paths, routePaths } from '@/app/paths';
 
 /** One component for every district in data/ecosystems.js. */
 export function District() {
@@ -74,7 +75,7 @@ export function District() {
               <h2 className="display display--section mt-4">{t.ecosystems.inviteTitle}</h2>
               <p className="lead mt-5">{t.ecosystems.inviteDesc}</p>
               <DraftNote>{t.ecosystems.draftNote}</DraftNote>
-              <Link to="/contact" className="btn btn--solid mt-8">
+              <Link to={paths.contact} className="btn btn--solid mt-8">
                 {t.ecosystems.inviteCta}
                 <Icon name="arrow_forward" size={18} color="#ffffff" />
               </Link>
@@ -112,7 +113,7 @@ export function District() {
                       {category.units.map((unit) => (
                         <Link
                           key={unit.slug}
-                          to={`/units/${unit.slug}`}
+                          to={routePaths.unit(unit.slug)}
                           aria-label={`${d.viewUnit}: ${unit.name}`}
                           className="card no-underline"
                         >
@@ -149,7 +150,7 @@ export function District() {
                 <Icon name="arrow_forward" size={18} color="#ffffff" />
               </a>
             ) : null}
-            <Link to="/units" className="btn btn--outline">
+            <Link to={paths.units} className="btn btn--outline">
               {d.allUnits}
             </Link>
           </div>

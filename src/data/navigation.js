@@ -1,61 +1,40 @@
 /**
  * Navigation structure shared by the desktop header, mobile drawer and footer.
  * Labels are locale keys so the active language resolves them; `icon` is only
- * used by the mobile drawer.
+ * used by the mobile drawer. Every destination comes from `app/paths`.
  *
  * Header has exactly six items: Beranda, Tentang Kami, Bisnis Kami, Ekosistem,
  * Unit, Kontak — in that order. New districts are data, not menu items, and
  * /licence is reached from the footer, /about-us and /legal (not the header).
  */
 
+import { paths } from '@/app/paths';
+
 export const mainNav = [
-  { labelKey: 'nav.home', href: '/', icon: 'home' },
-  { labelKey: 'nav.about', href: '/about-us', icon: 'info' },
-  { labelKey: 'nav.businesses', href: '/businesses', icon: 'design_services' },
-  { labelKey: 'nav.ecosystems', href: '/ecosystems', icon: 'apartment' },
-  { labelKey: 'nav.units', href: '/units', icon: 'boxes' },
-  { labelKey: 'nav.contact', href: '/contact', icon: 'mail' },
+  { labelKey: 'nav.home', href: paths.home, icon: 'home' },
+  { labelKey: 'nav.about', href: paths.about, icon: 'info' },
+  { labelKey: 'nav.businesses', href: paths.businesses, icon: 'design_services' },
+  { labelKey: 'nav.ecosystems', href: paths.ecosystems, icon: 'apartment' },
+  { labelKey: 'nav.units', href: paths.units, icon: 'boxes' },
+  { labelKey: 'nav.contact', href: paths.contact, icon: 'mail' },
 ];
 
-export const ctaLink = { labelKey: 'nav.cta', href: '/contact' };
-
-/**
- * Engagement routes are reached from the Home journey links and their own
- * CTAs, never from the six-item header. Keep key -> path in one place so a
- * route change never needs a hardcoded edit in several components.
- */
-export const engagementLinks = {
-  partnership: {
-    labelKey: 'engagement.partnership',
-    to: '/partnership',
-    intent: 'partnership',
-  },
-  investor: {
-    labelKey: 'engagement.investor',
-    to: '/investor',
-    intent: 'investor',
-  },
-  collaboration: {
-    labelKey: 'engagement.collaboration',
-    to: '/collaboration',
-    intent: 'collaboration',
-  },
-};
+export const ctaLink = { labelKey: 'nav.cta', href: paths.contact };
 
 export const footerNav = [
-  { labelKey: 'nav.home', href: '/' },
-  { labelKey: 'nav.about', href: '/about-us' },
-  { labelKey: 'nav.businesses', href: '/businesses' },
-  { labelKey: 'nav.ecosystems', href: '/ecosystems' },
-  { labelKey: 'nav.units', href: '/units' },
-  { labelKey: 'footer.licence', href: '/licence' },
+  { labelKey: 'nav.home', href: paths.home },
+  { labelKey: 'nav.about', href: paths.about },
+  { labelKey: 'nav.businesses', href: paths.businesses },
+  { labelKey: 'nav.ecosystems', href: paths.ecosystems },
+  { labelKey: 'nav.units', href: paths.units },
+  { labelKey: 'footer.licence', href: paths.licence },
 ];
 
 export const footerHelp = [
-  { labelKey: 'footer.contactUs', href: '/contact' },
-  { labelKey: 'footer.privacyPolicy', href: '/legal/privacy-policy' },
-  { labelKey: 'footer.terms', href: '/legal/term-condition' },
-  { labelKey: 'footer.faq', href: '/faq' },
+  { labelKey: 'footer.contactUs', href: paths.contact },
+  { labelKey: 'footer.privacyPolicy', href: paths.privacy },
+  { labelKey: 'footer.terms', href: paths.terms },
+  { labelKey: 'footer.faq', href: paths.faq },
 ];
 
 /**
@@ -63,6 +42,6 @@ export const footerHelp = [
  * Ekosistem, /units/pro belongs to Unit. The home route must match exactly.
  */
 export function isNavActive(pathname, href) {
-  if (href === '/') return pathname === '/';
+  if (href === paths.home) return pathname === paths.home;
   return pathname === href || pathname.startsWith(`${href}/`);
 }

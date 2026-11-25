@@ -2,7 +2,7 @@ import React from 'react';
 import { useStrings } from '@/i18n/useStrings';
 import idBundle from '@/i18n/locales/id/partnership.json';
 import enBundle from '@/i18n/locales/en/partnership.json';
-import { engagementLinks } from '@/data/navigation';
+import { engagementLinks } from '@/app/paths';
 import { PartnershipHero } from './sections/PartnershipHero';
 import { PartnershipFocus } from './sections/PartnershipFocus';
 import { PartnershipProcess } from './sections/PartnershipProcess';

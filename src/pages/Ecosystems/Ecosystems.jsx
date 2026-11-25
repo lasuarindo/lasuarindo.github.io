@@ -8,6 +8,7 @@ import { FinalCta } from '@/components/ui/FinalCta';
 import { CONTAINER } from '@/constants/layout';
 import { ecosystems } from '@/data/ecosystems';
 import { useEcosystemsStrings } from './useEcosystemsStrings';
+import { paths, routePaths } from '@/app/paths';
 
 /** Lightweight index: the parent URL for every district, now and future. */
 export function Ecosystems() {
@@ -56,7 +57,7 @@ export function Ecosystems() {
             {activeEcosystems.map((ecosystem) => (
               <Link
                 key={ecosystem.key}
-                to={`/ecosystems/${ecosystem.key}`}
+                to={routePaths.ecosystem(ecosystem.key)}
                 className="eco-card"
                 style={{ '--eco-accent': ecosystem.theme.accent }}
               >
@@ -76,7 +77,7 @@ export function Ecosystems() {
               <span className="eco-invite__label">{t.ecosystems.inviteEyebrow}</span>
               <h3 className="eco-invite__title">{t.ecosystems.inviteTitle}</h3>
               <p className="prose">{t.ecosystems.inviteDesc}</p>
-              <Link to="/contact" className="btn btn--outline mt-auto">
+              <Link to={paths.contact} className="btn btn--outline mt-auto">
                 {t.ecosystems.inviteCta}
                 <Icon name="arrow_forward" size={18} color="#b12600" />
               </Link>

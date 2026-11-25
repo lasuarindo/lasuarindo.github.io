@@ -4,6 +4,7 @@ import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CONTAINER } from '@/constants/layout';
 import { useBusinessesStrings } from '../useBusinessesStrings';
+import { routePaths } from '@/app/paths';
 
 /** Points to the district level — unit names belong on /units and /ecosystems. */
 export function BusinessesEcosystem() {
@@ -18,7 +19,7 @@ export function BusinessesEcosystem() {
           subtitle={t.businesses.ecosystemDesc}
         />
         <div className="mt-2">
-          <Link to="/ecosystems/t46" className="btn btn--solid">
+          <Link to={routePaths.t46()} className="btn btn--solid">
             {t.businesses.ecosystemCta}
             <Icon name="arrow_forward" size={18} color="#ffffff" />
           </Link>

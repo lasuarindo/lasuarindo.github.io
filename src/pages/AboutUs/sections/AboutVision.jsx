@@ -4,6 +4,7 @@ import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CONTAINER } from '@/constants/layout';
 import { useAboutStrings } from '../useAboutStrings';
+import { paths } from '@/app/paths';
 
 /** id="visi" is the anchor target of the Home hero's "Visi Kami" button. */
 export function AboutVision() {
@@ -33,7 +34,7 @@ export function AboutVision() {
         </div>
 
         <div className="mt-10">
-          <Link to="/businesses" className="link-arrow">
+          <Link to={paths.businesses} className="link-arrow">
             <span>{t.about.visionLink}</span>
             <Icon name="arrow_forward" size={16} color="#b12600" />
           </Link>

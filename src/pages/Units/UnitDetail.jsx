@@ -16,6 +16,7 @@ import { getEcosystemByKey } from '@/data/ecosystems';
 import { getUnitBySlug, getUnitCategory } from '@/data/units';
 import { formatAddress } from '@/data/company';
 import { useUnitsStrings } from './useUnitsStrings';
+import { paths, routePaths } from '@/app/paths';
 
 /** One component renders all twelve unit detail routes. */
 export function UnitDetail() {
@@ -98,12 +99,12 @@ export function UnitDetail() {
             <Icon name="location_on" size={18} color="#b12600" /> {formatAddress({ includeCountry: true })}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/units" className="btn btn--solid">
+            <Link to={paths.units} className="btn btn--solid">
               <Icon name="arrow_forward" size={18} color="#ffffff" className="rotate-180" />
               {t.units.backToCatalog}
             </Link>
             {ecosystem ? (
-              <Link to={`/ecosystems/${ecosystem.key}`} className="btn btn--outline">
+              <Link to={routePaths.ecosystem(ecosystem.key)} className="btn btn--outline">
                 {t.units.districtLink}
                 <Icon name="arrow_forward" size={18} color="#b12600" />
               </Link>

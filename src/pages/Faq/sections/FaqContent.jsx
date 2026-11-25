@@ -4,6 +4,7 @@ import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { Icon } from '@/components/ui/Icon';
 import { BODY_FONT, CONTAINER } from '@/constants/layout';
 import { useFaqStrings } from '../useFaqStrings';
+import { paths } from '@/app/paths';
 
 export function FaqContent() {
   const t = useFaqStrings();
@@ -33,7 +34,7 @@ export function FaqContent() {
 
           <div className="mt-10">
             <Link
-              to="/contact"
+              to={paths.contact}
               className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-[var(--color-primary)] px-7 py-3 font-[var(--font-display)] text-[14px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-colors duration-200 hover:bg-[var(--color-primary-container)]"
             >
               <span>{t.faq.contactCta}</span>

@@ -101,7 +101,7 @@ export function TermsContent() {
               ))}
 
             {section.definitions?.length > 0 && (
-              <dl className="mt-2 grid gap-3 sm:grid-cols-2">
+              <div className="mt-2 grid gap-3 sm:grid-cols-2">
                 {section.definitions.map((item, idx) => (
                   <div key={item.term} className={`${CARD_CLASS} p-4`}>
                     <div className="mb-3 flex items-center justify-between gap-3">
@@ -113,19 +113,19 @@ export function TermsContent() {
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="font-[var(--font-display)] text-[11px] font-bold tabular-nums text-[rgba(177,38,0,0.45)]">
+                      <span className="font-[var(--font-display)] text-[11px] font-bold tabular-nums text-[var(--color-primary)]">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
                     </div>
-                    <dt className="font-[var(--font-display)] text-[15px] font-bold leading-[1.4] text-[var(--color-on-background)]">
+                    <h3 className="font-[var(--font-display)] text-[15px] font-bold leading-[1.4] text-[var(--color-on-background)]">
                       {item.term}
-                    </dt>
-                    <dd className="m-0 mt-2 text-[14px] leading-[1.65] text-[var(--color-secondary)]">
+                    </h3>
+                    <p className="m-0 mt-2 text-[14px] leading-[1.65] text-[var(--color-secondary)]">
                       {item.definition}
-                    </dd>
+                    </p>
                   </div>
                 ))}
-              </dl>
+              </div>
             )}
 
             {section.bullets?.length > 0 && (

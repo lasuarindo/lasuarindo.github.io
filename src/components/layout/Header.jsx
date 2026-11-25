@@ -8,6 +8,7 @@ import { Icon } from '@/components/ui/Icon';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { ctaLink, isNavActive, mainNav } from '@/data/navigation';
 import logoImg from '@/assets/images/logoHD-rmv.png';
+import { paths } from '@/app/paths';
 
 export function Header() {
   const location = useLocation();
@@ -32,7 +33,7 @@ export function Header() {
       >
         <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-[clamp(14px,3vw,32px)] py-4">
           {/* Logo (flex: 1 matching react_native) */}
-          <Link to="/" className="flex flex-1 items-center gap-3 no-underline">
+          <Link to={paths.home} className="flex flex-1 items-center gap-3 no-underline">
             <img src={logoImg} alt="PT. LASUARINDO Logo" className="h-10 w-auto object-contain" />
             <span className="whitespace-nowrap font-[var(--font-display)] text-[clamp(15px,2.2vw,20px)] font-bold leading-7 tracking-[-0.2px] text-[var(--color-on-surface)]">
               LASUARINDO GROUP

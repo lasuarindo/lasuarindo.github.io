@@ -8,6 +8,7 @@ import { LegalCallout } from '@/components/legal/LegalCallout';
 import { LegalCta } from '@/components/legal/LegalCta';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { usePrivacyStrings } from '../usePrivacyStrings';
+import { paths } from '@/app/paths';
 
 const SECTION_ICONS = {
   introduction: 'description',
@@ -160,7 +161,7 @@ export function PrivacyContent() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(177,38,0,0.08)]">
                     <Icon name={card.icon} size={20} color="#b12600" aria-hidden="true" />
                   </span>
-                  <span className="font-[var(--font-display)] text-[11px] font-bold tabular-nums text-[rgba(177,38,0,0.45)]">
+                  <span className="font-[var(--font-display)] text-[11px] font-bold tabular-nums text-[var(--color-primary)]">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
@@ -307,7 +308,7 @@ export function PrivacyContent() {
           <p className={`${BODY_FONT} m-0 text-[15px] leading-[1.7] text-[var(--color-secondary)]`}>
             {sections.rights.outroPrefix}{' '}
             <Link
-              to="/contact"
+              to={paths.contact}
               className="font-semibold text-[var(--color-primary)] underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
             >
               {sections.rights.outroLink}

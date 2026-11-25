@@ -5,7 +5,7 @@ import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { Icon } from '@/components/ui/Icon';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { ctaLink } from '@/data/navigation';
+import { routePaths } from '@/app/paths';
 
 export function InvestorHero({ bundle, link }) {
   const t = useStrings(bundle);
@@ -29,7 +29,7 @@ export function InvestorHero({ bundle, link }) {
         </h1>
         <p className="lead enter-once" style={{ animationDelay: '120ms' }}>{t.heroLead}</p>
         <div className="cover__actions enter-once" style={{ animationDelay: '180ms' }}>
-          <Link to={`${ctaLink.href}?intent=${link.intent}`} className="btn btn--solid">
+          <Link to={routePaths.contactIntent(link.intent)} className="btn btn--solid">
             {t.ctaButton}
             <Icon name="arrow_forward" size={18} color="#ffffff" />
           </Link>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Icon } from '@/components/ui/Icon';
 import { BODY_FONT } from '@/constants/layout';
+import { paths } from '@/app/paths';
 
 /** Closing contact panel with the brand's dark surface and warm glow. */
 export function LegalCta({ text, buttonText }) {
@@ -19,7 +20,7 @@ export function LegalCta({ text, buttonText }) {
           {text}
         </p>
         <Link
-          to="/contact"
+          to={paths.contact}
           className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 font-[var(--font-display)] text-[14px] font-bold text-[var(--color-on-primary)] no-underline transition-colors duration-150 hover:bg-[var(--color-primary-container)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary-fixed-dim)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-inverse-surface)]"
         >
           <span>{buttonText}</span>

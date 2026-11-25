@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { useHomeStrings } from '../useHomeStrings';
 import heroCity800 from '@/assets/images/opt/hero-city-800.webp';
 import heroCity1600 from '@/assets/images/opt/hero-city-1600.webp';
+import { paths } from '@/app/paths';
 
 export function HomeHero() {
   const t = useHomeStrings();
@@ -37,10 +38,10 @@ export function HomeHero() {
           className="cover__actions enter-once"
           style={{ animationDelay: '180ms' }}
         >
-          <Link to="/businesses" className="btn btn--solid">
+          <Link to={paths.businesses} className="btn btn--solid">
             {t.home.exploreBtn}
           </Link>
-          <Link to="/about-us#visi" className="btn btn--light">
+          <Link to={paths.vision} className="btn btn--light">
             {t.home.visionBtn}
           </Link>
         </div>

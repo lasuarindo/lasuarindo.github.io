@@ -2,7 +2,7 @@ import React from 'react';
 import { useStrings } from '@/i18n/useStrings';
 import idBundle from '@/i18n/locales/id/investor.json';
 import enBundle from '@/i18n/locales/en/investor.json';
-import { engagementLinks } from '@/data/navigation';
+import { engagementLinks } from '@/app/paths';
 import { InvestorHero } from './sections/InvestorHero';
 import { InvestorFocus } from './sections/InvestorFocus';
 import { InvestorProcess } from './sections/InvestorProcess';

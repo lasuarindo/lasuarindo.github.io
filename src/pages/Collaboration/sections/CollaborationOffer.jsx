@@ -5,12 +5,12 @@ import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { DraftNote } from '@/components/ui/DraftBadge';
 import { FinalCta } from '@/components/ui/FinalCta';
-import { ctaLink } from '@/data/navigation';
+import { routePaths } from '@/app/paths';
 import { CONTAINER } from '@/constants/layout';
 
 export function CollaborationOffer({ bundle, link }) {
   const t = useStrings(bundle);
-  const to = `${ctaLink.href}?intent=${link.intent}`;
+  const to = routePaths.contactIntent(link.intent);
 
   return (
     <>

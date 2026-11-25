@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Icon } from '@/components/ui/Icon';
 import { CONTAINER } from '@/constants/layout';
-import { engagementLinks } from '@/data/navigation';
+import { engagementLinks, paths } from '@/app/paths';
 import { useHomeStrings } from '../useHomeStrings';
 import partnershipImg from '@/assets/images/opt/partnership-1200.webp';
 
@@ -41,7 +41,7 @@ export function HomeJourney() {
             <div className="dark-card mt-6">
               <h3>{h.journeyProgramTitle}</h3>
               <p className="mt-2">{h.journeyProgramDesc}</p>
-              <Link to="/contact" className="btn btn--light mt-6">
+              <Link to={paths.contact} className="btn btn--light mt-6">
                 {h.journeyProgramCta}
                 <Icon name="arrow_forward" size={18} color="#ffffff" />
               </Link>

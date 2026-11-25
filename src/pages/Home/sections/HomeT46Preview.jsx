@@ -9,6 +9,7 @@ import { CONTAINER } from '@/constants/layout';
 import { ecosystems } from '@/data/ecosystems';
 import { getUnitBySlug } from '@/data/units';
 import { useHomeStrings } from '../useHomeStrings';
+import { paths, routePaths } from '@/app/paths';
 
 // A short preview only; the complete twelve live on /units and /ecosystems/t46.
 const PREVIEW_SLUGS = ['pro', 'win', 'agt', 'lazura-koffie', 'vps-vamos-padelon', 'bizencio-business-hub'];
@@ -32,7 +33,7 @@ export function HomeT46Preview() {
             {activeEcosystems.map((ecosystem) => (
               <Link
                 key={ecosystem.key}
-                to={`/ecosystems/${ecosystem.key}`}
+                to={routePaths.ecosystem(ecosystem.key)}
                 className="eco-card"
                 style={{ '--eco-accent': ecosystem.theme.accent }}
               >
@@ -51,7 +52,7 @@ export function HomeT46Preview() {
               <span className="eco-invite__label">{preview.upcomingEyebrow}</span>
               <h3 className="eco-invite__title">{preview.upcomingTitle}</h3>
               <p className="prose">{preview.upcomingDesc}</p>
-              <Link to="/contact" className="btn btn--outline mt-auto">
+              <Link to={paths.contact} className="btn btn--outline mt-auto">
                 {preview.upcomingCta}
                 <Icon name="arrow_forward" size={18} color="#b12600" />
               </Link>
@@ -77,7 +78,7 @@ export function HomeT46Preview() {
             ))}
           </div>
           <div className="mt-10">
-            <Link to="/units" className="btn btn--outline">
+            <Link to={paths.units} className="btn btn--outline">
               {preview.unitsCta}
               <Icon name="arrow_forward" size={18} color="#b12600" />
             </Link>

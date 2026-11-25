@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { Icon } from '@/components/ui/Icon';
 import { CONTAINER } from '@/constants/layout';
 import { useBusinessesStrings } from '../useBusinessesStrings';
+import { paths } from '@/app/paths';
 
 /** Nothing is published yet — show an honest, designed empty state. */
 export function BusinessesProjects() {
@@ -31,7 +32,7 @@ export function BusinessesProjects() {
           <h3 className="display display--section mt-6">{t.businesses.projectsEmptyHeading}</h3>
           <p className="lead mt-4">{t.businesses.projectsEmptyLead}</p>
           <p className="impact-note mt-6">{t.businesses.projectsEmptyNote}</p>
-          <Link to="/contact" className="btn btn--outline mt-8">
+          <Link to={paths.contact} className="btn btn--outline mt-8">
             {t.businesses.partnerBtn}
             <Icon name="arrow_forward" size={18} color="#b12600" />
           </Link>

@@ -6,6 +6,7 @@ import { Icon } from '@/components/ui/Icon';
 import { getSectorByKey } from '@/data/sectors';
 import { getUnitCategory } from '@/data/units';
 import { unitImage } from '@/data/unitVisual';
+import { routePaths } from '@/app/paths';
 
 /** One card for a unit, shared by the Home preview and the Units directory. */
 export function UnitCard({ unit, index, detailLabel }) {
@@ -15,7 +16,7 @@ export function UnitCard({ unit, index, detailLabel }) {
 
   return (
     <Link
-      to={`/units/${unit.slug}`}
+      to={routePaths.unit(unit.slug)}
       aria-label={`${detailLabel}: ${unit.name}`}
       className="card card--grow unit-card no-underline"
     >

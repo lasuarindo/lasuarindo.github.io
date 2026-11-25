@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { useBusinessesStrings } from '../useBusinessesStrings';
 import heroCity from '@/assets/images/opt/hero-city-wide-1600.webp';
+import { paths } from '@/app/paths';
 
 export function BusinessesHero() {
   const t = useBusinessesStrings();
@@ -21,7 +22,7 @@ export function BusinessesHero() {
           {t.businesses.heroSubtitle}
         </p>
         <div className="cover__actions enter-once" style={{ animationDelay: '180ms' }}>
-          <Link to="/contact" className="btn btn--solid">
+          <Link to={paths.contact} className="btn btn--solid">
             {t.businesses.partnerBtn}
           </Link>
         </div>

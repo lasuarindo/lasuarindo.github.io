@@ -7,6 +7,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CONTAINER } from '@/constants/layout';
 import { sectors, sectorSummaries } from '@/data/sectors';
 import { useBusinessesStrings } from '../useBusinessesStrings';
+import { routePaths } from '@/app/paths';
 
 /** The six business lines — sector level only, never individual units. */
 export function BusinessesSectors() {
@@ -37,7 +38,7 @@ export function BusinessesSectors() {
           ))}
         </div>
         <div className="mt-10">
-          <Link to="/ecosystems/t46" className="link-arrow">
+          <Link to={routePaths.t46()} className="link-arrow">
             <span>{t.businesses.ecosystemCta}</span>
             <Icon name="arrow_forward" size={16} color="#b12600" />
           </Link>

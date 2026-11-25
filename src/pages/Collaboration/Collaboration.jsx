@@ -2,7 +2,7 @@ import React from 'react';
 import { useStrings } from '@/i18n/useStrings';
 import idBundle from '@/i18n/locales/id/collaboration.json';
 import enBundle from '@/i18n/locales/en/collaboration.json';
-import { engagementLinks } from '@/data/navigation';
+import { engagementLinks } from '@/app/paths';
 import { CollaborationHero } from './sections/CollaborationHero';
 import { CollaborationFocus } from './sections/CollaborationFocus';
 import { CollaborationProcess } from './sections/CollaborationProcess';

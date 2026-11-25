@@ -7,6 +7,7 @@ import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CONTAINER } from '@/constants/layout';
 import { useHomeStrings } from '../useHomeStrings';
+import { paths } from '@/app/paths';
 
 export function HomeEcosystem() {
   const { language } = useLanguage();
@@ -44,7 +45,7 @@ export function HomeEcosystem() {
         </div>
 
         <div className="mt-10">
-          <Link to="/businesses" className="link-arrow">
+          <Link to={paths.businesses} className="link-arrow">
             <span>{t.home.sectorsCta}</span>
             <Icon name="arrow_forward" size={16} color="#b12600" />
           </Link>
