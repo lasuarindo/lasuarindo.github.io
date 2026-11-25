@@ -14,6 +14,8 @@
     "body": "Lasuarindo Group menginvestasikan, memiliki, dan mengelola bisnis di enam lini usaha, dari investasi dan properti hingga teknologi, media, F&B, dan gaya hidup. Kami mengembangkan setiap unit dalam satu ekosistem di kawasan T46, Bandung.",
     "keywords": ["Investasi", "Pengelolaan", "Pengembangan"]
   },
+  "sectorDetailsHeading": "Lingkup Bisnis Kami",
+  "sectorDetailsLead": "Enam sektor ini membentuk portofolio grup. Setiap sektor memiliki unit yang menjalankan kegiatan sehari-hari di kawasan kami.",
   "sectorsHeading": "Enam Sektor, Satu Grup",
   "sectorsDesc": "Portofolio kami terdiri dari enam sektor bisnis. Setiap sektor memiliki peran tersendiri dan berkontribusi pada ekosistem grup secara keseluruhan.",
   "propertyScope": "Lingkupnya mencakup perencanaan kawasan hunian, desain dan konstruksi, serta manajemen properti. Pengembangan kawasan dan fasilitas dilakukan bersama WIN, Bizencio, dan SAA.",
@@ -116,6 +118,7 @@
       "b": "Varian B — Garis langkah",
       "c": "Varian C — Daftar bernomor"
     },
+    "generic": "Tahapan ini adalah gambaran umum alur kerja kami dan akan disesuaikan dengan kebutuhan setiap kerja sama.",
     "eyebrow": "CARA KAMI BEKERJA",
     "heading": "Dari Percakapan ke Dampak",
     "steps": [

@@ -14,6 +14,8 @@
     "body": "Lasuarindo Group invests in, owns, and manages businesses across six business lines, from investment and property to technology, media, F&B, and lifestyle. We develop each unit within one ecosystem at the T46 district in Bandung.",
     "keywords": ["Investment", "Management", "Development"]
   },
+  "sectorDetailsHeading": "Our Business Scope",
+  "sectorDetailsLead": "These six sectors make up the group portfolio. Each sector has units carrying out day-to-day work in our district.",
   "sectorsHeading": "Six Sectors, One Group",
   "sectorsDesc": "Our portfolio is made up of six business sectors. Each has its own role and contributes to the group ecosystem as a whole.",
   "propertyScope": "Its scope covers residential district planning, design and construction, and property management. District and facility development is carried out with WIN, Bizencio, and SAA.",
@@ -116,6 +118,7 @@
       "b": "Option B — Step line",
       "c": "Option C — Numbered list"
     },
+    "generic": "These stages describe our general working flow and are adapted to each collaboration.",
     "eyebrow": "HOW WE WORK",
     "heading": "From Conversation to Impact",
     "steps": [

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
@@ -8,11 +7,10 @@ import { localized } from '@/utils/localized';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
+import { UnitCard } from '@/components/ui/UnitCard';
 import { FinalCta } from '@/components/ui/FinalCta';
 import { CONTAINER } from '@/constants/layout';
 import { unitCategories, units } from '@/data/units';
-import { unitImage } from '@/data/unitVisual';
 import { useUnitsStrings } from './useUnitsStrings';
 
 /** Catalog of all twelve units — the parent URL for /units/:slug. */
@@ -91,42 +89,18 @@ export function Units() {
           <SectionHeader titlePrimary={t.units.gridHeading} />
           {shown.length ? (
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {shown.map((unit, index) => {
-                const category = unitCategories.find((item) => item.key === unit.category);
-                const image = unitImage(index);
-                return (
-                  <Link
-                    key={unit.slug}
-                    to={`/units/${unit.slug}`}
-                    aria-label={`${t.units.detailLabel}: ${unit.name}`}
-                    className="card card--grow unit-card no-underline"
-                  >
-                    <div className="unit-card__media">
-                      <img src={image} alt="" loading="lazy" decoding="async" />
-                      <span className="unit-card__badge">
-                        {category ? localized(category.label, language) : unit.name}
-                      </span>
-                    </div>
-                    <div className="unit-card__body">
-                      <div className="flex items-start justify-between gap-3">
-                        <Icon name={unit.icon} size={24} color="#b12600" />
-                        <DraftBadge />
-                      </div>
-                      <h3 className="display display--card card__title">{unit.name}</h3>
-                      <p className="prose">{localized(unit.desc, language)}</p>
-                      <span className="card__cta mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-bold text-[var(--color-primary)]">
-                        {t.units.detailLabel}
-                        <Icon name="arrow_forward" size={16} color="#b12600" />
-                      </span>
-                    </div>
-                  </Link>
-                );
-              })}
+              {shown.map((unit, index) => (
+                <UnitCard
+                  key={unit.slug}
+                  unit={unit}
+                  index={index}
+                  detailLabel={t.units.detailLabel}
+                />
+              ))}
             </div>
           ) : (
             <p className="lead">{t.units.noResults}</p>
           )}
-          <DraftNote>{common.status.draftNote}</DraftNote>
         </div>
       </section>
       <FinalCta {...t.units.finalCta} />

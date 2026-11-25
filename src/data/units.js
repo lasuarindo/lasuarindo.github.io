@@ -4,8 +4,8 @@
  * illustrative content recorded in drafts.md §E (C1/N6) — use the values,
  * never render the document marker.
  *
- * Public whitelist: slug, ecosystem, name, category, icon, desc, overview,
- * capabilities, status. `status: 'draft'` marks the temporary overview and
+ * Public whitelist: slug, sector, ecosystem, name, category, icon, desc,
+ * overview, capabilities, status. `status: 'draft'` marks the temporary overview and
  * capabilities. Internal staff and contract fields are deliberately absent.
  */
 
@@ -16,6 +16,7 @@ export const unitCategories = [
     units: [
       {
         slug: 'pro',
+        sector: 'investment',
         ecosystem: 't46',
         status: 'draft',
         name: 'PRO',
@@ -33,6 +34,7 @@ export const unitCategories = [
       },
       {
         slug: 'win',
+        sector: 'property',
         ecosystem: 't46',
         status: 'draft',
         name: 'WIN',
@@ -50,6 +52,7 @@ export const unitCategories = [
       },
       {
         slug: 'agt',
+        sector: 'technology',
         ecosystem: 't46',
         status: 'draft',
         name: 'AGT',
@@ -70,6 +73,7 @@ export const unitCategories = [
       },
       {
         slug: 'idr',
+        sector: 'food',
         ecosystem: 't46',
         status: 'draft',
         name: 'IDR',
@@ -90,6 +94,7 @@ export const unitCategories = [
       },
       {
         slug: 'lazura-koffie',
+        sector: 'food',
         ecosystem: 't46',
         status: 'draft',
         name: 'Lazura Koffie',
@@ -107,6 +112,7 @@ export const unitCategories = [
       },
       {
         slug: 'asyihan',
+        sector: 'food',
         ecosystem: 't46',
         status: 'draft',
         name: 'Asyihan',
@@ -130,6 +136,7 @@ export const unitCategories = [
     units: [
       {
         slug: 'vps-vamos-padelon',
+        sector: 'lifestyle',
         ecosystem: 't46',
         status: 'draft',
         name: 'VPS — Vamos Padelon',
@@ -147,6 +154,7 @@ export const unitCategories = [
       },
       {
         slug: 'bmg-royal-hd-mahjong',
+        sector: 'lifestyle',
         ecosystem: 't46',
         status: 'draft',
         name: 'BMG — Royal HD Mahjong',
@@ -173,6 +181,7 @@ export const unitCategories = [
     units: [
       {
         slug: 'bizencio-business-hub',
+        sector: 'property',
         ecosystem: 't46',
         status: 'draft',
         name: 'Bizencio Business Hub',
@@ -190,6 +199,7 @@ export const unitCategories = [
       },
       {
         slug: 'sare',
+        sector: 'lifestyle',
         ecosystem: 't46',
         status: 'draft',
         name: 'SARE',
@@ -207,6 +217,7 @@ export const unitCategories = [
       },
       {
         slug: 'cuanmie',
+        sector: 'food',
         ecosystem: 't46',
         status: 'draft',
         name: 'Cuanmie',
@@ -224,6 +235,7 @@ export const unitCategories = [
       },
       {
         slug: 'saa',
+        sector: 'property',
         ecosystem: 't46',
         status: 'draft',
         name: 'SAA',

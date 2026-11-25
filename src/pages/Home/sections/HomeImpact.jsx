@@ -27,7 +27,6 @@ export function HomeImpact() {
             </div>
           ))}
         </div>
-        <p className="impact-note">{t.home.impact.note}</p>
       </div>
     </section>
   );

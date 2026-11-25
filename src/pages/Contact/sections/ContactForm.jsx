@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { GradientDivider } from '@/components/ui/GradientDivider';
@@ -17,10 +18,16 @@ const INFO_TEXT = `m-0 ${BODY_FONT} text-[14px] leading-5 text-[var(--color-seco
 export function ContactForm() {
   const t = useContactStrings();
   const { language } = useLanguage();
+  const location = useLocation();
+  const intentIndex = { partnership: 0, investor: 1, collaboration: 2 }[
+    new URLSearchParams(location.search).get('intent')
+  ];
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
   const [perusahaan, setPerusahaan] = useState('');
-  const [subjek, setSubjek] = useState('');
+  const [subjek, setSubjek] = useState(
+    intentIndex === undefined ? '' : t.contact.subjects[intentIndex] || ''
+  );
   const [pesan, setPesan] = useState('');
   const [status, setStatus] = useState({ type: '', message: '' });
 

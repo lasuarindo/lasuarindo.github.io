@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
-import { sectors } from '@/data/sectors';
+import { sectors, sectorSummaries } from '@/data/sectors';
 import { localized } from '@/utils/localized';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -33,7 +33,7 @@ export function HomeEcosystem() {
               <h3 className="display display--card card__title">
                 {localized(sector.title, language)}
               </h3>
-              <p className="prose">{localized(sector.desc, language)}</p>
+              <p className="prose">{localized(sectorSummaries[sector.key], language)}</p>
               {sector.highlight ? (
                 <span className="mt-auto block pt-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--color-primary)]">
                   {t.home.focusTag}

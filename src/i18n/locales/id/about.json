@@ -61,18 +61,25 @@
     "eyebrow": "PERJALANAN KAMI",
     "heading": "Langkah yang Membangun Kami",
     "interactiveNote": "Pilih tahun untuk melihat ringkasan langkah tersebut. Detail lengkapnya masih disiapkan.",
+    "detailLabels": {
+      "activity": "Kegiatan",
+      "unit": "Unit",
+      "ecosystem": "Ekosistem",
+      "collaborator": "Kolaborator",
+      "partnership": "Kemitraan"
+    },
     "items": [
-      { "year": "2016", "title": "Awal Mula", "desc": "Lasuarindo Group mulai membangun fondasi bisnis yang terintegrasi.", "status": "draft" },
-      { "year": "2017", "title": "Catatan 2017", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft" },
-      { "year": "2018", "title": "Catatan 2018", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft" },
-      { "year": "2019", "title": "Ekspansi Sektor", "desc": "Portofolio berkembang ke properti, investasi, dan teknologi.", "status": "draft" },
-      { "year": "2020", "title": "Catatan 2020", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft" },
-      { "year": "2021", "title": "Catatan 2021", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft" },
-      { "year": "2022", "title": "Kawasan T46", "desc": "Pengembangan kawasan T46 sebagai pusat ekosistem bisnis grup.", "status": "draft" },
-      { "year": "2023", "title": "Catatan 2023", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft" },
-      { "year": "2024", "title": "Catatan 2024", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft" },
-      { "year": "2025", "title": "Ekosistem Terpadu", "desc": "Dua belas unit bisnis berjalan dalam satu ekosistem kawasan.", "status": "draft" },
-      { "year": "2026", "title": "Rencana 2026", "desc": "Rencana tahun berjalan sedang disiapkan.", "status": "draft" }
+      { "year": "2016", "title": "Awal Mula", "desc": "Lasuarindo Group mulai membangun fondasi bisnis yang terintegrasi.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2017", "title": "Catatan 2017", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2018", "title": "Catatan 2018", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2019", "title": "Ekspansi Sektor", "desc": "Portofolio berkembang ke properti, investasi, dan teknologi.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2020", "title": "Catatan 2020", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2021", "title": "Catatan 2021", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2022", "title": "Kawasan T46", "desc": "Pengembangan kawasan T46 sebagai pusat ekosistem bisnis grup.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2023", "title": "Catatan 2023", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2024", "title": "Catatan 2024", "desc": "Detail kegiatan tahun ini belum tersedia.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2025", "title": "Ekosistem Terpadu", "desc": "Dua belas unit bisnis berjalan dalam satu ekosistem kawasan.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } },
+      { "year": "2026", "title": "Rencana 2026", "desc": "Rencana tahun berjalan sedang disiapkan.", "status": "draft", "details": { "activity": "Kegiatan pada tahun ini masih disiapkan.", "unit": "Unit yang ditambahkan belum dicatat.", "ecosystem": "Ekosistem yang ada belum dicatat.", "collaborator": "Kolaborator terbaru belum dicatat.", "partnership": "Kemitraan baru belum dicatat." } }
     ]
   },
   "cta": {

@@ -5,7 +5,7 @@ import { localized } from '@/utils/localized';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CONTAINER } from '@/constants/layout';
-import { sectors, sectorDetails } from '@/data/sectors';
+import { sectors, sectorSummaries } from '@/data/sectors';
 import { useBusinessesStrings } from '../useBusinessesStrings';
 
 /** The six business lines — sector level only, never individual units. */
@@ -32,10 +32,7 @@ export function BusinessesSectors() {
               <h3 className="display display--card card__title">
                 {localized(sector.title, language)}
               </h3>
-              <p className="prose">{localized(sector.desc, language)}</p>
-              <p className="prose mt-4 border-t border-[var(--color-line)] pt-4">
-                {localized(sectorDetails[sector.key], language)}
-              </p>
+              <p className="prose">{localized(sectorSummaries[sector.key], language)}</p>
             </div>
           ))}
         </div>

@@ -4,7 +4,6 @@ import { useLanguage } from '@/i18n/language.js';
 import { localized } from '@/utils/localized';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DraftNote } from '@/components/ui/DraftBadge';
 import { FinalCta } from '@/components/ui/FinalCta';
 import { CONTAINER } from '@/constants/layout';
 import { ecosystems } from '@/data/ecosystems';
@@ -83,7 +82,6 @@ export function Ecosystems() {
               </Link>
             </div>
           </div>
-          <DraftNote>{t.ecosystems.draftNote}</DraftNote>
         </div>
       </section>
 
