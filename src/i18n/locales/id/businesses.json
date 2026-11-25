@@ -16,6 +16,9 @@
   },
   "sectorsHeading": "Enam Sektor, Satu Grup",
   "sectorsDesc": "Portofolio kami terdiri dari enam sektor bisnis. Setiap sektor memiliki peran tersendiri dan berkontribusi pada ekosistem grup secara keseluruhan.",
+  "propertyScope": "Lingkupnya mencakup perencanaan kawasan hunian, desain dan konstruksi, serta manajemen properti. Pengembangan kawasan dan fasilitas dilakukan bersama WIN, Bizencio, dan SAA.",
+  "mediaScope": "Lingkupnya meliputi portal berita dan media sosial (MSS), produksi film, video, musik, dan iklan (Arcadia Segara Cita), serta billboard, vidiotron, dan branding (Berkah Media Gemilang).",
+  "techScope": "Lingkupnya mencakup verifikasi digital untuk perlindungan produk melalui AGT/Authentic Guards, serta perlindungan hak cipta musisi dan pencipta lagu melalui Berkah Megah Abadi.",
   "propertyLabel": "PROPERTI",
   "propertyHeading": "MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK",
   "propertyDesc": "Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.",
@@ -107,6 +110,12 @@
   "ecosystemDesc": "PRO, WIN, dan AGT adalah sebagian dari unit yang berjalan di kawasan T46. Lihat semuanya di halaman ekosistem.",
   "ecosystemCta": "Lihat Ekosistem T46",
   "process": {
+    "variants": {
+      "note": "Beberapa usulan tampilan sedang ditampilkan bersamaan untuk dipilih.",
+      "a": "Varian A — Kartu langkah",
+      "b": "Varian B — Garis langkah",
+      "c": "Varian C — Daftar bernomor"
+    },
     "eyebrow": "CARA KAMI BEKERJA",
     "heading": "Dari Percakapan ke Dampak",
     "steps": [

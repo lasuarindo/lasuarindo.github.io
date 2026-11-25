@@ -10,6 +10,10 @@
     { "title": "Room to grow", "text": "New ecosystems can be added as the group grows." }
   ],
   "draftNote": "Ecosystems marked DRAFT are planned; their details are not yet verified.",
+  "inviteEyebrow": "UPCOMING ECOSYSTEMS",
+  "inviteTitle": "Build the next ecosystem with us",
+  "inviteDesc": "We are open to new partners and districts. Register your ecosystem or start a conversation with our team.",
+  "inviteCta": "Register an ecosystem",
   "districtsHeading": "Our Districts",
   "viewDistrict": "Explore district",
   "district": {

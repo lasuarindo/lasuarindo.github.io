@@ -44,6 +44,12 @@
   "collaboration": "Collaboration",
   "journeyProgramTitle": "Partnership Programme",
   "journeyProgramDesc": "Registration mechanics and partner criteria are being prepared by the team.",
+  "journeyVariants": {
+    "note": "Several layout options are shown together for review.",
+    "a": "Option A — Photo & link list",
+    "b": "Option B — Statement & steps",
+    "c": "Option C — Partnership cards"
+  },
   "impact": {
     "eyebrow": "OUR IMPACT",
     "stat1": { "value": "12", "label": "registered units in the group portfolio" },

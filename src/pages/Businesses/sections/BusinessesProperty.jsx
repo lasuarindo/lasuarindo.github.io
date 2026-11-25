@@ -17,6 +17,7 @@ export function BusinessesProperty() {
             <h2 className="display display--section">{t.businesses.propertyHeading}</h2>
             <div className="rule" />
             <p className="lead">{t.businesses.propertyDesc}</p>
+            <p className="prose mt-4 max-w-[62ch]">{t.businesses.propertyScope}</p>
 
             <div className="feature-row">
               {t.businesses.propertyFeatures.map((item) => (

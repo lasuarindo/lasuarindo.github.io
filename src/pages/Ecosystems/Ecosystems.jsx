@@ -4,7 +4,7 @@ import { useLanguage } from '@/i18n/language.js';
 import { localized } from '@/utils/localized';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
+import { DraftNote } from '@/components/ui/DraftBadge';
 import { FinalCta } from '@/components/ui/FinalCta';
 import { CONTAINER } from '@/constants/layout';
 import { ecosystems } from '@/data/ecosystems';
@@ -14,6 +14,7 @@ import { useEcosystemsStrings } from './useEcosystemsStrings';
 export function Ecosystems() {
   const t = useEcosystemsStrings();
   const { language } = useLanguage();
+  const activeEcosystems = ecosystems.filter((ecosystem) => ecosystem.status !== 'draft');
 
   return (
     <>
@@ -53,7 +54,7 @@ export function Ecosystems() {
         <div className={CONTAINER}>
           <SectionHeader titlePrimary={t.ecosystems.districtsHeading} />
           <div className="eco-grid">
-            {ecosystems.map((ecosystem) => (
+            {activeEcosystems.map((ecosystem) => (
               <Link
                 key={ecosystem.key}
                 to={`/ecosystems/${ecosystem.key}`}
@@ -64,7 +65,6 @@ export function Ecosystems() {
                   {localized(ecosystem.theme.label, language)}
                 </span>
                 <h3 className="eco-card__title">{localized(ecosystem.name, language)}</h3>
-                {ecosystem.status === 'draft' ? <DraftBadge /> : null}
                 <p className="prose">{localized(ecosystem.intro, language)}</p>
                 <span className="eco-card__foot">
                   {t.ecosystems.viewDistrict}
@@ -72,6 +72,16 @@ export function Ecosystems() {
                 </span>
               </Link>
             ))}
+
+            <div className="eco-invite">
+              <span className="eco-invite__label">{t.ecosystems.inviteEyebrow}</span>
+              <h3 className="eco-invite__title">{t.ecosystems.inviteTitle}</h3>
+              <p className="prose">{t.ecosystems.inviteDesc}</p>
+              <Link to="/contact" className="btn btn--outline mt-auto">
+                {t.ecosystems.inviteCta}
+                <Icon name="arrow_forward" size={18} color="#b12600" />
+              </Link>
+            </div>
           </div>
           <DraftNote>{t.ecosystems.draftNote}</DraftNote>
         </div>

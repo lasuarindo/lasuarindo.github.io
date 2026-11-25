@@ -16,6 +16,7 @@ export function BusinessesMedia() {
           titleSecondary={t.businesses.mediaHeadingAccent}
           subtitle={t.businesses.mediaDesc}
         />
+        <p className="prose mb-8 max-w-[80ch]">{t.businesses.mediaScope}</p>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {t.businesses.mediaCards.map((card) => (

@@ -7,7 +7,8 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { ecosystems } from '@/data/ecosystems';
-import { getUnitBySlug } from '@/data/units';
+import { getUnitBySlug, unitCategories } from '@/data/units';
+import { unitImage } from '@/data/unitVisual';
 import { useHomeStrings } from '../useHomeStrings';
 
 // A short preview only; the complete twelve live on /units and /ecosystems/t46.
@@ -50,7 +51,6 @@ export function HomeT46Preview() {
             <div className="eco-invite">
               <span className="eco-invite__label">{preview.upcomingEyebrow}</span>
               <h3 className="eco-invite__title">{preview.upcomingTitle}</h3>
-              <DraftBadge />
               <p className="prose">{preview.upcomingDesc}</p>
               <Link to="/contact" className="btn btn--outline mt-auto">
                 {preview.upcomingCta}
@@ -69,20 +69,29 @@ export function HomeT46Preview() {
             subtitle={preview.unitsDesc}
           />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {PREVIEW_SLUGS.map((slug) => {
+            {PREVIEW_SLUGS.map((slug, index) => {
               const unit = getUnitBySlug(slug);
+              const category = unitCategories.find((item) => item.key === unit.category);
               return (
-                <Link key={slug} to={`/units/${slug}`} className="card card--grow no-underline">
-                  <div className="flex items-start justify-between">
-                    <Icon name={unit.icon} size={24} color="#b12600" />
-                    <DraftBadge />
+                <Link key={slug} to={`/units/${slug}`} className="card card--grow unit-card no-underline">
+                  <div className="unit-card__media">
+                    <img src={unitImage(index)} alt="" loading="lazy" decoding="async" />
+                    <span className="unit-card__badge">
+                      {category ? localized(category.label, language) : unit.name}
+                    </span>
                   </div>
-                  <h3 className="display display--card card__title">{unit.name}</h3>
-                  <p className="prose">{localized(unit.desc, language)}</p>
-                  <span className="card__cta mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-bold text-[var(--color-primary)]">
-                    {preview.detailLabel}
-                    <Icon name="arrow_forward" size={16} color="#b12600" />
-                  </span>
+                  <div className="unit-card__body">
+                    <div className="flex items-start justify-between gap-3">
+                      <Icon name={unit.icon} size={24} color="#b12600" />
+                      <DraftBadge />
+                    </div>
+                    <h3 className="display display--card card__title">{unit.name}</h3>
+                    <p className="prose">{localized(unit.desc, language)}</p>
+                    <span className="card__cta mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-bold text-[var(--color-primary)]">
+                      {preview.detailLabel}
+                      <Icon name="arrow_forward" size={16} color="#b12600" />
+                    </span>
+                  </div>
                 </Link>
               );
             })}

@@ -404,6 +404,9 @@
   background: #faf6f0;
 }
 
+.eco-invite--feature { padding: clamp(32px, 5vw, 64px); border-width: 1px; border-style: dashed; border-top: 3px solid var(--color-tertiary); }
+.eco-invite--feature .lead { max-width: 62ch; }
+
 .eco-invite__label { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-tertiary); }
 .eco-invite__title { margin: 0; font-family: var(--font-display); font-size: clamp(21px, 2vw, 28px); font-weight: 600; line-height: 1.2; letter-spacing: -0.03em; color: var(--color-ink); }
 
@@ -448,10 +451,57 @@
 }
 
 .network-marquee {
-  margin-top: 24px;
+  max-width: 70%;
+  margin: 24px auto 0;
   padding-block: 22px;
   border-top: var(--rule);
   border-bottom: var(--rule);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+@media (max-width: 760px) {
+  .network-marquee { max-width: 92%; }
+}
+
+.carousel__frame { position: relative; aspect-ratio: 4 / 3; }
+.carousel__frame img { position: absolute; inset: 0; opacity: 0; transition: opacity 400ms ease; }
+.carousel__frame img.is-active { opacity: 1; }
+.carousel__frame:hover img { transform: none; }
+.carousel__controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 12px; }
+.carousel__btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--color-line); background: #fff; cursor: pointer; }
+.carousel__btn:hover { border-color: var(--color-primary); }
+.carousel__dots { display: flex; gap: 8px; }
+.carousel__dot { width: 10px; height: 10px; padding: 0; border: 1px solid var(--color-line-strong); border-radius: 50%; background: transparent; cursor: pointer; }
+.carousel__dot.is-active { border-color: var(--color-primary); background: var(--color-primary); }
+
+.step-line { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 8px; }
+.step-line__item { position: relative; padding-top: 44px; border-top: 2px solid var(--color-line); }
+.step-line__dot { position: absolute; top: -17px; left: 0; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 2px solid var(--color-primary); border-radius: 50%; background: var(--color-paper); font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--color-primary); }
+
+.step-list { margin: 8px 0 0; padding: 0; list-style: none; border-top: var(--rule); }
+.step-list li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 20px; padding: 22px 0; border-bottom: var(--rule); }
+.step-list__index { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-primary); }
+
+@media (max-width: 760px) {
+  .step-line { grid-template-columns: 1fr; }
+  .step-list li { grid-template-columns: 44px minmax(0, 1fr); }
+}
+
+.variant-block { margin-top: 36px; padding-top: 24px; border-top: 2px dashed var(--color-line-strong); }
+.variant-label { display: inline-flex; padding: 4px 8px; border: 1px solid var(--color-line-strong); font-family: var(--font-display); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted); }
+.section--ink .variant-label { color: #e8e4dd; border-color: rgba(255, 255, 255, 0.45); }
+
+.unit-search:focus-within {
+  outline: 3px solid var(--color-primary-fixed-dim);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-primary);
+}
+
+.unit-search input:focus-visible {
+  outline-style: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
 }
 
 .network-marquee-item {
@@ -525,8 +575,9 @@
 .timeline-detail__title { display: block; margin-top: 12px; font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--color-ink); }
 .timeline-detail__desc { display: block; margin-top: 8px; max-width: 62ch; }
 
-@media (max-width: 560px) {
-  .timeline-year { font-size: 12px; }
+@media (max-width: 760px) {
+  .timeline-years { overflow-x: auto; padding-bottom: 8px; }
+  .timeline-year { flex: 0 0 84px; font-size: 12px; }
 }
 
 .value-list { margin-top: 8px; border-top: var(--rule); }

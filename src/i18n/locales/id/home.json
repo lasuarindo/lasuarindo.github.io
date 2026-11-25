@@ -44,6 +44,12 @@
   "collaboration": "Kolaborasi",
   "journeyProgramTitle": "Program Kemitraan",
   "journeyProgramDesc": "Mekanisme pendaftaran dan kriteria mitra sedang disiapkan tim.",
+  "journeyVariants": {
+    "note": "Beberapa usulan tampilan sedang ditampilkan bersamaan untuk dipilih.",
+    "a": "Varian A — Foto & daftar tautan",
+    "b": "Varian B — Pernyataan & langkah",
+    "c": "Varian C — Kartu kemitraan"
+  },
   "impact": {
     "eyebrow": "DAMPAK KAMI",
     "stat1": { "value": "12", "label": "unit terdaftar dalam portofolio grup" },

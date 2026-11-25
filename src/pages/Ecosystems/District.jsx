@@ -69,8 +69,16 @@ export function District() {
       {isDraft ? (
         <section className="section section--neutral">
           <div className={CONTAINER}>
-            <SectionHeader titlePrimary={t.ecosystems.districtsHeading} />
-            <DraftNote>{t.ecosystems.draftNote}</DraftNote>
+            <div className="eco-invite eco-invite--feature">
+              <span className="eco-invite__label">{t.ecosystems.inviteEyebrow}</span>
+              <h2 className="display display--section mt-4">{t.ecosystems.inviteTitle}</h2>
+              <p className="lead mt-5">{t.ecosystems.inviteDesc}</p>
+              <DraftNote>{t.ecosystems.draftNote}</DraftNote>
+              <Link to="/contact" className="btn btn--solid mt-8">
+                {t.ecosystems.inviteCta}
+                <Icon name="arrow_forward" size={18} color="#ffffff" />
+              </Link>
+            </div>
           </div>
         </section>
       ) : (
@@ -122,6 +130,7 @@ export function District() {
         </>
       )}
 
+      {!isDraft ? (
       <section className="section section--paper">
         <div className={CONTAINER}>
           <h2 className="display display--section">{d.locationHeading}</h2>
@@ -147,6 +156,7 @@ export function District() {
           <p className="prose mt-6">{company.email}</p>
         </div>
       </section>
+      ) : null}
 
       <FinalCta {...t.ecosystems.finalCta} />
     </>

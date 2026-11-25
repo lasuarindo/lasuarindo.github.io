@@ -62,26 +62,17 @@
     "heading": "The Steps That Built Us",
     "interactiveNote": "Select a year to see the milestone. Full details are still being prepared.",
     "items": [
-      {
-        "year": "2016",
-        "title": "The Beginning",
-        "desc": "Lasuarindo Group began laying the foundation for an integrated business."
-      },
-      {
-        "year": "2019",
-        "title": "Sector Expansion",
-        "desc": "The portfolio expanded into property, investment, and technology."
-      },
-      {
-        "year": "2022",
-        "title": "T46 District",
-        "desc": "Development of T46 as the centre of the group's business ecosystem."
-      },
-      {
-        "year": "2025",
-        "title": "Integrated Ecosystem",
-        "desc": "Twelve business units operating within one district ecosystem."
-      }
+      { "year": "2016", "title": "The Beginning", "desc": "Lasuarindo Group began laying the foundation for an integrated business.", "status": "draft" },
+      { "year": "2017", "title": "2017 Note", "desc": "Details for this year are not available yet.", "status": "draft" },
+      { "year": "2018", "title": "2018 Note", "desc": "Details for this year are not available yet.", "status": "draft" },
+      { "year": "2019", "title": "Sector Expansion", "desc": "The portfolio expanded into property, investment, and technology.", "status": "draft" },
+      { "year": "2020", "title": "2020 Note", "desc": "Details for this year are not available yet.", "status": "draft" },
+      { "year": "2021", "title": "2021 Note", "desc": "Details for this year are not available yet.", "status": "draft" },
+      { "year": "2022", "title": "T46 District", "desc": "Development of T46 as the centre of the group's business ecosystem.", "status": "draft" },
+      { "year": "2023", "title": "2023 Note", "desc": "Details for this year are not available yet.", "status": "draft" },
+      { "year": "2024", "title": "2024 Note", "desc": "Details for this year are not available yet.", "status": "draft" },
+      { "year": "2025", "title": "Integrated Ecosystem", "desc": "Twelve business units operating within one district ecosystem.", "status": "draft" },
+      { "year": "2026", "title": "2026 Plan", "desc": "Plans for the current year are being prepared.", "status": "draft" }
     ]
   },
   "cta": {

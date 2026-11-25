@@ -12,17 +12,8 @@ import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
 import { FinalCta } from '@/components/ui/FinalCta';
 import { CONTAINER } from '@/constants/layout';
 import { unitCategories, units } from '@/data/units';
-import cityImg from '@/assets/images/opt/hero-city-800.webp';
-import teamImg from '@/assets/images/opt/about-team-1200.webp';
-import propertyImg from '@/assets/images/opt/property-hero-1000.webp';
-import technologyImg from '@/assets/images/opt/future-technology-1200.webp';
-import mediaImg from '@/assets/images/opt/creative-media-900.webp';
-import lifestyleImg from '@/assets/images/opt/vamos-1200.webp';
+import { unitImage } from '@/data/unitVisual';
 import { useUnitsStrings } from './useUnitsStrings';
-
-// Existing group imagery used as category-level illustration, never as a
-// photo of a specific unit. The whole catalogue is marked DRAFT.
-const UNIT_IMAGES = [cityImg, teamImg, propertyImg, technologyImg, mediaImg, lifestyleImg];
 
 /** Catalog of all twelve units — the parent URL for /units/:slug. */
 export function Units() {
@@ -102,7 +93,7 @@ export function Units() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {shown.map((unit, index) => {
                 const category = unitCategories.find((item) => item.key === unit.category);
-                const image = UNIT_IMAGES[index % UNIT_IMAGES.length];
+                const image = unitImage(index);
                 return (
                   <Link
                     key={unit.slug}

@@ -16,6 +16,9 @@
   },
   "sectorsHeading": "Six Sectors, One Group",
   "sectorsDesc": "Our portfolio is made up of six business sectors. Each has its own role and contributes to the group ecosystem as a whole.",
+  "propertyScope": "Its scope covers residential district planning, design and construction, and property management. District and facility development is carried out with WIN, Bizencio, and SAA.",
+  "mediaScope": "Its scope covers news portals and social media (MSS), film, video, music, and advertising production (Arcadia Segara Cita), as well as billboards, vidiotrons, and branding (Berkah Media Gemilang).",
+  "techScope": "Its scope covers digital verification for product protection through AGT/Authentic Guards, and copyright protection for musicians and songwriters through Berkah Megah Abadi.",
   "propertyLabel": "PROPERTY",
   "propertyHeading": "DEVELOPING SPACES FOR A BETTER LIFE",
   "propertyDesc": "We develop high-quality properties with modern architectural design, strategic locations, and ever-growing investment value. From residential housing to large-scale commercial projects, every project is designed to provide the highest comfort and satisfaction.",
@@ -107,6 +110,12 @@
   "ecosystemDesc": "PRO, WIN, and AGT are among the units operating in the T46 district. See them all on the ecosystem page.",
   "ecosystemCta": "Explore T46 Ecosystem",
   "process": {
+    "variants": {
+      "note": "Several layout options are shown together for review.",
+      "a": "Option A — Step cards",
+      "b": "Option B — Step line",
+      "c": "Option C — Numbered list"
+    },
     "eyebrow": "HOW WE WORK",
     "heading": "From Conversation to Impact",
     "steps": [

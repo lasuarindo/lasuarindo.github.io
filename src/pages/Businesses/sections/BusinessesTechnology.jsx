@@ -20,6 +20,7 @@ export function BusinessesTechnology() {
             </h2>
             <div className="rule rule--light" />
             <p className="lead lead--light">{t.businesses.techDesc}</p>
+            <p className="prose prose--light mt-4 max-w-[62ch]">{t.businesses.techScope}</p>
 
             <div className="mt-8 flex flex-col gap-4">
               {t.businesses.techCards.map((item) => (

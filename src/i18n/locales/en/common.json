@@ -41,5 +41,11 @@
   "status": {
     "draft": "DRAFT",
     "draftNote": "Draft data — pending company verification."
+  },
+  "carousel": {
+    "previous": "Previous image",
+    "next": "Next image",
+    "label": "Image navigation",
+    "goTo": "View image"
   }
 }

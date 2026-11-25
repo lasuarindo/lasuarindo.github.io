@@ -41,5 +41,11 @@
   "status": {
     "draft": "DRAFT",
     "draftNote": "Data sementara — menunggu verifikasi perusahaan."
+  },
+  "carousel": {
+    "previous": "Gambar sebelumnya",
+    "next": "Gambar berikutnya",
+    "label": "Navigasi gambar",
+    "goTo": "Lihat gambar"
   }
 }
