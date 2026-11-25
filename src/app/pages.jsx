@@ -19,6 +19,9 @@ export const pages = {
   PrivacyPolicy: lazy(() => import('@/pages/PrivacyPolicy/PrivacyPolicy.jsx')),
   Terms: lazy(() => import('@/pages/Terms/Terms.jsx')),
   Faq: lazy(() => import('@/pages/Faq/Faq.jsx')),
+  Partnership: lazy(() => import('@/pages/Partnership/Partnership.jsx')),
+  Investor: lazy(() => import('@/pages/Investor/Investor.jsx')),
+  Collaboration: lazy(() => import('@/pages/Collaboration/Collaboration.jsx')),
   NotFound: lazy(() => import('@/pages/NotFound/NotFound.jsx')),
 };
 

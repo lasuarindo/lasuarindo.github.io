@@ -1,0 +1,35 @@
+{
+  "crumbLabel": "Investor",
+  "heroEyebrow": "HUBUNGAN INVESTOR",
+  "heroTitle1": "Berkembang Bersama",
+  "heroTitle2": "Para Investor",
+  "heroLead": "Kami membuka dialog dengan investor yang tertarik pada portofolio dan pertumbuhan grup. Informasi formal akan kami siapkan lebih lanjut.",
+  "introHeading": "Mengapa Bergabung",
+  "introLead": "Grup membangun portofolio lintas sektor dengan fokus pada pertumbuhan berkelanjutan dan nilai jangka panjang.",
+  "points": [
+    { "title": "Portofolio terdiversifikasi", "text": "Enam sektor memberi penyebaran risiko dan ruang pertumbuhan." },
+    { "title": "Ekosistem nyata", "text": "Unit beroperasi dalam satu kawasan yang dapat dikunjungi dan dikaji langsung." },
+    { "title": "Arah jangka panjang", "text": "Kami membangun nilai yang bertahan, bukan sekadar pertumbuhan sesaat." }
+  ],
+  "audienceHeading": "Siapa yang Terlibat",
+  "audienceLead": "Dialog investor terbuka bagi pihak yang tertarik membangun nilai jangka panjang bersama grup.",
+  "audienceItems": [
+    { "title": "Investor portofolio", "text": "Pihak yang ingin memahami portofolio lintas sektor kami." },
+    { "title": "Mitra pembangunan", "text": "Rekan yang tertarik pada pengembangan kawasan dan unit." },
+    { "title": "Lembaga keuangan", "text": "Institusi yang ingin mendampingi pertumbuhan grup." }
+  ],
+  "processHeading": "Alur Dialog",
+  "processLead": "Kami memulai dari perkenalan, lalu menyampaikan informasi resmi saat tersedia.",
+  "processSteps": [
+    { "title": "Sampaikan minat", "text": "Hubungi kami lewat formulir kontak." },
+    { "title": "Konfirmasi", "text": "Tim kami menghubungi Anda untuk menjelaskan langkah berikutnya." },
+    { "title": "Informasi resmi", "text": "Dokumen dan angka dibagikan setelah siap." }
+  ],
+  "closingNote": "Seluruh informasi investor masih dalam penyiapan dan akan diperbarui.",
+  "offerHeading": "Informasi yang Akan Datang",
+  "offerLead": "Laporan, angka, dan dokumen investor belum tersedia. Sampaikan minat Anda dan tim kami akan menghubungi Anda saat informasi siap.",
+  "ctaTitle": "Sampaikan Minat Anda",
+  "ctaText": "Hubungi tim kami untuk memulai percakapan investor.",
+  "ctaButton": "Hubungi Kami",
+  "draftNote": "Halaman ini masih berisi pengajuan awal; detail investor akan diperbarui."
+}

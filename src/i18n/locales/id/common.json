@@ -42,6 +42,11 @@
     "draft": "DRAFT",
     "draftNote": "Data sementara — menunggu verifikasi perusahaan."
   },
+  "engagement": {
+    "partnership": "Kemitraan",
+    "investor": "Investor",
+    "collaboration": "Kolaborasi"
+  },
   "carousel": {
     "previous": "Gambar sebelumnya",
     "next": "Gambar berikutnya",

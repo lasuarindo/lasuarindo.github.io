@@ -1,0 +1,35 @@
+{
+  "crumbLabel": "Partnership",
+  "heroEyebrow": "STRATEGIC PARTNERSHIP",
+  "heroTitle1": "Grow With",
+  "heroTitle2": "Lasuarindo Group",
+  "heroLead": "We welcome partners who want to build shared value across the group's six business sectors. Partnership programme details are still being prepared.",
+  "introHeading": "Why Partner With Us",
+  "introLead": "Collaboration is part of how we work. We look for partners who complement the ecosystem and bring real impact.",
+  "points": [
+    { "title": "A broad portfolio", "text": "Six sectors and twelve units provide room to test ideas together." },
+    { "title": "A connected district", "text": "Units operate in one district, making cross-sector collaboration easier." },
+    { "title": "A long-term approach", "text": "We prioritise relationships that grow and benefit both sides." }
+  ],
+  "audienceHeading": "Who Fits",
+  "audienceLead": "We welcome partners who complement the ecosystem and bring value to our units.",
+  "audienceItems": [
+    { "title": "Strategic partners", "text": "Companies looking to expand their reach in our district." },
+    { "title": "Service providers", "text": "Parties with expertise that complements our units." },
+    { "title": "Communities & institutions", "text": "Organisations wanting to run joint programmes." }
+  ],
+  "processHeading": "How It Starts",
+  "processLead": "We keep the first conversation simple, then shape the right cooperation format.",
+  "processSteps": [
+    { "title": "Introduction", "text": "Tell us your interest and background." },
+    { "title": "Discussion", "text": "We explore scope and fit together." },
+    { "title": "Follow-up", "text": "Our team contacts you with the next steps." }
+  ],
+  "closingNote": "Partnership details will be shaped together after the first discussion.",
+  "offerHeading": "Partnership Formats",
+  "offerLead": "Available partnership formats are still being defined. Share your idea and our team will discuss the most suitable shape.",
+  "ctaTitle": "Let's Start a Conversation",
+  "ctaText": "Tell us about your partnership plans. Our team is ready to listen.",
+  "ctaButton": "Contact Us",
+  "draftNote": "This page is an early proposal; programme details will be updated."
+}

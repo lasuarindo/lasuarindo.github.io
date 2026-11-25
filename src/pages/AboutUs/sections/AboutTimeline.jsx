@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Icon } from '@/components/ui/Icon';
@@ -11,6 +11,9 @@ import { CONTAINER } from '@/constants/layout';
 import { timelineDetails } from '@/data/timelineDetails';
 import { useAboutStrings } from '../useAboutStrings';
 
+const alignForIndex = (index, length) =>
+  index === 0 ? 'start' : index === length - 1 ? 'end' : 'center';
+
 /** Swipeable year selector; the latest year is selected by default. */
 export function AboutTimeline() {
   const t = useAboutStrings();
@@ -18,24 +21,39 @@ export function AboutTimeline() {
   const { language } = useLanguage();
   const items = t.about.timeline.items;
   const [active, setActive] = useState(items.length - 1);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'end', containScroll: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'center', containScroll: false });
+  const aligning = useRef(false);
+  const ready = useRef(false);
   const selected = items[active];
   const details = timelineDetails[selected.year]?.[language] || selected.details;
 
+  const scrollToYear = useCallback((index, jump = false) => {
+    if (!emblaApi) return;
+    emblaApi.reInit({ align: alignForIndex(index, items.length) });
+    emblaApi.scrollTo(index, jump);
+  }, [emblaApi, items.length]);
+
   useEffect(() => {
     if (!emblaApi) return undefined;
-    const sync = () => setActive(emblaApi.selectedScrollSnap());
+    const sync = () => {
+      const index = emblaApi.selectedScrollSnap();
+      setActive(index);
+      if (!ready.current || aligning.current) return;
+      aligning.current = true;
+      scrollToYear(index);
+      requestAnimationFrame(() => { aligning.current = false; });
+    };
     emblaApi.on('select', sync);
     const frame = requestAnimationFrame(() => {
-      emblaApi.reInit();
-      emblaApi.scrollTo(items.length - 1, true);
+      scrollToYear(items.length - 1, true);
       setActive(items.length - 1);
+      ready.current = true;
     });
     return () => {
       cancelAnimationFrame(frame);
       emblaApi.off('select', sync);
     };
-  }, [emblaApi, items.length]);
+  }, [emblaApi, items.length, scrollToYear]);
 
   return (
     <section className="section section--paper">
@@ -55,7 +73,7 @@ export function AboutTimeline() {
                   aria-pressed={active === index}
                   onClick={() => {
                     setActive(index);
-                    emblaApi?.scrollTo(index);
+                    scrollToYear(index);
                   }}
                 >
                   <span className="timeline-year__dot" aria-hidden="true" />

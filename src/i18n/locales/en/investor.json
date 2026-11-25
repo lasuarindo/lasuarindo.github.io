@@ -1,0 +1,35 @@
+{
+  "crumbLabel": "Investor",
+  "heroEyebrow": "INVESTOR RELATIONS",
+  "heroTitle1": "Grow With Our",
+  "heroTitle2": "Investors",
+  "heroLead": "We welcome dialogue with investors interested in the group's portfolio and growth. Formal information will be made available in due course.",
+  "introHeading": "Why Join Us",
+  "introLead": "The group builds a cross-sector portfolio focused on sustainable growth and long-term value.",
+  "points": [
+    { "title": "A diversified portfolio", "text": "Six sectors provide risk spread and room to grow." },
+    { "title": "A real ecosystem", "text": "Units operate in one district that can be visited and reviewed directly." },
+    { "title": "A long-term direction", "text": "We build lasting value, not short-lived growth." }
+  ],
+  "audienceHeading": "Who Is Involved",
+  "audienceLead": "The investor dialogue is open to those interested in building long-term value with the group.",
+  "audienceItems": [
+    { "title": "Portfolio investors", "text": "Parties wanting to understand our cross-sector portfolio." },
+    { "title": "Development partners", "text": "Partners interested in district and unit development." },
+    { "title": "Financial institutions", "text": "Institutions wishing to support the group's growth." }
+  ],
+  "processHeading": "Dialog Flow",
+  "processLead": "We begin with an introduction, then share formal information when it is ready.",
+  "processSteps": [
+    { "title": "Express interest", "text": "Reach us through the contact form." },
+    { "title": "Confirmation", "text": "Our team contacts you with the next steps." },
+    { "title": "Formal information", "text": "Documents and figures are shared once prepared." }
+  ],
+  "closingNote": "All investor information is still in preparation and will be updated.",
+  "offerHeading": "Information to Come",
+  "offerLead": "Reports, figures, and investor documents are not available yet. Share your interest and our team will contact you when information is ready.",
+  "ctaTitle": "Share Your Interest",
+  "ctaText": "Contact our team to start an investor conversation.",
+  "ctaButton": "Contact Us",
+  "draftNote": "This page is an early proposal; investor details will be updated."
+}

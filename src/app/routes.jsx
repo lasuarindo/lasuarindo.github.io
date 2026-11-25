@@ -1,4 +1,5 @@
 import { pages } from './pages';
+import { engagementLinks } from '@/data/navigation';
 
 /**
  * Route table: path → page component. Kept free of layout/chrome concerns;
@@ -22,6 +23,9 @@ export const routes = [
   { path: '/legal/privacy-policy', Component: pages.PrivacyPolicy },
   { path: '/legal/term-condition', Component: pages.Terms },
   { path: '/faq', Component: pages.Faq },
+  { path: engagementLinks.partnership.to, Component: pages.Partnership },
+  { path: engagementLinks.investor.to, Component: pages.Investor },
+  { path: engagementLinks.collaboration.to, Component: pages.Collaboration },
   // Fallback
   { path: '*', Component: pages.NotFound },
 ];

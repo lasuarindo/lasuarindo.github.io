@@ -19,6 +19,29 @@ export const mainNav = [
 
 export const ctaLink = { labelKey: 'nav.cta', href: '/contact' };
 
+/**
+ * Engagement routes are reached from the Home journey links and their own
+ * CTAs, never from the six-item header. Keep key -> path in one place so a
+ * route change never needs a hardcoded edit in several components.
+ */
+export const engagementLinks = {
+  partnership: {
+    labelKey: 'engagement.partnership',
+    to: '/partnership',
+    intent: 'partnership',
+  },
+  investor: {
+    labelKey: 'engagement.investor',
+    to: '/investor',
+    intent: 'investor',
+  },
+  collaboration: {
+    labelKey: 'engagement.collaboration',
+    to: '/collaboration',
+    intent: 'collaboration',
+  },
+};
+
 export const footerNav = [
   { labelKey: 'nav.home', href: '/' },
   { labelKey: 'nav.about', href: '/about-us' },

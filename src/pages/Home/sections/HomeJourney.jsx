@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Icon } from '@/components/ui/Icon';
 import { CONTAINER } from '@/constants/layout';
+import { engagementLinks } from '@/data/navigation';
 import { useHomeStrings } from '../useHomeStrings';
 import partnershipImg from '@/assets/images/opt/partnership-1200.webp';
 
@@ -9,9 +10,9 @@ export function HomeJourney() {
   const t = useHomeStrings();
   const h = t.home;
   const links = [
-    { title: h.strategicPartnership, icon: 'handshake', to: '/contact?intent=partnership' },
-    { title: h.investorRelations, icon: 'trending_up', to: '/contact?intent=investor' },
-    { title: h.collaboration, icon: 'group_add', to: '/contact?intent=collaboration' },
+    { title: h.strategicPartnership, icon: 'handshake', to: engagementLinks.partnership.to },
+    { title: h.investorRelations, icon: 'trending_up', to: engagementLinks.investor.to },
+    { title: h.collaboration, icon: 'group_add', to: engagementLinks.collaboration.to },
   ];
 
   return (

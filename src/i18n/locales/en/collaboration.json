@@ -1,0 +1,35 @@
+{
+  "crumbLabel": "Collaboration",
+  "heroEyebrow": "PROJECT COLLABORATION",
+  "heroTitle1": "Build Something",
+  "heroTitle2": "With Us",
+  "heroLead": "We welcome project collaboration with creative, technology, and community partners. Opportunity details are still being prepared.",
+  "introHeading": "Room to Collaborate",
+  "introLead": "Every sector has challenges worth solving together. We look for ideas that give back to the ecosystem.",
+  "points": [
+    { "title": "Cross-sector", "text": "A project can involve more than one sector in the group." },
+    { "title": "District as a laboratory", "text": "T46 provides a real place to try ideas and measure results." },
+    { "title": "Shared impact", "text": "We favour collaboration that creates value for many parties." }
+  ],
+  "audienceHeading": "Who Can Collaborate",
+  "audienceLead": "We look for ideas that can be tested in the ecosystem and benefit many parties.",
+  "audienceItems": [
+    { "title": "Creative partners", "text": "Content makers, designers, and experience builders." },
+    { "title": "Technology developers", "text": "Parties with solutions our units can use." },
+    { "title": "Local communities", "text": "Groups wanting to run activities in the district." }
+  ],
+  "processHeading": "How Collaboration Starts",
+  "processLead": "Even a simple idea can be a starting point, which we then develop together.",
+  "processSteps": [
+    { "title": "Pitch your idea", "text": "Tell us what you want to build." },
+    { "title": "Mapping", "text": "We identify the most relevant sectors and units." },
+    { "title": "Follow-up", "text": "Our team contacts you with the next steps." }
+  ],
+  "closingNote": "Criteria and the project list will be updated once agreed.",
+  "offerHeading": "Opportunities in Preparation",
+  "offerLead": "The project list and collaboration criteria are not final yet. Share your idea so our team can follow up.",
+  "ctaTitle": "Pitch Your Idea",
+  "ctaText": "Contact our team to discuss project collaboration.",
+  "ctaButton": "Contact Us",
+  "draftNote": "This page is an early proposal; collaboration details will be updated."
+}

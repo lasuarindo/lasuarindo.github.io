@@ -42,6 +42,11 @@
     "draft": "DRAFT",
     "draftNote": "Draft data — pending company verification."
   },
+  "engagement": {
+    "partnership": "Partnership",
+    "investor": "Investor",
+    "collaboration": "Collaboration"
+  },
   "carousel": {
     "previous": "Previous image",
     "next": "Next image",

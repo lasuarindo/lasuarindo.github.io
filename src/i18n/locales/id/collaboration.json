@@ -1,0 +1,35 @@
+{
+  "crumbLabel": "Kolaborasi",
+  "heroEyebrow": "KOLABORASI PROYEK",
+  "heroTitle1": "Bangun Sesuatu",
+  "heroTitle2": "Bersama Kami",
+  "heroLead": "Kami membuka ruang bagi kolaborasi proyek dengan mitra kreatif, teknologi, dan komunitas. Detail peluang masih kami susun.",
+  "introHeading": "Ruang Berkolaborasi",
+  "introLead": "Setiap sektor memiliki tantangan yang bisa dijawab bersama. Kami mencari gagasan yang memberi manfaat bagi ekosistem.",
+  "points": [
+    { "title": "Lintas sektor", "text": "Proyek dapat melibatkan lebih dari satu sektor dalam grup." },
+    { "title": "Kawasan sebagai laboratorium", "text": "T46 memberi tempat nyata untuk mencoba dan mengukur hasil." },
+    { "title": "Dampak bersama", "text": "Kami mengutamakan kolaborasi yang memberi nilai bagi banyak pihak." }
+  ],
+  "audienceHeading": "Siapa Bisa Berkolaborasi",
+  "audienceLead": "Kami mencari gagasan yang bisa diuji dalam ekosistem dan memberi manfaat bagi banyak pihak.",
+  "audienceItems": [
+    { "title": "Mitra kreatif", "text": "Pembuat konten, desainer, dan pembangun pengalaman." },
+    { "title": "Pengembang teknologi", "text": "Pihak dengan solusi yang dapat dipakai unit kami." },
+    { "title": "Komunitas lokal", "text": "Kelompok yang ingin menjalankan kegiatan di kawasan." }
+  ],
+  "processHeading": "Awal Kolaborasi",
+  "processLead": "Gagasan sederhana pun bisa menjadi titik awal, lalu kami bersama-sama mengembangkannya.",
+  "processSteps": [
+    { "title": "Ajukan gagasan", "text": "Ceritakan apa yang ingin Anda bangun." },
+    { "title": "Pemetaan", "text": "Kami lihat sektor dan unit yang paling relevan." },
+    { "title": "Tindak lanjut", "text": "Tim kami menghubungi Anda untuk langkah berikutnya." }
+  ],
+  "closingNote": "Kriteria dan daftar proyek akan diperbarui setelah disepakati.",
+  "offerHeading": "Peluang yang Sedang Disiapkan",
+  "offerLead": "Daftar proyek dan kriteria kolaborasi belum final. Ceritakan gagasan Anda agar tim kami dapat menindaklanjutinya.",
+  "ctaTitle": "Ajukan Gagasan Anda",
+  "ctaText": "Hubungi tim kami untuk mendiskusikan kolaborasi proyek.",
+  "ctaButton": "Hubungi Kami",
+  "draftNote": "Halaman ini masih berisi pengajuan awal; detail kolaborasi akan diperbarui."
+}
