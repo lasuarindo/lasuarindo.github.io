@@ -101,28 +101,28 @@ export function ContactForm() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-[14px]">
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   <div>
-                    <label className={LABEL_CLASS}>{t.contact.nameLabel}</label>
-                    <input type="text" placeholder={t.contact.namePlaceholder} value={nama} onChange={(e) => setNama(e.target.value)} className={INPUT_CLASS} />
+                    <label htmlFor="contact-name" className={LABEL_CLASS}>{t.contact.nameLabel}</label>
+                    <input id="contact-name" name="name" autoComplete="name" type="text" placeholder={t.contact.namePlaceholder} value={nama} onChange={(e) => setNama(e.target.value)} className={INPUT_CLASS} />
                   </div>
                   <div>
-                    <label className={LABEL_CLASS}>{t.contact.emailLabel}</label>
-                    <input type="email" placeholder={t.contact.emailPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} className={INPUT_CLASS} />
+                    <label htmlFor="contact-email" className={LABEL_CLASS}>{t.contact.emailLabel}</label>
+                    <input id="contact-email" name="email" autoComplete="email" type="email" placeholder={t.contact.emailPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} className={INPUT_CLASS} />
                   </div>
                 </div>
                 <div>
-                  <label className={LABEL_CLASS}>{t.contact.companyLabel}</label>
-                  <input type="text" placeholder={t.contact.companyPlaceholder} value={perusahaan} onChange={(e) => setPerusahaan(e.target.value)} className={INPUT_CLASS} />
+                  <label htmlFor="contact-company" className={LABEL_CLASS}>{t.contact.companyLabel}</label>
+                  <input id="contact-company" name="company" autoComplete="organization" type="text" placeholder={t.contact.companyPlaceholder} value={perusahaan} onChange={(e) => setPerusahaan(e.target.value)} className={INPUT_CLASS} />
                 </div>
                 <div>
-                  <label className={LABEL_CLASS}>{t.contact.subjectLabel}</label>
-                  <select value={subjek} onChange={(e) => setSubjek(e.target.value)} className={INPUT_CLASS}>
+                  <label htmlFor="contact-subject" className={LABEL_CLASS}>{t.contact.subjectLabel}</label>
+                  <select id="contact-subject" name="subject" value={subjek} onChange={(e) => setSubjek(e.target.value)} className={INPUT_CLASS}>
                     <option value="">{t.contact.subjectPlaceholder}</option>
                     {t.contact.subjects.map((opt) => (<option key={opt} value={opt} className="text-[var(--color-on-background)]">{opt}</option>))}
                   </select>
                 </div>
                 <div>
-                  <label className={LABEL_CLASS}>{t.contact.messageLabel}</label>
-                  <textarea rows={4} placeholder={t.contact.messagePlaceholder} value={pesan} onChange={(e) => setPesan(e.target.value)} className={INPUT_CLASS} />
+                  <label htmlFor="contact-message" className={LABEL_CLASS}>{t.contact.messageLabel}</label>
+                  <textarea id="contact-message" name="message" rows={4} placeholder={t.contact.messagePlaceholder} value={pesan} onChange={(e) => setPesan(e.target.value)} className={INPUT_CLASS} />
                 </div>
                 <button type="submit" className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border-0 bg-[var(--color-primary)] px-6 py-3 font-[var(--font-display)] text-[16px] font-bold leading-[22px] text-[var(--color-on-primary)] shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] transition-colors duration-200 hover:bg-[var(--color-primary-container)]">
                   <Icon name="send" size={20} color="#ffffff" /><span>{t.contact.sendBtn}</span>

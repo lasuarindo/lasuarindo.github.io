@@ -1,11 +1,11 @@
 {
-  "badge": "Creative Technology & Lifestyle Group",
+  "badge": "INVESTMENT, PROPERTY, TECHNOLOGY & LIFESTYLE GROUP",
   "heroTitle1": "BUILDING",
   "heroTitle2": "BUSINESS,",
   "heroTitle3": "CREATING",
   "heroTitle4": "IMPACT",
-  "heroSubtitle": "Integrated Business & Investment Enterprise Driving Growth for a Better Future.",
-  "exploreBtn": "Explore Ecosystem",
+  "heroSubtitle": "Lasuarindo Group invests in, owns, and manages businesses across six business lines, from investment and property to technology, media, F&B, and lifestyle in one ecosystem at T46, Bandung.",
+  "exploreBtn": "Explore Our Businesses",
   "visionBtn": "Our Vision",
   "integrityTitle": "INTEGRITY",
   "integrityDesc": "Building trust in everything we do",
@@ -15,14 +15,39 @@
   "ecosystemHeading2": "ECOSYSTEM",
   "ecosystemLead": "Diverse Industries. One Strong Vision. Lasuarindo Group builds an interconnected, innovative, and sustainable business ecosystem across strategic sectors.",
   "focusTag": "MAIN FOCUS",
+  "sectorsCta": "See all businesses",
   "quoteText": "One Ecosystem. Countless Opportunities. One Goal.",
   "taglineMain1": "BUILDING BUSINESS.",
   "taglineMain2": "CREATING IMPACT.",
+  "t46Preview": {
+    "badge": "T46 DISTRICT",
+    "heading": "Our Ecosystem Has an Address",
+    "desc": "At T46 in Bandung, twelve business units operate side by side, from investment to lifestyle.",
+    "cta": "See the full ecosystem"
+  },
+  "journeyImageAlt": "Illustration of Lasuarindo Group partnership and collaboration",
   "journeyHeading1": "JOIN US ON THIS",
   "journeyHeading2": "JOURNEY",
   "journeyLead": "Let us grow, collaborate, and create a better future together. Every great journey begins with a single step, one vision, and the courage to grow together.",
   "journeyBody": "Lasuarindo Group continues to build an integrated business ecosystem through collaboration, innovation, and a passion to create real impact for the future.",
   "strategicPartnership": "Strategic Partnership",
   "investorRelations": "Investor Relations",
-  "collaboration": "Collaboration"
+  "collaboration": "Collaboration",
+  "impact": {
+    "eyebrow": "OUR IMPACT",
+    "stat1": { "value": "12", "label": "units in the T46 ecosystem" },
+    "stat2": { "value": "6", "label": "business lines" },
+    "stat3": { "value": "8", "label": "years building the ecosystem" },
+    "note": "Figures can be verified from the group's portfolio."
+  },
+  "faqTeaser": {
+    "title": "What is Lasuarindo Group?",
+    "text": "An integrated business and investment company managing six business lines and twelve units in the T46 district, Bandung.",
+    "button": "See the full FAQ"
+  },
+  "finalCta": {
+    "title": "Let's Build Impact Together",
+    "text": "Tell us about your plans. Our team is ready to discuss collaboration opportunities with Lasuarindo Group.",
+    "button": "Partner With Us"
+  }
 }

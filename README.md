@@ -46,12 +46,20 @@ Each page is a lazy route, so it ships as its own chunk and is fetched only when
 |---|---|
 | `/` | Home |
 | `/about-us` | About Us |
-| `/services` | Services |
+| `/businesses` | Businesses (the former `/services` page) |
+| `/ecosystems` | Ecosystem index |
+| `/ecosystems/t46` | T46 district |
+| `/units` | Unit directory |
+| `/units/:slug` | Unit detail (12 units) |
+| `/licence` | Licensing |
 | `/contact` | Contact |
 | `/faq` | FAQ Center |
+| `/legal` | Legal index |
 | `/legal/privacy-policy` | Privacy Policy |
 | `/legal/term-condition` | Terms & Conditions |
-| `*` | Redirects to `/` |
+| `*` | NotFound |
+
+`/services` is retired — it is no longer registered and resolves to NotFound.
 
 ## Internationalisation
 

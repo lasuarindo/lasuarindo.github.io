@@ -35,8 +35,8 @@ export function HomeHero() {
           </AnimatedReveal>
           <AnimatedReveal animation="up" delay={180} disabled>
             <div className="mt-[14px] flex flex-wrap gap-3 lg:mt-[18px] lg:gap-[14px]">
-              <Link to="/services" className="inline-block rounded-lg bg-[#b12600] px-[22px] py-[11px] font-[var(--font-display)] text-[14px] font-bold text-white no-underline transition-all hover:bg-[var(--color-primary-container)] lg:px-[26px] lg:py-[13px] lg:text-[15px]">{t.home.exploreBtn}</Link>
-              <Link to="/about-us" className="inline-block rounded-lg border-[1.5px] border-white bg-transparent px-[22px] py-[11px] font-[var(--font-display)] text-[14px] font-bold text-white no-underline transition-all hover:bg-[rgba(255,255,255,0.15)] lg:px-[26px] lg:py-[13px] lg:text-[15px]">{t.home.visionBtn}</Link>
+              <Link to="/businesses" className="inline-block min-h-[44px] rounded-lg bg-[#b12600] px-[22px] py-[11px] font-[var(--font-display)] text-[14px] font-bold text-white no-underline transition-all hover:bg-[var(--color-primary-container)] lg:px-[26px] lg:py-[13px] lg:text-[15px]">{t.home.exploreBtn}</Link>
+              <Link to="/about-us#visi" className="inline-block min-h-[44px] rounded-lg border-[1.5px] border-white bg-transparent px-[22px] py-[11px] font-[var(--font-display)] text-[14px] font-bold text-white no-underline transition-all hover:bg-[rgba(255,255,255,0.15)] lg:px-[26px] lg:py-[13px] lg:text-[15px]">{t.home.visionBtn}</Link>
             </div>
           </AnimatedReveal>
           {!isDesktop && (
@@ -44,14 +44,14 @@ export function HomeHero() {
               <AnimatedReveal animation="scale" delay={220} className="min-w-[140px] flex-1">
                 <div className="rounded-xl border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-[14px]">
                   <Icon name="groups" size={20} color="#ffb4a3" className="mb-2" />
-                  <h3 className="mb-1 font-[var(--font-display)] text-[14px] font-bold tracking-[0.5px] text-white">{t.home.integrityTitle}</h3>
+                  <p className="mb-1 font-[var(--font-display)] text-[14px] font-bold tracking-[0.5px] text-white">{t.home.integrityTitle}</p>
                   <p className="m-0 font-[var(--font-body)] text-[12px] leading-[18px] text-[rgba(226,226,222,0.8)]">{t.home.integrityDesc}</p>
                 </div>
               </AnimatedReveal>
               <AnimatedReveal animation="scale" delay={280} className="min-w-[140px] flex-1">
                 <div className="rounded-xl border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-[14px]">
                   <Icon name="lightbulb" size={20} color="#ffb4a3" className="mb-2" />
-                  <h3 className="mb-1 font-[var(--font-display)] text-[14px] font-bold tracking-[0.5px] text-white">{t.home.innovationTitle}</h3>
+                  <p className="mb-1 font-[var(--font-display)] text-[14px] font-bold tracking-[0.5px] text-white">{t.home.innovationTitle}</p>
                   <p className="m-0 font-[var(--font-body)] text-[12px] leading-[18px] text-[rgba(226,226,222,0.8)]">{t.home.innovationDesc}</p>
                 </div>
               </AnimatedReveal>
@@ -63,14 +63,14 @@ export function HomeHero() {
             <AnimatedReveal animation="scale" delay={100} className="max-w-[240px] flex-1">
               <div className="rounded-[14px] border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-5">
                 <Icon name="groups" size={26} color="#ffb4a3" className="mb-[10px]" />
-                <h3 className="mb-[6px] font-[var(--font-display)] text-[19px] font-bold tracking-[0.5px] text-white">{t.home.integrityTitle}</h3>
+                <p className="mb-[6px] font-[var(--font-display)] text-[19px] font-bold tracking-[0.5px] text-white">{t.home.integrityTitle}</p>
                 <p className="m-0 font-[var(--font-body)] text-[15px] leading-5 text-[rgba(226,226,222,0.8)]">{t.home.integrityDesc}</p>
               </div>
             </AnimatedReveal>
             <AnimatedReveal animation="scale" delay={180} className="mt-7 max-w-[240px] flex-1">
               <div className="rounded-[14px] border border-[rgba(228,190,181,0.2)] bg-[rgba(255,255,255,0.08)] p-5">
                 <Icon name="lightbulb" size={26} color="#ffb4a3" className="mb-[10px]" />
-                <h3 className="mb-[6px] font-[var(--font-display)] text-[19px] font-bold tracking-[0.5px] text-white">{t.home.innovationTitle}</h3>
+                <p className="mb-[6px] font-[var(--font-display)] text-[19px] font-bold tracking-[0.5px] text-white">{t.home.innovationTitle}</p>
                 <p className="m-0 font-[var(--font-body)] text-[15px] leading-5 text-[rgba(226,226,222,0.8)]">{t.home.innovationDesc}</p>
               </div>
             </AnimatedReveal>

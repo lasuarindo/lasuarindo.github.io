@@ -2,14 +2,19 @@
   "nav": {
     "home": "Beranda",
     "about": "Tentang Kami",
-    "services": "Layanan",
+    "businesses": "Bisnis Kami",
+    "ecosystems": "Ekosistem",
+    "units": "Unit",
     "contact": "Kontak",
+    "primary": "Navigasi utama",
+    "breadcrumb": "Breadcrumb",
     "cta": "Bermitra Dengan Kami",
     "language": "Bahasa"
   },
   "footer": {
     "tagline": "Membangun Bisnis, Menciptakan Dampak. Sebuah ekosistem teknologi kreatif dan gaya hidup yang terintegrasi.",
     "navigation": "Navigasi",
+    "licence": "Legalitas",
     "help": "Bantuan",
     "privacyPolicy": "Kebijakan Privasi",
     "terms": "Syarat & Ketentuan",

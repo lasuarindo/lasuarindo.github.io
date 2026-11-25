@@ -40,13 +40,14 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav (flex: 2, centered matching react_native) */}
-          <nav className="desktop-only flex flex-[2] items-center justify-center gap-10">
+          <nav aria-label={t.nav.primary} className="desktop-only flex flex-[2] items-center justify-center gap-10">
             {mainNav.map((item) => {
               const active = isNavActive(pathname, item.href);
               return (
                 <Link
                   key={item.href}
                   to={item.href}
+                  aria-current={active ? 'page' : undefined}
                   className={`nav-link-item border-b-2 pb-1 font-[var(--font-display)] text-[12px] font-bold uppercase tracking-[1.2px] no-underline transition-[color,border-color] duration-200 ${
                     active
                       ? 'border-[var(--color-primary)] text-[var(--color-primary)]'

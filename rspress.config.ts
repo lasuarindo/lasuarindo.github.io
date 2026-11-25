@@ -39,7 +39,7 @@ export default defineConfig({
           items: [
             { text: 'Home', link: '/pages/home' },
             { text: 'About Us', link: '/pages/about-us' },
-            { text: 'Services', link: '/pages/services' },
+            { text: 'Businesses', link: '/pages/businesses' },
             { text: 'Contact', link: '/pages/contact' },
             { text: 'Privacy Policy', link: '/pages/privacy-policy' },
             { text: 'Terms & Conditions', link: '/pages/terms' },

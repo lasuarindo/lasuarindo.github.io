@@ -1,11 +1,11 @@
 {
-  "badge": "Grup Teknologi Kreatif & Gaya Hidup",
+  "badge": "GRUP INVESTASI, PROPERTI, TEKNOLOGI & GAYA HIDUP",
   "heroTitle1": "MEMBANGUN",
   "heroTitle2": "BISNIS,",
   "heroTitle3": "MENCIPTAKAN",
   "heroTitle4": "DAMPAK",
-  "heroSubtitle": "Perusahaan Bisnis & Investasi Terpadu Mendorong Pertumbuhan untuk Masa Depan yang Lebih Baik.",
-  "exploreBtn": "Jelajahi Ekosistem",
+  "heroSubtitle": "Lasuarindo Group menginvestasikan, memiliki, dan mengelola bisnis di enam lini usaha, dari investasi dan properti hingga teknologi, media, F&B, dan gaya hidup dalam satu ekosistem di T46, Bandung.",
+  "exploreBtn": "Jelajahi Bisnis Kami",
   "visionBtn": "Visi Kami",
   "integrityTitle": "INTEGRITAS",
   "integrityDesc": "Membangun kepercayaan dalam setiap hal yang kami lakukan",
@@ -15,14 +15,39 @@
   "ecosystemHeading2": "KAMI",
   "ecosystemLead": "Beragam Industri. Satu Visi yang Kuat. Lasuarindo Group membangun ekosistem bisnis yang saling terhubung, inovatif, dan berkelanjutan di berbagai sektor strategis.",
   "focusTag": "FOKUS UTAMA",
+  "sectorsCta": "Lihat semua bisnis",
   "quoteText": "Satu Ekosistem. Banyak Peluang. Satu Tujuan.",
   "taglineMain1": "MEMBANGUN BISNIS.",
   "taglineMain2": "MENCIPTAKAN DAMPAK.",
+  "t46Preview": {
+    "badge": "KAWASAN T46",
+    "heading": "Ekosistem Kami Punya Alamat",
+    "desc": "Di kawasan T46, Bandung, dua belas unit bisnis berjalan berdampingan, dari investasi hingga gaya hidup.",
+    "cta": "Lihat ekosistem lengkap"
+  },
+  "journeyImageAlt": "Ilustrasi kemitraan dan kolaborasi Lasuarindo Group",
   "journeyHeading1": "BERGABUNG DALAM",
   "journeyHeading2": "PERJALANAN",
   "journeyLead": "Mari tumbuh, berkolaborasi, dan menciptakan masa depan yang lebih baik bersama. Setiap perjalanan besar dimulai dari satu langkah, satu visi, dan satu keberanian untuk tumbuh bersama.",
   "journeyBody": "Lasuarindo Group terus membangun ekosistem bisnis yang terintegrasi melalui kolaborasi, inovasi, dan semangat menciptakan dampak nyata bagi masa depan.",
   "strategicPartnership": "Kemitraan Strategis",
   "investorRelations": "Hubungan Investor",
-  "collaboration": "Kolaborasi"
+  "collaboration": "Kolaborasi",
+  "impact": {
+    "eyebrow": "DAMPAK KAMI",
+    "stat1": { "value": "12", "label": "unit dalam ekosistem T46" },
+    "stat2": { "value": "6", "label": "lini usaha" },
+    "stat3": { "value": "8", "label": "tahun membangun ekosistem" },
+    "note": "Angka dapat diverifikasi dari portofolio grup."
+  },
+  "faqTeaser": {
+    "title": "Apa itu Lasuarindo Group?",
+    "text": "Perusahaan bisnis dan investasi terpadu yang mengelola enam lini usaha dan dua belas unit di kawasan T46, Bandung.",
+    "button": "Lihat FAQ lengkap"
+  },
+  "finalCta": {
+    "title": "Mari Bangun Dampak Bersama",
+    "text": "Ceritakan rencana Anda. Kami siap mendiskusikan peluang kolaborasi dengan tim Lasuarindo Group.",
+    "button": "Bermitra Dengan Kami"
+  }
 }

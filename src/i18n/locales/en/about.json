@@ -1,6 +1,7 @@
 {
   "heroTitle1": "WHO",
   "heroTitle2": "WE ARE",
+  "heroImageAlt": "Illustration of the Lasuarindo Group team and activities",
   "lead1": "Lasuarindo Group",
   "lead2": "is an integrated enterprise operating across multiple strategic sectors.",
   "body": "We focus on innovation, sustainable growth, and delivering lasting value to communities and business partners through a solid, collaborative ecosystem.",
@@ -14,12 +15,12 @@
   "valuesHeading2": "VALUES",
   "valuesSub": "The foundational principles guiding every action and strategic decision we make.",
   "values": [
-    "Upholding the highest standards of honesty, transparency, and ethics in every endeavor.",
-    "Continuously innovating and adapting to deliver forward-looking, impactful solutions.",
-    "Believing that strong, purpose-driven collaboration produces superior, lasting results.",
-    "Committed to excellence, constantly challenging ourselves to surpass industry benchmarks.",
-    "Centering our clients and partners to create meaningful, transformative experiences.",
-    "Devoted to environmental responsibility and social sustainability across all operations."
+    { "icon": "shield", "text": { "id": "Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan dan keputusan.", "en": "Upholding the highest standards of honesty, transparency, and ethics in every endeavor." } },
+    { "icon": "lightbulb", "text": { "id": "Kami terus berinovasi dan beradaptasi untuk menciptakan solusi yang relevan dan bernilai.", "en": "Continuously innovating and adapting to deliver forward-looking, impactful solutions." } },
+    { "icon": "groups", "text": { "id": "Kami percaya bahwa kolaborasi yang kuat menciptakan hasil yang lebih besar dan berkelanjutan.", "en": "Believing that strong, purpose-driven collaboration produces superior, lasting results." } },
+    { "icon": "workspace_premium", "text": { "id": "Kami berkomitmen memberikan kualitas terbaik dan terus mendorong diri untuk melampaui standar.", "en": "Committed to excellence, constantly challenging ourselves to surpass industry benchmarks." } },
+    { "icon": "favorite", "text": { "id": "Kami berfokus pada kebutuhan pelanggan dan berupaya memberikan pengalaman terbaik.", "en": "Centering our clients and partners to create meaningful, transformative experiences." } },
+    { "icon": "eco", "text": { "id": "Kami peduli terhadap lingkungan dan masyarakat dengan mengedepankan keberlanjutan.", "en": "Devoted to environmental responsibility and social sustainability across all operations." } }
   ],
   "strengthsHeading1": "OUR VALUES, ",
   "strengthsHeading2": "OUR STRENGTH",
@@ -43,13 +44,42 @@
   "visionTitle": "Our Vision",
   "visionDesc": "To become a premier integrated, innovative, and globally competitive business group dedicated to shaping a better, sustainable future.",
   "missionTitle": "Our Mission",
+  "visionLink": "See Our Businesses",
   "missions": [
     "Develop resilient, well-diversified business portfolios across high-potential sectors.",
     "Drive digital acceleration and embrace cutting-edge innovation across all operations.",
     "Create enduring, sustainable value for shareholders, strategic partners, and society.",
     "Champion robust corporate governance, ethical leadership, and environmental stewardship."
   ],
-  "networkHeading1": "OUR",
-  "networkHeading2": "NETWORK",
-  "networkSub": "Strategic partnerships and institutional affiliations."
+  "timeline": {
+    "eyebrow": "OUR JOURNEY",
+    "heading": "The Steps That Built Us",
+    "items": [
+      {
+        "year": "2016",
+        "title": "The Beginning",
+        "desc": "Lasuarindo Group began laying the foundation for an integrated business."
+      },
+      {
+        "year": "2019",
+        "title": "Sector Expansion",
+        "desc": "The portfolio expanded into property, investment, and technology."
+      },
+      {
+        "year": "2022",
+        "title": "T46 District",
+        "desc": "Development of T46 as the centre of the group's business ecosystem."
+      },
+      {
+        "year": "2025",
+        "title": "Integrated Ecosystem",
+        "desc": "Twelve business units operating within one district ecosystem."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Partner for the Next Step",
+    "text": "From our vision to the T46 district, we are ready to discuss your role in it.",
+    "button": "Partner With Us"
+  }
 }

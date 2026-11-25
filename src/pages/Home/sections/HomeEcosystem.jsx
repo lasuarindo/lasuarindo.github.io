@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { sectors } from '@/data/sectors';
 import { localized } from '@/utils/localized';
@@ -8,7 +9,7 @@ import { useResponsive } from '@/hooks/useResponsive';
 import { BODY_FONT, CONTAINER } from '@/constants/layout';
 import { useHomeStrings } from '../useHomeStrings';
 
-const BENTO_COLUMNS = [[0, 4], [1, 5], [2], [3, 6]];
+const BENTO_COLUMNS = [[0, 4], [1, 5], [2], [3]];
 
 export function HomeEcosystem() {
   const { language } = useLanguage();
@@ -75,6 +76,17 @@ export function HomeEcosystem() {
             ))}
           </div>
         )}
+        <AnimatedReveal animation="up" delay={160}>
+          <div className="mt-12 text-center">
+            <Link
+              to="/businesses"
+              className="inline-flex min-h-[48px] items-center gap-2 rounded-lg border-[1.5px] border-[var(--color-primary)] px-7 py-3 font-[var(--font-display)] text-[14px] font-bold text-[var(--color-primary)] no-underline transition-colors duration-200 hover:bg-[rgba(177,38,0,0.08)]"
+            >
+              <span>{t.home.sectorsCta}</span>
+              <Icon name="arrow_forward" size={16} color="#b12600" />
+            </Link>
+          </div>
+        </AnimatedReveal>
         <AnimatedReveal animation="up" delay={200}>
           <div className="mt-16 text-center">
             <p className="mb-2 font-[var(--font-display)] text-[24px] font-bold leading-[32px] text-[var(--color-on-background)]"><span className="text-[32px] text-[var(--color-primary)]">"</span>{'  '}{t.home.quoteText}{'  '}<span className="text-[32px] text-[var(--color-primary)]">"</span></p>

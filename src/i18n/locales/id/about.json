@@ -1,6 +1,7 @@
 {
   "heroTitle1": "SIAPA",
   "heroTitle2": "KAMI",
+  "heroImageAlt": "Ilustrasi tim dan kegiatan Lasuarindo Group",
   "lead1": "Lasuarindo Group",
   "lead2": "adalah perusahaan terintegrasi yang bergerak di berbagai sektor strategis.",
   "body": "Kami berfokus pada inovasi, pertumbuhan berkelanjutan, dan memberikan nilai tambah bagi masyarakat dan mitra bisnis kami melalui ekosistem yang solid dan kolaboratif.",
@@ -14,12 +15,12 @@
   "valuesHeading2": "KAMI",
   "valuesSub": "Prinsip yang membimbing setiap langkah dan keputusan kami.",
   "values": [
-    "Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan dan keputusan.",
-    "Kami terus berinovasi dan beradaptasi untuk menciptakan solusi yang relevan dan bernilai.",
-    "Kami percaya bahwa kolaborasi yang kuat menciptakan hasil yang lebih besar dan berkelanjutan.",
-    "Kami berkomitmen memberikan kualitas terbaik dan terus mendorong diri untuk melampaui standar.",
-    "Kami berfokus pada kebutuhan pelanggan dan berupaya memberikan pengalaman terbaik.",
-    "Kami peduli terhadap lingkungan dan masyarakat dengan mengedepankan keberlanjutan."
+    { "icon": "shield", "text": { "id": "Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan dan keputusan.", "en": "Upholding the highest standards of honesty, transparency, and ethics in every endeavor." } },
+    { "icon": "lightbulb", "text": { "id": "Kami terus berinovasi dan beradaptasi untuk menciptakan solusi yang relevan dan bernilai.", "en": "Continuously innovating and adapting to deliver forward-looking, impactful solutions." } },
+    { "icon": "groups", "text": { "id": "Kami percaya bahwa kolaborasi yang kuat menciptakan hasil yang lebih besar dan berkelanjutan.", "en": "Believing that strong, purpose-driven collaboration produces superior, lasting results." } },
+    { "icon": "workspace_premium", "text": { "id": "Kami berkomitmen memberikan kualitas terbaik dan terus mendorong diri untuk melampaui standar.", "en": "Committed to excellence, constantly challenging ourselves to surpass industry benchmarks." } },
+    { "icon": "favorite", "text": { "id": "Kami berfokus pada kebutuhan pelanggan dan berupaya memberikan pengalaman terbaik.", "en": "Centering our clients and partners to create meaningful, transformative experiences." } },
+    { "icon": "eco", "text": { "id": "Kami peduli terhadap lingkungan dan masyarakat dengan mengedepankan keberlanjutan.", "en": "Devoted to environmental responsibility and social sustainability across all operations." } }
   ],
   "strengthsHeading1": "NILAI KAMI, ",
   "strengthsHeading2": "KEKUATAN KAMI",
@@ -43,13 +44,42 @@
   "visionTitle": "Visi Kami",
   "visionDesc": "Menjadi grup bisnis terdepan yang terintegrasi, inovatif, dan berdaya saing global demi menciptakan masa depan yang lebih baik dan berkelanjutan.",
   "missionTitle": "Misi Kami",
+  "visionLink": "Lihat Bisnis Kami",
   "missions": [
     "Mengembangkan portofolio bisnis yang tangguh dan terdiversifikasi di berbagai sektor.",
     "Mendorong transformasi digital dan adopsi inovasi di seluruh lini operasional.",
     "Menciptakan nilai jangka panjang bagi para pemegang saham, mitra kerja, dan masyarakat.",
     "Menerapkan tata kelola perusahaan yang baik dan bertanggung jawab sosial serta lingkungan."
   ],
-  "networkHeading1": "JARINGAN",
-  "networkHeading2": "KAMI",
-  "networkSub": "Kemitraan dan keanggotaan institusional strategis."
+  "timeline": {
+    "eyebrow": "PERJALANAN KAMI",
+    "heading": "Langkah yang Membangun Kami",
+    "items": [
+      {
+        "year": "2016",
+        "title": "Awal Mula",
+        "desc": "Lasuarindo Group mulai membangun fondasi bisnis yang terintegrasi."
+      },
+      {
+        "year": "2019",
+        "title": "Ekspansi Sektor",
+        "desc": "Portofolio berkembang ke properti, investasi, dan teknologi."
+      },
+      {
+        "year": "2022",
+        "title": "Kawasan T46",
+        "desc": "Pengembangan kawasan T46 sebagai pusat ekosistem bisnis grup."
+      },
+      {
+        "year": "2025",
+        "title": "Ekosistem Terpadu",
+        "desc": "Dua belas unit bisnis berjalan dalam satu ekosistem kawasan."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bermitra untuk Langkah Berikutnya",
+    "text": "Dari visi hingga ekosistem T46, kami siap mendiskusikan peran Anda di dalamnya.",
+    "button": "Bermitra Dengan Kami"
+  }
 }

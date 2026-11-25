@@ -1,0 +1,26 @@
+{
+  "heroTitle1": "EKOSISTEM",
+  "heroTitle2": "KAMI",
+  "heroLead": "Bisnis kami berjalan di dalam kawasan yang bisa dikunjungi. Mulai dari T46, lihat di mana setiap unit berada dan bagaimana kawasannya dirawat.",
+  "districtsHeading": "Kawasan Kami",
+  "viewDistrict": "Lihat kawasan",
+  "district": {
+    "eyebrow": "KAWASAN",
+    "lead": "T46 bukan sekadar daftar unit. Ini kawasan bisnis dengan alamat, kategori, dan peran yang jelas bagi setiap penghuninya.",
+    "addressLabel": "Alamat kawasan",
+    "categoryHeading": "Kategori Unit",
+    "unitCountLabel": "unit",
+    "unitsHeading": "Unit di Kawasan Ini",
+    "viewUnit": "Lihat detail unit",
+    "locationHeading": "Lokasi",
+    "locationLead": "Kawasan T46 berada di Bandung, Jawa Barat. Alamat lengkapnya bersumber dari data resmi perusahaan.",
+    "mapLink": "Buka peta",
+    "allUnits": "Lihat semua unit",
+    "homeLink": "Beranda"
+  },
+  "finalCta": {
+    "title": "Mari Bangun Dampak Bersama",
+    "text": "Tertarik dengan kawasan atau unit tertentu? Ceritakan rencana Anda kepada tim kami.",
+    "button": "Bermitra Dengan Kami"
+  }
+}

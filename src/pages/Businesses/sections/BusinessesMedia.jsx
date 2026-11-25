@@ -3,24 +3,24 @@ import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { GradientDivider } from '@/components/ui/GradientDivider';
 import { Icon } from '@/components/ui/Icon';
 import { CONTAINER } from '@/constants/layout';
-import { useServicesStrings } from '../useServicesStrings';
+import { useBusinessesStrings } from '../useBusinessesStrings';
 
-export function ServicesMedia() {
-  const t = useServicesStrings();
+export function BusinessesMedia() {
+  const t = useBusinessesStrings();
 
   return (
     <section className="section section--surface-low">
       <div className={CONTAINER}>
         <AnimatedReveal animation="up" delay={0}>
           <div className="mx-auto mb-16 text-center">
-            <h2 className="mb-2 font-[var(--font-display)] text-[48px] font-bold leading-[58px] text-[var(--color-on-background)] max-[767px]:text-[32px] max-[767px]:leading-[40px]">{t.services.mediaHeadingLead} <span className="text-[var(--color-primary)]">{t.services.mediaHeadingAccent}</span></h2>
-            <p className="mb-4 font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[1.4px] text-[var(--color-secondary)]">{t.services.mediaSubheading}</p>
+            <h2 className="mb-2 font-[var(--font-display)] text-[48px] font-bold leading-[58px] text-[var(--color-on-background)] max-[767px]:text-[32px] max-[767px]:leading-[40px]">{t.businesses.mediaHeadingLead} <span className="text-[var(--color-primary)]">{t.businesses.mediaHeadingAccent}</span></h2>
+            <p className="mb-4 font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[1.4px] text-[var(--color-secondary)]">{t.businesses.mediaSubheading}</p>
             <GradientDivider center />
-            <p className="mx-auto max-w-[672px] font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{t.services.mediaDesc}</p>
+            <p className="mx-auto max-w-[672px] font-[var(--font-body)] text-[16px] leading-[26px] text-[var(--color-secondary)]">{t.businesses.mediaDesc}</p>
           </div>
         </AnimatedReveal>
         <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 max-[767px]:grid-cols-1 lg:grid-cols-3">
-          {t.services.mediaCards.map((card) => (
+          {t.businesses.mediaCards.map((card) => (
             <AnimatedReveal key={card.title} animation="up" delay={card.delay || 100} hover="lift">
               <div className="box-border flex h-full flex-col justify-between rounded-2xl border border-[rgba(228,190,181,0.2)] bg-[var(--color-surface-container-lowest)] p-8 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
                 <div>
@@ -38,7 +38,7 @@ export function ServicesMedia() {
         </div>
         <AnimatedReveal animation="up" delay={400}>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <span className="font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[1.2px] text-[var(--color-secondary)]">{t.services.ourPlatform}:</span>
+            <span className="font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[1.2px] text-[var(--color-secondary)]">{t.businesses.ourPlatform}:</span>
             <div className="flex gap-4">
               {['share', 'videocam', 'music_note', 'podcasts', 'article'].map((icon) => (<div key={icon} className="flex h-10 w-10 items-center justify-center rounded-[20px] bg-[var(--color-surface-container-high)]"><Icon name={icon} size={20} color="#5f5e5e" /></div>))}
             </div>
@@ -49,4 +49,4 @@ export function ServicesMedia() {
   );
 }
 
-export default ServicesMedia;
+export default BusinessesMedia;

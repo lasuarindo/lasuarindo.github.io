@@ -1,0 +1,26 @@
+{
+  "heroTitle1": "OUR",
+  "heroTitle2": "ECOSYSTEM",
+  "heroLead": "Our businesses run in districts you can visit. Start with T46: see where each unit operates and how the district is managed.",
+  "districtsHeading": "Our Districts",
+  "viewDistrict": "Explore district",
+  "district": {
+    "eyebrow": "DISTRICT",
+    "lead": "T46 is more than a list of units. It is a business district with an address, clear categories, and a defined role for each occupant.",
+    "addressLabel": "District address",
+    "categoryHeading": "Unit Categories",
+    "unitCountLabel": "units",
+    "unitsHeading": "Units in This District",
+    "viewUnit": "View unit details",
+    "locationHeading": "Location",
+    "locationLead": "T46 is in Bandung, West Java. The full address comes from the company's official data.",
+    "mapLink": "Open map",
+    "allUnits": "See all units",
+    "homeLink": "Home"
+  },
+  "finalCta": {
+    "title": "Let's Build Impact Together",
+    "text": "Interested in the district or a particular unit? Tell our team what you have in mind.",
+    "button": "Partner With Us"
+  }
+}

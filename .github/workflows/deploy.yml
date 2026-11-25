@@ -42,12 +42,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check i18n parity
+        run: npm run check:parity
+
       - name: Build
         run: npm run build
 
       - name: SPA fallback for GitHub Pages
         # GitHub Pages serves 404.html for unknown paths; copying index.html
-        # keeps deep links (e.g. /about-us, /services) working as an SPA.
+        # keeps deep links (e.g. /about-us, /businesses) working as an SPA.
         run: cp dist/index.html dist/404.html
 
       - name: Setup Pages

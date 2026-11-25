@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 23 public routes (24 with /legal), including the 12 unit detail URLs.
+     /services is intentionally absent: it is the pre-migration redirect. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.lasuarindo.co.id/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.lasuarindo.co.id/about-us</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/businesses</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/ecosystems</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/ecosystems/t46</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/pro</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/win</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/agt</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/idr</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/lazura-koffie</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/asyihan</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/vps-vamos-padelon</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/bmg-royal-hd-mahjong</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/bizencio-business-hub</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/sare</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/cuanmie</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/units/saa</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/licence</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/contact</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/faq</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/legal</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/legal/privacy-policy</loc></url>
+  <url><loc>https://www.lasuarindo.co.id/legal/term-condition</loc></url>
+</urlset>

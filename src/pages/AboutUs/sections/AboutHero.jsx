@@ -35,7 +35,7 @@ export function AboutHero() {
         </AnimatedReveal>
         <AnimatedReveal animation="right" delay={150} className="w-full lg:flex-1">
           <div className="relative overflow-hidden rounded-tl-[16px] rounded-tr-[110px] rounded-br-[16px] rounded-bl-[16px] bg-[#171717] shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-            <img src={tentangKamiImg} alt="Tentang Kami" className="block h-[260px] w-full object-cover max-[379px]:h-[320px] md:h-[340px] lg:h-[420px]" />
+            <img src={tentangKamiImg} alt={t.about.heroImageAlt} className="block h-[260px] w-full object-cover max-[379px]:h-[320px] md:h-[340px] lg:h-[420px]" />
             <div className="absolute bottom-0 left-0 right-0 border-t border-t-[rgba(255,255,255,0.1)] bg-[rgba(0,0,0,0.85)] px-[16px] py-[18px] backdrop-blur-[12px] max-[379px]:px-[10px] max-[379px]:py-[12px]">
               <div className="flex flex-row justify-between gap-[8px] max-[379px]:grid max-[379px]:grid-cols-2 max-[379px]:gap-[10px]">
                 {heroFeatures.map((f) => (

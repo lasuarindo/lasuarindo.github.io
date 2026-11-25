@@ -1,5 +1,5 @@
 {
-  "badge": "Lasuarindo Group",
+  "badge": "OUR BUSINESSES",
   "heroTitle1": "Building the",
   "heroTitle2": "Future in",
   "heroTitle3": "Key",
@@ -8,6 +8,12 @@
   "exploreBtn": "Learn More",
   "contactBtn": "Consult With Us",
   "partnerBtn": "Partner With Us",
+  "intro": {
+    "eyebrow": "WHAT WE DO",
+    "heading": "Six Business Lines, One Ecosystem",
+    "body": "Lasuarindo Group invests in, owns, and manages businesses across six business lines, from investment and property to technology, media, F&B, and lifestyle. We develop each unit within one ecosystem at the T46 district in Bandung.",
+    "keywords": ["Investment", "Management", "Development"]
+  },
   "propertyLabel": "PROPERTY",
   "propertyHeading": "DEVELOPING SPACES FOR A BETTER LIFE",
   "propertyDesc": "We develop high-quality properties with modern architectural design, strategic locations, and ever-growing investment value. From residential housing to large-scale commercial projects, every project is designed to provide the highest comfort and satisfaction.",
@@ -17,10 +23,18 @@
     { "icon": "apartment", "title": "Property Management", "desc": "Professional management for high-value assets." }
   ],
   "recentProject": "Recent Project",
+  "imageAlts": {
+    "propertyDistrict": "Residential area and surroundings developed by Lasuarindo Group",
+    "propertyBuilding": "A property building with modern architecture in the group's district",
+    "techPlatform": "Lasuarindo Group product-protection technology interface",
+    "techGrid": "Illustration of a digital verification system",
+    "techProject": "Digital Hub Indonesia future technology project",
+    "vamos": "Padel courts and lifestyle area at Vamos Padelon Sinergi"
+  },
   "mediaHeadingLead": "CREATIVE",
   "mediaHeadingAccent": "MEDIA",
   "mediaSubheading": "BEHIND THE SCENES, STORIES, INFLUENCE & MEDIA",
-  "mediaDesc": "We deliver cutting-edge creative services integrated with modern business needs — from visual design to large-scale event production, all designed to deliver maximum impact.",
+  "mediaDesc": "We deliver cutting-edge creative services integrated with modern business needs, from visual design to large-scale event production, all designed to deliver maximum impact.",
   "mediaCards": [
     {
       "icon": "public",
@@ -34,12 +48,12 @@
       "title": "Arcadia Segara Cita",
       "tag": "PRODUCTION HOUSE",
       "desc": "Focuses on high-quality visual content production for commercial and entertainment needs.",
-      "items": ["Film Production", "Video and Music Production", "TVC and Commercials", "Script & Storytelling"]
+      "items": ["Film Production", "Video & Music Production", "TVC and Commercials", "Script & Storytelling"]
     },
     {
       "icon": "qr_code_2",
       "title": "Berkah Media Gemilang",
-      "tag": "Outdoor Media",
+      "tag": "OUTDOOR MEDIA",
       "desc": "Provides outdoor media solutions and supporting services to build a strong and memorable brand.",
       "items": ["Event Management", "Billboard", "Vidiotron", "Branding & Signage"]
     }
@@ -83,7 +97,28 @@
   ],
   "futureProjects": "FUTURE PROJECTS",
   "futureProjectsDesc": "Sustainable initiatives and forward-looking ventures actively being pioneered within the Lasuarindo ecosystem.",
-  "ecosystemBadge": "T46 Ecosystem",
-  "ecosystemHeading": "T46 Business Ecosystem",
-  "ecosystemDesc": "Lasuarindo Group manages the T46 district as a connected business ecosystem — spanning investment, technology, culinary, and lifestyle — with consistent service standards across every unit."
+  "ecosystemBadge": "T46 ECOSYSTEM",
+  "ecosystemHeading": "Twelve Units in One District",
+  "ecosystemDesc": "PRO, WIN, and AGT are among the units operating in the T46 district. See them all on the ecosystem page.",
+  "ecosystemCta": "Explore T46 Ecosystem",
+  "process": {
+    "eyebrow": "HOW WE WORK",
+    "heading": "From Conversation to Impact",
+    "steps": [
+      { "title": "Discuss", "desc": "We listen to your needs and objectives." },
+      { "title": "Plan", "desc": "We shape an approach that fits the resources available." },
+      { "title": "Execute", "desc": "The team works with the relevant unit to deliver the plan." },
+      { "title": "Support", "desc": "We stay with the outcome so it keeps running." }
+    ]
+  },
+  "faqTeaser": {
+    "title": "How can I partner with Lasuarindo Group?",
+    "text": "Contact our team through the contact page to discuss collaboration opportunities.",
+    "button": "See the full FAQ"
+  },
+  "finalCta": {
+    "title": "Let's Build Impact Together",
+    "text": "Tell us about your plans. Our team is ready to discuss collaboration opportunities with Lasuarindo Group.",
+    "button": "Partner With Us"
+  }
 }

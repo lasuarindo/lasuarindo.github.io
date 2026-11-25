@@ -1,5 +1,5 @@
 {
-  "badge": "Lasuarindo Group",
+  "badge": "BISNIS KAMI",
   "heroTitle1": "Membangun Masa",
   "heroTitle2": "Depan di",
   "heroTitle3": "Industri",
@@ -8,6 +8,12 @@
   "exploreBtn": "Pelajari Lebih Lanjut",
   "contactBtn": "Konsultasi Sekarang",
   "partnerBtn": "Bermitra Dengan Kami",
+  "intro": {
+    "eyebrow": "APA YANG KAMI LAKUKAN",
+    "heading": "Enam Lini Usaha, Satu Ekosistem",
+    "body": "Lasuarindo Group menginvestasikan, memiliki, dan mengelola bisnis di enam lini usaha, dari investasi dan properti hingga teknologi, media, F&B, dan gaya hidup. Kami mengembangkan setiap unit dalam satu ekosistem di kawasan T46, Bandung.",
+    "keywords": ["Investasi", "Pengelolaan", "Pengembangan"]
+  },
   "propertyLabel": "PROPERTI",
   "propertyHeading": "MENGEMBANGKAN RUANG UNTUK KEHIDUPAN LEBIH BAIK",
   "propertyDesc": "Kami mengembangkan properti berkualitas tinggi dengan desain arsitektur modern, lokasi strategis, dan nilai investasi yang terus berkembang. Dari perumahan residensial hingga proyek komersial skala besar, setiap proyek dirancang untuk memberikan kenyamanan dan kepuasan tertinggi.",
@@ -17,10 +23,18 @@
     { "icon": "apartment", "title": "Manajemen Properti", "desc": "Pengelolaan profesional untuk aset bernilai tinggi." }
   ],
   "recentProject": "Proyek Terkini",
+  "imageAlts": {
+    "propertyDistrict": "Kawasan hunian dan lingkungan sekitar yang dikembangkan Lasuarindo Group",
+    "propertyBuilding": "Bangunan properti dengan arsitektur modern di kawasan grup",
+    "techPlatform": "Tampilan teknologi perlindungan produk Lasuarindo Group",
+    "techGrid": "Ilustrasi sistem verifikasi digital",
+    "techProject": "Proyek teknologi masa depan Digital Hub Indonesia",
+    "vamos": "Lapangan padel dan area gaya hidup Vamos Padelon Sinergi"
+  },
   "mediaHeadingLead": "MEDIA",
   "mediaHeadingAccent": "KREATIF",
   "mediaSubheading": "DI BALIK LAYAR, CERITA, PENGARUH & MEDIA",
-  "mediaDesc": "Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern — dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.",
+  "mediaDesc": "Kami menghadirkan layanan kreatif terdepan yang menyatu dengan kebutuhan bisnis modern, dari desain visual hingga produksi event berskala besar, semua dirancang untuk memberikan dampak maksimal.",
   "mediaCards": [
     {
       "icon": "public",
@@ -34,14 +48,14 @@
       "title": "Arcadia Segara Cita",
       "tag": "PRODUCTION HOUSE",
       "desc": "Berfokus pada produksi konten visual berkualitas tinggi untuk kebutuhan komersial dan hiburan.",
-      "items": ["Pembuatan Film", "Pembuatan Video dan musik", "TVC dan iklan", "Script & Storytelling"]
+      "items": ["Pembuatan Film", "Pembuatan Video & Musik", "TVC dan Iklan", "Script & Storytelling"]
     },
     {
       "icon": "qr_code_2",
       "title": "Berkah Media Gemilang",
-      "tag": "Media Luar Ruangan",
+      "tag": "MEDIA LUAR RUANGAN",
       "desc": "Menyediakan solusi media luar ruang dan layanan pendukung untuk membangun brand yang kuat dan berkesan.",
-      "items": ["Event Management", "Bilboard", "Vidiotron", "branding & Signage"]
+      "items": ["Event Management", "Billboard", "Vidiotron", "Branding & Signage"]
     }
   ],
   "ourPlatform": "Platform Kami",
@@ -66,7 +80,7 @@
   "vamosDesc": "Vamos Padelon Sinergi (VPS) adalah sarana olahraga padel berkualitas dengan fasilitas modern, nyaman, dan berstandar profesional untuk semua kalangan.",
   "vamosTags": [
     { "icon": "sports_tennis", "label": "lapangan padel premium" },
-    { "icon": "storefront", "label": "pro shope" },
+    { "icon": "storefront", "label": "toko pro" },
     { "icon": "coffee", "label": "cafe dan area relaksasi" },
     { "icon": "play_circle", "label": "Media" },
     { "icon": "flight_takeoff", "label": "fasilitas modern" }
@@ -83,7 +97,28 @@
   ],
   "futureProjects": "PROYEK MASA DEPAN",
   "futureProjectsDesc": "Inisiatif berkelanjutan dan terobosan terbaru dalam ekosistem bisnis Lasuarindo Group.",
-  "ecosystemBadge": "Ekosistem T46",
-  "ecosystemHeading": "Ekosistem Bisnis T46",
-  "ecosystemDesc": "Lasuarindo Group mengelola kawasan T46 sebagai ekosistem bisnis terpadu — dari investasi, teknologi, kuliner, hingga gaya hidup — dengan standar layanan yang konsisten di setiap unit."
+  "ecosystemBadge": "EKOSISTEM T46",
+  "ecosystemHeading": "Dua Belas Unit di Satu Kawasan",
+  "ecosystemDesc": "PRO, WIN, dan AGT adalah sebagian dari unit yang berjalan di kawasan T46. Lihat semuanya di halaman ekosistem.",
+  "ecosystemCta": "Lihat Ekosistem T46",
+  "process": {
+    "eyebrow": "CARA KAMI BEKERJA",
+    "heading": "Dari Percakapan ke Dampak",
+    "steps": [
+      { "title": "Diskusi", "desc": "Kami mendengarkan kebutuhan dan tujuan Anda." },
+      { "title": "Perencanaan", "desc": "Kami susun pendekatan yang sesuai dengan sumber daya yang tersedia." },
+      { "title": "Pelaksanaan", "desc": "Tim bekerja bersama unit terkait mewujudkan rencana." },
+      { "title": "Pendampingan", "desc": "Kami mendampingi hasilnya agar tetap berjalan." }
+    ]
+  },
+  "faqTeaser": {
+    "title": "Bagaimana cara bermitra dengan Lasuarindo Group?",
+    "text": "Hubungi tim kami melalui halaman kontak untuk mendiskusikan peluang kolaborasi.",
+    "button": "Lihat FAQ lengkap"
+  },
+  "finalCta": {
+    "title": "Mari Bangun Dampak Bersama",
+    "text": "Ceritakan rencana Anda. Kami siap mendiskusikan peluang kolaborasi dengan tim Lasuarindo Group.",
+    "button": "Bermitra Dengan Kami"
+  }
 }

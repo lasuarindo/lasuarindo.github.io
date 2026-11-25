@@ -23,12 +23,20 @@ flowchart TD
 |---|---|
 | `/` | Home |
 | `/about-us` | About Us |
-| `/services` | Services |
+| `/businesses` | Businesses (migrated from `/services`) |
+| `/ecosystems` | Ecosystem index |
+| `/ecosystems/:key` | District page (currently `t46`) |
+| `/units` | Unit directory |
+| `/units/:slug` | Unit detail (12 units) |
+| `/licence` | Licensing |
 | `/contact` | Contact |
 | `/faq` | FAQ Center |
+| `/legal` | Legal index |
 | `/legal/privacy-policy` | Privacy Policy |
 | `/legal/term-condition` | Terms & Conditions |
 | `*` | NotFound |
+
+The old `/services` path is retired and falls through to NotFound.
 
 ## Layout
 
@@ -39,7 +47,8 @@ flowchart TD
 - a skip link to `#main`
 - `Header`
 - `<main id="main" class="page">` keyed by pathname, with `Suspense` + `RouteFallback`
-- `Footer` (route-aware: the creative-ecosystem gallery only shows on `/services`)
+- `Footer` (route-aware: the creative-ecosystem gallery only shows on `/businesses`)
+- `StructuredData` (JSON-LD Organization, plus LocalBusiness on `/ecosystems/t46`)
 - `BackToTop`
 
 `usePageMeta` (in `src/hooks/usePageMeta.js`) updates `document.title` plus the description and Open Graph tags from `src/data/pageMeta.js` whenever the route or language changes.

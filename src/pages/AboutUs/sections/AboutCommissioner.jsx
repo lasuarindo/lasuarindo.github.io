@@ -1,11 +1,16 @@
 import React from 'react';
+import { useLanguage } from '@/i18n/language.js';
+import { localized } from '@/utils/localized';
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { Stars } from '@/components/ui/Stars';
+import { getLeaderByKey } from '@/data/leadership';
 import { useAboutStrings } from '../useAboutStrings';
 import komisarisImg from '@/assets/images/komisaris.png';
 
 export function AboutCommissioner() {
   const t = useAboutStrings();
+  const { language } = useLanguage();
+  const commissioner = getLeaderByKey('commissioner');
 
   return (
     <section className="section section--sm section--surface">
@@ -21,14 +26,14 @@ export function AboutCommissioner() {
               <p className="m-0 font-[var(--font-body)] text-[13px] leading-[22px] text-[#6b7280]">{t.about.commissionerBody2}</p>
             </div>
             <div className="mt-[18px] pl-[4px]">
-              <h3 className="m-0 font-[var(--font-display)] text-[22px] font-bold text-[var(--color-on-background)]">Herawati</h3>
-              <div className="mt-[4px] flex flex-row items-center"><span className="font-[var(--font-display)] text-[13px] font-semibold text-[var(--color-primary)]">Commissioner</span><span className="mx-[6px] text-[#9ca3af]">•</span><Stars /></div>
+              <h3 className="m-0 font-[var(--font-display)] text-[22px] font-bold text-[var(--color-on-background)]">{commissioner.name}</h3>
+              <div className="mt-[4px] flex flex-row items-center"><span className="font-[var(--font-display)] text-[13px] font-semibold text-[var(--color-primary)]">{localized(commissioner.role, language)}</span><span className="mx-[6px] text-[#9ca3af]">•</span><Stars /></div>
             </div>
           </div>
         </AnimatedReveal>
         <AnimatedReveal animation="right" delay={200} className="w-full lg:flex-1">
           <div className="flex h-[300px] w-full items-center justify-center overflow-hidden rounded-[24px] bg-[var(--color-surface-container-lowest)] shadow-[0_20px_40px_rgba(0,0,0,0.06)] md:h-[400px] lg:h-[480px]">
-            <img src={komisarisImg} alt="Herawati - Commissioner" className="block h-full w-full object-contain" />
+            <img src={komisarisImg} alt={localized(commissioner.imageAlt, language)} className="block h-full w-full object-contain" />
           </div>
         </AnimatedReveal>
       </div>

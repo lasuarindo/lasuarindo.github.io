@@ -2,14 +2,19 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Services",
+    "businesses": "Our Businesses",
+    "ecosystems": "Ecosystems",
+    "units": "Units",
     "contact": "Contact",
+    "primary": "Main navigation",
+    "breadcrumb": "Breadcrumb",
     "cta": "Partner With Us",
     "language": "Language"
   },
   "footer": {
     "tagline": "Building Business, Creating Impact. An integrated creative technology and lifestyle ecosystem.",
     "navigation": "Navigation",
+    "licence": "Licensing",
     "help": "Help",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms & Conditions",

@@ -33,23 +33,23 @@ function SocialButton({ label, url, icon }) {
 export function Footer() {
   const t = useStrings({ id: idCommon, en: enCommon });
   const { pathname } = useLocation();
-  // Route-aware: the creative-ecosystem gallery only appears on the Services page.
-  const isServices = pathname === '/services' || pathname.startsWith('/services/');
-  const gallery = isServices ? footerGallery : [];
+  // Route-aware: the creative-ecosystem gallery only appears on the Businesses page.
+  const isBusinesses = pathname === '/businesses' || pathname.startsWith('/businesses/');
+  const gallery = isBusinesses ? footerGallery : [];
 
   return (
     <footer
       className={`relative z-20 border-t-4 border-t-[var(--color-primary)] bg-[#111313] pb-8 text-[#f0f1f1] ${
-        isServices && gallery.length ? 'pt-0' : 'pt-[60px]'
+        isBusinesses && gallery.length ? 'pt-0' : 'pt-[60px]'
       }`}
     >
-      {/* Gallery Section on Services Page */}
-      {isServices && gallery.length > 0 && (
+      {/* Gallery Section on Businesses Page */}
+      {isBusinesses && gallery.length > 0 && (
         <div className="mb-8 bg-[#111313] pt-8">
           <div className={CONTAINER}>
             <div className="mb-5 flex items-center gap-3">
               <div className="h-[24px] w-[4px] rounded-[2px] bg-[var(--color-primary)]" />
-              <span className={`${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.12px] text-[var(--color-primary)]`}>
+              <span className={`${DISPLAY_FONT} text-[14px] font-bold uppercase tracking-[1.12px] text-[var(--color-primary-fixed-dim)]`}>
                 {t.footer.creativeEcosystem}
               </span>
             </div>
@@ -79,7 +79,7 @@ export function Footer() {
                 LASUARINDO
               </span>
             </div>
-            <p className={`${DISPLAY_FONT} mb-[14px] text-[11px] font-semibold uppercase tracking-[1px] text-[var(--color-primary)]`}>
+            <p className={`${DISPLAY_FONT} mb-[14px] text-[11px] font-semibold uppercase tracking-[1px] text-[var(--color-primary-fixed-dim)]`}>
               {t.footer.brandSubline}
             </p>
             <p className={`${BODY_FONT} mb-6 text-[14px] leading-[1.6] text-[#9ca3af]`}>
@@ -98,9 +98,9 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-10">
             {/* Navigation */}
             <div>
-              <h4 className={FOOTER_HEADING}>
+              <h2 className={FOOTER_HEADING}>
                 {t.footer.navigation}
-              </h4>
+              </h2>
               <div className="flex flex-col gap-3">
                 {footerNav.map((item) => (
                   <Link key={item.href} to={item.href} className={FOOTER_LINK}>
@@ -112,9 +112,9 @@ export function Footer() {
 
             {/* Help */}
             <div>
-              <h4 className={FOOTER_HEADING}>
+              <h2 className={FOOTER_HEADING}>
                 {t.footer.help}
-              </h4>
+              </h2>
               <div className="flex flex-col gap-3">
                 {footerHelp.map((item) => (
                   <Link key={item.href} to={item.href} className={FOOTER_LINK}>
@@ -129,9 +129,9 @@ export function Footer() {
         {/* Contact section: address and email on their own row */}
         <div className="mb-12 border-t border-t-[rgba(255,255,255,0.1)] pt-8">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-[240px_1fr] md:gap-10">
-            <h4 className={`${FOOTER_HEADING} md:mb-0`}>
+            <h2 className={`${FOOTER_HEADING} md:mb-0`}>
               {t.footer.contactUs}
-            </h4>
+            </h2>
             <ul className="flex flex-col gap-[14px]">
               <li className="flex items-start gap-[10px]">
                 <Icon name="location_on" size={18} color={Colors.primary} className="mt-[2px]" />

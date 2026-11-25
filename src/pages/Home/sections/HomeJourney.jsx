@@ -21,7 +21,7 @@ export function HomeJourney() {
     <section className="section section--dark section--relative">
       {isDesktop && (
         <div className="absolute bottom-0 right-0 top-0 z-[1] w-1/2">
-          <img src={kemitraanImg} alt="Kemitraan Lasuarindo" className="block h-full w-full rounded-l-[48px] object-cover" />
+          <img src={kemitraanImg} alt={t.home.journeyImageAlt} className="block h-full w-full rounded-l-[48px] object-cover" />
         </div>
       )}
       <div className={`relative z-[2] ${CONTAINER}`}>
@@ -53,7 +53,7 @@ export function HomeJourney() {
       </div>
       {!isDesktop && (
         <div className={`mt-8 ${CONTAINER}`}>
-          <img src={kemitraanImg} alt="Kemitraan Lasuarindo" className="block aspect-[16/9] max-h-[420px] w-full rounded-[20px] object-cover" />
+          <img src={kemitraanImg} alt={t.home.journeyImageAlt} className="block aspect-[16/9] max-h-[420px] w-full rounded-[20px] object-cover" />
         </div>
       )}
     </section>

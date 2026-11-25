@@ -26,6 +26,14 @@ p, h1, h2, h3, h4, h5, h6, span {
   overflow-wrap: break-word;
 }
 
+/* Keyboard focus is always visible, including on cards and dark sections.
+   The two rings keep contrast on both light and dark surfaces. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-primary-fixed-dim);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-primary);
+}
+
 /* Respect reduced-motion preferences for anchor navigation (legal TOC). */
 @media (prefers-reduced-motion: reduce) {
   html {

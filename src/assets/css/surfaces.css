@@ -11,7 +11,7 @@
   }
 
   .hover-lift:active,
-  .hover-lift:focus {
+  .hover-lift:focus:not(:focus-visible) {
     outline: none !important;
     border-bottom: none !important;
   }

@@ -76,6 +76,7 @@ export function MobileMenu({ visible, onClose }) {
                     key={item.href}
                     type="button"
                     onClick={() => go(item.href)}
+                    aria-current={active ? 'page' : undefined}
                     className={`mb-2 flex w-full cursor-pointer items-center gap-4 rounded-xl border-none px-4 py-[14px] text-left font-[var(--font-display)] text-[15px] transition-colors duration-200 ${
                       active
                         ? 'bg-[rgba(177,38,0,0.08)] font-bold text-[var(--color-primary)]'

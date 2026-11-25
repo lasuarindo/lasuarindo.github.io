@@ -5,7 +5,7 @@ import proyekEkosistemImg from '@/assets/images/future_project_ecosystem.png';
 import vamosImg from '@/assets/images/service_vamos_synergy.png';
 import layananEkosistemImg from '@/assets/images/services_ecosystem.png';
 
-// "Creative ecosystem" gallery shown above the footer on the Services route.
+// "Creative ecosystem" gallery shown above the footer on the Businesses route.
 // The footer reads this catalogue based on the active route, so pages no longer
 // need to pass gallery props themselves.
 export const footerGallery = [

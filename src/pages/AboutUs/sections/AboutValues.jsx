@@ -1,15 +1,16 @@
 import React from 'react';
+import { useLanguage } from '@/i18n/language.js';
+import { localized } from '@/utils/localized';
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
 import { Icon } from '@/components/ui/Icon';
 import { Colors } from '@/constants/theme';
 import { CONTAINER } from '@/constants/layout';
 import { useAboutStrings } from '../useAboutStrings';
 
-// Icons are positional: one icon per value, in the same order as about.json.
-const VALUES_ICONS = ['shield', 'lightbulb', 'groups', 'workspace_premium', 'favorite', 'eco'];
-
+/** Icons belong to the value itself, not to its position in the array. */
 export function AboutValues() {
   const t = useAboutStrings();
+  const { language } = useLanguage();
 
   return (
     <section className="section section--sm section--surface-low">
@@ -21,11 +22,13 @@ export function AboutValues() {
           </div>
         </AnimatedReveal>
         <div className="mx-auto grid max-w-[960px] grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-[16px] md:grid-cols-3">
-          {t.about.values.map((desc, idx) => (
-            <AnimatedReveal key={idx} animation="up" delay={100 + idx * 50} hover="lift">
+          {t.about.values.map((value, idx) => (
+            <AnimatedReveal key={value.icon} animation="up" delay={100 + idx * 50} hover="lift">
               <div className="flex h-full min-h-[210px] flex-col items-center rounded-[16px] border border-[rgba(228,190,181,0.4)] bg-[var(--color-surface-container-lowest)] px-[20px] py-[26px] shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
-                <div className="mb-[16px] flex h-[52px] w-[52px] items-center justify-center rounded-[13px] border-[1.5px] border-[rgba(177,38,0,0.4)]"><Icon name={VALUES_ICONS[idx % VALUES_ICONS.length]} size={26} color={Colors.primary} /></div>
-                <p className="m-0 text-center font-[var(--font-body)] text-[14px] leading-[22px] text-[var(--color-secondary)] lg:text-[15px] lg:leading-[24px]">{desc}</p>
+                <div className="mb-[16px] flex h-[52px] w-[52px] items-center justify-center rounded-[13px] border-[1.5px] border-[rgba(177,38,0,0.4)]">
+                  <Icon name={value.icon} size={26} color={Colors.primary} />
+                </div>
+                <p className="m-0 text-center font-[var(--font-body)] text-[14px] leading-[22px] text-[var(--color-secondary)] lg:text-[15px] lg:leading-[24px]">{localized(value.text, language)}</p>
               </div>
             </AnimatedReveal>
           ))}
