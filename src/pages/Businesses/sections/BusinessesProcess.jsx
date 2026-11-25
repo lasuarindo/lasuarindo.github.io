@@ -1,5 +1,6 @@
 import React from 'react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DraftNote } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { useBusinessesStrings } from '../useBusinessesStrings';
 
@@ -25,6 +26,7 @@ export function BusinessesProcess() {
             </div>
           ))}
         </div>
+        <DraftNote />
       </div>
     </section>
   );

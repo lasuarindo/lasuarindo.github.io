@@ -2,6 +2,14 @@
   "heroTitle1": "OUR",
   "heroTitle2": "ECOSYSTEM",
   "heroLead": "Our businesses run in districts you can visit. Start with T46: see where each unit operates and how the district is managed.",
+  "introHeading": "More Than an Address",
+  "introLead": "An ecosystem is how we group sectors and units inside one connected district. Each ecosystem has its own role, address, and quiet visual theme.",
+  "introPoints": [
+    { "title": "Sectors & units", "text": "Sectors set the direction; units carry out the work on the ground." },
+    { "title": "One district", "text": "A shared location makes collaboration and management easier." },
+    { "title": "Room to grow", "text": "New ecosystems can be added as the group grows." }
+  ],
+  "draftNote": "Ecosystems marked DRAFT are planned; their details are not yet verified.",
   "districtsHeading": "Our Districts",
   "viewDistrict": "Explore district",
   "district": {

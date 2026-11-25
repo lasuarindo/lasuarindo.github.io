@@ -4,7 +4,9 @@ import { useLanguage } from '@/i18n/language.js';
 import { localized } from '@/utils/localized';
 import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
+import { ecosystems } from '@/data/ecosystems';
 import { getUnitBySlug } from '@/data/units';
 import { useHomeStrings } from '../useHomeStrings';
 
@@ -24,13 +26,39 @@ export function HomeT46Preview() {
           subtitle={t.home.t46Preview.desc}
         />
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="eco-grid">
+          {ecosystems.map((ecosystem) => (
+            <Link
+              key={ecosystem.key}
+              to={`/ecosystems/${ecosystem.key}`}
+              className="eco-card"
+              style={{ '--eco-accent': ecosystem.theme.accent }}
+            >
+              <span className="eco-card__label">
+                {localized(ecosystem.theme.label, language)}
+              </span>
+              <h3 className="eco-card__title">{localized(ecosystem.name, language)}</h3>
+              {ecosystem.status === 'draft' ? <DraftBadge /> : null}
+              <p className="prose">{localized(ecosystem.intro, language)}</p>
+              <span className="eco-card__foot">
+                <Icon name="arrow_forward" size={16} color="currentColor" />
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <DraftNote>{t.home.t46Preview.draftNote}</DraftNote>
+
+        <h3 className="display display--card mt-12">
+          {t.home.t46Preview.unitsHeading}
+        </h3>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PREVIEW_SLUGS.map((slug) => {
             const unit = getUnitBySlug(slug);
             return (
               <div key={slug} className="card">
                 <Icon name={unit.icon} size={22} color="#b12600" />
-                <h3 className="display display--card card__title">{unit.name}</h3>
+                <h4 className="display display--card card__title">{unit.name}</h4>
                 <p className="prose">{localized(unit.desc, language)}</p>
               </div>
             );

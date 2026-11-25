@@ -2,6 +2,14 @@
   "heroTitle1": "EKOSISTEM",
   "heroTitle2": "KAMI",
   "heroLead": "Bisnis kami berjalan di dalam kawasan yang bisa dikunjungi. Mulai dari T46, lihat di mana setiap unit berada dan bagaimana kawasannya dirawat.",
+  "introHeading": "Lebih dari Sekadar Alamat",
+  "introLead": "Ekosistem adalah cara kami mengelompokkan sektor dan unit di dalam satu kawasan yang saling terhubung. Setiap ekosistem memiliki peran, alamat, dan tema tersendiri.",
+  "introPoints": [
+    { "title": "Sektor & unit", "text": "Sektor memberi arah, unit menjalankan kegiatannya di lapangan." },
+    { "title": "Satu kawasan", "text": "Lokasi yang sama memudahkan kolaborasi dan pengelolaan bersama." },
+    { "title": "Terus bertumbuh", "text": "Ekosistem baru dapat ditambahkan seiring pertumbuhan grup." }
+  ],
+  "draftNote": "Ekosistem berstatus DRAFT masih berupa rencana; detailnya belum diverifikasi.",
   "districtsHeading": "Kawasan Kami",
   "viewDistrict": "Lihat kawasan",
   "district": {

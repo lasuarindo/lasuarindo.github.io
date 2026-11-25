@@ -37,5 +37,9 @@
     "title": "Page Not Found",
     "message": "The page you are looking for is unavailable or has been moved.",
     "backHome": "Back to Home"
+  },
+  "status": {
+    "draft": "DRAFT",
+    "draftNote": "Draft data — pending company verification."
   }
 }

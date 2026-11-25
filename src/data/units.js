@@ -5,6 +5,7 @@
  * never render the document marker.
  *
  * Public whitelist: slug, ecosystem, name, category, icon, desc, overview,
+ * capabilities, status. `status: 'draft'` marks the temporary overview and
  * capabilities. Internal staff and contract fields are deliberately absent.
  */
 
@@ -16,6 +17,7 @@ export const unitCategories = [
       {
         slug: 'pro',
         ecosystem: 't46',
+        status: 'draft',
         name: 'PRO',
         category: 'managed',
         icon: 'trending_up',
@@ -32,6 +34,7 @@ export const unitCategories = [
       {
         slug: 'win',
         ecosystem: 't46',
+        status: 'draft',
         name: 'WIN',
         category: 'managed',
         icon: 'domain',
@@ -48,6 +51,7 @@ export const unitCategories = [
       {
         slug: 'agt',
         ecosystem: 't46',
+        status: 'draft',
         name: 'AGT',
         category: 'managed',
         icon: 'shield',
@@ -67,6 +71,7 @@ export const unitCategories = [
       {
         slug: 'idr',
         ecosystem: 't46',
+        status: 'draft',
         name: 'IDR',
         category: 'managed',
         icon: 'storefront',
@@ -86,6 +91,7 @@ export const unitCategories = [
       {
         slug: 'lazura-koffie',
         ecosystem: 't46',
+        status: 'draft',
         name: 'Lazura Koffie',
         category: 'managed',
         icon: 'coffee',
@@ -102,6 +108,7 @@ export const unitCategories = [
       {
         slug: 'asyihan',
         ecosystem: 't46',
+        status: 'draft',
         name: 'Asyihan',
         category: 'managed',
         icon: 'spray_can',
@@ -124,6 +131,7 @@ export const unitCategories = [
       {
         slug: 'vps-vamos-padelon',
         ecosystem: 't46',
+        status: 'draft',
         name: 'VPS — Vamos Padelon',
         category: 'partnership',
         icon: 'sports_tennis',
@@ -140,6 +148,7 @@ export const unitCategories = [
       {
         slug: 'bmg-royal-hd-mahjong',
         ecosystem: 't46',
+        status: 'draft',
         name: 'BMG — Royal HD Mahjong',
         category: 'partnership',
         icon: 'gamepad_2',
@@ -165,6 +174,7 @@ export const unitCategories = [
       {
         slug: 'bizencio-business-hub',
         ecosystem: 't46',
+        status: 'draft',
         name: 'Bizencio Business Hub',
         category: 'spaces',
         icon: 'work',
@@ -181,6 +191,7 @@ export const unitCategories = [
       {
         slug: 'sare',
         ecosystem: 't46',
+        status: 'draft',
         name: 'SARE',
         category: 'spaces',
         icon: 'sparkles',
@@ -197,6 +208,7 @@ export const unitCategories = [
       {
         slug: 'cuanmie',
         ecosystem: 't46',
+        status: 'draft',
         name: 'Cuanmie',
         category: 'spaces',
         icon: 'restaurant',
@@ -213,6 +225,7 @@ export const unitCategories = [
       {
         slug: 'saa',
         ecosystem: 't46',
+        status: 'draft',
         name: 'SAA',
         category: 'spaces',
         icon: 'local_parking',

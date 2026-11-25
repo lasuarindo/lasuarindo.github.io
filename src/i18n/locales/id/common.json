@@ -37,5 +37,9 @@
     "title": "Halaman Tidak Ditemukan",
     "message": "Halaman yang Anda cari tidak tersedia atau telah dipindahkan.",
     "backHome": "Kembali ke Beranda"
+  },
+  "status": {
+    "draft": "DRAFT",
+    "draftNote": "Data sementara — menunggu verifikasi perusahaan."
   }
 }

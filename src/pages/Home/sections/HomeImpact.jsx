@@ -1,4 +1,5 @@
 import React from 'react';
+import { DraftBadge } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { useHomeStrings } from '../useHomeStrings';
 
@@ -12,10 +13,11 @@ export function HomeImpact() {
       <div className={CONTAINER}>
         <span className="eyebrow">{t.home.impact.eyebrow}</span>
         <div className="grid-3">
-          {stats.map((stat) => (
+          {stats.map((stat, index) => (
             <div key={stat.label} className="stat">
               <span className="stat__value">{stat.value}</span>
               <span className="stat__label">{stat.label}</span>
+              {index === 2 ? <DraftBadge className="mt-3" /> : null}
             </div>
           ))}
         </div>
