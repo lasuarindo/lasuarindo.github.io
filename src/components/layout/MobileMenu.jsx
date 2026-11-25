@@ -41,7 +41,7 @@ export function MobileMenu({ visible, onClose }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[rgba(0,0,0,0.6)] backdrop-blur-[4px]"
+            className="absolute inset-0 bg-[rgba(0,0,0,0.6)]"
           />
 
           {/* Slide-out Drawer */}
@@ -50,7 +50,7 @@ export function MobileMenu({ visible, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="relative z-[101] flex h-full w-[85%] max-w-[320px] flex-col bg-white shadow-[-8px_0_30px_rgba(0,0,0,0.25)]"
+            className="relative z-[101] flex h-full w-[85%] max-w-[320px] flex-col bg-[var(--color-paper)] shadow-[-8px_0_30px_rgba(0,0,0,0.25)]"
           >
             {/* Drawer Header */}
             <div className="flex items-center justify-between border-b border-[#f0f0f0] px-6 py-5">
@@ -61,7 +61,7 @@ export function MobileMenu({ visible, onClose }) {
                 type="button"
                 onClick={onClose}
                 aria-label={t.footer.closeMenu}
-                className="flex cursor-pointer items-center justify-center border-none bg-transparent p-1 text-[var(--color-on-surface)]"
+                className="flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center border-none bg-transparent text-[var(--color-on-surface)]"
               >
                 <Icon name="close" size={28} />
               </button>
@@ -77,10 +77,10 @@ export function MobileMenu({ visible, onClose }) {
                     type="button"
                     onClick={() => go(item.href)}
                     aria-current={active ? 'page' : undefined}
-                    className={`mb-2 flex w-full cursor-pointer items-center gap-4 rounded-xl border-none px-4 py-[14px] text-left font-[var(--font-display)] text-[15px] transition-colors duration-200 ${
+                    className={`mb-2 flex min-h-[48px] w-full cursor-pointer items-center gap-4 border-none border-l-2 px-4 text-left font-[var(--font-display)] text-[15px] transition-colors duration-200 ${
                       active
-                        ? 'bg-[rgba(177,38,0,0.08)] font-bold text-[var(--color-primary)]'
-                        : 'bg-transparent font-semibold text-[var(--color-on-background)]'
+                        ? 'border-l-[var(--color-primary)] bg-[rgba(177,38,0,0.06)] font-bold text-[var(--color-primary)]'
+                        : 'border-l-transparent bg-transparent font-semibold text-[var(--color-ink)]'
                     }`}
                   >
                     <Icon
@@ -95,7 +95,7 @@ export function MobileMenu({ visible, onClose }) {
             </div>
 
             {/* Drawer Footer: Language & CTA */}
-            <div className="mt-auto flex flex-col gap-4 border-t border-[rgba(228,190,181,0.25)] px-6 pb-7 pt-4">
+            <div className="mt-auto flex flex-col gap-4 border-t border-[var(--color-line)] px-6 pb-7 pt-4">
               <div>
                 <div className="mb-[10px] font-[var(--font-display)] text-[12px] font-semibold uppercase tracking-[1px] text-[var(--color-secondary)]">
                   {t.nav.language}
@@ -107,7 +107,7 @@ export function MobileMenu({ visible, onClose }) {
               <button
                 type="button"
                 onClick={() => go(ctaLink.href)}
-                className="w-full cursor-pointer rounded-lg border-none bg-[var(--color-primary)] px-6 py-3 text-center font-[var(--font-display)] text-[14px] font-bold text-white shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-colors duration-200"
+                className="btn btn--solid w-full"
               >
                 {t(ctaLink.labelKey)}
               </button>

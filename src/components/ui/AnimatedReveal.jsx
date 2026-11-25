@@ -1,9 +1,13 @@
 import React from 'react';
-import { motion } from 'motion/react';
 
+/**
+ * A single on-load entrance — never a scroll-linked reveal. One page deals
+ * this moment once; cards only answer the pointer. CSS owns the motion so
+ * prefers-reduced-motion can turn it all off in one place.
+ */
 export function AnimatedReveal({
   children,
-  animation = 'up',
+  animation: _animation = 'up',
   delay = 0,
   hover = 'none',
   style = {},
@@ -11,89 +15,26 @@ export function AnimatedReveal({
   disabled = false,
   ...props
 }) {
-  if (disabled) {
-    const hoverClass =
-      hover === 'lift' ? 'hover-lift' : hover === 'scale' ? 'hover-scale' : '';
-    return (
-      <div
-        className={`${hoverClass} ${className}`.trim()}
-        style={style}
-        {...props}
-      >
-        {children}
-      </div>
-    );
-  }
-  const getVariants = () => {
-    switch (animation) {
-      case 'left':
-        return {
-          initial: { opacity: 0, x: -30 },
-          animate: { opacity: 1, x: 0 },
-        };
-      case 'right':
-        return {
-          initial: { opacity: 0, x: 30 },
-          animate: { opacity: 1, x: 0 },
-        };
-      case 'scale':
-        return {
-          initial: { opacity: 0, scale: 0.92 },
-          animate: { opacity: 1, scale: 1 },
-        };
-      case 'fade':
-        return {
-          initial: { opacity: 0 },
-          animate: { opacity: 1 },
-        };
-      case 'up':
-      default:
-        return {
-          initial: { opacity: 0, y: 30 },
-          animate: { opacity: 1, y: 0 },
-        };
-    }
-  };
-
-  const variants = getVariants();
-
   const hoverClass =
-    hover === 'lift'
-      ? 'hover-lift'
-      : hover === 'scale'
-      ? 'hover-scale'
-      : '';
-
-  const hoverProps =
-    hover === 'lift'
-      ? { whileHover: { y: -6, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } } }
-      : hover === 'scale'
-      ? { whileHover: { scale: 1.025, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } } }
-      : {};
+    hover === 'lift' ? 'hover-lift' : hover === 'scale' ? 'hover-scale' : '';
 
   return (
-    <motion.div
-      initial={variants.initial}
-      whileInView={variants.animate}
-      viewport={{ once: true, margin: '60px', amount: 0 }}
-      transition={{
-        duration: 0.65,
-        delay: delay ? delay / 1000 : 0,
-        ease: [0.16, 1, 0.3, 1],
+    <div
+      className={`${disabled ? '' : 'enter-once'} ${hoverClass} ${className}`.trim()}
+      style={{
+        animationDelay: delay ? `${Math.min(delay, 240)}ms` : undefined,
+        ...style,
       }}
-      className={`${hoverClass} ${className}`.trim()}
-      style={style}
-      {...hoverProps}
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-export function FadeInView({ children, delay = 0, animation = 'up', style = {}, className = '', ...props }) {
+export function FadeInView({ children, delay = 0, animation: _animation = 'up', style = {}, className = '', ...props }) {
   return (
-    <AnimatedReveal animation={animation} delay={delay} style={style} className={className} {...props}>
+    <AnimatedReveal delay={delay} style={style} className={className} {...props}>
       {children}
     </AnimatedReveal>
   );

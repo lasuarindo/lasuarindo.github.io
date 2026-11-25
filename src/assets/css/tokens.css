@@ -64,6 +64,15 @@
   --color-outline: #907068;
   --color-outline-variant: #e4beb5;
 
+  /* editorial layer — paper, ink, quiet rules */
+  --color-paper: #fbfaf8;
+  --color-ink: #1b1b1a;
+  --color-ink-soft: #343634;
+  --color-muted: #6b665f;
+  --color-line: #e4dfd7;
+  --color-line-strong: #cfc8be;
+  --color-accent-orange: #f68d22;
+
   /* fonts */
   --font-display: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;

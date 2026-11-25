@@ -5,8 +5,8 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-body);
-  background-color: var(--color-background);
-  color: var(--color-on-background);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
@@ -34,9 +34,15 @@ p, h1, h2, h3, h4, h5, h6, span {
   box-shadow: 0 0 0 5px var(--color-primary);
 }
 
-/* Respect reduced-motion preferences for anchor navigation (legal TOC). */
+/* Respect reduced-motion preferences everywhere, not just anchor navigation. */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -28,7 +28,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`glass-nav ${scrolled ? 'scrolled' : ''} sticky top-0 z-[80] w-full border-b border-[rgba(228,190,181,0.35)] bg-[rgba(249,249,249,0.88)] backdrop-blur-[16px]`}
+        className={`glass-nav ${scrolled ? 'scrolled' : ''} sticky top-0 z-[80] w-full`}
       >
         <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between px-[clamp(14px,3vw,32px)] py-4">
           {/* Logo (flex: 1 matching react_native) */}
@@ -40,7 +40,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav (flex: 2, centered matching react_native) */}
-          <nav aria-label={t.nav.primary} className="desktop-only flex flex-[2] items-center justify-center gap-10">
+          <nav aria-label={t.nav.primary} className="desktop-only flex flex-[2] items-center justify-center gap-5">
             {mainNav.map((item) => {
               const active = isNavActive(pathname, item.href);
               return (
@@ -48,11 +48,8 @@ export function Header() {
                   key={item.href}
                   to={item.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`nav-link-item border-b-2 pb-1 font-[var(--font-display)] text-[12px] font-bold uppercase tracking-[1.2px] no-underline transition-[color,border-color] duration-200 ${
-                    active
-                      ? 'border-[var(--color-primary)] text-[var(--color-primary)]'
-                      : 'border-transparent text-[var(--color-secondary)] hover:text-[var(--color-primary)]'
-                  }`}
+                  data-active={active ? 'true' : undefined}
+                  className="nav-link-item"
                 >
                   {t(item.labelKey)}
                 </Link>
@@ -67,7 +64,7 @@ export function Header() {
             {/* CTA Button */}
             <Link
               to={ctaLink.href}
-              className="inline-block cursor-pointer rounded-lg border-none bg-[var(--color-primary)] px-[22px] py-[10px] font-[var(--font-display)] text-[13px] font-bold text-[var(--color-on-primary)] no-underline shadow-[0_4px_14px_rgba(177,38,0,0.25)] transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-[var(--color-primary-container)]"
+              className="btn btn--solid btn--sm"
             >
               {t(ctaLink.labelKey)}
             </Link>
@@ -82,7 +79,7 @@ export function Header() {
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-label={t.footer.openMenu}
-              className="flex cursor-pointer items-center justify-center border-none bg-transparent p-[6px] text-[var(--color-on-surface)]"
+              className="flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center border-none bg-transparent text-[var(--color-on-surface)]"
             >
               <Icon name="menu" size={28} />
             </button>

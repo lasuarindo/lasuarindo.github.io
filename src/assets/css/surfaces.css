@@ -1,82 +1,67 @@
 @layer components {
-  /* Hover & visual utilities. */
+  /* Shared surface treatments. Kept as one restrained family so pages that
+     have not been migrated yet still inherit the editorial language. */
+
   .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease, box-shadow 220ms ease;
   }
 
   .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
-    border-bottom: none !important;
-  }
-
-  .hover-lift:active,
-  .hover-lift:focus:not(:focus-visible) {
-    outline: none !important;
-    border-bottom: none !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(27, 27, 26, 0.06) !important;
   }
 
   .hover-scale {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-scale:hover {
-    transform: scale(1.025);
+    transform: scale(1.02);
   }
 
-  .img-zoom {
-    overflow: hidden;
-  }
+  .img-zoom { overflow: hidden; }
 
   .img-zoom img {
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .img-zoom:hover img {
-    transform: scale(1.06);
+    transform: scale(1.03);
   }
 
+  /* Solid colour, not a gradient — accent text stays contrast-auditable.
+     Default is the light accent for dark heroes; reverse is for paper. */
   .text-gradient {
-    background: linear-gradient(135deg, #b12600 0%, #ffb68b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline;
+    color: var(--color-primary-fixed-dim);
   }
 
   .text-gradient-reverse {
-    background: linear-gradient(135deg, #ffb68b 0%, #b12600 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline;
+    color: var(--color-primary);
   }
 
   .section-divider {
-    width: 64px;
-    height: 4px;
-    background: linear-gradient(to right, #b12600, #ffb68b);
+    width: 44px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 0;
+  }
+
+  /* Flat surface instead of glass; blur and translucency read as template UI. */
+  .card-glass {
+    background: #fff;
+    border: 1px solid var(--color-line);
     border-radius: 2px;
   }
 
-  /* Glass utilities. */
-  .card-glass {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(228, 190, 181, 0.2);
-  }
-
   .glass-nav {
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    background-color: rgba(249, 249, 249, 0.85);
-    transition: all 0.3s ease;
+    background-color: var(--color-paper);
+    border-bottom: 1px solid var(--color-line);
+    transition: box-shadow 180ms ease;
   }
 
   .glass-nav.scrolled {
-    background-color: rgba(249, 249, 249, 0.95);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    background-color: var(--color-paper);
+    box-shadow: 0 1px 0 var(--color-line);
   }
 
   /* Long legal table of contents scrolls inside its sticky card. */
@@ -85,16 +70,18 @@
     scrollbar-color: rgba(177, 38, 0, 0.3) transparent;
   }
 
-  .legal-toc-scroll::-webkit-scrollbar {
-    width: 8px;
-  }
+  .legal-toc-scroll::-webkit-scrollbar { width: 8px; }
 
   .legal-toc-scroll::-webkit-scrollbar-thumb {
     background: rgba(177, 38, 0, 0.25);
     border-radius: 9999px;
   }
 
-  .legal-toc-scroll::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  .legal-toc-scroll::-webkit-scrollbar-track { background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .img-zoom:hover img { transform: none; }
 }

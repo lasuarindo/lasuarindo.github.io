@@ -52,6 +52,16 @@ export const Colors = {
 
   outline: '#907068',
   outlineVariant: '#e4beb5',
+
+  // Editorial layer — a warm paper ground, ink, and quiet rules. These extend
+  // the Material-derived palette without replacing any existing token.
+  paper: '#fbfaf8',
+  ink: '#1b1b1a',
+  inkSoft: '#343634',
+  muted: '#6b665f',
+  line: '#e4dfd7',
+  lineStrong: '#cfc8be',
+  accentOrange: '#f68d22',
 };
 
 export const Fonts = {

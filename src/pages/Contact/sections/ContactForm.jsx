@@ -53,29 +53,29 @@ export function ContactForm() {
                 <div className="flex items-start gap-[14px]">
                   <div className={INFO_ICON_BOX}><Icon name="location_on" size={24} color="#b12600" /></div>
                   <div>
-                    <h4 className={INFO_TITLE}>{t.contact.addressTitle}</h4>
+                    <h3 className={INFO_TITLE}>{t.contact.addressTitle}</h3>
                     <p className={INFO_TEXT}>{formatAddress({ includeCountry: true })}</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{t.contact.addressArea}</span>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-muted)]">{t.contact.addressArea}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-[14px]">
                   <div className={INFO_ICON_BOX}><Icon name="mail" size={24} color="#b12600" /></div>
                   <div>
-                    <h4 className={INFO_TITLE}>{t.contact.emailTitle}</h4>
+                    <h3 className={INFO_TITLE}>{t.contact.emailTitle}</h3>
                     <a href={`mailto:${company.email}`} className="font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)] no-underline">{company.email}</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-[14px]">
                   <div className={INFO_ICON_BOX}><Icon name="schedule" size={24} color="#b12600" /></div>
                   <div>
-                    <h4 className={INFO_TITLE}>{t.contact.hoursTitle}</h4>
+                    <h3 className={INFO_TITLE}>{t.contact.hoursTitle}</h3>
                     <p className={INFO_TEXT}>{localized(company.hours.weekdays, language)}</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[rgba(95,94,94,0.7)]">{localized(company.hours.weekend, language)}</span>
+                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-muted)]">{localized(company.hours.weekend, language)}</span>
                   </div>
                 </div>
               </div>
               <div className="mt-7 border-t border-[rgba(228,190,181,0.3)] pt-5">
-                <h4 className="mb-3 font-[var(--font-display)] text-[15px] font-bold leading-[22px] text-[var(--color-on-background)]">{t.contact.socialHeading}</h4>
+                <h3 className="mb-3 font-[var(--font-display)] text-[15px] font-bold leading-[22px] text-[var(--color-on-background)]">{t.contact.socialHeading}</h3>
                 <div className="flex gap-3">
                   {company.social.map((s) => (
                     <a key={s.label} href={s.url || '#'} target="_blank" rel="noopener noreferrer" aria-label={s.label}

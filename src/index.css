@@ -13,3 +13,7 @@
    old single file too, and they must stay above the components layer. */
 @import "./assets/css/chrome.css";
 @import "./assets/css/animations.css";
+
+/* Editorial system is the final word: paper/ink palette, one type scale, one
+   button/card family, and restrained motion. Loaded last, unlayered. */
+@import "./assets/css/editorial.css";
