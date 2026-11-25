@@ -3,20 +3,24 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Icon } from '@/components/ui/Icon';
 import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
+import { useLanguage } from '@/i18n/language.js';
 import { useStrings } from '@/i18n/useStrings';
 import idCommon from '@/i18n/locales/id/common.json';
 import enCommon from '@/i18n/locales/en/common.json';
 import { CONTAINER } from '@/constants/layout';
+import { timelineDetails } from '@/data/timelineDetails';
 import { useAboutStrings } from '../useAboutStrings';
 
 /** Swipeable year selector; the latest year is selected by default. */
 export function AboutTimeline() {
   const t = useAboutStrings();
   const common = useStrings({ id: idCommon, en: enCommon });
+  const { language } = useLanguage();
   const items = t.about.timeline.items;
   const [active, setActive] = useState(items.length - 1);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', containScroll: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'end', containScroll: false });
   const selected = items[active];
+  const details = timelineDetails[selected.year]?.[language] || selected.details;
 
   useEffect(() => {
     if (!emblaApi) return undefined;
@@ -82,7 +86,7 @@ export function AboutTimeline() {
               {Object.entries(t.about.timeline.detailLabels).map(([key, label]) => (
                 <div key={key} className="timeline-detail__row">
                   <span>{label}</span>
-                  <p>{selected.details?.[key]}</p>
+                  <p>{details?.[key]}</p>
                 </div>
               ))}
             </div>

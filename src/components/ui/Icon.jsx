@@ -10,6 +10,7 @@ import {
   Building2,
   Camera,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   ChevronUp,
   ClipboardList,
@@ -94,6 +95,7 @@ const LUCIDE_MAP = {
   // Navigation & UI
   menu: Menu,
   close: X,
+  chevron_left: ChevronLeft,
   chevron_right: ChevronRight,
   keyboard_arrow_up: ChevronUp,
   'keyboard-arrow-up': ChevronUp,
