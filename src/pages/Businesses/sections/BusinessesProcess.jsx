@@ -15,9 +15,9 @@ export function BusinessesProcess() {
           badge={t.businesses.process.eyebrow}
           titlePrimary={t.businesses.process.heading}
         />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid-4">
           {t.businesses.process.steps.map((step, index) => (
-            <div key={step.title} className="card">
+            <div key={step.title} className="card card--grow">
               <span className="card__index">
                 {String(index + 1).padStart(2, '0')}
               </span>

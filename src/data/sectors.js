@@ -74,4 +74,35 @@ export const sectors = [
   },
 ];
 
+/**
+ * Sector-level elaboration. Every line is drawn from the verified `desc`
+ * values above — no new entity, figure, or claim is introduced here.
+ */
+export const sectorDetails = {
+  investment: {
+    id: 'Melalui PRO, grup mengelola investasi dan kepemilikan bisnis dalam portofolio.',
+    en: 'Through PRO, the group manages investments and business ownership across its portfolio.',
+  },
+  property: {
+    id: 'WIN mengelola kawasan dan fasilitas T46, sementara Bizencio dan SAA menjadi bagian dari pengembangan ruang bisnis.',
+    en: 'WIN manages the T46 district and its facilities, while Bizencio and SAA are part of the business-space development.',
+  },
+  technology: {
+    id: 'AGT, Authentic Guards, dan Berkah Megah Abadi mengembangkan teknologi perlindungan produk dan hak cipta.',
+    en: 'AGT, Authentic Guards, and Berkah Megah Abadi develop product-protection and copyright technology.',
+  },
+  media: {
+    id: 'MSS, Arcadia, dan Berkah Media Gemilang mencakup media online, produksi konten, dan media luar ruangan.',
+    en: 'MSS, Arcadia, and Berkah Media Gemilang cover online media, content production, and outdoor media.',
+  },
+  food: {
+    id: 'Portofolio ini mencakup food court, kafe, mie yamin, dan produk konsumer lainnya dalam grup.',
+    en: 'This portfolio covers the food court, café, mie yamin, and other consumer products in the group.',
+  },
+  lifestyle: {
+    id: 'Lapangan padel, perawatan diri, dan hiburan mahjong berada di kawasan T46.',
+    en: 'Padel courts, personal care, and mahjong entertainment are located in the T46 district.',
+  },
+};
+
 export default sectors;

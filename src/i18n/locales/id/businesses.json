@@ -91,6 +91,9 @@
   "projectsHeading2": "MASA DEPAN",
   "projectsHeading3": " KAMI",
   "projectsDesc": "Inilah proyek-proyek strategis yang kami kembangkan untuk membangun masa depan yang lebih baik dan berkelanjutan.",
+  "projectsEmptyHeading": "Proyek berikutnya masih didiskusikan",
+  "projectsEmptyLead": "Belum ada proyek yang diumumkan. Kami sedang menyiapkan rencana pengembangan bersama unit terkait.",
+  "projectsEmptyNote": "Daftar proyek akan diperbarui setelah rencana disetujui.",
   "projects": [
     { "tag": "Properti", "title": "Kawasan Residensial Premium" },
     { "tag": "Teknologi", "title": "Digital Hub Indonesia" },

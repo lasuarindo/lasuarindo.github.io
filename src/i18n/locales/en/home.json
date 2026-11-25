@@ -24,6 +24,13 @@
     "heading": "The Ecosystems We Build",
     "desc": "Each ecosystem brings sectors and units together in one district. T46 in Bandung is already running; more ecosystems can follow as the group grows.",
     "unitsHeading": "Units within the ecosystem",
+    "unitsDesc": "Twelve units operate in T46, from investment to lifestyle. Open one for its overview and capabilities.",
+    "unitsCta": "View all units",
+    "detailLabel": "View details",
+    "upcomingEyebrow": "UPCOMING ECOSYSTEMS",
+    "upcomingTitle": "Build the next ecosystem with us",
+    "upcomingDesc": "We are open to new partners and districts. Register your ecosystem or start a conversation with our team.",
+    "upcomingCta": "Register an ecosystem",
     "draftNote": "Further ecosystems and units are still being prepared.",
     "cta": "See the full ecosystem"
   },
@@ -35,11 +42,13 @@
   "strategicPartnership": "Strategic Partnership",
   "investorRelations": "Investor Relations",
   "collaboration": "Collaboration",
+  "journeyProgramTitle": "Partnership Programme",
+  "journeyProgramDesc": "Registration mechanics and partner criteria are being prepared by the team.",
   "impact": {
     "eyebrow": "OUR IMPACT",
-    "stat1": { "value": "12", "label": "units in the T46 ecosystem" },
-    "stat2": { "value": "6", "label": "business lines" },
-    "stat3": { "value": "8", "label": "years building the ecosystem" },
+    "stat1": { "value": "12", "label": "registered units in the group portfolio" },
+    "stat2": { "value": "6", "label": "business lines managed" },
+    "stat3": { "value": "8", "label": "years building the group" },
     "note": "Figures can be verified from the group's portfolio."
   },
   "faqTeaser": {

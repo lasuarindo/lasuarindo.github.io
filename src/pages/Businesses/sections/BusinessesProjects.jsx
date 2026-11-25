@@ -1,14 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
+import { Icon } from '@/components/ui/Icon';
+import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { useBusinessesStrings } from '../useBusinessesStrings';
-import proyekPropertiImg from '@/assets/images/opt/future-property-1200.webp';
-import proyekTeknologiImg from '@/assets/images/opt/future-technology-1200.webp';
-import proyekEkosistemImg from '@/assets/images/opt/ecosystem-wide-1800.webp';
-import proyekKarbonImg from '@/assets/images/opt/future-carbon-900.webp';
 
-// Images map to the `projects` array in businesses.json by position.
-const PROJECT_IMAGES = [proyekPropertiImg, proyekTeknologiImg, proyekEkosistemImg, proyekKarbonImg];
-
+/** Nothing is published yet — show an honest, designed empty state. */
 export function BusinessesProjects() {
   const t = useBusinessesStrings();
 
@@ -27,25 +24,19 @@ export function BusinessesProjects() {
             <p className="lead">{t.businesses.projectsDesc}</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {t.businesses.projects.map((item, idx) => (
-            <article key={item.title} className="project-card">
-              <div className="figure">
-                <img
-                  src={PROJECT_IMAGES[idx]}
-                  alt={item.title}
-                  width="1200"
-                  height="1500"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="project-card__meta">
-                <span className="project-card__tag">{item.tag}</span>
-                <h3 className="project-card__title">{item.title}</h3>
-              </div>
-            </article>
-          ))}
+
+        <div className="empty-state">
+          <span className="flex h-14 w-14 items-center justify-center border border-[var(--color-line-strong)]">
+            <Icon name="architecture" size={26} color="#b12600" />
+          </span>
+          <h3 className="display display--card mt-6">{t.businesses.projectsEmptyHeading}</h3>
+          <DraftBadge className="mt-3" />
+          <p className="lead mt-4">{t.businesses.projectsEmptyLead}</p>
+          <DraftNote>{t.businesses.projectsEmptyNote}</DraftNote>
+          <Link to="/contact" className="btn btn--outline mt-8">
+            {t.businesses.partnerBtn}
+            <Icon name="arrow_forward" size={18} color="#b12600" />
+          </Link>
         </div>
       </div>
     </section>

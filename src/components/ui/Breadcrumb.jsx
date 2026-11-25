@@ -6,14 +6,17 @@ import enCommon from '@/i18n/locales/en/common.json';
 import { Icon } from '@/components/ui/Icon';
 
 /**
- * Breadcrumb for nested routes. The final item is plain text with
- * aria-current="page"; every earlier item is a real link.
+ * Breadcrumb for nested routes. With `inside`, it renders as the first row
+ * of a cover/hero instead of a detached bar above it.
  */
-export function Breadcrumb({ items }) {
+export function Breadcrumb({ items, inside = false }) {
   const t = useStrings({ id: idCommon, en: enCommon });
 
   return (
-    <nav aria-label={t.nav.breadcrumb} className="breadcrumb-bar">
+    <nav
+      aria-label={t.nav.breadcrumb}
+      className={inside ? 'breadcrumb-inline' : 'breadcrumb-bar'}
+    >
       <ol className="breadcrumb-list">
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;

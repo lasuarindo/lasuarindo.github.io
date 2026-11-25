@@ -24,6 +24,13 @@
     "heading": "Ekosistem yang Kami Bangun",
     "desc": "Setiap ekosistem mempertemukan sektor dan unit dalam satu kawasan. T46 di Bandung adalah contoh yang sudah berjalan; ekosistem lain dapat menyusul seiring pertumbuhan grup.",
     "unitsHeading": "Unit di dalam ekosistem",
+    "unitsDesc": "Dua belas unit berjalan di T46, dari investasi hingga gaya hidup. Pilih satu untuk melihat ringkasan dan kapabilitasnya.",
+    "unitsCta": "Lihat semua unit",
+    "detailLabel": "Lihat detail",
+    "upcomingEyebrow": "EKOSISTEM BERIKUTNYA",
+    "upcomingTitle": "Bangun ekosistem berikutnya bersama kami",
+    "upcomingDesc": "Kami membuka ruang untuk mitra dan kawasan baru. Daftarkan ekosistem Anda atau mulai percakapan dengan tim kami.",
+    "upcomingCta": "Daftarkan ekosistem",
     "draftNote": "Ekosistem dan unit berikutnya masih dalam penyiapan data.",
     "cta": "Lihat ekosistem lengkap"
   },
@@ -35,11 +42,13 @@
   "strategicPartnership": "Kemitraan Strategis",
   "investorRelations": "Hubungan Investor",
   "collaboration": "Kolaborasi",
+  "journeyProgramTitle": "Program Kemitraan",
+  "journeyProgramDesc": "Mekanisme pendaftaran dan kriteria mitra sedang disiapkan tim.",
   "impact": {
     "eyebrow": "DAMPAK KAMI",
-    "stat1": { "value": "12", "label": "unit dalam ekosistem T46" },
-    "stat2": { "value": "6", "label": "lini usaha" },
-    "stat3": { "value": "8", "label": "tahun membangun ekosistem" },
+    "stat1": { "value": "12", "label": "unit terdaftar dalam portofolio grup" },
+    "stat2": { "value": "6", "label": "lini usaha yang dikelola" },
+    "stat3": { "value": "8", "label": "tahun membangun grup" },
     "note": "Angka dapat diverifikasi dari portofolio grup."
   },
   "faqTeaser": {

@@ -21,14 +21,15 @@ export function Licence() {
 
   return (
     <>
-      <Breadcrumb
-        items={[
-          { label: common.nav.home, to: '/' },
-          { label: common.footer.licence },
-        ]}
-      />
       <section className="cover cover--light cover--text">
         <div className="cover__copy">
+          <Breadcrumb
+            inside
+            items={[
+              { label: common.nav.home, to: '/' },
+              { label: common.footer.licence },
+            ]}
+          />
           <span className="eyebrow enter-once">{common.footer.licence}</span>
           <h1 className="display display--hero enter-once" style={{ animationDelay: '60ms' }}>
             {t.licence.heroTitle1} {t.licence.heroTitle2}

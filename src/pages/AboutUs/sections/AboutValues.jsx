@@ -1,12 +1,11 @@
 import React from 'react';
 import { useLanguage } from '@/i18n/language.js';
 import { localized } from '@/utils/localized';
-import { Icon } from '@/components/ui/Icon';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CONTAINER } from '@/constants/layout';
 import { useAboutStrings } from '../useAboutStrings';
 
-/** Icons belong to the value itself, not to its position in the array. */
+/** Editorial value rows — no icon tiles, no identical generated cards. */
 export function AboutValues() {
   const t = useAboutStrings();
   const { language } = useLanguage();
@@ -15,20 +14,17 @@ export function AboutValues() {
     <section className="section section--neutral">
       <div className={CONTAINER}>
         <SectionHeader
-          titlePrimary={t.about.valuesHeading1}
-          titleSecondary={t.about.valuesHeading2}
+          titlePrimary={`${t.about.valuesHeading1} ${t.about.valuesHeading2}`}
           subtitle={t.about.valuesSub}
         />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="value-list">
           {t.about.values.map((value, index) => (
-            <div key={value.icon} className="card">
-              <span className="card__index">
+            <div key={value.icon} className="value-row">
+              <span className="value-row__index">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <div className="mt-6">
-                <Icon name={value.icon} size={24} color="#b12600" />
-              </div>
-              <p className="prose mt-4">{localized(value.text, language)}</p>
+              <h3 className="value-row__label">{t.about.valueLabels[index]}</h3>
+              <p className="prose value-row__text">{localized(value.text, language)}</p>
             </div>
           ))}
         </div>

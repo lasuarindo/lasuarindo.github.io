@@ -14,7 +14,7 @@ export function AboutHero() {
   return (
     <section className="cover cover--light">
       <div className="cover__copy">
-        <div className="rule enter-once" />
+        <span className="eyebrow enter-once">{t.about.heroEyebrow}</span>
         <h1 className="display display--hero enter-once" style={{ animationDelay: '60ms' }}>
           {t.about.heroTitle1}
           <br />

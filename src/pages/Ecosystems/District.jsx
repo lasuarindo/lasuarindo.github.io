@@ -38,15 +38,16 @@ export function District() {
 
   return (
     <>
-      <Breadcrumb
-        items={[
-          { label: common.nav.home, to: '/' },
-          { label: common.nav.ecosystems, to: '/ecosystems' },
-          { label: localized(ecosystem.name, language) },
-        ]}
-      />
       <section className="cover cover--light cover--text">
         <div className="cover__copy">
+          <Breadcrumb
+            inside
+            items={[
+              { label: common.nav.home, to: '/' },
+              { label: common.nav.ecosystems, to: '/ecosystems' },
+              { label: localized(ecosystem.name, language) },
+            ]}
+          />
           <span className="eyebrow enter-once" style={{ color: ecosystem.theme.accent }}>
             {localized(ecosystem.theme.label, language)}
           </span>

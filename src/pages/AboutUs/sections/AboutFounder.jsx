@@ -36,7 +36,11 @@ export function AboutFounder() {
             </h2>
             <div className="rule" />
             <span className="card__index">99</span>
-            <div className="leader__quote">{t.about.founderQuote}</div>
+            <div className="leader__core">{t.about.founderCore}</div>
+            <details className="leader__more">
+              <summary>{t.about.readFullMessage}</summary>
+              <p className="prose mt-3">{t.about.founderQuote}</p>
+            </details>
             <p className="prose leader__body">{t.about.founderBody1}</p>
             <p className="prose leader__body">{t.about.founderBody2}</p>
             <div className="leader__meta">

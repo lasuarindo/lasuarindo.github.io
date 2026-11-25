@@ -91,6 +91,9 @@
   "projectsHeading2": "FUTURE",
   "projectsHeading3": " PROJECTS",
   "projectsDesc": "These are the strategic projects we are developing to build a better and more sustainable future.",
+  "projectsEmptyHeading": "The next projects are still under discussion",
+  "projectsEmptyLead": "No projects have been announced yet. We are preparing the next development plans with the relevant units.",
+  "projectsEmptyNote": "The project list will be updated once the plans are approved.",
   "projects": [
     { "tag": "Property", "title": "Premium Residential Area" },
     { "tag": "Technology", "title": "Indonesia Digital Hub" },

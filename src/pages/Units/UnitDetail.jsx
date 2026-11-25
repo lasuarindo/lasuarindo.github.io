@@ -32,15 +32,16 @@ export function UnitDetail() {
 
   return (
     <>
-      <Breadcrumb
-        items={[
-          { label: common.nav.home, to: '/' },
-          { label: common.nav.units, to: '/units' },
-          { label: unit.name },
-        ]}
-      />
       <section className="cover cover--light cover--text">
         <div className="cover__copy">
+          <Breadcrumb
+            inside
+            items={[
+              { label: common.nav.home, to: '/' },
+              { label: common.nav.units, to: '/units' },
+              { label: unit.name },
+            ]}
+          />
           <span className="eyebrow enter-once">
             {category ? localized(category.label, language) : ''}
           </span>

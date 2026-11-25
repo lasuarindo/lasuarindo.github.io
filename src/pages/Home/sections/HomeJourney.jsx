@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Icon } from '@/components/ui/Icon';
+import { DraftBadge } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { useHomeStrings } from '../useHomeStrings';
 import partnershipImg from '@/assets/images/opt/partnership-1200.webp';
@@ -34,6 +35,14 @@ export function HomeJourney() {
                   <Icon name="arrow_forward" size={18} color="#f7f5f1" />
                 </Link>
               ))}
+            </div>
+
+            <div className="dark-card mt-8">
+              <div className="flex items-center gap-3">
+                <h3 className="!m-0">{t.home.journeyProgramTitle}</h3>
+                <DraftBadge />
+              </div>
+              <p className="mt-2">{t.home.journeyProgramDesc}</p>
             </div>
           </div>
 
