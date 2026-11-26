@@ -6,47 +6,37 @@ import enCommon from '@/i18n/locales/en/common.json';
 import { FinalCta } from '@/components/ui/FinalCta';
 import { NotFound } from '@/pages/NotFound/NotFound';
 import { getUnitBySlug, units } from '@/data/units';
-import { getUnitTheme } from '@/data/unitTheme';
+import { resolveThemeSlots } from './sections/themeRegistry';
+import { useUnitView } from './sections/useUnitView';
 import { useUnitsStrings } from './useUnitsStrings';
-import {
-  CourtUnit,
-  LedgerUnit,
-  MenuUnit,
-  ProtocolUnit,
-  SiteUnit,
-} from './sections/UnitThemes';
-
-const THEME_COMPONENTS = {
-  ledger: LedgerUnit,
-  site: SiteUnit,
-  protocol: ProtocolUnit,
-  menu: MenuUnit,
-  court: CourtUnit,
-};
 
 /**
- * One route, five compositions. The unit data keeps a single shape; the
- * sector decides which motif renders it. Approved overview, capabilities,
- * location and closing invitation stay intact on every motif.
+ * One route, six theme slots. The registry owns every component mapping, so
+ * adding a new variant never touches this page. Approved copy, facts, location
+ * and the closing invitation stay identical on every combination.
  */
 export function UnitDetail() {
   const { slug } = useParams();
   const t = useUnitsStrings();
   const common = useStrings({ id: idCommon, en: enCommon });
   const unit = getUnitBySlug(slug);
+  const index = unit
+    ? Math.max(0, units.findIndex((candidate) => candidate.slug === unit.slug))
+    : 0;
+  const slots = unit ? resolveThemeSlots(unit, index) : null;
+  const v = useUnitView(unit, index, t, common, slots?.theme);
 
-  if (!unit) return <NotFound />;
+  if (!unit || !slots) return <NotFound />;
 
-  const index = Math.max(
-    0,
-    units.findIndex((candidate) => candidate.slug === unit.slug),
-  );
-  const motif = getUnitTheme(unit.sector).motif;
-  const Theme = THEME_COMPONENTS[motif] || THEME_COMPONENTS.ledger;
+  const { Hero, Overview, Capabilities, Notes, Closing } = slots;
 
   return (
     <>
-      <Theme unit={unit} index={index} t={t} common={common} />
+      <Hero unit={unit} v={v} />
+      <Overview unit={unit} v={v} />
+      <Capabilities unit={unit} v={v} />
+      <Notes unit={unit} t={t} variant={slots.theme.notes} />
+      <Closing t={t} ecosystem={v.ecosystem} />
       <FinalCta {...t.units.finalCta} />
     </>
   );

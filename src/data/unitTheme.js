@@ -1,50 +1,76 @@
 import cityImg from '@/assets/images/opt/hero-city-800.webp';
+import wideCityImg from '@/assets/images/opt/hero-city-wide-1600.webp';
 import propertyImg from '@/assets/images/opt/property-hero-1000.webp';
 import technologyImg from '@/assets/images/opt/technology-grid-900.webp';
 import foodImg from '@/assets/images/opt/ecosystem-service-1200.webp';
 import lifestyleImg from '@/assets/images/opt/vamos-1200.webp';
+import posterImg from '@/assets/images/opt/future-property-1200.webp';
 import districtImg from '@/assets/images/opt/ecosystem-wide-1800.webp';
+import { units } from '@/data/units';
 
 /**
- * One motif per sector. The unit data keeps one shape; only the rendering
- * changes. Imagery is category-level group photography, never a portrait of a
- * specific unit, and stays decorative (empty alt) on every theme.
+ * Mixed theme slots. The unit data keeps one shape; each slot picks a
+ * composition independently. Selection is deterministic (sector + public
+ * order), so a refresh never reshuffles a page and neighbours rarely match.
+ * Imagery is category-level group photography, never a portrait of a unit.
  */
-export const UNIT_THEMES = {
-  investment: {
-    motif: 'ledger',
-    dark: false,
-    hero: { src: cityImg, width: 800, height: 950 },
-    band: { src: districtImg, width: 1800, height: 438 },
-  },
-  property: {
-    motif: 'site',
-    dark: false,
-    hero: { src: propertyImg, width: 1000, height: 1000 },
-    band: { src: districtImg, width: 1800, height: 438 },
-  },
-  technology: {
-    motif: 'protocol',
-    dark: true,
-    hero: { src: technologyImg, width: 900, height: 900 },
-    band: { src: districtImg, width: 1800, height: 438 },
-  },
-  food: {
-    motif: 'menu',
-    dark: false,
-    hero: { src: foodImg, width: 1200, height: 1192 },
-    band: { src: districtImg, width: 1800, height: 438 },
-  },
-  lifestyle: {
-    motif: 'court',
-    dark: false,
-    hero: { src: lifestyleImg, width: 1200, height: 900 },
-    band: { src: districtImg, width: 1800, height: 438 },
-  },
+const MEDIA = {
+  cityPortrait: { src: cityImg, width: 800, height: 950 },
+  cityWide: { src: wideCityImg, width: 1600, height: 858 },
+  property: { src: propertyImg, width: 1000, height: 1000 },
+  technology: { src: technologyImg, width: 900, height: 900 },
+  food: { src: foodImg, width: 1200, height: 1192 },
+  lifestyle: { src: lifestyleImg, width: 1200, height: 900 },
+  poster: { src: posterImg, width: 1200, height: 1086 },
+  district: { src: districtImg, width: 1800, height: 438 },
 };
 
-export function getUnitTheme(sectorKey) {
-  return UNIT_THEMES[sectorKey] || UNIT_THEMES.investment;
+const HERO_MEDIA = {
+  ledger: MEDIA.cityPortrait,
+  index: MEDIA.cityWide,
+  protocol: MEDIA.technology,
+  menu: MEDIA.food,
+  court: MEDIA.lifestyle,
+  site: MEDIA.property,
+  poster: MEDIA.poster,
+};
+
+const HERO_POOLS = {
+  investment: ['ledger', 'index'],
+  property: ['site', 'poster'],
+  technology: ['protocol', 'ledger'],
+  food: ['menu', 'poster', 'index'],
+  lifestyle: ['court', 'site', 'index'],
+};
+
+const OVERVIEW_SLOTS = ['ledger', 'split', 'quote', 'grid'];
+const CAPABILITY_SLOTS = ['numbered', 'tiles', 'menu', 'protocol', 'strip'];
+const NOTE_SLOTS = ['ledger', 'site', 'protocol', 'menu', 'court'];
+const CLOSING_SLOTS = ['rail', 'split', 'index', 'quiet'];
+
+export const THEME_SLOTS = {
+  hero: [...new Set(Object.values(HERO_POOLS).flat())],
+  overview: OVERVIEW_SLOTS,
+  capabilities: CAPABILITY_SLOTS,
+  notes: NOTE_SLOTS,
+  closing: CLOSING_SLOTS,
+};
+
+/** Resolves one theme tuple for a unit. `index` is its position in /units. */
+export function resolveUnitTheme(unit, index) {
+  const heroes = HERO_POOLS[unit.sector] || ['ledger'];
+  const occurrence = units.slice(0, index).filter((candidate) => candidate.sector === unit.sector).length;
+  const hero = heroes[occurrence % heroes.length];
+
+  return {
+    hero,
+    overview: OVERVIEW_SLOTS[(index + 1) % OVERVIEW_SLOTS.length],
+    capabilities: CAPABILITY_SLOTS[(index * 2 + 1) % CAPABILITY_SLOTS.length],
+    notes: NOTE_SLOTS[(index + 2) % NOTE_SLOTS.length],
+    closing: CLOSING_SLOTS[(index + 3) % CLOSING_SLOTS.length],
+    media: HERO_MEDIA[hero] || MEDIA.cityPortrait,
+    band: MEDIA.district,
+  };
 }
 
-export default UNIT_THEMES;
+export default THEME_SLOTS;
