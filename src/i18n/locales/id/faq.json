@@ -3,27 +3,164 @@
   "heroTitle1": "PUSAT",
   "heroTitle2": "FAQ",
   "heroSubtitle": "Jawaban singkat atas pertanyaan yang sering diajukan tentang Lasuarindo Group.",
+  "contentMeta": "PANDUAN",
+  "contentTitle": "Temukan jawaban yang Anda cari",
+  "contentLead": "Jelajahi pertanyaan berdasarkan topik, atau cari kata kunci tertentu. Pilih pertanyaan untuk membaca jawabannya.",
+  "searchLabel": "Cari pertanyaan FAQ",
+  "searchPlaceholder": "Cari pertanyaan atau kata kunci…",
+  "filterLabel": "Filter kategori FAQ",
+  "filterAll": "Semua topik",
+  "resultsCount": "Menampilkan {{total}} pertanyaan",
+  "emptyTitle": "Belum ada pertanyaan yang cocok",
+  "emptyText": "Coba kata kunci lain atau pilih topik lain untuk melihat pertanyaan yang tersedia.",
+  "resetFilters": "Tampilkan semua pertanyaan",
+  "draftLegend": "Item bertanda DRAFT berisi arahan awal; detailnya akan kami perbarui setelah data tersedia.",
+  "categories": {
+    "group": "Tentang Grup",
+    "business": "Lini Usaha",
+    "ecosystem": "Ekosistem & Unit",
+    "partnership": "Kemitraan & Investasi",
+    "legal": "Legalitas",
+    "contact": "Kontak"
+  },
   "items": [
     {
+      "id": "what-is-group",
+      "category": "group",
       "question": "Apa itu Lasuarindo Group?",
-      "answer": "Lasuarindo Group adalah perusahaan bisnis dan investasi terpadu yang mengelola enam lini usaha: investasi, properti, teknologi, media, F&B, dan gaya hidup."
+      "answer": "Lasuarindo Group adalah perusahaan bisnis dan investasi terpadu yang mengelola enam lini usaha: investasi, properti, teknologi, media, F&B, dan gaya hidup.",
+      "status": "actual",
+      "links": [
+        { "label": "Tentang kami", "key": "about" },
+        { "label": "Bisnis kami", "key": "businesses" }
+      ]
     },
     {
-      "question": "Di mana lokasi kantor Lasuarindo Group?",
-      "answer": "Kantor kami berlokasi di Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112, Indonesia."
+      "id": "business-lines",
+      "category": "business",
+      "question": "Apa saja lini usaha Lasuarindo Group?",
+      "answer": "Ada enam lini usaha: investasi, properti dan ekosistem kawasan, teknologi, media dan kreatif, F&B dan konsumer, serta gaya hidup dan hiburan.",
+      "status": "actual",
+      "links": [{ "label": "Lihat bisnis kami", "key": "businesses" }]
     },
     {
-      "question": "Bagaimana cara menghubungi Lasuarindo Group?",
-      "answer": "Anda dapat mengirim email ke contact@lasuarindo.co.id atau menggunakan formulir pada halaman Kontak."
+      "id": "sector-detail",
+      "category": "business",
+      "question": "Di mana saya melihat rincian tiap lini usaha?",
+      "answer": "Ringkasan setiap lini usaha tersedia pada halaman Bisnis Kami. Rincian lanjutan akan kami perbarui setelah data tersedia.",
+      "status": "draft",
+      "links": [{ "label": "Bisnis kami", "key": "businesses" }]
     },
     {
+      "id": "t46-district",
+      "category": "ecosystem",
+      "question": "Apa itu kawasan T46?",
+      "answer": "T46 adalah kawasan bisnis Lasuarindo Group di Bandung, tempat dua belas unit berjalan dalam satu ekosistem.",
+      "status": "actual",
+      "links": [
+        { "label": "Ekosistem", "key": "ecosystems" },
+        { "label": "Kawasan T46", "key": "t46" }
+      ]
+    },
+    {
+      "id": "units-in-t46",
+      "category": "ecosystem",
+      "question": "Berapa unit bisnis yang berjalan di T46?",
+      "answer": "Ada dua belas unit bisnis yang dikelompokkan menjadi tiga kategori: dikelola langsung, kemitraan, dan ekosistem kawasan.",
+      "status": "actual",
+      "links": [{ "label": "Daftar unit", "key": "units" }]
+    },
+    {
+      "id": "unit-detail",
+      "category": "ecosystem",
+      "question": "Apakah setiap unit memiliki halaman detail?",
+      "answer": "Setiap unit memiliki halaman detail berisi ringkasan dan kapabilitas. Kami masih menyempurnakan rinciannya; silakan cek halaman Unit untuk informasi terbaru.",
+      "status": "draft",
+      "links": [{ "label": "Daftar unit", "key": "units" }]
+    },
+    {
+      "id": "partnership",
+      "category": "partnership",
       "question": "Apakah Lasuarindo Group membuka peluang kemitraan?",
-      "answer": "Ya. Kami terbuka terhadap kolaborasi strategis dengan investor, wirausahawan, dan institusi. Silakan sampaikan proposal Anda melalui halaman Kontak."
+      "answer": "Ya. Kami terbuka terhadap kolaborasi strategis dengan investor, wirausahawan, dan institusi. Silakan sampaikan proposal Anda melalui halaman Kemitraan atau Kontak.",
+      "status": "actual",
+      "links": [
+        { "label": "Kemitraan", "key": "partnership" },
+        { "label": "Kontak", "key": "contact" }
+      ]
     },
     {
+      "id": "investor-collaboration",
+      "category": "partnership",
+      "question": "Ke mana saya menyampaikan minat investasi atau kolaborasi?",
+      "answer": "Anda dapat membaca penjelasan pada halaman Investor atau Kolaborasi, lalu menyampaikan minat melalui halaman Kontak.",
+      "status": "actual",
+      "links": [
+        { "label": "Investor", "key": "investor" },
+        { "label": "Kolaborasi", "key": "collaboration" },
+        { "label": "Kontak", "key": "contact" }
+      ]
+    },
+    {
+      "id": "collaboration-process",
+      "category": "partnership",
+      "question": "Bagaimana proses kolaborasi dengan grup?",
+      "answer": "Kami sedang menyiapkan penjelasan proses kolaborasi. Untuk sementara, sampaikan rencana Anda melalui halaman Kontak.",
+      "status": "draft",
+      "links": [
+        { "label": "Kolaborasi", "key": "collaboration" },
+        { "label": "Kontak", "key": "contact" }
+      ]
+    },
+    {
+      "id": "licence",
+      "category": "legal",
+      "question": "Apakah Lasuarindo Group memiliki informasi legalitas usaha?",
+      "answer": "Informasi legalitas dasar PT Lasuarindo Group, termasuk Nomor Induk Berusaha (NIB), tersedia pada halaman Legalitas.",
+      "status": "actual",
+      "links": [{ "label": "Legalitas", "key": "licence" }]
+    },
+    {
+      "id": "legal-documents",
+      "category": "legal",
+      "question": "Di mana saya menemukan kebijakan privasi dan syarat ketentuan?",
+      "answer": "Dokumen tersebut tersedia pada halaman Informasi Legal, melalui tautan Kebijakan Privasi dan Syarat & Ketentuan.",
+      "status": "actual",
+      "links": [
+        { "label": "Kebijakan Privasi", "key": "privacy" },
+        { "label": "Syarat & Ketentuan", "key": "terms" }
+      ]
+    },
+    {
+      "id": "contact-office",
+      "category": "contact",
+      "question": "Di mana lokasi kantor Lasuarindo Group?",
+      "answer": "Kantor kami berada di Bandung, Jawa Barat. Alamat lengkapnya adalah:",
+      "status": "actual",
+      "facts": ["address"],
+      "links": [{ "label": "Halaman kontak", "key": "contact" }]
+    },
+    {
+      "id": "contact-email",
+      "category": "contact",
+      "question": "Bagaimana cara menghubungi Lasuarindo Group?",
+      "answer": "Anda dapat mengirim email ke alamat resmi kami atau menggunakan formulir pada halaman Kontak.",
+      "status": "actual",
+      "facts": ["email"],
+      "links": [{ "label": "Halaman kontak", "key": "contact" }]
+    },
+    {
+      "id": "contact-form",
+      "category": "contact",
       "question": "Apakah formulir kontak dapat digunakan untuk pertanyaan umum?",
-      "answer": "Ya. Formulir kontak dapat digunakan untuk pertanyaan umum, permintaan informasi, maupun usulan kerja sama."
+      "answer": "Ya. Formulir kontak dapat digunakan untuk pertanyaan umum, permintaan informasi, maupun usulan kerja sama.",
+      "status": "actual",
+      "links": [{ "label": "Halaman kontak", "key": "contact" }]
     }
   ],
-  "contactCta": "Hubungi Kami"
+  "finalCta": {
+    "title": "Masih punya pertanyaan?",
+    "text": "Tim kami siap membantu Anda menemukan informasi yang dibutuhkan tentang Lasuarindo Group.",
+    "button": "Bermitra Dengan Kami"
+  }
 }

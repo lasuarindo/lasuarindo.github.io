@@ -3,27 +3,164 @@
   "heroTitle1": "FAQ",
   "heroTitle2": "CENTER",
   "heroSubtitle": "Quick answers to frequently asked questions about Lasuarindo Group.",
+  "contentMeta": "GUIDE",
+  "contentTitle": "Find the answer you need",
+  "contentLead": "Browse questions by topic, or search for a keyword. Select a question to read its answer.",
+  "searchLabel": "Search FAQ questions",
+  "searchPlaceholder": "Search questions or keywords…",
+  "filterLabel": "Filter FAQ topics",
+  "filterAll": "All topics",
+  "resultsCount": "Showing {{total}} questions",
+  "emptyTitle": "No matching questions",
+  "emptyText": "Try another keyword or choose a different topic to see the available questions.",
+  "resetFilters": "Show all questions",
+  "draftLegend": "Items marked DRAFT hold initial guidance; details will be updated once the data is available.",
+  "categories": {
+    "group": "About the Group",
+    "business": "Business Lines",
+    "ecosystem": "Ecosystem & Units",
+    "partnership": "Partnership & Investment",
+    "legal": "Legal",
+    "contact": "Contact"
+  },
   "items": [
     {
+      "id": "what-is-group",
+      "category": "group",
       "question": "What is Lasuarindo Group?",
-      "answer": "Lasuarindo Group is an integrated business and investment company managing six business lines: investment, property, technology, media, F&B, and lifestyle."
+      "answer": "Lasuarindo Group is an integrated business and investment company managing six business lines: investment, property, technology, media, F&B, and lifestyle.",
+      "status": "actual",
+      "links": [
+        { "label": "About us", "key": "about" },
+        { "label": "Our businesses", "key": "businesses" }
+      ]
     },
     {
-      "question": "Where is the Lasuarindo Group office?",
-      "answer": "Our office is located at Jl. Tamblong No.46, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112, Indonesia."
+      "id": "business-lines",
+      "category": "business",
+      "question": "What are the Group's business lines?",
+      "answer": "There are six business lines: investment, property and district ecosystem, technology, media and creative, F&B and consumer, and lifestyle and entertainment.",
+      "status": "actual",
+      "links": [{ "label": "Explore our businesses", "key": "businesses" }]
     },
     {
-      "question": "How do I contact Lasuarindo Group?",
-      "answer": "You can email contact@lasuarindo.co.id or use the form on the Contact page."
+      "id": "sector-detail",
+      "category": "business",
+      "question": "Where can I see more detail on each business line?",
+      "answer": "A summary of each business line is available on Our Businesses. Further detail will be added once the data is available.",
+      "status": "draft",
+      "links": [{ "label": "Our businesses", "key": "businesses" }]
     },
     {
+      "id": "t46-district",
+      "category": "ecosystem",
+      "question": "What is the T46 district?",
+      "answer": "T46 is a Lasuarindo Group business district in Bandung, where twelve units operate within one ecosystem.",
+      "status": "actual",
+      "links": [
+        { "label": "Ecosystems", "key": "ecosystems" },
+        { "label": "T46 district", "key": "t46" }
+      ]
+    },
+    {
+      "id": "units-in-t46",
+      "category": "ecosystem",
+      "question": "How many business units operate in T46?",
+      "answer": "Twelve business units operate there, grouped into three categories: directly managed, partnerships, and district ecosystem.",
+      "status": "actual",
+      "links": [{ "label": "Unit catalogue", "key": "units" }]
+    },
+    {
+      "id": "unit-detail",
+      "category": "ecosystem",
+      "question": "Does each unit have a detail page?",
+      "answer": "Each unit has a detail page with an overview and capabilities. We are still refining the details; please check the Units page for the latest information.",
+      "status": "draft",
+      "links": [{ "label": "Unit catalogue", "key": "units" }]
+    },
+    {
+      "id": "partnership",
+      "category": "partnership",
       "question": "Does Lasuarindo Group welcome partnerships?",
-      "answer": "Yes. We are open to strategic collaborations with investors, entrepreneurs, and institutions. Please share your proposal through the Contact page."
+      "answer": "Yes. We are open to strategic collaborations with investors, entrepreneurs, and institutions. Please share your proposal through our Partnership or Contact page.",
+      "status": "actual",
+      "links": [
+        { "label": "Partnership", "key": "partnership" },
+        { "label": "Contact", "key": "contact" }
+      ]
     },
     {
+      "id": "investor-collaboration",
+      "category": "partnership",
+      "question": "Where should I send an investment or collaboration inquiry?",
+      "answer": "You can read more on the Investor or Collaboration page, then send your inquiry through the Contact page.",
+      "status": "actual",
+      "links": [
+        { "label": "Investor", "key": "investor" },
+        { "label": "Collaboration", "key": "collaboration" },
+        { "label": "Contact", "key": "contact" }
+      ]
+    },
+    {
+      "id": "collaboration-process",
+      "category": "partnership",
+      "question": "How does the collaboration process work?",
+      "answer": "We are preparing a clearer explanation of the process. In the meantime, please send your plans through the Contact page.",
+      "status": "draft",
+      "links": [
+        { "label": "Collaboration", "key": "collaboration" },
+        { "label": "Contact", "key": "contact" }
+      ]
+    },
+    {
+      "id": "licence",
+      "category": "legal",
+      "question": "Is basic business licensing information available?",
+      "answer": "Basic licensing information for PT Lasuarindo Group, including its Business Identification Number (NIB), is available on the Licensing page.",
+      "status": "actual",
+      "links": [{ "label": "Licensing", "key": "licence" }]
+    },
+    {
+      "id": "legal-documents",
+      "category": "legal",
+      "question": "Where can I find the privacy policy and terms and conditions?",
+      "answer": "Both documents are available on the Legal Information page, via the Privacy Policy and Terms & Conditions links.",
+      "status": "actual",
+      "links": [
+        { "label": "Privacy Policy", "key": "privacy" },
+        { "label": "Terms & Conditions", "key": "terms" }
+      ]
+    },
+    {
+      "id": "contact-office",
+      "category": "contact",
+      "question": "Where is the Lasuarindo Group office?",
+      "answer": "Our office is in Bandung, West Java. The full address is:",
+      "status": "actual",
+      "facts": ["address"],
+      "links": [{ "label": "Contact page", "key": "contact" }]
+    },
+    {
+      "id": "contact-email",
+      "category": "contact",
+      "question": "How do I contact Lasuarindo Group?",
+      "answer": "You can email our official address or use the form on the Contact page.",
+      "status": "actual",
+      "facts": ["email"],
+      "links": [{ "label": "Contact page", "key": "contact" }]
+    },
+    {
+      "id": "contact-form",
+      "category": "contact",
       "question": "Can the contact form be used for general inquiries?",
-      "answer": "Yes. The contact form can be used for general questions, information requests, and collaboration proposals."
+      "answer": "Yes. The contact form can be used for general questions, information requests, and collaboration proposals.",
+      "status": "actual",
+      "links": [{ "label": "Contact page", "key": "contact" }]
     }
   ],
-  "contactCta": "Contact Us"
+  "finalCta": {
+    "title": "Still have a question?",
+    "text": "Our team is ready to help you find the information you need about Lasuarindo Group.",
+    "button": "Partner With Us"
+  }
 }
