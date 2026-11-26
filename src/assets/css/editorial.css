@@ -389,8 +389,22 @@
   color: #d7d3cd;
 }
 
-.footer-email { color: var(--color-primary-fixed-dim); }
-.footer-email:hover { color: #f7f5f1; }
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #d7d3cd;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-email:hover {
+  color: var(--color-primary-fixed-dim);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
 .footer-legal {
   display: flex;
@@ -398,8 +412,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px 24px;
-  padding-top: 24px;
-  border-top: var(--rule);
   color: #b9b6b0;
 }
 

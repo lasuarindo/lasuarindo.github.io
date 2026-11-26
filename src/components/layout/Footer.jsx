@@ -86,7 +86,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footer-contact mt-14">
+        <div className="footer-contact mt-10">
           <h2 className="footer-heading">{t.footer.contactUs}</h2>
           <div className="footer-contact__list">
             <div className="footer-contact__item">
@@ -95,10 +95,7 @@ export function Footer() {
             </div>
             <div className="footer-contact__item">
               <span className="footer-item-label">{t.nav.contact}</span>
-              <a
-                href={`mailto:${company.email}`}
-                className="link-arrow link-arrow--light footer-email"
-              >
+              <a href={`mailto:${company.email}`} className="footer-email">
                 {company.email}
               </a>
             </div>
