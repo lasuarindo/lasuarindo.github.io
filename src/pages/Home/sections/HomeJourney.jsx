@@ -4,7 +4,7 @@ import { Icon } from '@/components/ui/Icon';
 import { CONTAINER } from '@/constants/layout';
 import { engagementLinks, paths } from '@/app/paths';
 import { useHomeStrings } from '../useHomeStrings';
-import partnershipImg from '@/assets/images/opt/partnership-1200.webp';
+import partnershipImg from '@/assets/images/opt/office-creative-1559136555-960x1200-opt.webp';
 
 export function HomeJourney() {
   const t = useHomeStrings();
@@ -49,7 +49,7 @@ export function HomeJourney() {
           </div>
 
           <div className="figure figure--portrait">
-            <img src={partnershipImg} alt={h.journeyImageAlt} width="1200" height="1200" loading="lazy" decoding="async" />
+            <img src={partnershipImg} alt={h.journeyImageAlt} width="960" height="1200" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

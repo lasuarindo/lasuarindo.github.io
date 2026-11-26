@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAboutStrings } from '../useAboutStrings';
-import aboutTeamImg from '@/assets/images/opt/about-team-1200.webp';
+import aboutTeamImg from '@/assets/images/opt/office-wide-1527192491265-1200x1193-opt.webp';
 
 export function AboutHero() {
   const t = useAboutStrings();

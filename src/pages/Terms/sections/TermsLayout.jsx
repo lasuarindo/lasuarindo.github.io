@@ -41,9 +41,9 @@ function TocList({ toc, activeId, onNavigate, className = 'flex flex-col' }) {
               href={`#${item.id}`}
               aria-current={active ? 'location' : undefined}
               onClick={(event) => scrollToTocTarget(event, item, onNavigate)}
-              className={`flex min-h-[44px] items-center gap-3 border-l-2 px-3 text-[12.5px] leading-[1.45] no-underline transition-colors duration-150 ${
+              className={`flex min-h-[44px] items-center gap-3 border-l-2 bg-white px-3 text-[12.5px] leading-[1.45] no-underline transition-colors duration-150 ${
                 active
-                  ? 'border-[var(--color-primary)] bg-[rgba(177,38,0,0.04)] font-semibold text-[var(--color-primary)]'
+                  ? 'border-[var(--color-primary)] bg-[#fcf9f9] font-semibold text-[var(--color-primary)]'
                   : 'border-transparent text-[var(--color-muted)] hover:border-[var(--color-line-strong)] hover:text-[var(--color-ink)]'
               }`}
             >

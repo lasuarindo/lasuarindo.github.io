@@ -15,7 +15,7 @@ import { paths, routePaths } from '@/app/paths';
 import { ecosystems } from '@/data/ecosystems';
 import { getSectorByKey } from '@/data/sectors';
 import { getUnitCategory, unitCategories, units } from '@/data/units';
-import heroImg from '@/assets/images/opt/hero-city-800.webp';
+import heroImg from '@/assets/images/opt/jakarta-golden-hour-1562367072-800-opt.webp';
 import { useUnitsStrings } from './useUnitsStrings';
 
 /**

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContactStrings } from '../useContactStrings';
-import contactHeroImg from '@/assets/images/opt/contact-hero-1200.webp';
+import contactHeroImg from '@/assets/images/opt/jakarta-dusk-1666884257245-1200x1198-opt.webp';
 
 export function ContactHero() {
   const t = useContactStrings();
@@ -25,7 +25,7 @@ export function ContactHero() {
           src={contactHeroImg}
           alt=""
           width="1200"
-          height="1197"
+          height="1198"
           fetchPriority="high"
           decoding="async"
         />

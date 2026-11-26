@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { useHomeStrings } from '../useHomeStrings';
-import heroCity800 from '@/assets/images/opt/hero-city-800.webp';
-import heroCity1600 from '@/assets/images/opt/hero-city-1600.webp';
+import heroCity800 from '@/assets/images/opt/jakarta-golden-hour-1562367072-800-opt.webp';
+import heroCity1600 from '@/assets/images/opt/jakarta-golden-hour-1562367072-1600-opt.webp';
 import { paths } from '@/app/paths';
 
 export function HomeHero() {

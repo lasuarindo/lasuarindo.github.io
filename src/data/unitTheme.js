@@ -1,11 +1,11 @@
-import cityImg from '@/assets/images/opt/hero-city-800.webp';
+import cityImg from '@/assets/images/opt/jakarta-golden-hour-1562367072-800-opt.webp';
 import wideCityImg from '@/assets/images/opt/hero-city-wide-1600.webp';
 import propertyImg from '@/assets/images/opt/property-hero-1000.webp';
 import technologyImg from '@/assets/images/opt/technology-grid-900.webp';
 import foodImg from '@/assets/images/opt/ecosystem-service-1200.webp';
 import lifestyleImg from '@/assets/images/opt/vamos-1200.webp';
 import posterImg from '@/assets/images/opt/future-property-1200.webp';
-import districtImg from '@/assets/images/opt/ecosystem-wide-1800.webp';
+import districtImg from '@/assets/images/opt/office-creative-1559136555-1800x438-opt.webp';
 import { units } from '@/data/units';
 
 /**

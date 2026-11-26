@@ -9,7 +9,7 @@ import { routePaths } from '@/app/paths';
 import { getSectorByKey } from '@/data/sectors';
 import { units } from '@/data/units';
 import { useBusinessesStrings } from '../useBusinessesStrings';
-import cityImg from '@/assets/images/opt/hero-city-800.webp';
+import cityImg from '@/assets/images/opt/jakarta-dusk-1666884257245-opt.webp';
 import propertyImg from '@/assets/images/opt/property-hero-1000.webp';
 import technologyImg from '@/assets/images/opt/technology-grid-900.webp';
 import mediaImg from '@/assets/images/opt/creative-media-900.webp';
@@ -18,7 +18,7 @@ import lifestyleImg from '@/assets/images/opt/vamos-1200.webp';
 
 /** The six sections share one editorial spine and one different composition each. */
 const SECTOR_MEDIA = {
-  investment: { src: cityImg, width: 800, height: 950 },
+  investment: { src: cityImg, width: 1800, height: 1125 },
   property: { src: propertyImg, width: 1000, height: 1000 },
   technology: { src: technologyImg, width: 900, height: 900 },
   media: { src: mediaImg, width: 900, height: 900 },
