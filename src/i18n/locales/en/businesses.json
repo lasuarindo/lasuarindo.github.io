@@ -20,7 +20,41 @@
   "sectorsDesc": "Our portfolio is made up of six business sectors. Each has its own role and contributes to the group ecosystem as a whole.",
   "sectorEnrichment": {
     "unitsLabel": "UNITS IN THIS SECTOR",
-    "note": "Unit names, descriptions, and capabilities above come from the temporary T46 ecosystem data and are awaiting company verification."
+    "note": "The editorial narrative and the unit names, descriptions, and capabilities below are drawn from temporary T46 ecosystem data and await company verification.",
+    "showMore": "Show {{count}} more units",
+    "showLess": "Show fewer units"
+  },
+  "sectorCopy": {
+    "investment": {
+      "subtitle": "Business ownership within one group portfolio",
+      "lead": "Lasuarindo Group places investment and business ownership in a single portfolio. PRO carries this role in the T46 district in Bandung.",
+      "body": "The scope recorded at present covers strategic investments and asset management within the group portfolio."
+    },
+    "property": {
+      "subtitle": "Workspaces, facilities, and district management",
+      "lead": "The property line brings together district planning, development, and facility management in T46. Three units hold distinct roles within it.",
+      "body": "Its scope covers district planning, business-space development, and facility management in T46."
+    },
+    "technology": {
+      "subtitle": "Product verification and copyright protection",
+      "lead": "Technology in the group is directed at product protection and copyright. Two tracks are run by different units in T46.",
+      "body": "Its scope covers digital verification for product protection and copyright protection for musicians and songwriters."
+    },
+    "media": {
+      "subtitle": "Online media, content production, and outdoor media",
+      "lead": "The media & creative line covers three functions: online media, content production, and outdoor media.",
+      "body": "Its scope covers online media, content production, and outdoor media for communication needs in the group district."
+    },
+    "food": {
+      "subtitle": "Food court, café, and consumer products",
+      "lead": "The F&B & consumer portfolio brings together food venues and consumer products run by units in T46.",
+      "body": "The portfolio brings together the food court, café, mie yamin, and other group consumer products in one business line."
+    },
+    "lifestyle": {
+      "subtitle": "Sport, personal care, and entertainment in T46",
+      "lead": "In the T46 district, the lifestyle & entertainment line covers padel, personal care, and mahjong entertainment.",
+      "body": "Its scope covers padel courts, personal care services, and mahjong entertainment in the T46 district."
+    }
   },
   "propertyScope": "Its scope covers residential district planning, design and construction, and property management. District and facility development is carried out with WIN, Bizencio, and SAA.",
   "mediaScope": "Its scope covers news portals and social media (MSS), film, video, music, and advertising production (Arcadia Segara Cita), as well as billboards, vidiotrons, and branding (Berkah Media Gemilang).",

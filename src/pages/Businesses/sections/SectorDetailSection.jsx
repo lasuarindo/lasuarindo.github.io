@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { localized } from '@/utils/localized';
@@ -6,7 +6,7 @@ import { Icon } from '@/components/ui/Icon';
 import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { routePaths } from '@/app/paths';
-import { getSectorByKey, sectorSummaries, sectorDetails, sectorUnits } from '@/data/sectors';
+import { getSectorByKey, sectorUnits } from '@/data/sectors';
 import { units } from '@/data/units';
 import { useBusinessesStrings } from '../useBusinessesStrings';
 import cityImg from '@/assets/images/opt/hero-city-800.webp';
@@ -35,15 +35,24 @@ const SECTOR_MOTIFS = {
   lifestyle: 'court',
 };
 
+/** Keep the first screen short; extra units expand into a responsive grid. */
+const VISIBLE_UNITS = 3;
+
 /** One dedicated section per sector, with a data-derived, marked unit directory. */
 export function SectorDetailSection({ sectorKey, index }) {
   const { language } = useLanguage();
   const t = useBusinessesStrings();
+  const [expanded, setExpanded] = useState(false);
   const sector = getSectorByKey(sectorKey);
   const media = SECTOR_MEDIA[sectorKey];
   const motif = SECTOR_MOTIFS[sectorKey];
   const isDark = motif === 'protocol';
+  const copy = t.businesses.sectorCopy[sectorKey];
   const relatedUnits = units.filter((unit) => unit.sector === sectorKey);
+  const shownUnits = expanded ? relatedUnits : relatedUnits.slice(0, VISIBLE_UNITS);
+  const moreCount = relatedUnits.length - VISIBLE_UNITS;
+  const canExpand = moreCount > 0;
+  const listId = `sector-units-${sectorKey}`;
 
   return (
     <section
@@ -63,11 +72,15 @@ export function SectorDetailSection({ sectorKey, index }) {
           </div>
 
           <div className="dossier__copy">
-            <p className={`lead ${isDark ? 'lead--light' : ''}`}>
-              {localized(sectorSummaries[sectorKey], language)}
+            <div className="dossier__subtitle-row">
+              <h3 className="dossier__subtitle">{copy.subtitle}</h3>
+              <DraftBadge />
+            </div>
+            <p className={`lead dossier__lead ${isDark ? 'lead--light' : ''}`}>
+              {copy.lead}
             </p>
-            <p className={`prose mt-4 ${isDark ? 'prose--light' : ''}`}>
-              {localized(sectorDetails[sectorKey], language)}
+            <p className={`prose dossier__body ${isDark ? 'prose--light' : ''}`}>
+              {copy.body}
             </p>
             <p className="sector-detail-row__units">
               <Icon name="apartment" size={16} color={isDark ? '#c9c6c0' : '#6b665f'} />
@@ -91,10 +104,14 @@ export function SectorDetailSection({ sectorKey, index }) {
           <div className="dossier__extra">
             <div className="dossier__extra-head">
               <span className="eyebrow">{t.businesses.sectorEnrichment.unitsLabel}</span>
+              <span className="dossier__count">{String(relatedUnits.length).padStart(2, '0')}</span>
               <DraftBadge />
             </div>
-            <ul className="dossier__units">
-              {relatedUnits.map((unit) => (
+            <ul
+              id={listId}
+              className={`dossier__units ${expanded ? 'dossier__units--expanded' : ''}`}
+            >
+              {shownUnits.map((unit) => (
                 <li key={unit.slug} className="dossier__unit">
                   <Link className="dossier__unit-link" to={routePaths.unit(unit.slug)}>
                     <span className="dossier__unit-name">{unit.name}</span>
@@ -108,6 +125,22 @@ export function SectorDetailSection({ sectorKey, index }) {
                 </li>
               ))}
             </ul>
+            {canExpand && (
+              <button
+                type="button"
+                className="link-arrow dossier__toggle"
+                aria-expanded={expanded}
+                aria-controls={listId}
+                onClick={() => setExpanded((value) => !value)}
+              >
+                <span>
+                  {expanded
+                    ? t('businesses.sectorEnrichment.showLess')
+                    : t('businesses.sectorEnrichment.showMore', { count: moreCount })}
+                </span>
+                <Icon name={expanded ? 'keyboard_arrow_up' : 'arrow_forward'} size={16} />
+              </button>
+            )}
             <DraftNote>{t.businesses.sectorEnrichment.note}</DraftNote>
           </div>
         </div>
