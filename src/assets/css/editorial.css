@@ -327,11 +327,9 @@
 }
 
 .site-footer {
-  /* Light rules inside the dark footer; every child reuses `--rule`. */
-  --rule: 1px solid rgba(255, 255, 255, 0.18);
   background: var(--color-ink);
   color: #f7f5f1;
-  border-top: var(--rule);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .footer-heading {
@@ -341,7 +339,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-primary-fixed-dim);
+  color: #b9b6b0;
 }
 
 .footer-list { display: flex; flex-direction: column; align-items: flex-start; }
@@ -364,18 +362,14 @@
   text-underline-offset: 4px;
 }
 
-.footer-contact { border-top: var(--rule); padding-top: 28px; }
-.footer-contact__list { display: grid; gap: 18px; }
+.footer-contact__list { display: grid; gap: 20px; }
 
 .footer-contact__item {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
-
-.footer-contact__item:last-child { border-bottom: 0; padding-bottom: 0; }
 
 .footer-item-label {
   font-family: var(--font-display);
@@ -383,7 +377,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-primary-fixed-dim);
+  color: #b9b6b0;
 }
 
 .footer-contact__value {
@@ -763,8 +757,8 @@
   box-shadow: none !important;
 }
 
-/* Contact form: the focus halo belongs to the field, not a free-floating
-   outline on each control. Same pattern as .unit-search:focus-within. */
+/* Contact form: a quiet ring on the control group only — never on the label
+   or the error text, and no stacked outline + shadow. */
 .field { display: flex; flex-direction: column; }
 .field__label {
   margin-bottom: 8px;
@@ -791,10 +785,10 @@
 .field__control::placeholder { color: var(--color-muted); }
 .field__control[aria-invalid='true'] { border-color: var(--color-error); }
 textarea.field__control { min-height: 128px; resize: vertical; }
-.field:focus-within {
-  outline: 3px solid var(--color-primary-fixed-dim);
+.field__control-wrap { display: block; }
+.field__control-wrap:focus-within {
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-  box-shadow: 0 0 0 5px var(--color-primary);
 }
 .field__control:focus-visible {
   outline-style: none !important;

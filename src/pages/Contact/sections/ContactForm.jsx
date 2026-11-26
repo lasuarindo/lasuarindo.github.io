@@ -16,11 +16,13 @@ function Field({ id, label, error, children, className = '' }) {
   return (
     <div className={`field ${className}`.trim()}>
       <label htmlFor={id} className="field__label">{label}</label>
-      {React.cloneElement(children, {
-        id,
-        'aria-invalid': error ? 'true' : undefined,
-        'aria-describedby': error ? errorId : undefined,
-      })}
+      <div className="field__control-wrap">
+        {React.cloneElement(children, {
+          id,
+          'aria-invalid': error ? 'true' : undefined,
+          'aria-describedby': error ? errorId : undefined,
+        })}
+      </div>
       {error ? <p id={errorId} className="field__error">{error}</p> : null}
     </div>
   );
