@@ -5,6 +5,7 @@
   "heroSubtitle": "Have an inquiry or looking to partner? Our executive team is ready to discuss high-impact collaborations with you.",
   "formTitle": "Send Us a Message",
   "formSubtitle": "Fill out the form below and our team will get in touch with you within 24 hours.",
+  "formDemoNote": "Demo form — messages are not sent to our team yet.",
   "nameLabel": "Full Name",
   "namePlaceholder": "Enter your full name",
   "emailLabel": "Email Address",
@@ -12,7 +13,7 @@
   "companyLabel": "Company Name (Optional)",
   "companyPlaceholder": "Organization / Enterprise",
   "subjectLabel": "Subject",
-  "subjectPlaceholder": "Select or enter your inquiry topic",
+  "subjectPlaceholder": "Select a topic",
   "messageLabel": "Message",
   "messagePlaceholder": "Describe your proposal or requirements in detail...",
   "sendBtn": "Send Message Now",
@@ -28,21 +29,33 @@
   "socialHeading": "Follow Our Official Channels",
   "partnerTitle": "Strategic Opportunities",
   "partnerDesc": "We actively welcome strategic alliances with institutional investors, innovators, and industry leaders.",
+  "partnerCta": "Learn more",
+  "partnerCardTitles": {
+    "partnership": "Strategic Partnership",
+    "investor": "Investor Relations",
+    "collaboration": "Collaboration"
+  },
   "locationHeading1": "OUR ",
   "locationHeading2": "LOCATION",
+  "mapTitle": "Map of the Lasuarindo Group office",
   "partnerCardsDesc": {
     "strategicPartnership": "Build mutually rewarding collaboration and create lasting tangible impact together with us.",
     "investorRelations": "Invest in an integrated, high-growth business ecosystem with sustainable potential.",
     "collaboration": "Join our community of professionals and creators to execute impactful initiatives."
   },
-  "subjects": [
-    "Strategic Partnership",
-    "Investor Relations",
-    "Project Collaboration",
-    "Technology Services",
-    "General Inquiries"
-  ],
+  "subjects": {
+    "partnership": "Strategic Partnership",
+    "investor": "Investor Relations",
+    "collaboration": "Project Collaboration",
+    "technology": "Technology Services",
+    "general": "General Inquiries"
+  },
+  "errorName": "Please enter your full name.",
+  "errorEmail": "Please enter your email address.",
+  "errorEmailFormat": "Please provide a valid email address.",
+  "errorSubject": "Please select a subject.",
+  "errorMessage": "Please enter your message.",
   "alertIncomplete": "Please complete your Name, Email, Subject, and Message.",
   "alertEmailInvalid": "Please provide a valid corporate or personal email address.",
-  "alertSuccess": "Thank you! Your message has been received. Our team will contact you promptly."
+  "alertSuccess": "Demo: your message has not been sent. Please contact us using the official email above."
 }

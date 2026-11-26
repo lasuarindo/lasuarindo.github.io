@@ -5,6 +5,7 @@
   "heroSubtitle": "Punya pertanyaan atau ingin bermitra? Tim kami siap berdiskusi dan membantu mewujudkan kolaborasi terbaik bersama Anda.",
   "formTitle": "Kirim Pesan",
   "formSubtitle": "Isi formulir di bawah ini dan tim kami akan menghubungi Anda dalam waktu 1x24 jam.",
+  "formDemoNote": "Formulir demo — pesan belum dikirim ke tim kami.",
   "nameLabel": "Nama Lengkap",
   "namePlaceholder": "Masukkan nama lengkap Anda",
   "emailLabel": "Alamat Email",
@@ -12,7 +13,7 @@
   "companyLabel": "Nama Perusahaan (Opsional)",
   "companyPlaceholder": "PT / CV / Instansi",
   "subjectLabel": "Subjek",
-  "subjectPlaceholder": "Pilih atau ketik topik pesan",
+  "subjectPlaceholder": "Pilih topik pesan",
   "messageLabel": "Pesan",
   "messagePlaceholder": "Tuliskan pesan atau kebutuhan kerja sama Anda...",
   "sendBtn": "Kirim Pesan Sekarang",
@@ -28,21 +29,33 @@
   "socialHeading": "Ikuti Kami di Media Sosial",
   "partnerTitle": "Peluang Kerja Sama",
   "partnerDesc": "Kami membuka pintu kolaborasi strategis dengan investor, wirausahawan, dan institusi.",
+  "partnerCta": "Pelajari lebih lanjut",
+  "partnerCardTitles": {
+    "partnership": "Kemitraan Strategis",
+    "investor": "Hubungan Investor",
+    "collaboration": "Kolaborasi"
+  },
   "locationHeading1": "LOKASI ",
   "locationHeading2": "KAMI",
+  "mapTitle": "Peta lokasi kantor Lasuarindo Group",
   "partnerCardsDesc": {
     "strategicPartnership": "Bangun kolaborasi yang saling menguntungkan dan menciptakan dampak nyata bersama kami.",
     "investorRelations": "Investasikan di ekosistem bisnis yang terintegrasi dan terus berkembang.",
     "collaboration": "Bergabunglah dengan komunitas profesional dan kreatif kami untuk proyek berdampak."
   },
-  "subjects": [
-    "Kemitraan Strategis",
-    "Hubungan Investor",
-    "Kolaborasi Proyek",
-    "Layanan Teknologi",
-    "Pertanyaan Umum"
-  ],
+  "subjects": {
+    "partnership": "Kemitraan Strategis",
+    "investor": "Hubungan Investor",
+    "collaboration": "Kolaborasi Proyek",
+    "technology": "Layanan Teknologi",
+    "general": "Pertanyaan Umum"
+  },
+  "errorName": "Nama lengkap wajib diisi.",
+  "errorEmail": "Alamat email wajib diisi.",
+  "errorEmailFormat": "Format email belum benar.",
+  "errorSubject": "Pilih subjek pesan.",
+  "errorMessage": "Pesan wajib diisi.",
   "alertIncomplete": "Mohon lengkapi Nama, Email, Subjek, dan Pesan Anda.",
-  "alertEmailInvalid": "Format email belum ben.",
-  "alertSuccess": "Terima kasih! Pesan Anda telah dikirim. Tim kami akan segera menghubungi Anda."
+  "alertEmailInvalid": "Format email belum benar.",
+  "alertSuccess": "Demo: pesan Anda belum dikirim. Silakan hubungi kami lewat email resmi di atas."
 }

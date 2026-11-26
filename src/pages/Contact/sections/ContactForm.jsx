@@ -1,143 +1,261 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
 import { useLanguage } from '@/i18n/language.js';
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal';
-import { GradientDivider } from '@/components/ui/GradientDivider';
 import { Icon } from '@/components/ui/Icon';
-import { BODY_FONT, CONTAINER, DISPLAY_FONT } from '@/constants/layout';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { CONTAINER } from '@/constants/layout';
 import { company, formatAddress } from '@/data/company';
 import { localized } from '@/utils/localized';
 import { useContactStrings } from '../useContactStrings';
 
-const INPUT_CLASS = 'box-border w-full rounded-lg border border-[var(--color-outline-variant)] bg-[var(--color-surface-container-low)] px-[14px] py-[10px] font-[var(--font-body)] text-[15px] text-[var(--color-on-background)] outline-none focus:border-[var(--color-primary)]';
-const LABEL_CLASS = 'mb-[6px] block font-[var(--font-display)] text-[12px] font-semibold uppercase leading-4 tracking-[0.35px] text-[var(--color-on-background)]';
-const INFO_ICON_BOX = 'flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(177,38,0,0.1)]';
-const INFO_TITLE = `m-0 mb-[2px] ${DISPLAY_FONT} text-[18px] font-bold leading-6 text-[var(--color-on-background)]`;
-const INFO_TEXT = `m-0 ${BODY_FONT} text-[14px] leading-5 text-[var(--color-secondary)]`;
+/** A label that never hides, an error that lives next to its own field. */
+function Field({ id, label, error, children, className = '' }) {
+  const errorId = `${id}-error`;
+
+  return (
+    <div className={`field ${className}`.trim()}>
+      <label htmlFor={id} className="field__label">{label}</label>
+      {React.cloneElement(children, {
+        id,
+        'aria-invalid': error ? 'true' : undefined,
+        'aria-describedby': error ? errorId : undefined,
+      })}
+      {error ? <p id={errorId} className="field__error">{error}</p> : null}
+    </div>
+  );
+}
 
 export function ContactForm() {
   const t = useContactStrings();
   const { language } = useLanguage();
-  const location = useLocation();
-  const intentIndex = { partnership: 0, investor: 1, collaboration: 2 }[
-    new URLSearchParams(location.search).get('intent')
-  ];
+  const { search } = useLocation();
+  const intent = new URLSearchParams(search).get('intent');
+  const initialSubject =
+    intent && Object.prototype.hasOwnProperty.call(t.contact.subjects, intent)
+      ? intent
+      : '';
+
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
   const [perusahaan, setPerusahaan] = useState('');
-  const [subjek, setSubjek] = useState(
-    intentIndex === undefined ? '' : t.contact.subjects[intentIndex] || ''
-  );
+  const [subject, setSubject] = useState(initialSubject);
   const [pesan, setPesan] = useState('');
+  const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ type: '', message: '' });
+  const formRef = useRef(null);
+  const focusOnErrors = useRef(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!nama.trim() || !email.trim() || !subjek || !pesan.trim()) {
-      setStatus({ type: 'error', message: t.contact.alertIncomplete });
-      return;
-    }
-    if (!email.includes('@')) {
-      setStatus({ type: 'error', message: t.contact.alertEmailInvalid });
-      return;
-    }
-    setStatus({ type: 'success', message: t.contact.alertSuccess });
-    setNama(''); setEmail(''); setPerusahaan(''); setSubjek(''); setPesan('');
+  useEffect(() => {
+    if (!focusOnErrors.current || !Object.keys(errors).length) return;
+    focusOnErrors.current = false;
+    formRef.current?.querySelector('[aria-invalid="true"]')?.focus();
+  }, [errors]);
+
+  const clearFieldError = (field) => {
+    setErrors((prev) => {
+      if (!prev[field]) return prev;
+      const next = { ...prev };
+      delete next[field];
+      return next;
+    });
+    setStatus((prev) => (prev.message ? { type: '', message: '' } : prev));
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const nextErrors = {};
+
+    if (!nama.trim()) nextErrors.name = t.contact.errorName;
+    if (!email.trim()) nextErrors.email = t.contact.errorEmail;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      nextErrors.email = t.contact.errorEmailFormat;
+    }
+    if (!subject) nextErrors.subject = t.contact.errorSubject;
+    if (!pesan.trim()) nextErrors.message = t.contact.errorMessage;
+
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length) {
+      setStatus({ type: 'error', message: t.contact.alertIncomplete });
+      focusOnErrors.current = true;
+      return;
+    }
+
+    // No endpoint is connected: this is a demo confirmation, not a sent message.
+    setStatus({ type: 'success', message: t.contact.alertSuccess });
+  };
+
+  const statusClass =
+    status.type === 'error'
+      ? 'border-l-2 border-[var(--color-error)] bg-[rgba(186,26,26,0.06)] text-[var(--color-error)]'
+      : 'border-l-2 border-[var(--color-primary)] bg-[rgba(177,38,0,0.06)] text-[var(--color-primary)]';
+
   return (
-    <section className="bg-[var(--color-surface)] py-12">
+    <section className="section section--paper">
       <div className={CONTAINER}>
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
-          {/* Left Info Column */}
-          <AnimatedReveal animation="left" delay={100}>
+        <SectionHeader
+          badge={t.contact.infoTitle}
+          titlePrimary={t.contact.infoHeading1}
+          titleSecondary={t.contact.infoHeading2}
+        />
+
+        <AnimatedReveal>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+            {/* Contact details: one editorial row per fact. */}
             <div>
-              <h2 className="mb-[10px] font-[var(--font-display)] text-[28px] font-bold leading-[34px] text-[var(--color-on-background)] lg:text-[34px] lg:leading-[40px]">
-                {t.contact.infoHeading1}<span className="text-[var(--color-primary)]">{t.contact.infoHeading2}</span>
-              </h2>
-              <GradientDivider />
-              <div className="mt-5 flex flex-col gap-5">
-                <div className="flex items-start gap-[14px]">
-                  <div className={INFO_ICON_BOX}><Icon name="location_on" size={24} color="#b12600" /></div>
-                  <div>
-                    <h3 className={INFO_TITLE}>{t.contact.addressTitle}</h3>
-                    <p className={INFO_TEXT}>{formatAddress({ includeCountry: true })}</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-muted)]">{t.contact.addressArea}</span>
-                  </div>
+              <dl className="info-list">
+                <div className="info-row">
+                  <dt className="info-row__label">{t.contact.addressTitle}</dt>
+                  <dd className="info-row__value">
+                    {formatAddress({ includeCountry: true })}
+                    <span className="info-row__note">{t.contact.addressArea}</span>
+                  </dd>
                 </div>
-                <div className="flex items-start gap-[14px]">
-                  <div className={INFO_ICON_BOX}><Icon name="mail" size={24} color="#b12600" /></div>
-                  <div>
-                    <h3 className={INFO_TITLE}>{t.contact.emailTitle}</h3>
-                    <a href={`mailto:${company.email}`} className="font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)] no-underline">{company.email}</a>
-                  </div>
+                <div className="info-row">
+                  <dt className="info-row__label">{t.contact.emailTitle}</dt>
+                  <dd className="info-row__value">
+                    <a className="info-link" href={`mailto:${company.email}`}>
+                      {company.email}
+                    </a>
+                  </dd>
                 </div>
-                <div className="flex items-start gap-[14px]">
-                  <div className={INFO_ICON_BOX}><Icon name="schedule" size={24} color="#b12600" /></div>
-                  <div>
-                    <h3 className={INFO_TITLE}>{t.contact.hoursTitle}</h3>
-                    <p className={INFO_TEXT}>{localized(company.hours.weekdays, language)}</p>
-                    <span className="mt-[2px] block font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-muted)]">{localized(company.hours.weekend, language)}</span>
-                  </div>
+                <div className="info-row">
+                  <dt className="info-row__label">{t.contact.hoursTitle}</dt>
+                  <dd className="info-row__value">
+                    {localized(company.hours.weekdays, language)}
+                    <span className="info-row__note">
+                      {localized(company.hours.weekend, language)}
+                    </span>
+                  </dd>
                 </div>
-              </div>
-              <div className="mt-7 border-t border-[rgba(228,190,181,0.3)] pt-5">
-                <h3 className="mb-3 font-[var(--font-display)] text-[15px] font-bold leading-[22px] text-[var(--color-on-background)]">{t.contact.socialHeading}</h3>
-                <div className="flex gap-3">
-                  {company.social.map((s) => (
-                    <a key={s.label} href={s.url || '#'} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-[rgba(177,38,0,0.1)] text-[var(--color-primary)] no-underline transition-colors duration-200 hover:bg-[rgba(177,38,0,0.2)]">
-                      <Icon name={s.icon} size={20} color="#b12600" />
+              </dl>
+
+              <div className="mt-8 border-t border-[var(--color-line)] pt-5">
+                <h3 className="m-0 mb-2 font-[var(--font-display)] text-[15px] font-bold text-[var(--color-ink)]">
+                  {t.contact.socialHeading}
+                </h3>
+                <div className="flex flex-wrap gap-x-6">
+                  {company.social.filter((item) => item.url).map((item) => (
+                    <a
+                      key={item.label}
+                      className="info-link"
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.label}
                     </a>
                   ))}
                 </div>
               </div>
             </div>
-          </AnimatedReveal>
 
-          {/* Right Form Column */}
-          <AnimatedReveal animation="right" delay={100}>
-            <div className="rounded-2xl border border-[rgba(228,190,181,0.3)] bg-[var(--color-surface-container-lowest)] p-6 shadow-[0_20px_25px_rgba(0,0,0,0.1),0_8px_10px_rgba(0,0,0,0.1)] max-[767px]:p-5 lg:p-7">
-              <h3 className="m-0 mb-1 font-[var(--font-display)] text-[24px] font-bold leading-[30px] text-[var(--color-on-background)]">{t.contact.formTitle}</h3>
-              <p className="m-0 mb-5 font-[var(--font-body)] text-[14px] leading-5 text-[var(--color-secondary)]">
-                {t.contact.formSubtitle}
-              </p>
-              {status.message && (
-                <div className={`mb-4 rounded-lg border px-4 py-3 font-[var(--font-body)] text-[14px] ${status.type === 'error' ? 'border-[#ba1a1a] bg-[rgba(186,26,26,0.1)] text-[#ba1a1a]' : 'border-[#10b981] bg-[rgba(16,185,129,0.1)] text-[#047857]'}`}>{status.message}</div>
-              )}
-              <form onSubmit={handleSubmit} className="flex flex-col gap-[14px]">
-                <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                  <div>
-                    <label htmlFor="contact-name" className={LABEL_CLASS}>{t.contact.nameLabel}</label>
-                    <input id="contact-name" name="name" autoComplete="name" type="text" placeholder={t.contact.namePlaceholder} value={nama} onChange={(e) => setNama(e.target.value)} className={INPUT_CLASS} />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-email" className={LABEL_CLASS}>{t.contact.emailLabel}</label>
-                    <input id="contact-email" name="email" autoComplete="email" type="email" placeholder={t.contact.emailPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} className={INPUT_CLASS} />
-                  </div>
+            {/* Flat paper panel; no shadow, no glass. */}
+            <div className="rounded-[2px] border border-[var(--color-line)] bg-white p-6 sm:p-8">
+              <h3 className="m-0 font-[var(--font-display)] text-[24px] font-semibold leading-[30px] text-[var(--color-ink)]">
+                {t.contact.formTitle}
+              </h3>
+              <p className="prose mt-2">{t.contact.formSubtitle}</p>
+
+              {status.message ? (
+                <div
+                  role={status.type === 'error' ? 'alert' : 'status'}
+                  aria-live={status.type === 'error' ? 'assertive' : 'polite'}
+                  className={`mt-5 px-4 py-3 text-[14px] leading-5 ${statusClass}`}
+                >
+                  {status.message}
                 </div>
-                <div>
-                  <label htmlFor="contact-company" className={LABEL_CLASS}>{t.contact.companyLabel}</label>
-                  <input id="contact-company" name="company" autoComplete="organization" type="text" placeholder={t.contact.companyPlaceholder} value={perusahaan} onChange={(e) => setPerusahaan(e.target.value)} className={INPUT_CLASS} />
+              ) : null}
+
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                noValidate
+                className="mt-6 flex flex-col gap-5"
+              >
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field id="contact-name" label={t.contact.nameLabel} error={errors.name}>
+                    <input
+                      name="name"
+                      type="text"
+                      autoComplete="name"
+                      placeholder={t.contact.namePlaceholder}
+                      value={nama}
+                      onChange={(event) => {
+                        setNama(event.target.value);
+                        clearFieldError('name');
+                      }}
+                      className="field__control"
+                    />
+                  </Field>
+                  <Field id="contact-email" label={t.contact.emailLabel} error={errors.email}>
+                    <input
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      placeholder={t.contact.emailPlaceholder}
+                      value={email}
+                      onChange={(event) => {
+                        setEmail(event.target.value);
+                        clearFieldError('email');
+                      }}
+                      className="field__control"
+                    />
+                  </Field>
                 </div>
-                <div>
-                  <label htmlFor="contact-subject" className={LABEL_CLASS}>{t.contact.subjectLabel}</label>
-                  <select id="contact-subject" name="subject" value={subjek} onChange={(e) => setSubjek(e.target.value)} className={INPUT_CLASS}>
+
+                <Field id="contact-company" label={t.contact.companyLabel} error={errors.company}>
+                  <input
+                    name="company"
+                    type="text"
+                    autoComplete="organization"
+                    placeholder={t.contact.companyPlaceholder}
+                    value={perusahaan}
+                    onChange={(event) => setPerusahaan(event.target.value)}
+                    className="field__control"
+                  />
+                </Field>
+
+                <Field id="contact-subject" label={t.contact.subjectLabel} error={errors.subject}>
+                  <select
+                    name="subject"
+                    value={subject}
+                    onChange={(event) => {
+                      setSubject(event.target.value);
+                      clearFieldError('subject');
+                    }}
+                    className="field__control"
+                  >
                     <option value="">{t.contact.subjectPlaceholder}</option>
-                    {t.contact.subjects.map((opt) => (<option key={opt} value={opt} className="text-[var(--color-on-background)]">{opt}</option>))}
+                    {Object.entries(t.contact.subjects).map(([key, label]) => (
+                      <option key={key} value={key}>{label}</option>
+                    ))}
                   </select>
-                </div>
-                <div>
-                  <label htmlFor="contact-message" className={LABEL_CLASS}>{t.contact.messageLabel}</label>
-                  <textarea id="contact-message" name="message" rows={4} placeholder={t.contact.messagePlaceholder} value={pesan} onChange={(e) => setPesan(e.target.value)} className={INPUT_CLASS} />
-                </div>
-                <button type="submit" className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border-0 bg-[var(--color-primary)] px-6 py-3 font-[var(--font-display)] text-[16px] font-bold leading-[22px] text-[var(--color-on-primary)] shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] transition-colors duration-200 hover:bg-[var(--color-primary-container)]">
-                  <Icon name="send" size={20} color="#ffffff" /><span>{t.contact.sendBtn}</span>
+                </Field>
+
+                <Field id="contact-message" label={t.contact.messageLabel} error={errors.message}>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    placeholder={t.contact.messagePlaceholder}
+                    value={pesan}
+                    onChange={(event) => {
+                      setPesan(event.target.value);
+                      clearFieldError('message');
+                    }}
+                    className="field__control"
+                  />
+                </Field>
+
+                <button type="submit" className="btn btn--solid mt-1 w-full">
+                  <Icon name="send" size={18} />
+                  <span>{t.contact.sendBtn}</span>
                 </button>
+                <p className="draft-note">{t.contact.formDemoNote}</p>
               </form>
             </div>
-          </AnimatedReveal>
-        </div>
+          </div>
+        </AnimatedReveal>
       </div>
     </section>
   );

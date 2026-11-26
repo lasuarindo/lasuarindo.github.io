@@ -763,6 +763,95 @@
   box-shadow: none !important;
 }
 
+/* Contact form: the focus halo belongs to the field, not a free-floating
+   outline on each control. Same pattern as .unit-search:focus-within. */
+.field { display: flex; flex-direction: column; }
+.field__label {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+.field__control {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 2px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+.field__control::placeholder { color: var(--color-muted); }
+.field__control[aria-invalid='true'] { border-color: var(--color-error); }
+textarea.field__control { min-height: 128px; resize: vertical; }
+.field:focus-within {
+  outline: 3px solid var(--color-primary-fixed-dim);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-primary);
+}
+.field__control:focus-visible {
+  outline-style: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+}
+.field__error {
+  margin: 8px 0 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-error);
+}
+
+/* Contact details as editorial rows, not icon boxes. */
+.info-list { margin: 28px 0 0; border-top: var(--rule); }
+.info-row { display: grid; gap: 4px; padding: 18px 0; border-bottom: var(--rule); }
+.info-row__label {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.info-row__value {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+.info-row__note {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+.info-link {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-primary);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+.info-link:hover { text-decoration: underline; }
+@media (min-width: 640px) {
+  .info-row { grid-template-columns: 150px minmax(0, 1fr); gap: 24px; }
+}
+
 .network-marquee-item {
   display: flex;
   align-items: center;
