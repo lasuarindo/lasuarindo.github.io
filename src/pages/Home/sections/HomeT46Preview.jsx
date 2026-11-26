@@ -68,11 +68,10 @@ export function HomeT46Preview() {
             subtitle={preview.unitsDesc}
           />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {PREVIEW_SLUGS.map((slug, index) => (
+            {PREVIEW_SLUGS.map((slug) => (
               <UnitCard
                 key={slug}
                 unit={getUnitBySlug(slug)}
-                index={index}
                 detailLabel={preview.detailLabel}
               />
             ))}

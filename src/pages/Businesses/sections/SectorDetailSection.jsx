@@ -10,11 +10,11 @@ import { getSectorByKey } from '@/data/sectors';
 import { units } from '@/data/units';
 import { useBusinessesStrings } from '../useBusinessesStrings';
 import cityImg from '@/assets/images/opt/jakarta-dusk-1666884257245-opt.webp';
-import propertyImg from '@/assets/images/opt/property-hero-1000.webp';
+import propertyImg from '@/assets/images/opt/architecture-curved-facade-1554793000-1000x1000-opt.webp';
 import technologyImg from '@/assets/images/opt/technology-grid-900.webp';
-import mediaImg from '@/assets/images/opt/creative-media-900.webp';
-import foodImg from '@/assets/images/opt/ecosystem-service-1200.webp';
-import lifestyleImg from '@/assets/images/opt/vamos-1200.webp';
+import mediaImg from '@/assets/images/opt/creative-designer-swatches-1572044162444-900x900-opt.webp';
+import foodImg from '@/assets/images/opt/coffee-latte-art-1507915135761-1200x1192-opt.webp';
+import lifestyleImg from '@/assets/images/opt/padel-flatlay-1646649853703-1200x900-opt.webp';
 
 /** The six sections share one editorial spine and one different composition each. */
 const SECTOR_MEDIA = {

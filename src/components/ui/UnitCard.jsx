@@ -9,7 +9,7 @@ import { unitImage } from '@/data/unitVisual';
 import { routePaths } from '@/app/paths';
 
 /** One card for a unit, shared by the Home preview and the Units directory. */
-export function UnitCard({ unit, index, detailLabel }) {
+export function UnitCard({ unit, detailLabel }) {
   const { language } = useLanguage();
   const sector = getSectorByKey(unit.sector);
   const category = getUnitCategory(unit.category);
@@ -21,7 +21,7 @@ export function UnitCard({ unit, index, detailLabel }) {
       className="card card--grow unit-card no-underline"
     >
       <div className="unit-card__media">
-        <img src={unitImage(index)} alt="" loading="lazy" decoding="async" />
+        <img src={unitImage(unit)} alt="" loading="lazy" decoding="async" />
         <span className="unit-card__badge">
           {category ? localized(category.label, language) : unit.name}
         </span>
