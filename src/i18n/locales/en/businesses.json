@@ -11,7 +11,7 @@
   "intro": {
     "eyebrow": "WHAT WE DO",
     "heading": "Six Business Lines, One Ecosystem",
-    "body": "Lasuarindo Group invests in, owns, and manages businesses across six business lines, from investment and property to technology, media, F&B, and lifestyle. We develop each unit within one ecosystem at the T46 district in Bandung.",
+    "body": "Lasuarindo Group invests in, owns, and manages businesses across six business lines, from investment and property to technology, media, F&B, and lifestyle. We develop each unit within one group business ecosystem.",
     "keywords": ["Investment", "Management", "Development"]
   },
   "sectorDetailsHeading": "Our Business Scope",
@@ -20,24 +20,24 @@
   "sectorsDesc": "Our portfolio is made up of six business sectors. Each has its own role and contributes to the group ecosystem as a whole.",
   "sectorEnrichment": {
     "unitsLabel": "UNITS IN THIS SECTOR",
-    "note": "The editorial narrative and the unit names, descriptions, and capabilities below are drawn from temporary T46 ecosystem data and await company verification.",
+    "note": "The editorial narrative and the unit names, descriptions, and capabilities below are drawn from temporary group ecosystem data and await company verification.",
     "showMore": "Show {{count}} more units",
     "showLess": "Show fewer units"
   },
   "sectorCopy": {
     "investment": {
       "subtitle": "Business ownership within one group portfolio",
-      "lead": "Lasuarindo Group places investment and business ownership in a single group portfolio. The role is part of the ecosystem in T46, Bandung.",
+      "lead": "Lasuarindo Group places investment and business ownership in a single group portfolio. The role is part of the group business ecosystem.",
       "body": "Its work centres on strategic investments and asset management recorded in the group portfolio."
     },
     "property": {
       "subtitle": "Workspaces, facilities, and district management",
-      "lead": "The property line brings together district planning, development, and facility management in T46. All of it sits within one group business district.",
-      "body": "In T46, the work covers district and facility management, working and creative spaces, and parking and valet services."
+      "lead": "The property line brings together district planning, development, and facility management. The work takes place within the group business district.",
+      "body": "The work covers district and facility management, working and creative spaces, and parking and valet services."
     },
     "technology": {
       "subtitle": "Product verification and copyright protection",
-      "lead": "Technology in the group is directed at product protection and copyright. Both are part of the technology portfolio in T46.",
+      "lead": "Technology in the group is directed at product protection and copyright. Both are part of the group's technology portfolio.",
       "body": "The work covers digital verification for product protection, brand protection, and copyright protection for musicians and songwriters."
     },
     "media": {
@@ -47,12 +47,12 @@
     },
     "food": {
       "subtitle": "Food court, café, and consumer products",
-      "lead": "The F&B & consumer portfolio brings together food venues and consumer products in T46. It is part of the group ecosystem.",
+      "lead": "The F&B & consumer portfolio brings together food venues and consumer products within the group ecosystem. It is part of the group portfolio.",
       "body": "The work covers food court and culinary tenant management, café operations, mie yamin service, and perfume product development."
     },
     "lifestyle": {
-      "subtitle": "Sport, personal care, and entertainment in T46",
-      "lead": "In the T46 district, the lifestyle & entertainment line covers padel, personal care, and mahjong entertainment. All three sit in one business district.",
+      "subtitle": "Sport, personal care, and entertainment in the group district",
+      "lead": "The lifestyle & entertainment line covers padel, personal care, and mahjong entertainment. All three sit within the group business district.",
       "body": "The work covers padel courts and community events, beauty and personal care services, and membership-based mahjong entertainment."
     }
   },
@@ -145,10 +145,10 @@
   ],
   "futureProjects": "FUTURE PROJECTS",
   "futureProjectsDesc": "Sustainable initiatives and forward-looking ventures actively being pioneered within the Lasuarindo ecosystem.",
-  "ecosystemBadge": "T46 ECOSYSTEM",
-  "ecosystemHeading": "Twelve Units in One District",
-  "ecosystemDesc": "PRO, WIN, and AGT are among the units operating in the T46 district. See them all on the ecosystem page.",
-  "ecosystemCta": "Explore T46 Ecosystem",
+  "ecosystemBadge": "GROUP ECOSYSTEM",
+  "ecosystemHeading": "{{count}} Units in the Group Ecosystem",
+  "ecosystemDesc": "PRO, WIN, and AGT are among the units operating within the group ecosystem. See them all on the ecosystem page.",
+  "ecosystemCta": "Explore Ecosystems",
   "process": {
     "variants": {
       "note": "Several layout options are shown together for review.",

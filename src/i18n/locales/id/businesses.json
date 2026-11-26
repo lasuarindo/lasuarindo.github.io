@@ -11,7 +11,7 @@
   "intro": {
     "eyebrow": "APA YANG KAMI LAKUKAN",
     "heading": "Enam Lini Usaha, Satu Ekosistem",
-    "body": "Lasuarindo Group menginvestasikan, memiliki, dan mengelola bisnis di enam lini usaha, dari investasi dan properti hingga teknologi, media, F&B, dan gaya hidup. Kami mengembangkan setiap unit dalam satu ekosistem di kawasan T46, Bandung.",
+    "body": "Lasuarindo Group menginvestasikan, memiliki, dan mengelola bisnis di enam lini usaha, dari investasi dan properti hingga teknologi, media, F&B, dan gaya hidup. Kami mengembangkan setiap unit dalam satu ekosistem bisnis grup.",
     "keywords": ["Investasi", "Pengelolaan", "Pengembangan"]
   },
   "sectorDetailsHeading": "Lingkup Bisnis Kami",
@@ -20,24 +20,24 @@
   "sectorsDesc": "Portofolio kami terdiri dari enam sektor bisnis. Setiap sektor memiliki peran tersendiri dan berkontribusi pada ekosistem grup secara keseluruhan.",
   "sectorEnrichment": {
     "unitsLabel": "UNIT DALAM SEKTOR INI",
-    "note": "Narasi editorial serta nama unit, keterangan, dan kapabilitas di bawah disusun dari data ekosistem T46 yang masih sementara dan menunggu verifikasi perusahaan.",
+    "note": "Narasi editorial serta nama unit, keterangan, dan kapabilitas di bawah disusun dari data ekosistem grup yang masih sementara dan menunggu verifikasi perusahaan.",
     "showMore": "Tampilkan {{count}} unit lainnya",
     "showLess": "Tampilkan lebih sedikit"
   },
   "sectorCopy": {
     "investment": {
       "subtitle": "Kepemilikan bisnis dalam satu portofolio grup",
-      "lead": "Lasuarindo Group menempatkan investasi dan kepemilikan bisnis dalam satu portofolio grup. Peran ini menjadi bagian dari ekosistem di T46, Bandung.",
+      "lead": "Lasuarindo Group menempatkan investasi dan kepemilikan bisnis dalam satu portofolio grup. Peran ini menjadi bagian dari ekosistem bisnis grup.",
       "body": "Kegiatannya berpusat pada investasi strategis dan pengelolaan aset yang tercatat dalam portofolio grup."
     },
     "property": {
       "subtitle": "Ruang usaha, fasilitas, dan pengelolaan kawasan",
-      "lead": "Lini properti merangkai perencanaan kawasan, pengembangan, dan pengelolaan fasilitas di T46. Semua kegiatan itu berada dalam satu kawasan bisnis grup.",
-      "body": "Di T46, kegiatan lini ini meliputi pengelolaan kawasan dan fasilitas, penyediaan ruang kerja serta ruang kreatif, dan layanan parkir serta valet."
+      "lead": "Lini properti merangkai perencanaan kawasan, pengembangan, dan pengelolaan fasilitas. Kegiatannya berlangsung di dalam kawasan bisnis grup.",
+      "body": "Kegiatan lini ini meliputi pengelolaan kawasan dan fasilitas, penyediaan ruang kerja serta ruang kreatif, dan layanan parkir serta valet."
     },
     "technology": {
       "subtitle": "Verifikasi produk dan perlindungan hak cipta",
-      "lead": "Teknologi dalam grup diarahkan pada perlindungan produk dan hak cipta. Keduanya menjadi bagian dari portofolio lini teknologi di T46.",
+      "lead": "Teknologi dalam grup diarahkan pada perlindungan produk dan hak cipta. Keduanya menjadi bagian dari portofolio lini teknologi grup.",
       "body": "Kegiatannya mencakup verifikasi digital untuk perlindungan produk, perlindungan merek, serta perlindungan hak cipta musisi dan pencipta lagu."
     },
     "media": {
@@ -47,12 +47,12 @@
     },
     "food": {
       "subtitle": "Food court, kafe, dan produk konsumer",
-      "lead": "Portofolio F&B & konsumer menghimpun tempat makan dan produk konsumer di kawasan T46. Lini ini menjadi bagian dari ekosistem grup.",
+      "lead": "Portofolio F&B & konsumer menghimpun tempat makan dan produk konsumer dalam ekosistem grup. Lini ini menjadi bagian dari portofolio grup.",
       "body": "Kegiatannya mencakup pengelolaan food court dan tenant kuliner, operasional kafe, penyajian mie yamin, serta pengembangan produk parfum."
     },
     "lifestyle": {
-      "subtitle": "Olahraga, perawatan diri, dan hiburan di T46",
-      "lead": "Di kawasan T46, lini gaya hidup & hiburan mencakup padel, perawatan diri, dan hiburan mahjong. Ketiganya berada dalam satu kawasan bisnis grup.",
+      "subtitle": "Olahraga, perawatan diri, dan hiburan dalam kawasan grup",
+      "lead": "Lini gaya hidup & hiburan mencakup padel, perawatan diri, dan hiburan mahjong. Ketiganya berada dalam kawasan bisnis grup.",
       "body": "Kegiatannya meliputi penyelenggaraan lapangan padel dan event komunitas, layanan beauty serta perawatan diri, dan hiburan mahjong dengan keanggotaan."
     }
   },
@@ -145,10 +145,10 @@
   ],
   "futureProjects": "PROYEK MASA DEPAN",
   "futureProjectsDesc": "Inisiatif berkelanjutan dan terobosan terbaru dalam ekosistem bisnis Lasuarindo Group.",
-  "ecosystemBadge": "EKOSISTEM T46",
-  "ecosystemHeading": "Dua Belas Unit di Satu Kawasan",
-  "ecosystemDesc": "PRO, WIN, dan AGT adalah sebagian dari unit yang berjalan di kawasan T46. Lihat semuanya di halaman ekosistem.",
-  "ecosystemCta": "Lihat Ekosistem T46",
+  "ecosystemBadge": "EKOSISTEM GRUP",
+  "ecosystemHeading": "{{count}} Unit dalam Ekosistem Grup",
+  "ecosystemDesc": "PRO, WIN, dan AGT adalah sebagian dari unit yang berjalan dalam ekosistem grup. Lihat semuanya di halaman ekosistem.",
+  "ecosystemCta": "Lihat Ekosistem",
   "process": {
     "variants": {
       "note": "Beberapa usulan tampilan sedang ditampilkan bersamaan untuk dipilih.",
