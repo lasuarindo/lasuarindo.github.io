@@ -6,7 +6,7 @@ import { Icon } from '@/components/ui/Icon';
 import { DraftBadge, DraftNote } from '@/components/ui/DraftBadge';
 import { CONTAINER } from '@/constants/layout';
 import { routePaths } from '@/app/paths';
-import { getSectorByKey, sectorUnits } from '@/data/sectors';
+import { getSectorByKey } from '@/data/sectors';
 import { units } from '@/data/units';
 import { useBusinessesStrings } from '../useBusinessesStrings';
 import cityImg from '@/assets/images/opt/hero-city-800.webp';
@@ -81,10 +81,6 @@ export function SectorDetailSection({ sectorKey, index }) {
             </p>
             <p className={`prose dossier__body ${isDark ? 'prose--light' : ''}`}>
               {copy.body}
-            </p>
-            <p className="sector-detail-row__units">
-              <Icon name="apartment" size={16} color={isDark ? '#c9c6c0' : '#6b665f'} />
-              {localized(sectorUnits[sectorKey], language)}
             </p>
           </div>
 
