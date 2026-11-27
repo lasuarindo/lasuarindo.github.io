@@ -2,6 +2,13 @@
 
 This page is a guided tour of the application code. It explains how a request becomes a page, where content lives, and what each shared piece does. For setup commands, see [Quick start](/docs/quick-start). For the palette and CSS rules, see [Design system](/docs/design-system).
 
+## How to read this page
+
+- Start with [Runtime flow](#runtime-flow) for the request-to-page path.
+- Follow [Entry, routing and lazy loading](#entry-routing-and-lazy-loading) and [Layout and chrome](#layout-and-chrome) for the boot sequence.
+- Use [Content and data layer](#content-and-data-layer) and [Internationalisation](#internationalisation) when you change copy or catalogues.
+- [Bundling](#bundling) and [File map](#file-map) are reference sections; jump to them when you need a specific file.
+
 ## Runtime flow
 
 ```mermaid

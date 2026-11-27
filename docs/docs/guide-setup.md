@@ -23,6 +23,12 @@ Navigation is file-based:
 
 Output is `doc_build/`, which is gitignored. A new or renamed docs page must be added to its folder's `_meta.json`. A new section needs an entry in `_nav.json` and its own `_meta.json`.
 
+### Static assets and home markup
+
+- `docs/public/logo.png` is the symbol-only mark copied from `public/favicon.png`. The `logo` field in `rspress.config.ts` points at it with 28×28 dimensions, so it stays visible in both theme modes.
+- The `head` field in `rspress.config.ts` loads the same Inter and Montserrat families as the application's `index.html`.
+- `theme/index.tsx` at the repository root wraps built-in components through ESM re-exports: `HomeLayout` adds a visually hidden `<h1>`, `HomeFeature` renders the feature cards as `<a>`, and `SocialLinks` gives the GitHub icon an accessible name. It ends with `export * from '@rspress/core/theme-original'` so every other component remains built-in.
+
 ### Navbar: `docs/_nav.json`
 
 ```json

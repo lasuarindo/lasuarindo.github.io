@@ -47,7 +47,7 @@ No token matches the logo red exactly. The logo orange is available as `--color-
 | Display / headings | Montserrat (600–900) | `--font-display`, loaded in `index.html` |
 | Body | Inter (400–700) | `--font-body`, loaded in `index.html` |
 
-The wordmark inside the logo image is a separate, fixed graphic. It is not typeset with Montserrat at runtime and must not be recreated with CSS text.
+The wordmark inside the logo image is a separate, fixed graphic. It is not typeset with Montserrat at runtime and must not be recreated with CSS text. The documentation site loads both families through `head` in `rspress.config.ts` and uses Montserrat for the home hero and feature titles; see [Rspress setup](/docs/guide-setup).
 
 ## Styling layers
 
