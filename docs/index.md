@@ -15,21 +15,21 @@ hero:
       link: /docs/quick-start
 features:
   - title: For Everyone
-    details: The website explained in everyday language, with no code or settings.
+    details: Plain-language pages about the group and its work, plus contact and legal.
     link: /for-everyone/
   - title: Docs
-    details: Technical project documentation, from structure to deployment.
+    details: From quick start and recipes through the reference pages and deployment.
     link: /docs/
   - title: Pages
-    details: Every website page, with a plain explanation and notes for maintainers.
+    details: One entry per website route, with a plain explanation and maintainer notes.
     link: /pages/
   - title: Docs › Docs Guide
-    details: How this documentation site is organised and how to read it.
+    details: Rspress setup and contributing rules for the docs site.
     link: /docs/guide-overview
   - title: Docs › Design system
-    details: Sampled logo colours, digital tokens and the paper-and-ink editorial system.
+    details: Brand tokens and type scale, with contrast ratios and the accessibility checklist.
     link: /docs/design-system
   - title: Changelog
-    details: What changed on the website and when.
+    details: Shipped work grouped by date and summarised from commits.
     link: /changelog/
 ---
