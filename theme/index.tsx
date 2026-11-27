@@ -2,7 +2,11 @@ import type { ComponentProps } from 'react';
 import type { Feature, SocialLink as ISocialLink } from '@rspress/core';
 import '@rspress/core/dist/theme/components/SocialLinks/index.css';
 import { useFrontmatter, useSite, socialLinks as socialLinkIcons } from '@rspress/core/runtime';
-import { HomeLayout as BasicHomeLayout, Link } from '@rspress/core/theme-original';
+import {
+  HomeLayout as BasicHomeLayout,
+  Layout as BasicLayout,
+  Link,
+} from '@rspress/core/theme-original';
 
 type HeroCopy = {
   name?: string;
@@ -136,6 +140,20 @@ function HomeStack() {
         </div>
       ) : null}
     </section>
+  );
+}
+
+/** The logo stays a symbol; the docs label sits beside it and drops on narrow screens. */
+export function Layout(props: ComponentProps<typeof BasicLayout>) {
+  return (
+    <BasicLayout
+      {...props}
+      afterNavTitle={
+        <Link href="/" className="docs-nav-title">
+          Lasuarindo Docs
+        </Link>
+      }
+    />
   );
 }
 
