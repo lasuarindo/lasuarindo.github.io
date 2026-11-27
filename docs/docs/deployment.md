@@ -1,5 +1,7 @@
 # Deployment
 
+This page follows a push to `main` from checkout through locale checks, build and the GitHub Pages deploy.
+
 ## Pipeline
 
 `.github/workflows/deploy.yml` runs on every push to `main` and on manual dispatch. It deploys the app build, not the docs site.
@@ -101,3 +103,5 @@ npx npm@10 ci --dry-run --ignore-scripts
 ## Docs site
 
 The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`. They are not part of the GitHub Pages workflow. `doc_build/` is gitignored. See [Quick start](/docs/quick-start) for the full script list.
+
+Next: [Troubleshooting](/docs/troubleshooting).

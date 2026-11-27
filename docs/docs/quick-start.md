@@ -34,16 +34,18 @@ npm run docs:dev
 
 Open `src/i18n/locales/id/home.json` and `src/i18n/locales/en/home.json`, find the `badge` key near the top, and replace both values with the same short phrase in the matching language. Keep the meaning identical; do not translate it mechanically.
 
+The values below are deliberately fake examples, not the strings currently in the repo, so following the steps produces a visible change.
+
 Indonesian, `src/i18n/locales/id/home.json`:
 
 ```json
-{ "badge": "GRUP INVESTASI, PROPERTI, TEKNOLOGI & GAYA HIDUP" }
+{ "badge": "CONTOH BADGE — UBAH TEKS INI" }
 ```
 
 English, `src/i18n/locales/en/home.json`:
 
 ```json
-{ "badge": "INVESTMENT, PROPERTY, TECHNOLOGY & LIFESTYLE GROUP" }
+{ "badge": "EXAMPLE BADGE — CHANGE THIS TEXT" }
 ```
 
 Start the app and check both languages:

@@ -170,3 +170,5 @@ These are the mechanisms that are actually present in the source, not generic ad
 ## Open questions
 
 These need a decision from the company before they can be written as facts: official brand hex codes, the meaning of the two arcs, minimum clearspace and display size for the mark, monochrome variants, and tone of voice for public copy.
+
+Next: [How-to recipes](/docs/how-to).

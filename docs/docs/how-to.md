@@ -59,7 +59,7 @@ Short procedures for common changes. Each recipe assumes the app is installed an
 5. For docs, add the page to its folder's `_meta.json`:
 
    ```json
-   { "type": "file", "name": "tutorial", "label": "First change" }
+   { "type": "file", "name": "first-change", "label": "First change" }
    ```
 
    A new section also needs an entry in `docs/_nav.json` and its own `_meta.json`.
@@ -67,3 +67,5 @@ Short procedures for common changes. Each recipe assumes the app is installed an
 ## Review a change remotely
 
 The dev server allows a small set of ngrok hosts in `vite.config.js`. Start `npm run dev`, expose the port with your ngrok account, and share the generated URL. The allowed hosts are fixed in config, so use one of those domains.
+
+Next: [Deployment](/docs/deployment).

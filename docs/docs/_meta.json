@@ -14,7 +14,7 @@
   { "type": "file", "name": "troubleshooting", "label": "Troubleshooting" },
   { "type": "divider" },
   { "type": "section-header", "label": "Docs Guide" },
-  { "type": "file", "name": "guide-overview", "label": "Overview" },
+  { "type": "file", "name": "guide-overview", "label": "Docs Guide" },
   { "type": "file", "name": "guide-setup", "label": "Setup" },
   { "type": "file", "name": "guide-contributing", "label": "Contributing" },
   { "type": "divider" },

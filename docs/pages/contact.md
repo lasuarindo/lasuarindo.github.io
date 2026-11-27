@@ -13,6 +13,8 @@ This page shows how to reach Lasuarindo Group. The form checks entries in your b
 
 The three cards open the engagement pages. Those pages in turn link back to this form with the correct subject selected.
 
+The `intent` query parameter accepts five keys from `contact.subjects`: `partnership`, `investor`, `collaboration`, `technology` and `general`. For example, `/contact?intent=partnership` opens the form with "Strategic Partnership" preselected.
+
 ## For maintainers
 
 - Route: `/contact` → `src/pages/Contact/Contact.jsx`, with `ContactHero`, `ContactForm`, `ContactMap` and `ContactPartnership`.

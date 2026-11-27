@@ -11,7 +11,7 @@ This section explains the documentation site itself: how it is built, navigated 
 | Pages | Writers and maintainers | Every page, with plain notes and technical notes together |
 | Changelog | Everyone | What changed and when |
 
-The Docs Guide is a group in the Docs sidebar, so open the Docs section to reach these pages. The home page opens from the logo in the top bar. The GitHub icon opens the Lasuarindo organisation; it is a link, not a section.
+The Docs Guide is a group in the Docs sidebar, so open the Docs section to reach these pages. Navigation details live in [Rspress setup](/docs/guide-setup).
 
 ## Suggested reading paths
 
@@ -22,4 +22,4 @@ The Docs Guide is a group in the Docs sidebar, so open the Docs section to reach
 
 ## How navigation works
 
-Each section has its own sidebar. Use the top bar to change section and the sidebar to move inside it. See [Contributing](/docs/guide-contributing#top-navigation) for how groups work.
+Each section has its own sidebar. Use the top bar to change section and the sidebar to move inside it. See [Rspress setup](/docs/guide-setup) for how the groups work.

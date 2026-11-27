@@ -57,7 +57,7 @@ The Docs sidebar is one example. The five section headers are plain labels, not 
   { "type": "file", "name": "troubleshooting", "label": "Troubleshooting" },
   { "type": "divider" },
   { "type": "section-header", "label": "Docs Guide" },
-  { "type": "file", "name": "guide-overview", "label": "Overview" },
+  { "type": "file", "name": "guide-overview", "label": "Docs Guide" },
   { "type": "file", "name": "guide-setup", "label": "Setup" },
   { "type": "file", "name": "guide-contributing", "label": "Contributing" },
   { "type": "divider" },
@@ -99,7 +99,7 @@ html.dark {
 }
 ```
 
-The `--rp-c-*` variables style ordinary pages; the `--rp-home-*` variables style the home page's hero and feature cards. The dark selector swaps both families at once. A small `.rp-home-hero__title-brand` override removes Rspress's gradient clip and hardcoded transparent text fill, so the hero label uses the flat colour independently of the brand CTA background.
+The `--rp-c-*` variables style ordinary pages; the `--rp-home-*` variables style the home page's hero and feature cards. The dark selector swaps both families at once. A small `html .rp-home-hero__title-brand` override removes Rspress's gradient clip and hardcoded transparent text fill, so the hero label uses the flat colour independently of the brand CTA background. The `html` prefix is needed because global styles are emitted before Rspress's own rule at the same specificity.
 
 ```mermaid
 flowchart LR
@@ -108,3 +108,5 @@ flowchart LR
     T["theme.css"] --> B
     B --> D["doc_build/"]
 ```
+
+Next: [Contributing](/docs/guide-contributing).

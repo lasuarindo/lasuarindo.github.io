@@ -13,4 +13,4 @@ The licensing page shares the basic licence information the group is able to pub
 - The **terms and conditions** set out general rules for using the site. This wording is general and needs legal review before it is treated as a binding agreement.
 - The **FAQ** gives short answers to common questions and points to the contact page when more help is needed.
 
-Some information is marked draft. See the [draft label definition](/docs/guide-contributing#draft-labels).
+Some information is marked draft. That means it is still being prepared, so treat it as an illustration rather than a confirmed fact.

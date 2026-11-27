@@ -6,7 +6,7 @@ A short record of work already shipped on the website. Entries below are summari
 
 - Restructured the documentation into Docs Guide, Docs, For Everyone, Pages and Changelog sections.
 - Moved navigation and sidebars into Rspress `_nav.json` and `_meta.json` files.
-- Added tutorial, how-to, troubleshooting and limitations pages to close the Diátaxis gaps; corrected stale navigation, brand-token and contact-form guidance, revisited earlier changelog entries, added real code snippets and expanded short descriptions (`17cf3b8`).
+- Added tutorial, how-to, troubleshooting and limitations pages to close the Diátaxis gaps (the tutorial and limitations material was later consolidated into Quick start); corrected stale navigation, brand-token and contact-form guidance, revisited earlier changelog entries, added real code snippets and expanded short descriptions (`17cf3b8`).
 - Consolidated 13 fragmented pages into 11 goal-oriented pages, kept Docs Guide as a sidebar group, and expanded the architecture guide with code examples for routing, assets, components, hooks, i18n and pages (`33161ca`).
 
 ## 2026-11-26

@@ -4,16 +4,11 @@ How this documentation site is navigated, read and maintained. For the applicati
 
 ## Top navigation
 
-The top bar lists four sections: For Everyone, Docs, Pages and Changelog. The Docs Guide is a group inside the Docs sidebar, not a top-level section. The home page opens from the logo, and the GitHub icon opens the Lasuarindo organisation as an external link.
+The top bar and the home entry are described in [Rspress setup](/docs/guide-setup).
 
 ## Sidebars
 
-- **For Everyone** explains the website in everyday language.
-- **Docs** holds the technical project documentation, including this guide group.
-- **Pages** describes each website page, with both plain and technical notes.
-- **Changelog** records what changed.
-
-Sidebar groups are plain section headers. Items sit at the same level as their header, and the current page is highlighted.
+See the [section table](/docs/guide-overview#the-sections) and [Rspress setup](/docs/guide-setup) for how the four sidebars are grouped. Sidebar groups are plain section headers; items sit at the same level as their header, and the current page is highlighted.
 
 ## Reading a page
 
@@ -23,7 +18,7 @@ Sidebar groups are plain section headers. Items sit at the same level as their h
 
 ## Draft labels
 
-When something is marked draft, it is still being prepared. Treat it as an illustration, not as a confirmed fact. This is the single definition used across the docs, so other pages link here instead of repeating it. Draft labels are intentional and should only be removed after the information is confirmed.
+When something is marked draft, it is still being prepared. Treat it as an illustration, not as a confirmed fact. This is the shared definition for Docs pages; plain-language sections may restate it in their own words. Draft labels are intentional and should only be removed after the information is confirmed.
 
 ## Conventions
 

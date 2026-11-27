@@ -1,6 +1,6 @@
 # Pages
 
-This section explains every page of the Lasuarindo Group website. Each page starts with a plain explanation, then ends with a "For maintainers" part containing technical details. If you want a version without any technical detail, use the [For Everyone](/for-everyone/) section instead.
+This section explains every page of the Lasuarindo Group website. Each page starts with a plain explanation and marks maintainer notes with a "For maintainers" heading. If you want a version without any technical detail, use the [For Everyone](/for-everyone/) section instead.
 
 ## The pages at a glance
 

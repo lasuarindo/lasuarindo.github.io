@@ -12,4 +12,4 @@ The website offers three ways to start a conversation with the group.
 
 Each page explains why the topic matters, who it suits, how a first conversation usually starts, and what kind of cooperation might follow.
 
-Programme details are marked draft on each page. When you follow the contact link, the contact form opens with the subject already filled in. See the [draft label definition](/docs/guide-contributing#draft-labels).
+Programme details are marked draft on each page. That means the detail is still being prepared, so treat it as an illustration rather than a confirmed plan. When you follow the contact link, the contact form opens with the subject already filled in.

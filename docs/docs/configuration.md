@@ -1,5 +1,7 @@
 # Configuration
 
+Scripts, Vite settings, lint rules, locale parity checks and the build-time environment variable live here.
+
 ## App scripts
 
 | Script | Command | Purpose |
@@ -91,3 +93,5 @@ Nothing secret is needed to build or run the app. The deploy workflow derives th
 ## Documentation site
 
 The Rspress setup, file-based navigation and theme live in the [Docs Guide](/docs/guide-overview) section.
+
+Next: [Deployment](/docs/deployment).
