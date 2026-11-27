@@ -88,11 +88,38 @@ A short record of work already shipped on the website. Entries below are summari
 - Code-split route pages with `React.lazy` and a `Suspense` fallback (`9a29ea7`).
 - Grouped Rolldown vendor chunks under `dist/assets/vendor` and enabled `codeSplitting`, reducing the app entry chunk (`a52928e`, `85f9545`).
 - Added motion, icon, styling and translation dependencies with dormant configuration (`49fb668`).
-- Two commits carry only the message "update by rafli" with no further detail (`ad092dc`, `3a20d86`).
+- Added `@tabler/icons-react` and brand-icon entries to the shared `Icon` component, then switched Footer, Contact and Services social links to those icons (`ad092dc`).
+- Replaced the hand-rolled context router with a `react-router` configuration and declarative redirects for the legacy Indonesian URLs (`3a20d86`). The same commit split the monolithic translation file into i18next namespaced locale JSONs and moved layout and page files to English names with aliases for the old ones:
+
+  ```jsx
+  // src/App.jsx
+  const router = createBrowserRouter([
+    {
+      element: <RootLayout />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: '/about-us',
+          element: <AboutUs />,
+        },
+  ```
 
 ## 2026-11-17
 
-- The only commit carries the message "update by rafli" with no further detail (`f651884`).
+- Added the initial React/Vite scaffold: a context-based custom router with legacy Indonesian redirects, an ID/EN language context with local dictionaries, CSS custom-property theme tokens, shared UI components and five page components (`f651884`). The token block already fixed the primary red used by the site:
+
+  ```css
+  /* src/index.css */
+  :root {
+    --color-primary: #b12600;
+    --color-primary-container: #d83910;
+    --color-on-primary: #ffffff;
+    --color-primary-fixed: #ffdad2;
+    --color-primary-fixed-dim: #ffb4a3;
+  ```
 
 ## How entries are added
 
