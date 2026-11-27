@@ -1,24 +1,25 @@
 # Contact
 
-Route: `/contact` — `src/pages/Contact/Contact.jsx`.
+This page shows how to reach Lasuarindo Group and sends visitors to the right conversation.
 
-Four sections:
+## What you can find
 
-1. **Hero** (`ContactHero`) — badge, two-line headline, lead paragraph.
-2. **Details and form** — address, email, and office hours on the left; social links; the contact form on the right (name, email, company, subject select, message).
-3. **Map** (`ContactMap`) — embedded Google Maps iframe (`loading="lazy"`, height switches between mobile and desktop).
-4. **Partnership CTA** (`ContactPartnership`) — three cards (strategic partnership, investor relations, collaboration).
+- The office address, email address and opening hours.
+- A short form with fields for name, email, company, subject and message.
+- A map showing where the office is.
+- Three cards for partnership, investor relations and collaboration.
 
-## Form state
+## Where it links
 
-Form state is local component state. Submitting runs client-side validation:
+The three cards open the engagement pages. Those pages in turn link back to this form with the correct subject selected.
 
-- missing required fields → error status with `alertIncomplete`
-- invalid email → error status with `alertEmailInvalid`
-- otherwise → success status with `alertSuccess`
+## Good to know
 
-There is no network request and no backend endpoint.
+At the moment the form only checks the entries on your screen. It tells you when something is missing or when an email address is not valid, but it does not send a message to a server yet.
 
-## Notes
+## For maintainers
 
-- Copy comes from `contact.json` (`{ contact: ... }` bundle, id + en) via `useStrings`, including `subjects` and the three `partnerCardsDesc` entries.
+- Route: `/contact` → `src/pages/Contact/Contact.jsx`, with `ContactHero`, `ContactForm`, `ContactMap` and `ContactPartnership`.
+- Form state is local; validation produces `alertIncomplete`, `alertEmailInvalid` or `alertSuccess`. There is no network request.
+- `intent` from the query string preselects a subject when it matches a key in `contact.subjects`.
+- Address, email, hours and social links come from `src/data/company.js`; copy comes from `contact.json` via `useContactStrings`.

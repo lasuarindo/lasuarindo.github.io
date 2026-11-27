@@ -1,0 +1,24 @@
+/* Rspress theme overrides.
+   Values mirror the site's digital tokens in src/constants/theme.js and
+   src/assets/css/tokens.css, so the documentation site uses the same brand. */
+
+:root {
+  --rp-c-brand: #b12600;          /* --color-primary */
+  --rp-c-brand-dark: #d83910;     /* --color-primary-container */
+  --rp-c-brand-darker: #8a1b00;   /* --color-on-primary-fixed-variant */
+  --rp-c-brand-light: #ffb4a3;    /* --color-primary-fixed-dim */
+  --rp-c-brand-lighter: #ffdad2;  /* --color-primary-fixed */
+
+  --rp-code-block-bg: #2f3131;    /* --color-inverse-surface */
+}
+
+html.rp-dark,
+html.dark {
+  --rp-c-brand: #ffb4a3;
+  --rp-c-brand-dark: #ffdad2;
+  --rp-c-brand-darker: #ffffff;
+  --rp-c-brand-light: #d83910;
+  --rp-c-brand-lighter: #b12600;
+
+  --rp-code-block-bg: #1b1b1a;    /* --color-ink */
+}

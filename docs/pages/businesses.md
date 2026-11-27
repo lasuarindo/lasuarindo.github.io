@@ -1,23 +1,32 @@
 # Businesses
 
-Route: `/businesses` — `src/pages/Businesses/Businesses.jsx`. The pre-migration
-`/services` path is retired and resolves to NotFound; it is not aliased here.
+This page describes the six areas of business that make up the group and the companies connected to them.
 
-Sections:
+## What you can find
 
-1. **Hero** (`BusinessesHero`) — headline, lead, and partnership CTA.
-2. **What we do** (`BusinessesIntro`) — defines the group's role using the six real business lines (F11) and twelve T46 units (F12).
-3. **Property** (`BusinessesProperty`) — feature card with three capabilities (planning, design & construction, property management) and a two-image stack.
-4. **Creative media** (`BusinessesMedia`) — three entity cards (MSS, Arcadia Segara Cita, Berkah Media Gemilang) with capability lists, plus platform icons.
-5. **Technology** (`BusinessesTechnology`) — dark section: Authentic Guards Technology and Berkah Megah Abadi, with an image grid.
-6. **Vamos Padelon** (`BusinessesVamos`) — partnership feature with facility tags and social links.
-7. **Ecosystem teaser** (`BusinessesEcosystem`) — three example units linking to `/units/:slug` and a CTA to `/ecosystems/t46`; the full twelve live on the district page.
-8. **Future projects** (`BusinessesProjects`) — four showcase cards (residential, digital hub, business ecosystem, sustainability).
-9. **How we work** (`BusinessesProcess`) — four illustrative steps from `drafts.md` §C.
-10. **FAQ teaser** and **final CTA** — shared components linking to `/faq` and `/contact`.
+- A plain introduction to what the group invests in and manages.
+- An overview of the six business areas: investment, property and districts, technology, media and creative work, food and consumer goods, and lifestyle.
+- Short sections on each area, with examples of the companies involved.
+- A preview of the units operating in T46.
+- A look at future projects.
+- A short explanation of how the group works, still marked draft.
+- A link to common questions and an invitation to contact the group.
 
-## Notes
+## Where it links
 
-- Section copy comes from `businesses.json` (`{ businesses: ... }` bundle, id + en) via `useStrings`.
-- The namespace was migrated mechanically from `services.*`; no `services.*` keys remain.
-- The footer shows the "creative ecosystem" gallery only on this route (route-aware, catalogue in `src/data/footerGallery.js`).
+- **Units** for the full directory of businesses.
+- **T46** for the district those businesses operate in.
+- **FAQ** for quick answers.
+- **Contact** to discuss a partnership.
+
+## Good to know
+
+An older page called Services has been retired. This page is its replacement. Some project descriptions are still illustrative and carry a draft label.
+
+## For maintainers
+
+- Route: `/businesses` → `src/pages/Businesses/Businesses.jsx`.
+- Copy: `businesses.json` through `useBusinessesStrings`; the namespace was migrated from `services.*`.
+- The sector grid reads `src/data/sectors.js`, the same catalogue used by Home.
+- Unit previews read `src/data/units.js`.
+- The footer gallery appears only on this route, using `src/data/footerGallery.js`.

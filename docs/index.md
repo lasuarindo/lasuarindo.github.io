@@ -1,10 +1,41 @@
-# Lasuarindo Docs
-
-Documentation for the PT Lasuarindo Group website.
-
-- **App:** React 19 + Vite 8 + Tailwind CSS 4 + React Router 7
-- **i18n:** i18next + react-i18next, one locale bundle per page
-- **Docs:** Rspress v2 (`rspress.config.ts` at the repo root)
-- **Deploy:** GitHub Pages via GitHub Actions
-
-Start with [Introduction](/introduction), then [Getting Started](/getting-started).
+---
+pageType: home
+title: Lasuarindo Docs
+titleSuffix: Documentation for the group website
+hero:
+  name: Lasuarindo Docs
+  text: The group's website, explained.
+  tagline: Start with Using the Docs, read the simple version, or go into the technical details.
+  actions:
+    - theme: brand
+      text: Read the guide
+      link: /guide/
+    - theme: alt
+      text: Read the simple version
+      link: /for-everyone/
+features:
+  - title: Using the Docs
+    details: How this documentation site is organised and how to read it.
+    icon: 🧭
+    link: /guide/
+  - title: For Everyone
+    details: The website explained in everyday language, with no code or settings.
+    icon: 💬
+    link: /for-everyone/
+  - title: Pages
+    details: Every website page, with a plain explanation and notes for maintainers.
+    icon: 📄
+    link: /pages/
+  - title: Docs
+    details: Technical project documentation, from structure to deployment.
+    icon: 🧱
+    link: /docs/
+  - title: Brand and styling
+    details: Sampled logo colours, digital tokens and the paper-and-ink editorial system.
+    icon: 🎨
+    link: /docs/brand
+  - title: Changelog
+    details: What changed on the website and when.
+    icon: 🚀
+    link: /changelog/
+---

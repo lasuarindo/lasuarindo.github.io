@@ -1,12 +1,23 @@
 # Terms & Conditions
 
-Route: `/legal/term-condition` — `src/pages/Terms/Terms.jsx`.
+This page sets out the general rules for using the website.
 
-- **Hero** — title, intro, and last-updated date.
-- **Seven articles** rendered from `t.terms.sections` in `terms.json` (id + en), separated by dividers.
-- **Contact CTA** — links to `/contact`.
+## What you can find
 
-## Notes
+- A short introduction and the date the terms were last updated.
+- Seven numbered sections covering the usual terms of website use.
+- A way to contact the group at the end.
 
-- The copy is intentionally generic. It must be reviewed by legal counsel before being relied on as a binding document.
-- Metadata comes from `src/data/pageMeta.js` (`terms` key).
+## Where it links
+
+The legal index links to the terms. The page also has a contact link.
+
+## Good to know
+
+The wording is general. It should be reviewed by a legal professional before it is relied on as a binding document.
+
+## For maintainers
+
+- Route: `/legal/term-condition` → `src/pages/Terms/Terms.jsx`, with `TermsHero` and `TermsContent`.
+- Seven articles are rendered from `t.terms.sections` in `terms.json` (id + en) via `useTermsStrings`.
+- Metadata uses the `terms` key in `src/data/pageMeta.js`.

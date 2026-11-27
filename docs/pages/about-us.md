@@ -1,22 +1,31 @@
 # About Us
 
-Route: `/about-us` — `src/pages/AboutUs/AboutUs.jsx`.
+This page answers the question "who are we?". It explains what the group believes, how it is led, and how it has developed over time.
 
-Nine sections:
+## What you can find
 
-1. **Hero** (`AboutHero`) — "Siapa Kami" headline, lead paragraphs, and a four-item feature strip.
-2. **Vision & mission** (`AboutVision`) — existing `about.json` keys rendered in a `<section id="visi">`, the target of the Home hero's *Our Vision* button, with a secondary link → `/businesses`.
-3. **Values** (`AboutValues`) — grid of `{ icon, text: { id, en } }` values from `about.json`.
-4. **Values / strength statement** (`AboutStrengths`) — centred statement between two `66` / `99` markers.
-5. **Founder's message** (`AboutFounder`) — portrait and quote block (Mochamad Ryan Januar Akbar, Founder & CEO).
-6. **Commissioner's message** (`AboutCommissioner`) — quote block and portrait (Herawati, Commissioner).
-7. **Timeline** (`AboutTimeline`) — four milestones from drafts.md §B (temporary content).
-8. **Strategic network** (`AboutNetwork`) — strip sourced from `data/network.js`.
-9. **Final CTA** (`FinalCta`) — `Bermitra Dengan Kami` → `/contact`.
+- The group's vision and mission.
+- The values the group says it works by.
+- A short statement about its strengths.
+- Messages from the founder and the commissioner.
+- A timeline of four milestones.
+- A look at the wider network the group works with.
+- An invitation to get in touch.
 
-Founder and commissioner names, roles and image alt text come from `src/data/leadership.js`.
+## Where it links
 
-## Notes
+- **Businesses** to see what the group actually does.
+- **Contact** to start a conversation.
+- The home page links to the vision section on this page.
 
-- All copy comes from `about.json` (`{ about: ... }` bundle, id + en) via `useStrings`.
-- Headline pairs are split into keys (`heroTitle1`/`heroTitle2`, `valuesHeading1`/`valuesHeading2`) so the second half can be highlighted.
+## Good to know
+
+The timeline is still illustrative. Its details are marked draft, so they should not be read as confirmed company history yet.
+
+## For maintainers
+
+- Route: `/about-us` → `src/pages/AboutUs/AboutUs.jsx`.
+- Copy: `about.json` through `useAboutStrings`; headlines are split into pairs so the second half can be highlighted.
+- Data: `src/data/leadership.js`, `src/data/network.js` and `src/data/timelineDetails.js`; timeline details are draft.
+- The vision section is the anchor target `#visi` used by the Home hero.
+- The timeline carousel uses `embla-carousel-react`.

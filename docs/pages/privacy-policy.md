@@ -1,14 +1,24 @@
 # Privacy Policy
 
-Route: `/legal/privacy-policy` — `src/pages/PrivacyPolicy/PrivacyPolicy.jsx`.
+This page explains how personal information is handled when you use the website.
 
-- **Hero** — title and intro.
-- **Sticky table of contents** — a sidebar list of the eight articles. It is `position: sticky` only from the `lg` breakpoint (`lg:top-[100px]`); below that it stacks above the content.
-- **Eight articles**, each an anchored block: `pendahuluan`, `informasi-dikumpulkan`, `penggunaan-informasi`, `perlindungan-data`, `berbagi-data`, `cookies`, `hak-pengguna`, `perubahan-kebijakan`.
+## What you can find
 
-## Notes
+- An introduction to the policy.
+- Eight short articles covering what information is collected, how it is used, how it is protected, when it may be shared, cookies, your rights and changes to the policy.
+- A table of contents that stays visible while you read on a large screen.
 
-- TOC entries come from `t.privacy.toc` in `privacy.json` and are matched to the article `id`s, so adding an article means adding one entry to both locales.
-- In-page jumps rely on `scroll-behavior: smooth` (set on `html`).
-- The sticky TOC is the reason `overflow-x: clip` is used instead of `hidden` on `html`, `body`, and `.page` — see [Styling](/styling).
-- Hero, TOC, and all eight articles come from `privacy.json` (`{ privacy: ... }` bundle, id + en), including the cookie table and user-rights content.
+## Where it links
+
+The legal index links to the privacy policy. At the end of the page you can contact the group.
+
+## Good to know
+
+Cookies are described in their own article. On smaller screens the table of contents appears above the articles instead of alongside them.
+
+## For maintainers
+
+- Route: `/legal/privacy-policy` → `src/pages/PrivacyPolicy/PrivacyPolicy.jsx`, with `PrivacyHero` and `PrivacyContent`.
+- Eight anchored articles; the TOC comes from `t.privacy.toc` and must be updated in both locales when an article is added.
+- The sticky TOC starts at the `lg` breakpoint (`lg:top-[100px]`). It is the reason `html`, `body` and `.page` use `overflow-x: clip` instead of `hidden`.
+- Metadata uses the `privacy` key, resolved before the parent `/legal` key.

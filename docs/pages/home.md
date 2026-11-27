@@ -1,19 +1,32 @@
 # Home
 
-Route: `/` — `src/pages/Home/Home.jsx`.
+The home page is the first page most visitors see. It introduces Lasuarindo Group in a few lines, shows what the group works in, and helps people choose where to go next.
 
-The page composes seven sections:
+## What you can find
 
-1. **Hero** (`HomeHero`) — badge, four-line headline, lead paragraph, and two CTAs: *Explore Our Businesses* → `/businesses`, *Our Vision* → `/about-us#visi`. Integrity and innovation cards are repeated in desktop and mobile variants.
-2. **Ecosystem** (`HomeEcosystem`) — bento grid of the six business lines read from `src/data/sectors.js`, plus a CTA → `/businesses`. The line with `highlight: true` (technology) gets the focus tag.
-3. **T46 preview** (`HomeT46Preview`) — six example units from `src/data/units.js` with a CTA → `/ecosystems/t46`.
-4. **Impact** (`HomeImpact`) — three figures: 12 units (F12), 6 business lines (F11), and one temporary illustrative value (drafts.md §A, N1).
-5. **Journey / Partnership** (`HomeJourney`) — dark section with the partnership image, two paragraphs, and three links to `/contact`.
-6. **FAQ teaser** (`FaqTeaser`) — one question and a link to `/faq`.
-7. **Final CTA** (`FinalCta`) — `Bermitra Dengan Kami` → `/contact`.
+- A short introduction to the group and its way of working.
+- The six areas of business the group is involved in.
+- A small preview of the businesses in the T46 district.
+- Three figures that summarise the group at a glance. One of them is still a placeholder.
+- A short partnership story and a link to the FAQ.
+- A closing invitation to get in touch.
 
-## Notes
+## Where it links
 
-- Sector titles and descriptions are localised inline in `sectors.js` as `{ id, en }` objects and resolved with `localized()` — they are not i18n keys.
-- All other copy comes from `home.json` through `useStrings`.
-- Scroll-reveal animations run through `AnimatedReveal`.
+- **Businesses** for the full description of what the group does.
+- **Our Vision** on the About Us page.
+- **T46** for the district and its businesses.
+- **Contact** for questions or partnerships.
+- **FAQ** for quick answers.
+
+## Good to know
+
+Some figures and stories are still being prepared. When a label says draft, the information is illustrative and should not be treated as final.
+
+## For maintainers
+
+- Route: `/` → `src/pages/Home/Home.jsx`, loaded as a lazy chunk.
+- Copy: `home.json` through `useHomeStrings`, in both `id` and `en`.
+- Data: `src/data/sectors.js` and `src/data/units.js`, resolved with `localized()`.
+- Imagery: `src/assets/images/opt/`, including responsive hero sizes.
+- SEO: the `home` entry in `src/data/pageMeta.js`.
