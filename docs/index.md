@@ -40,29 +40,47 @@ specs:
     - label: Stack
       items:
         - term: Docs
-          value: Rspress v2 + Mermaid
+          value: Rspress v2
+          url: https://www.npmjs.com/package/@rspress/core
+        - term: Diagrams
+          value: rspress-plugin-mermaid
+          url: https://www.npmjs.com/package/rspress-plugin-mermaid
         - term: App
-          value: React 19 + React Router 7
+          value: React 19
+          url: https://www.npmjs.com/package/react
+        - term: Routing
+          value: React Router 7
+          url: https://www.npmjs.com/package/react-router
         - term: Build
-          value: Vite 8 + Tailwind CSS 4
+          value: Vite 8
+          url: https://www.npmjs.com/package/vite
+        - term: Styling
+          value: Tailwind CSS 4
+          url: https://www.npmjs.com/package/tailwindcss
         - term: Copy
-          value: i18next — id / en
+          value: i18next
+          url: https://www.npmjs.com/package/i18next
         - term: Checks
           value: oxlint
+          url: https://www.npmjs.com/package/oxlint
     - label: Environment
       items:
         - term: Node
           value: 22
+          url: https://nodejs.org/
         - term: npm
           value: 10
+          url: https://www.npmjs.com/package/npm
         - term: App out
           value: dist/
         - term: Docs out
           value: doc_build/
         - term: Host
           value: GitHub Pages
+          url: https://docs.github.com/en/pages
         - term: Source
           value: github.com/lasuarindo
+          url: https://github.com/lasuarindo
   action:
     text: Full setup
     link: /docs/quick-start

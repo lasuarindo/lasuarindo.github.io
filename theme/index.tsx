@@ -15,7 +15,7 @@ type Specs = {
   eyebrow?: string;
   title?: string;
   note?: string;
-  groups?: { label: string; items: { term: string; value: string }[] }[];
+  groups?: { label: string; items: { term: string; value: string; url?: string }[] }[];
   action?: { text: string; link: string };
 };
 
@@ -106,7 +106,22 @@ function HomeStack() {
               {group.items.map(item => (
                 <div className="docs-stack__row" key={item.term}>
                   <dt className="docs-stack__term">{item.term}</dt>
-                  <dd className="docs-stack__value">{item.value}</dd>
+                  <dd className="docs-stack__value">
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="docs-stack__source"
+                        aria-label={`${item.value} (opens in a new tab)`}
+                      >
+                        {item.value}
+                        <span className="docs-stack__external" aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      item.value
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>
