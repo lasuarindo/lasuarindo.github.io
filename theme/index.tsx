@@ -1,4 +1,6 @@
 import type { Feature, SocialLink as ISocialLink } from '@rspress/core';
+import '@rspress/core/dist/theme/components/HomeFeature/index.css';
+import '@rspress/core/dist/theme/components/SocialLinks/index.css';
 import { socialLinks as socialLinkIcons, useFrontmatter, useSite } from '@rspress/core/runtime';
 import {
   HomeLayout as BasicHomeLayout,

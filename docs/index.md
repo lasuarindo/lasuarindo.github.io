@@ -8,10 +8,10 @@ hero:
   tagline: Start with For Everyone for a plain-language overview, or use Docs for the technical details.
   actions:
     - theme: brand
-      text: Read about the group
+      text: For Everyone
       link: /for-everyone/
     - theme: alt
-      text: Work on the site
+      text: Docs
       link: /docs/quick-start
 features:
   - title: Docs › Docs Guide
