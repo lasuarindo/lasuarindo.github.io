@@ -1,6 +1,6 @@
 # Contact
 
-This page shows how to reach Lasuarindo Group and sends visitors to the right conversation.
+This page shows how to reach Lasuarindo Group. The form checks entries in your browser but does not send messages. Use contact@lasuarindo.co.id to reach the group.
 
 ## What you can find
 
@@ -9,13 +9,9 @@ This page shows how to reach Lasuarindo Group and sends visitors to the right co
 - A map showing where the office is.
 - Three cards for partnership, investor relations and collaboration.
 
-## Where it links
+**Where it links.**
 
 The three cards open the engagement pages. Those pages in turn link back to this form with the correct subject selected.
-
-## Good to know
-
-At the moment the form only checks the entries on your screen. It tells you when something is missing or when an email address is not valid, but it does not send a message to a server yet.
 
 ## For maintainers
 

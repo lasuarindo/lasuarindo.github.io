@@ -40,7 +40,7 @@ Defined in `src/constants/theme.js`, exposed as CSS custom properties in `src/as
 | `--color-surface` | `#f9f9f9` | Light section background |
 | `--color-error` | `#ba1a1a` | Error state only, not a brand colour |
 
-There is no token matching the logo red exactly, and no token for the logo orange. Do not describe `#b12600` or `#d83910` as "the logo colour"; they are the darker digital adaptation.
+No token matches the logo red exactly. The logo orange is available as `--color-accent-orange` (`#f68d22`), but it stays decorative only. Do not describe `#b12600` or `#d83910` as "the logo colour"; they are the darker digital adaptation.
 
 ## Typography
 

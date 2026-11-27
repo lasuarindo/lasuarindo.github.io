@@ -18,9 +18,9 @@ This page answers the question "who are we?". It explains what the group believe
 - **Contact** to start a conversation.
 - The home page links to the vision section on this page.
 
-## Good to know
+**Timeline status.**
 
-The timeline is still illustrative. Its details are marked draft, so they should not be read as confirmed company history yet.
+The four milestones are illustrative and marked draft. They should not be read as confirmed company history. See the [draft label definition](/guide/reading-a-page#draft-labels).
 
 ## For maintainers
 

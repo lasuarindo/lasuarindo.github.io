@@ -4,7 +4,7 @@ This site is split into sections. Each section has its own sidebar so the links 
 
 ## Top navigation
 
-The top bar lists the sections in this order: Guide, For Everyone, Docs, Pages, Changelog and GitHub. Choosing a section takes you to its starting page. GitHub opens the Lasuarindo organisation. The home page opens from the logo.
+The top bar lists five sections in this order: Guide, For Everyone, Docs, Pages and Changelog. Choosing a section takes you to its starting page. The home page opens from the logo, and the GitHub icon opens the Lasuarindo organisation as an external link.
 
 ## Sidebars
 
@@ -13,7 +13,6 @@ The top bar lists the sections in this order: Guide, For Everyone, Docs, Pages, 
 - **Docs** holds the technical project documentation.
 - **Pages** describes each website page, with both plain and technical notes.
 - **Changelog** records what changed.
-- **GitHub** opens the Lasuarindo organisation repository.
 
 Sidebar groups are plain section headers. Items sit at the same level as their header, and the current page is highlighted so you can see where you are.
 

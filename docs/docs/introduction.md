@@ -75,4 +75,4 @@ flowchart TD
 
 ## Draft content
 
-A few sections are labelled draft in the interface: the planned district, the licensing page, engagement programme details, and parts of the About timeline and unit copy. The labels are intentional. They tell readers which statements are illustrative and which are verified, and they should not be removed until the underlying data is confirmed. When you add content, add both `id` and `en`, then run `npm run check:parity`.
+The planned district, licensing page, engagement details, and parts of the About timeline and unit copy are marked draft. See the [draft label definition](/guide/reading-a-page#draft-labels). When you add content, add both `id` and `en`, then run `npm run check:parity`.

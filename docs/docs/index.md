@@ -30,4 +30,4 @@ Technical documentation for the Lasuarindo Group website. This section is for pe
 - Need to understand routing, translations or metadata? See [Architecture](/docs/architecture).
 - Need to change how things look? See [Styling](/docs/styling) and [Brand](/docs/brand).
 
-A few catalogue entries and page copy are deliberately marked as draft. Those labels are the source of truth: do not turn an illustrative value into a company fact. When adding content, add both `id` and `en`, then run `npm run check:parity`.
+Some catalogue entries are marked draft. See the [draft label definition](/guide/reading-a-page#draft-labels). When adding content, add both `id` and `en`, then run `npm run check:parity`.

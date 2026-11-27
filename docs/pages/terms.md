@@ -1,4 +1,4 @@
-# Terms & Conditions
+# Terms and Conditions
 
 This page sets out the general rules for using the website.
 
@@ -8,13 +8,13 @@ This page sets out the general rules for using the website.
 - Seven numbered sections covering the usual terms of website use.
 - A way to contact the group at the end.
 
-## Where it links
+**Where it links.**
 
 The legal index links to the terms. The page also has a contact link.
 
-## Good to know
+**Legal review.**
 
-The wording is general. It should be reviewed by a legal professional before it is relied on as a binding document.
+The wording is general and is not written for a specific jurisdiction. It should be reviewed by a legal professional before anyone relies on it as a binding document.
 
 ## For maintainers
 

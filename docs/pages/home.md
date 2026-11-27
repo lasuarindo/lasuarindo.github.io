@@ -19,9 +19,9 @@ The home page is the first page most visitors see. It introduces Lasuarindo Grou
 - **Contact** for questions or partnerships.
 - **FAQ** for quick answers.
 
-## Good to know
+**Draft figures.**
 
-Some figures and stories are still being prepared. When a label says draft, the information is illustrative and should not be treated as final.
+The impact section shows three numbers: the unit count, the business-line count, and one placeholder. The placeholder is marked draft until a verified value is available. See the [draft label definition](/guide/reading-a-page#draft-labels).
 
 ## For maintainers
 

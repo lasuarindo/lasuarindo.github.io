@@ -10,7 +10,7 @@ This page explains how to reach the group and what to do when you need help.
 
 ## The contact form
 
-The form asks for your name, email, company, subject and message. At the moment it checks your entries on screen and tells you when something is missing or when an email address is not valid. It does not send a message to a server yet.
+The form asks for your name, email, company, subject and message. It checks entries in your browser and tells you when something is missing or when an email address is not valid. It does not send a message to a server.
 
 A map on the page shows where the office is. Three cards link to the partnership, investor and collaboration pages.
 

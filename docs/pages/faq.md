@@ -8,13 +8,13 @@ The FAQ answers the questions people ask most often about the group, its busines
 - A list of questions that open to show their answers.
 - A link to the contact page for anything not covered.
 
-## Where it links
+**Where it links.**
 
 The home page and the Businesses page show a single question with a link to the FAQ. The contact page is the next step when an answer is not enough.
 
-## Good to know
+**Where answers come from.**
 
-The answers reuse facts that are already published elsewhere on the website. No new company claims are introduced on this page.
+The answers reuse facts already published on the Businesses, Contact and ecosystem pages. The FAQ introduces no new company claims; it only groups existing answers in one place.
 
 ## For maintainers
 

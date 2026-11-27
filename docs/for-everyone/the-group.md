@@ -10,6 +10,6 @@ Lasuarindo Group is an Indonesian business and investment group. The website int
 - A timeline of four milestones. The details are still marked draft, so they should not be read as final history.
 - The wider network of organisations the group works with.
 
-## In plain terms
+## What the site covers
 
 The About Us page is the place to read who the group is and how it sees its work. The Businesses page then shows what the group actually does.

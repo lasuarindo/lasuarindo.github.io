@@ -6,9 +6,9 @@ A short checklist for anyone updating this repository. It is written in plain st
 
 1. Decide which section the change belongs to: [For Everyone](/for-everyone/), [Pages](/pages/) or [Docs](/docs/).
 2. If the change adds or edits website copy, update both language files.
-3. Run the parity check so a missing translation fails early.
-4. Run the linter and the app build.
-5. Build the documentation site to catch broken links.
+3. Run `npm run check:parity` so a missing translation fails early.
+4. Run `npm run lint` and `npm run build`.
+5. Run `npm run docs:build` to catch broken doc links.
 6. Add a short entry to [Changelog](/changelog/) once the change is shipped.
 
 ## New pages

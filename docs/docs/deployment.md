@@ -38,7 +38,7 @@ Deep links such as `/about-us` work because GitHub Pages serves `404.html` for u
 
 ## Static SEO assets
 
-`robots.txt` and `sitemap.xml` are served as-is from `public/`. They are not generated from the route table, so a new public route must be added to the sitemap by hand. The sitemap currently uses `www.lasuarindo.co.id` as its host and has not caught up with the engagement pages; align it with the live domain and the route table before relying on it.
+`robots.txt` and `sitemap.xml` are served as-is from `public/`. They are not generated from the route table, so a new public route must be added to the sitemap by hand. The sitemap uses `www.lasuarindo.co.id` as its host and does not include the engagement routes; the site is served at `https://lasuarindo.github.io/`. See [Limitations](/docs/limitations).
 
 ## Lock file
 

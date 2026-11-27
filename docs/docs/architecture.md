@@ -35,7 +35,7 @@ flowchart TD
 | `/faq` | FAQ |
 | `/legal` | Legal index |
 | `/legal/privacy-policy` | Privacy Policy |
-| `/legal/term-condition` | Terms & Conditions |
+| `/legal/term-condition` | Terms and Conditions |
 | `/partnership` | Partnership |
 | `/investor` | Investor relations |
 | `/collaboration` | Collaboration |
@@ -105,7 +105,7 @@ Catalogue entries marked `status: 'draft'` render a visible draft badge or note.
 
 `StructuredData` writes a JSON-LD `Organization` graph on every page and adds `LocalBusiness` on `/ecosystems/t46`. Values come from `company.js`; unverified fields such as coordinates, telephone and founding date are intentionally absent.
 
-One gap to be aware of: `resolvePageMetaKey` has no cases for `/partnership`, `/investor` or `/collaboration`, so those three pages currently fall back to the `notFound` metadata entry. Per-page entries still need to be added.
+`resolvePageMetaKey` has no cases for `/partnership`, `/investor` or `/collaboration`, so those three pages use the `notFound` metadata entry. See [Limitations](/docs/limitations).
 
 Static `robots.txt` and `sitemap.xml` are served from `public/`. They are plain files, not generated from the route table, so a new public route has to be added there too.
 

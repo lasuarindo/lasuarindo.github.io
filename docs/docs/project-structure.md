@@ -63,7 +63,7 @@ lasuarindo.github.io/
 | Add a menu or footer link | `src/data/navigation.js` and `common.json` |
 | Change page titles or descriptions | `src/data/pageMeta.js` |
 | Change design tokens or the editorial system | `src/constants/theme.js`, `assets/css/tokens.css`, `assets/css/editorial.css` |
-| Add a docs page | `docs/` and `rspress.config.ts` |
+| Add a docs page | `docs/` plus its folder's `_meta.json`; `_nav.json` for a new section |
 
 ## Conventions worth knowing
 

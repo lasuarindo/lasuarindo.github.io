@@ -11,14 +11,14 @@ These pages show where the group's businesses operate and introduce each one ind
 - An individual page for each unit, with an overview, its capabilities and images.
 - A planned future ecosystem, clearly marked as draft.
 
-## Where it links
+**Where it links.**
 
 - **Contact** for questions about the district or a unit.
 - **Businesses** for the wider description of the group's work.
 
-## Good to know
+**Draft entries.**
 
-A unit or district marked draft is still being prepared. The directory contains twelve units in three categories: directly managed, partnerships and the district ecosystem.
+The planned district is marked draft, and some unit entries carry draft markers for illustrative copy. See the [draft label definition](/guide/reading-a-page#draft-labels). The directory contains twelve units in three categories: directly managed, partnerships and the district ecosystem.
 
 ## For maintainers
 

@@ -8,13 +8,13 @@ This page explains how personal information is handled when you use the website.
 - Eight short articles covering what information is collected, how it is used, how it is protected, when it may be shared, cookies, your rights and changes to the policy.
 - A table of contents that stays visible while you read on a large screen.
 
-## Where it links
+**Where it links.**
 
 The legal index links to the privacy policy. At the end of the page you can contact the group.
 
-## Good to know
+**Reading the policy.**
 
-Cookies are described in their own article. On smaller screens the table of contents appears above the articles instead of alongside them.
+The eight articles cover collection, use, protection, sharing, cookies, user rights and policy changes, with cookies in their own article. On smaller screens the table of contents appears above the articles instead of alongside them.
 
 ## For maintainers
 

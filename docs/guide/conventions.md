@@ -12,7 +12,7 @@ Proper names, such as a person's name or a product name, are not translated. Num
 
 ## Draft markers
 
-Draft is a status, not a style choice. It tells readers that a section is still being prepared. Do not remove a draft marker until the information is confirmed.
+Use "marked draft" and link to the [draft label definition](/guide/reading-a-page#draft-labels). Do not remove a marker until the information is confirmed.
 
 ## Where to write
 

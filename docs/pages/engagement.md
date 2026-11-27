@@ -12,11 +12,11 @@ Each page follows the same simple shape: why the topic matters, who it suits, ho
 
 ## Where it links
 
-Each page ends with a contact invitation. Following it opens the contact form with the right subject already selected, so the message reaches the right conversation.
+Each page ends with a contact invitation. Following it opens the contact form with the right subject already filled in. The form validates entries in your browser; it does not send messages. See [Contact](/pages/contact).
 
-## Good to know
+**Programme details.**
 
-The exact programme details are still being prepared. That is why each page carries a draft note. You can find the three pages in the site footer and on the Contact page.
+Programme details are marked draft on each page, so treat the listed formats as illustrative rather than final. You can find the three pages in the site footer and on the Contact page.
 
 ## For maintainers
 

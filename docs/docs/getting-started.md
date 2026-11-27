@@ -39,7 +39,7 @@ npm run docs:dev
 
 **Factual data.** Business lines, units, districts, contact details and licensing live in `src/data/`. Translatable fields are `{ id, en }` pairs and are read with `localized(value, language)`.
 
-**A new route.** Add the path to `src/app/paths.js`, the lazy import to `src/app/pages.jsx`, the route to `src/app/routes.jsx`, and a metadata entry to `src/data/pageMeta.js`. For a top-level page, also update `src/data/navigation.js` and `public/sitemap.xml`, then add a page under `docs/pages/` and register it in `rspress.config.ts`.
+**A new route.** Add the path to `src/app/paths.js`, the lazy import to `src/app/pages.jsx`, the route to `src/app/routes.jsx`, and a metadata entry to `src/data/pageMeta.js`. For a top-level page, also update `src/data/navigation.js` and `public/sitemap.xml`. For docs, add the page to its folder's `_meta.json`; a new section also needs an entry in `docs/_nav.json` and its own `_meta.json`.
 
 ## Verification
 

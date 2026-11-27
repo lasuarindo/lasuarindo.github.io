@@ -21,4 +21,4 @@ These pages assume you are working on the project. They use technical terms and 
 
 ## Draft labels
 
-When something is marked draft, it is still being prepared. Treat it as an illustration, not as a confirmed fact. Draft labels are intentional and should only be removed after the information is confirmed.
+When something is marked draft, it is still being prepared. Treat it as an illustration, not as a confirmed fact. This is the single definition used across the docs, so other pages link here instead of repeating it. Draft labels are intentional and should only be removed after the information is confirmed.

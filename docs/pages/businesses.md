@@ -19,9 +19,9 @@ This page describes the six areas of business that make up the group and the com
 - **FAQ** for quick answers.
 - **Contact** to discuss a partnership.
 
-## Good to know
+**Draft content.**
 
-An older page called Services has been retired. This page is its replacement. Some project descriptions are still illustrative and carry a draft label.
+An older page called Services has been retired; this page is its replacement. The working-steps section and some project descriptions are illustrative and marked draft. See the [draft label definition](/guide/reading-a-page#draft-labels).
 
 ## For maintainers
 

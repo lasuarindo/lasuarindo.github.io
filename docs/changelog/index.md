@@ -2,6 +2,11 @@
 
 A short record of work already shipped on the website. Entries below are summarised from the repository's commit messages, grouped by date. They are a development record, not a legal or contractual document.
 
+## 2026-11-27
+
+- Restructured the documentation into Guide, Docs, For Everyone, Pages and Changelog sections.
+- Moved navigation and sidebars into Rspress `_nav.json` and `_meta.json` files.
+
 ## 2026-11-26
 
 - Diversified unit imagery and gallery assets.

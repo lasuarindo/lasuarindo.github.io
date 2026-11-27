@@ -4,18 +4,18 @@ These pages publish the group's basic legal information and the documents that e
 
 ## What you can find
 
-- A licensing page with the basic licence information the group is able to publish. At present this is the Business Identification Number.
+- A licensing page with the basic licence information the group is able to publish. The catalogue contains one confirmed entry: the Business Identification Number.
 - A legal index that collects the site's policy documents.
 - A privacy policy explaining how personal information is handled.
 - Terms and conditions for using the site.
 
-## Where it links
+**Where it links.**
 
 The legal index links to the privacy policy and the terms. Each document links back to the contact page.
 
-## Good to know
+**Unpublished fields.**
 
-Licence numbers, issuers and years are not published because they have not been confirmed. The licensing page says so openly. The terms are general wording and need a legal review before anyone treats them as a binding agreement.
+The licence catalogue records only a name and a category. Numbers, issuers and years are not published because they have not been confirmed, and the licensing page says so openly. The terms are general wording and need a legal review before anyone treats them as a binding agreement.
 
 ## For maintainers
 
