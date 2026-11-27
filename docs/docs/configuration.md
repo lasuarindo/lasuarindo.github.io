@@ -22,6 +22,28 @@
 - Plugins: `@vitejs/plugin-react` and `@tailwindcss/vite`.
 - The dev server allows a small set of ngrok hosts so a local instance can be shared for review.
 
+The relevant part of the file (vendor chunk groups are covered below):
+
+```js
+// vite.config.js
+import path from 'node:path'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'
+
+const base = process.env.BASE_PATH || '/'
+
+export default defineConfig({
+  base,
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': path.resolve(import.meta.dirname, './src'),
+    },
+  },
+})
+```
+
 ### Vendor chunks
 
 Vite 8 bundles with Rolldown. Chunks are declared under `build.rolldownOptions.output.codeSplitting.groups`. The older `advancedChunks` option is deprecated and ignored when `codeSplitting` is present:
@@ -56,7 +78,15 @@ This is why a copy change should always touch both locale files. See [Quick star
 
 ## Environment
 
-No `.env` file is required. `BASE_PATH` is the only build-time variable and is set by the deploy workflow. Nothing secret is needed to build or run the app.
+No `.env` file is required. `BASE_PATH` is the only build-time variable: `vite.config.js` falls back to `/` when it is unset, and the deploy workflow sets the correct value for the repository.
+
+| Situation | `BASE_PATH` | Effect on built asset URLs |
+|---|---|---|
+| Organisation or user site (`<owner>.github.io`) | `/` | `/assets/...` |
+| Project site (`<owner>.github.io/<repo>/`) | `/<repo>/` | `/<repo>/assets/...` |
+| Local `npm run dev` / `npm run preview` | unset, so `/` | `/assets/...` |
+
+Nothing secret is needed to build or run the app. The deploy workflow derives the value from `GITHUB_REPOSITORY`; see [Deployment](/docs/deployment).
 
 ## Documentation site
 

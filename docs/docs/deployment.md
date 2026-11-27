@@ -26,6 +26,50 @@ flowchart LR
 7. Copy `dist/index.html` to `dist/404.html` as an SPA fallback.
 8. `actions/configure-pages@v5` and `actions/upload-pages-artifact@v3`.
 
+### Workflow excerpt
+
+The build job's steps in `.github/workflows/deploy.yml` (comments omitted):
+
+```yaml
+- name: Checkout
+  uses: actions/checkout@v4
+
+- name: Derive BASE_PATH
+  run: |
+    REPO="${GITHUB_REPOSITORY#*/}"
+    if [[ "$REPO" == *.github.io ]]; then
+      echo "BASE_PATH=/" >> "$GITHUB_ENV"
+    else
+      echo "BASE_PATH=/$REPO/" >> "$GITHUB_ENV"
+    fi
+
+- name: Setup Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: 22
+    cache: npm
+
+- name: Install dependencies
+  run: npm ci
+
+- name: Check i18n parity
+  run: npm run check:parity
+
+- name: Build
+  run: npm run build
+
+- name: SPA fallback for GitHub Pages
+  run: cp dist/index.html dist/404.html
+
+- name: Setup Pages
+  uses: actions/configure-pages@v5
+
+- name: Upload artifact
+  uses: actions/upload-pages-artifact@v3
+  with:
+    path: dist
+```
+
 A second job publishes the artifact with `actions/deploy-pages@v4`. The `pages` concurrency group with `cancel-in-progress` keeps one deploy at a time; the latest run wins.
 
 ## One-time activation

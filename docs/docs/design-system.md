@@ -113,7 +113,52 @@ The documentation site maps the same tokens onto Rspress's `--rp-c-*` and `--rp-
 
 ## Accessibility
 
-Contrast against white, computed from the hex values above:
+### Component checklist
+
+These are the mechanisms that are actually present in the source, not generic advice.
+
+- [x] **Skip link.** `RootLayout.jsx` renders the link before the header, and the main landmark is `<main id="main" className="page">`. In `chrome.css`, `.skip-link` sits at `left: -9999px` until `.skip-link:focus` moves it to `left: 0; top: 0` with `z-index: 100`. Its text is the `skipLink` key of `common.json` in both locales.
+
+  ```jsx
+  // src/components/layout/RootLayout.jsx
+  <a href="#main" className="skip-link">
+    {t.skipLink}
+  </a>
+  ```
+
+- [x] **Focus ring.** `base.css` targets links, buttons, inputs, selects, textareas and anything with `[tabindex]`. The comment in the file explains the two rings: an outline and a shadow keep the indicator visible on both light and dark surfaces.
+
+  ```css
+  /* src/assets/css/base.css */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-primary-fixed-dim);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--color-primary);
+  }
+  ```
+
+  Composite controls move the ring to the group rather than stacking it on the inner input. In `editorial.css`, `.unit-search:focus-within` and `.field__control-wrap:focus-within` draw the outline, while the nested `input:focus-visible` rules reset `outline-style`, `outline-width` and `box-shadow`. FAQ summaries and links get a 3px `--color-primary-fixed-dim` outline with a 2px offset.
+
+- [x] **Reduced motion.** `base.css` handles the preference globally, and smaller rules stop individual animations in `chrome.css` (`.page-enter`), `animations.css` (`.route-spinner`) and `surfaces.css` (`.hover-lift`, `.hover-scale`, `.img-zoom`). `AnimatedReveal.jsx` deliberately leaves motion to CSS so this one preference covers it.
+
+  ```css
+  /* src/assets/css/base.css */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  ```
+
+- [x] **Contrast.** The computed ratios below come from the hex values in this page. Use `--color-primary` rather than the raw logo red for small text on white. The skip link pairs white text with `#b12600`, the same high-contrast combination. The focus ring's light outline is backed by a dark `--color-primary` shadow for the reason noted above; the logo orange is decoration only and never text.
+
+### Contrast against white
 
 | Colour | Ratio | Result |
 |---|---|---|
@@ -121,8 +166,6 @@ Contrast against white, computed from the hex values above:
 | `#F68D22` (logo orange) | 2.40:1 | Fails, decoration only |
 | `#b12600` (`--color-primary`) | 6.67:1 | Passes AA for normal text |
 | `#d83910` (`--color-primary-container`) | 4.65:1 | Passes AA for normal text |
-
-Use `--color-primary` rather than the raw logo red for small text on white.
 
 ## Open questions
 
