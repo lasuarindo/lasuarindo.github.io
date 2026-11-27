@@ -1,78 +1,78 @@
 import type { Feature, SocialLink as ISocialLink } from '@rspress/core';
-import '@rspress/core/dist/theme/components/HomeFeature/index.css';
 import '@rspress/core/dist/theme/components/SocialLinks/index.css';
-import { socialLinks as socialLinkIcons, useFrontmatter, useSite } from '@rspress/core/runtime';
-import {
-  HomeLayout as BasicHomeLayout,
-  renderHtmlOrText,
-  SvgWrapper,
-} from '@rspress/core/theme-original';
+import { useFrontmatter, useSite, socialLinks as socialLinkIcons } from '@rspress/core/runtime';
+import { Link } from '@rspress/core/theme-original';
 
-/**
- * Rspress renders the home hero without an h1 and the feature cards as clickable
- * <article> elements. These wrappers keep the built-in layout and styling but
- * give the page a heading order and real links.
- */
-export function HomeLayout() {
-  return (
-    <BasicHomeLayout beforeHero={<h1 className="rp-visually-hidden">Lasuarindo Docs</h1>} />
-  );
-}
-
-const gridClass = (feature: Feature): string => {
-  switch (feature.span) {
-    case 2:
-      return 'rp-home-feature__item--span-2';
-    case 3:
-      return 'rp-home-feature__item--span-3';
-    case 4:
-      return 'rp-home-feature__item--span-4';
-    case 6:
-      return 'rp-home-feature__item--span-6';
-    default:
-      return 'rp-home-feature__item--span-4';
-  }
+type HeroCopy = {
+  name?: string;
+  text?: string;
+  tagline?: string;
+  actions?: { text: string; link: string }[];
 };
 
-function FeatureCard({ feature }: { feature: Feature }) {
-  const { icon, title, details, link } = feature;
-  const body = (
-    <>
-      <div className="rp-home-feature__title-wrapper">
-        {icon ? (
-          <div className="rp-home-feature__icon">
-            <SvgWrapper icon={icon} />
-          </div>
-        ) : null}
-        <h2 className="rp-home-feature__title">{title}</h2>
-      </div>
-      <p className="rp-home-feature__detail" {...renderHtmlOrText(details)} />
-    </>
-  );
+/**
+ * The home is a masthead followed by one numbered index, not a centred hero
+ * with six emoji cards. All copy still comes from docs/index.md front matter.
+ */
+export function HomeHero() {
+  const { frontmatter } = useFrontmatter();
+  const hero = (frontmatter?.hero ?? {}) as HeroCopy;
+  const [primary, secondary] = hero.actions ?? [];
 
   return (
-    <div className={`rp-home-feature__item ${gridClass(feature)}`}>
-      <div className="rp-home-feature__item-wrapper">
-        {link ? (
-          <a className="rp-home-feature__card rp-home-feature__card--clickable" href={link}>
-            {body}
-          </a>
-        ) : (
-          <div className="rp-home-feature__card">{body}</div>
-        )}
+    <section className="docs-hero">
+      <div className="docs-hero__inner">
+        <div className="docs-hero__meta">
+          <span className="docs-hero__rule" aria-hidden="true" />
+          <span>Documentation</span>
+          <span aria-hidden="true">·</span>
+          <span>Four sections</span>
+        </div>
+        <h1 className="docs-hero__title">{hero.name}</h1>
+        <p className="docs-hero__lead">{hero.text}</p>
+        <p className="docs-hero__tagline">{hero.tagline}</p>
+        <div className="docs-hero__actions">
+          {primary ? (
+            <Link href={primary.link} className="docs-hero__cta">
+              {primary.text}
+            </Link>
+          ) : null}
+          {secondary ? (
+            <Link href={secondary.link} className="docs-hero__link">
+              {secondary.text}
+            </Link>
+          ) : null}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export function HomeFeature({ features: featuresProp }: { features?: Feature[] }) {
   const { frontmatter } = useFrontmatter();
-  const features = featuresProp ?? frontmatter?.features;
+  const features = featuresProp ?? (frontmatter?.features as Feature[] | undefined) ?? [];
 
   return (
-    <div className="rp-home-feature">
-      {features?.map(feature => <FeatureCard key={feature.title} feature={feature} />)}
-    </div>
+    <section className="docs-index">
+      <div className="docs-index__head">
+        <span className="docs-index__eyebrow">Where to go</span>
+        <h2 className="docs-index__title">Read the part that fits.</h2>
+      </div>
+      <ol className="docs-index__list">
+        {features.map((feature, index) => (
+          <li className="docs-index__row" key={feature.title}>
+            <Link href={feature.link ?? '/'} className="docs-index__link">
+              <span className="docs-index__num" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span className="docs-index__name">{feature.title}</span>
+              <span className="docs-index__detail">{feature.details}</span>
+              <span className="docs-index__arrow" aria-hidden="true">→</span>
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 

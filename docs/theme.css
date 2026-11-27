@@ -26,11 +26,12 @@
   --rp-home-feature-bg: #ffffff;             /* --color-surface-container-lowest */
   --rp-home-feature-gap: 15px;
   --rp-home-hero-secondary-color: #d83910;   /* decorative dot only */
-  --rp-home-hero-title-bg: #b12600;          /* --color-primary; white CTA = 6.67:1 */
+  --rp-home-hero-title-bg: #b12600;          /* --color-primary */
   --rp-home-hero-title-color: #b12600;       /* one red on paper = 6.40:1 */
 
   --rp-font-family-base: Inter, sans-serif;
   --rp-font-family-heading: Montserrat, sans-serif;
+  --docs-edge: clamp(24px, 5vw, 80px);
   --rp-code-block-bg: #2f3131;    /* --color-inverse-surface */
 }
 
@@ -58,48 +59,202 @@ html.dark {
   --rp-home-background-bg: #1b1b1a;          /* --color-ink */
   --rp-home-feature-bg: #2f3131;             /* --color-inverse-surface */
   --rp-home-hero-secondary-color: #ffb4a3;   /* --color-primary-fixed-dim, decorative dot */
-  --rp-home-hero-title-bg: #b12600;          /* keeps white CTA text at 6.67:1 */
+  --rp-home-hero-title-bg: #b12600;          /* --color-primary */
   --rp-home-hero-title-color: #ffb4a3;       /* accent text on ink, not a CTA background */
 
   --rp-code-block-bg: #1b1b1a;    /* --color-ink */
 }
 
-/* Rspress clips the hero label with a gradient and hardcodes a transparent
-   text fill. The editorial system uses one flat red, and the brand CTA keeps
-   white text, so override the BEM hook instead of coupling both to one variable. */
-html .rp-home-hero__title-brand {
-  background: none;
-  -webkit-text-fill-color: currentColor;
+/* Editorial home: a masthead alone on the first screen, then one index.
+   Both blocks share the same left and right edge. */
+.docs-hero {
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - 64px);
+  padding: clamp(56px, 8vw, 112px) 0;
+}
+
+.docs-hero__inner,
+.docs-index {
+  width: min(calc(100% - 2 * var(--docs-edge)), 72rem);
+  margin-inline: auto;
+}
+
+.docs-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font: 700 11px/1 var(--rp-font-family-base);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rp-c-text-3);
+}
+
+.docs-hero__rule {
+  width: 40px;
+  height: 1px;
+  background: var(--rp-c-brand);
+}
+
+.docs-hero__title {
+  margin: 28px 0 0;
+  font: 800 clamp(44px, 7vw, 88px)/1 var(--rp-font-family-heading);
+  letter-spacing: -0.04em;
   color: var(--rp-home-hero-title-color);
 }
 
-/* Home heading order: a real h1 sits above the six feature-card h2s. */
-.rp-visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
+.docs-hero__lead {
+  max-width: 26ch;
+  margin: 24px 0 0;
+  font: 600 clamp(22px, 3vw, 34px)/1.15 var(--rp-font-family-heading);
+  letter-spacing: -0.02em;
+  color: var(--rp-c-text-0);
 }
 
-/* Feature cards are anchors in the custom theme; Rspress styles them as
-   block <article> elements, so the anchor needs the same display box. */
-.rp-home-feature__card {
-  display: block;
+.docs-hero__tagline {
+  max-width: 58ch;
+  margin: 18px 0 0;
+  color: var(--rp-c-text-2);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.docs-hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.docs-hero__cta,
+.docs-hero__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--rp-c-text-0);
+  font: 700 14px/1 var(--rp-font-family-base);
+  text-decoration: none;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.docs-hero__cta {
+  color: var(--rp-c-brand);
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+}
+
+.docs-hero__cta::after,
+.docs-hero__link::after {
+  content: "→";
+}
+
+.docs-hero__cta:hover,
+.docs-hero__link:hover {
+  color: var(--rp-c-brand);
+  transform: translateY(-2px);
+}
+
+.docs-hero__cta:active,
+.docs-hero__link:active {
+  transform: translateY(0);
+}
+
+.docs-index {
+  padding: clamp(48px, 6vw, 88px) 0 clamp(72px, 9vw, 128px);
+}
+
+.docs-index__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rp-c-divider);
+}
+
+.docs-index__eyebrow {
+  font: 700 11px/1 var(--rp-font-family-base);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rp-c-text-3);
+}
+
+.docs-index__title {
+  margin: 0;
+  font: 700 clamp(24px, 3vw, 36px)/1.1 var(--rp-font-family-heading);
+  letter-spacing: -0.02em;
+}
+
+.docs-index__list {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--rp-c-divider);
+}
+
+.docs-index__row {
+  border-top: 1px solid var(--rp-c-divider);
+}
+
+.docs-index__link {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 1.25fr) 24px;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
   color: inherit;
   text-decoration: none;
+  transition: transform 180ms ease;
 }
 
-.rp-home-hero__title,
-.rp-home-feature__title {
-  font-family: var(--rp-font-family-heading);
+.docs-index__link:hover {
+  transform: translateX(4px);
 }
 
-.rp-home-hero__title {
-  line-height: 1.03;
-  letter-spacing: -0.035em;
+.docs-index__num {
+  font: 700 12px/1 var(--rp-font-family-base);
+  letter-spacing: 0.08em;
+  color: var(--rp-c-brand);
+}
+
+.docs-index__name {
+  font: 700 18px/1.3 var(--rp-font-family-heading);
+}
+
+.docs-index__detail {
+  color: var(--rp-c-text-2);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.docs-index__arrow {
+  justify-self: end;
+  color: var(--rp-c-brand);
+}
+
+@media (max-width: 760px) {
+  .docs-index__link {
+    grid-template-columns: 32px minmax(0, 1fr) 20px;
+    gap: 12px;
+  }
+
+  .docs-index__detail {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .docs-hero__cta,
+  .docs-hero__link,
+  .docs-index__link {
+    transition: none;
+  }
+
+  .docs-hero__cta:hover,
+  .docs-hero__link:hover,
+  .docs-index__link:hover {
+    transform: none;
+  }
 }

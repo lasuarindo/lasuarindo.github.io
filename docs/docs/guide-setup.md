@@ -27,7 +27,7 @@ Output is `doc_build/`, which is gitignored. A new or renamed docs page must be 
 
 - `docs/public/logo.png` is the symbol-only mark copied from `public/favicon.png`. The `logo` field in `rspress.config.ts` points at it with 28×28 dimensions, so it stays visible in both theme modes.
 - The `head` field in `rspress.config.ts` loads the same Inter and Montserrat families as the application's `index.html`.
-- `theme/index.tsx` at the repository root wraps built-in components through ESM re-exports: `HomeLayout` adds a visually hidden `<h1>`, `HomeFeature` renders the feature cards as `<a>`, and `SocialLinks` gives the GitHub icon an accessible name. It imports the original `HomeFeature` and `SocialLinks` CSS explicitly, because re-exporting a component drops its own stylesheet import, and ends with `export * from '@rspress/core/theme-original'` so every other component remains built-in.
+- `theme/index.tsx` at the repository root replaces three built-in components through ESM re-exports: `HomeHero` renders the masthead with the visible `<h1>` and two text links, `HomeFeature` renders the six features as a numbered index instead of cards, and `SocialLinks` gives the GitHub icon an accessible name. It imports the original `SocialLinks` CSS explicitly, because re-exporting a component drops its own stylesheet import, and ends with `export * from '@rspress/core/theme-original'` so every other component remains built-in. The layout lives in `.docs-hero` and `.docs-index` in `docs/theme.css`.
 
 ### Navbar: `docs/_nav.json`
 
@@ -100,12 +100,12 @@ html.dark {
   --rp-c-text-0: #f7f5f1;
   --rp-c-link: var(--rp-c-brand);
   --rp-home-background-bg: #1b1b1a;          /* --color-ink */
-  --rp-home-hero-title-bg: #b12600;          /* keeps white CTA text at 6.67:1 */
+  --rp-home-hero-title-bg: #b12600;          /* --color-primary */
   --rp-home-hero-title-color: #ffb4a3;       /* accent text on ink */
 }
 ```
 
-The `--rp-c-*` variables style ordinary pages; the `--rp-home-*` variables style the home page's hero and feature cards. The dark selector swaps both families at once. A small `html .rp-home-hero__title-brand` override removes Rspress's gradient clip and hardcoded transparent text fill, so the hero label uses the flat colour independently of the brand CTA background. The `html` prefix is needed because global styles are emitted before Rspress's own rule at the same specificity.
+The `--rp-c-*` variables style ordinary pages; the `--rp-home-*` variables feed the home's background and masthead. The dark selector swaps both families at once. The visible home title reads its colour from `--rp-home-hero-title-color`, so the light red and the dark accent stay separate from the brand used for links and rules.
 
 ```mermaid
 flowchart LR
