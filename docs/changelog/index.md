@@ -16,6 +16,12 @@ A short record of work already shipped on the website. Entries below are summari
 - Restyled the docs home as an editorial masthead and numbered index (`2d348d2`).
 - Made the home index descriptions more concrete (`12d16e8`).
 - Added a styled stack and environment section to the docs home (`6cc1996`).
+
+  ```tsx
+  export function HomeLayout(props: ComponentProps<typeof BasicHomeLayout>) {
+    return <BasicHomeLayout {...props} afterFeatures={<HomeStack />} />;
+  }
+  ```
 - Linked the home stack items to their source packages (`40ca56c`).
 
 ## 2026-11-26
@@ -41,6 +47,15 @@ A short record of work already shipped on the website. Entries below are summari
 - Unified the header and footer with the editorial design system (`705a79f`).
 - Centred the timeline's end years and let arrows follow the active state (`6f353bf`).
 - Centralised all internal paths in `src/app/paths.js` and fixed legal-page contrast and definition-list markup (`14e0762`).
+
+  ```js
+  export const routePaths = {
+    ecosystem: (key) => `${paths.ecosystems}/${key}`,
+    t46: () => routePaths.ecosystem('t46'),
+    unit: (slug) => `${paths.units}/${slug}`,
+    contactIntent: (intent) => `${paths.contact}?intent=${intent}`,
+  };
+  ```
 - Gave each engagement topic its own detailed page (`44bca76`).
 - Split sector sections and polished the timeline (`8942a8a`).
 - Refined sector cards, unit badges and the timeline (`334791b`).
@@ -62,19 +77,30 @@ A short record of work already shipped on the website. Entries below are summari
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
   ```
 
 - Retired `/services` in favour of `/businesses`, including its locale namespace (`9d2b3df`).
 - Added a dependency-free i18n parity check: `check:parity` compares flattened `id` and `en` keys, rejects document-only markers, and runs as a CI step before the build (`9d2b3df`).
 
   ```js
-  /**
-   * Verify that every id locale key has an en counterpart (and vice versa),
-   * and that no document-only marker leaked into published copy.
-   *
-   * Usage: node scripts/check-i18n-parity.mjs
-   * Exits 1 on any missing key or forbidden marker. No dependencies required.
-   */
+  const root = fileURLToPath(new URL('../src/i18n/locales/', import.meta.url));
+  const idDir = join(root, 'id');
+  const enDir = join(root, 'en');
+  const FORBIDDEN = ['[DRAFT:', '[NEED:', 'undefined', 'NaN'];
+
+  function flatten(value, prefix = '', out = {}) {
+    if (Array.isArray(value)) {
+      value.forEach((item, idx) => flatten(item, prefix ? `${prefix}[${idx}]` : `[${idx}]`, out));
+    } else if (value && typeof value === 'object') {
+      for (const [key, child] of Object.entries(value)) {
+        flatten(child, prefix ? `${prefix}.${key}` : key, out);
+      }
+    } else {
+      out[prefix] = value;
+    }
+    return out;
+  }
   ```
 
 ## 2026-11-24
@@ -89,6 +115,16 @@ A short record of work already shipped on the website. Entries below are summari
 - Updated docs for React 19 and Rspress v2, enabled Mermaid rendering and registered a brand page (`5faa4c3`).
 - Slimmed `AGENTS.md` and moved detailed rules into `.agents/rules` (`910d1b6`); migrated the docs site from VitePress to Rspress v2 (`4a3ea5d`).
 - Reinstated i18next with per-page namespace registration and adopted per-page locale bundles for translation (`703f41f`, `04b1788`).
+
+  ```js
+  i18n.use(initReactI18next).init({
+    lng: initialLanguage,
+    fallbackLng: 'id',
+    interpolation: { escapeValue: false },
+    defaultNS: 'translation',
+    initImmediate: false,
+  })
+  ```
 - Added a local `.plan/.gitignore` so private refactor notes stay untracked (`1ed3a75`).
 
 ## 2026-11-23
@@ -119,6 +155,13 @@ A short record of work already shipped on the website. Entries below are summari
 - Added a GitHub Pages deploy workflow with an SPA fallback and gitignored the docs build output (`da1b0fb`, `171b406`).
 - Added VitePress documentation, later replaced by Rspress (`034a948`).
 - Switched to per-page locale loading through `useStrings`, replacing the eager-resource i18next setup (`971e9d5`).
+
+  ```js
+  export function useStrings(bundle) {
+    const { language } = useLanguage()
+    return bundle[language] ?? bundle.id
+  }
+  ```
 - Started tracking the `.ignore` gitignore file (`487c700`).
 
 ## 2026-11-19
@@ -127,6 +170,21 @@ A short record of work already shipped on the website. Entries below are summari
 - Added the `@` alias to Vite and switched internal imports to use it (`bbcec0b`, `a158262`).
 - Code-split route pages with `React.lazy` and a `Suspense` fallback (`9a29ea7`).
 - Grouped Rolldown vendor chunks under `dist/assets/vendor` and enabled `codeSplitting`, reducing the app entry chunk (`a52928e`, `85f9545`).
+
+  ```js
+  codeSplitting: {
+    groups: [
+      {
+        name: 'react-vendor',
+        test: /node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+        priority: 20,
+      },
+      {
+        name: 'motion',
+        test: /node_modules[\\/]motion(-dom|-utils)?[\\/]/,
+        priority: 15,
+      },
+  ```
 - Added motion, icon, styling and translation dependencies with dormant configuration (`49fb668`); Tailwind v4 was activated the same day with layer-only imports so the custom reset stayed intact (`3a20d86`).
 - Added `@tabler/icons-react` and brand-icon entries to the shared `Icon` component, then switched Footer, Contact and Services social links to those icons (`ad092dc`).
 - Replaced the hand-rolled context router with a `react-router` configuration and declarative redirects for the legacy Indonesian URLs (`3a20d86`). The same commit split the monolithic translation file into i18next namespaced locale JSONs and moved layout and page files to English names with aliases for the old ones:
