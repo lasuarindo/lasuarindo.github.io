@@ -9,9 +9,10 @@
     "lint": "oxlint",
     "check:parity": "node scripts/check-i18n-parity.mjs",
     "preview": "vite preview",
-    "docs:dev": "rspress dev docs",
-    "docs:build": "rspress build docs",
-    "docs:preview": "rspress preview docs"
+    "docs:dev": "rspress dev docs --base /",
+    "docs:build": "rspress build docs --base /",
+    "docs:build:pages": "rspress build docs",
+    "docs:preview": "rspress preview docs --base /"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.15.1",

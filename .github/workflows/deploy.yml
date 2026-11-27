@@ -54,7 +54,9 @@ jobs:
         run: cp dist/index.html dist/404.html
 
       - name: Build docs
-        run: npm run docs:build
+        env:
+          DOCS_BASE_PATH: /docs/
+        run: npm run docs:build:pages
 
       - name: Merge docs into the Pages artifact
         # One Pages site: app at /, docs at /docs/ from the same artifact.

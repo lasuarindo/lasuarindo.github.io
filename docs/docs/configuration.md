@@ -11,9 +11,10 @@ Scripts, Vite settings, lint rules, locale parity checks and the build-time envi
 | `preview` | `vite preview` | Preview the production build |
 | `lint` | `oxlint` | Lint source files |
 | `check:parity` | `node scripts/check-i18n-parity.mjs` | Validate locale bundles |
-| `docs:dev` | `rspress dev docs` | Local docs server |
-| `docs:build` | `rspress build docs` | Docs build into `doc_build/` |
-| `docs:preview` | `rspress preview docs` | Preview the built docs |
+| `docs:dev` | `rspress dev docs --base /` | Local docs server |
+| `docs:build` | `rspress build docs --base /` | Local docs build into `doc_build/` |
+| `docs:build:pages` | `rspress build docs` | Pages docs build at `/docs/` |
+| `docs:preview` | `rspress preview docs --base /` | Preview the built docs |
 
 ## Vite
 
@@ -82,13 +83,13 @@ This is why a copy change should always touch both locale files. See [Quick star
 
 No `.env` file is required. `BASE_PATH` is the only build-time variable: `vite.config.js` falls back to `/` when it is unset, and the deploy workflow sets the correct value for the repository.
 
-| Situation | `BASE_PATH` | Effect on built asset URLs |
+| Situation | `BASE_PATH` | Docs base |
 |---|---|---|
-| Organisation or user site (`<owner>.github.io`) | `/` | `/assets/...` |
-| Project site (`<owner>.github.io/<repo>/`) | `/<repo>/` | `/<repo>/assets/...` |
-| Local `npm run dev` / `npm run preview` | unset, so `/` | `/assets/...` |
+| Organisation or user site (`<owner>.github.io`) | `/` | `/docs/` via `docs:build:pages` |
+| Project site (`<owner>.github.io/<repo>/`) | `/<repo>/` | `/docs/` via `docs:build:pages` |
+| Local `npm run dev`, `npm run preview`, `npm run docs:*` | unset, so `/` | `/` via `--base /` |
 
-Nothing secret is needed to build or run the app. The deploy workflow derives the value from `GITHUB_REPOSITORY`; see [Deployment](/docs/deployment).
+`rspress.config.ts` keeps `/docs/` as the published base; the local docs scripts override it with Rspress's `--base /` flag. Nothing secret is needed; see [Deployment](/docs/deployment).
 
 ## Documentation site
 

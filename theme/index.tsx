@@ -1,3 +1,5 @@
+declare const __DOCS_BASE__: string;
+
 import type { ComponentProps } from 'react';
 import type { Feature, SocialLink as ISocialLink } from '@rspress/core';
 import '@rspress/core/dist/theme/components/SocialLinks/index.css';
@@ -9,16 +11,24 @@ import {
 } from '@rspress/core/theme-original';
 
 /**
- * Rspress's withBase() skips URLs that already start with the base path. Docs
- * section routes also start with /docs/, so prefix them here before handing
- * the link to the built-in component. Other sections are handled by Rspress.
+ * Rspress's withBase() skips URLs that already start with the base path. On
+ * the deployed /docs/ base, Docs section routes collide with that prefix, so
+ * add it here; on the local / base nothing is added. Other sections are
+ * handled by Rspress itself.
  */
 export function Link(props: ComponentProps<typeof BasicLink>) {
+  const baseRoot = (__DOCS_BASE__ || '/').replace(/\/+$/, '');
   const href = props.href;
-  const fixedHref =
-    typeof href === 'string' && href.startsWith('/docs/') && !href.startsWith('/docs/docs/')
-      ? `/docs${href}`
-      : href;
+  const sectionRoots = ['/for-everyone', '/pages', '/changelog'];
+  const isSectionLink =
+    typeof href === 'string' &&
+    (href === '/' ||
+      href.startsWith('/docs/') ||
+      sectionRoots.some(root => href === root || href.startsWith(`${root}/`)));
+  const alreadyPrefixed =
+    typeof href === 'string' && href.startsWith(`${baseRoot}/docs/`);
+  const shouldPrefix = baseRoot !== '' && isSectionLink && !alreadyPrefixed;
+  const fixedHref = shouldPrefix ? `${baseRoot}${href}` : href;
 
   return <BasicLink {...props} href={fixedHref} />;
 }

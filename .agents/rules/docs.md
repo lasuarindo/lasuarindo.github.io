@@ -5,7 +5,7 @@ Documentation workflow for `docs/`. Load for any docs work. Replaces the old "Do
 ## Tooling
 
 - Current: **Rspress v2** (`@rspress/core`), config `rspress.config.ts` at repo root.
-- Scripts: `docs:dev`, `docs:build`, `docs:preview` → `rspress dev|build|preview docs`.
+- Scripts: `docs:dev`, `docs:build`, `docs:preview` → `rspress dev|build|preview docs --base /` for local work; `docs:build:pages` → `rspress build docs`, which keeps `base: '/docs/'` for the published artifact.
 - Build check: `npm run docs:build` (must exit 0, no broken links, no dead pages).
 - Import `defineConfig` from `@rspress/core` (v2). The v1 `rspress/config` entry point and legacy static-site docs configs do not apply.
 - `rspress.config.ts` holds site-level settings only (`root`, `title`, `lang`, `logo`, `head`, `globalStyles`, `plugins`, `themeConfig.socialLinks`). Do not add `themeConfig.nav` or `themeConfig.sidebar`; navigation is file-based.

@@ -25,7 +25,8 @@ npm run docs:dev
 | `npm run lint` | Oxlint |
 | `npm run check:parity` | Check that `id` and `en` bundles have matching keys and no draft markers |
 | `npm run docs:dev` | Docs dev server |
-| `npm run docs:build` | Build docs into `doc_build/` |
+| `npm run docs:build` | Build docs into `doc_build/` at `/` |
+| `npm run docs:build:pages` | Build docs at `/docs/` for GitHub Pages |
 | `npm run docs:preview` | Preview the built docs |
 
 `check:parity` runs in CI before the app build. A key added to only one language fails the deploy, so run it locally before pushing.
