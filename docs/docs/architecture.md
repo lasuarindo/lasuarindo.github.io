@@ -32,7 +32,7 @@ flowchart TD
 | `/units/:slug` | Unit detail (12 units) |
 | `/licence` | Licensing |
 | `/contact` | Contact |
-| `/faq` | FAQ Center |
+| `/faq` | FAQ |
 | `/legal` | Legal index |
 | `/legal/privacy-policy` | Privacy Policy |
 | `/legal/term-condition` | Terms & Conditions |
@@ -47,7 +47,7 @@ Routes fall into four families:
 
 - **Static pages** (Home, About, Businesses, Contact, FAQ, legal documents): copy comes mostly from locale JSON.
 - **Data-driven pages** (districts and units): the route is generic and the content comes from catalogues in `src/data/`.
-- **Engagement pages** (Partnership, Investor, Collaboration): the same four-section shape, with per-page locale bundles and a contact intent. See [Engagement Pages](/pages/engagement).
+- **Engagement pages** (Partnership, Investor, Collaboration): the same four-section shape, with per-page locale bundles and a contact intent. See [Engagement](/pages/engagement).
 - **Fallback**: NotFound, also used when a district key or unit slug does not resolve.
 
 ## Layout and chrome

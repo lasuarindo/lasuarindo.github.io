@@ -1,4 +1,4 @@
-# FAQ Center
+# FAQ
 
 The FAQ answers the questions people ask most often about the group, its businesses and T46.
 

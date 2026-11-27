@@ -1,16 +1,16 @@
-# Project Documentation
+# Documentation
 
-Technical documentation for the Lasuarindo Group website. This section is for people who work on the code: developers, designers and maintainers. For a general introduction, use the [Using the Docs](/guide/) or the [For Everyone](/for-everyone/) section. For notes on every page, use [Pages](/pages/).
+Technical documentation for the Lasuarindo Group website. This section is for people who work on the code: developers, designers and maintainers. For a general introduction, use the [Guide](/guide/) or the [For Everyone](/for-everyone/) section. For notes on every page, use [Pages](/pages/).
 
 ## What is covered
 
 | Area | Where to read |
 |---|---|
-| Start here | [Introduction](/docs/introduction), [Getting Started](/docs/getting-started) |
-| How the project is organised | [Project Structure](/docs/project-structure), [Architecture](/docs/architecture) |
+| Welcome | [Introduction](/docs/introduction), [Getting Started](/docs/getting-started) |
+| How the project is organised | [Structure](/docs/project-structure), [Architecture](/docs/architecture) |
 | Day-to-day work | [Configuration](/docs/configuration), [Styling](/docs/styling), [Brand](/docs/brand) |
 | Publishing | [Deployment](/docs/deployment) |
-| Other sections | [Using the Docs](/guide/), [For Everyone](/for-everyone/), [Pages](/pages/), [Changelog](/changelog/) |
+| More | [Guide](/guide/), [For Everyone](/for-everyone/), [Pages](/pages/), [Changelog](/changelog/), [GitHub](https://github.com/lasuarindo) |
 
 ## Key facts
 
@@ -26,7 +26,7 @@ Technical documentation for the Lasuarindo Group website. This section is for pe
 ## Where to start
 
 - New to the repo? Read [Introduction](/docs/introduction), then [Getting Started](/docs/getting-started).
-- Need to find a file? See [Project Structure](/docs/project-structure).
+- Need to find a file? See [Structure](/docs/project-structure).
 - Need to understand routing, translations or metadata? See [Architecture](/docs/architecture).
 - Need to change how things look? See [Styling](/docs/styling) and [Brand](/docs/brand).
 

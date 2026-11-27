@@ -9,6 +9,27 @@
   --rp-c-brand-light: #ffb4a3;    /* --color-primary-fixed-dim */
   --rp-c-brand-lighter: #ffdad2;  /* --color-primary-fixed */
 
+  --rp-c-bg: #fbfaf8;             /* --color-paper */
+  --rp-c-bg-alt: #ffffff;         /* --color-surface-container-lowest */
+  --rp-c-bg-soft: #f2f0ec;        /* editorial neutral surface */
+  --rp-c-bg-mute: #e8e8e8;        /* --color-surface-container-high */
+  --rp-c-divider: #e4dfd7;        /* --color-line */
+  --rp-c-divider-light: #e4dfd7;
+  --rp-c-text-0: #1b1b1a;         /* --color-ink */
+  --rp-c-text-1: #1b1b1a;
+  --rp-c-text-2: #343634;         /* --color-ink-soft */
+  --rp-c-text-3: #6b665f;         /* --color-muted */
+  --rp-c-text-4: #6b665f;
+  --rp-c-link: var(--rp-c-brand);
+
+  --rp-home-background-bg: linear-gradient(135deg, #fbfaf8 0%, #f2f0ec 100%);
+  --rp-home-feature-bg: linear-gradient(135deg, #ffffff 0%, #fbfaf8 100%);
+  --rp-home-feature-gap: 15px;
+  --rp-home-hero-secondary-color: #d83910;
+  --rp-home-hero-title-bg: linear-gradient(90deg, #b12600 0%, #d83910 100%);
+  --rp-home-hero-title-color: transparent;
+
+  --rp-font-family-base: Inter, sans-serif;
   --rp-code-block-bg: #2f3131;    /* --color-inverse-surface */
 }
 
@@ -19,6 +40,24 @@ html.dark {
   --rp-c-brand-darker: #ffffff;
   --rp-c-brand-light: #d83910;
   --rp-c-brand-lighter: #b12600;
+
+  --rp-c-bg: #1b1b1a;             /* --color-ink */
+  --rp-c-bg-alt: #2f3131;         /* --color-inverse-surface */
+  --rp-c-bg-soft: #343634;        /* --color-ink-soft */
+  --rp-c-bg-mute: #2f3131;
+  --rp-c-divider: #343634;
+  --rp-c-divider-light: #343634;
+  --rp-c-text-0: #f7f5f1;
+  --rp-c-text-1: #f0f1f1;         /* --color-inverse-on-surface */
+  --rp-c-text-2: #c9c6c0;
+  --rp-c-text-3: #b9b6b0;
+  --rp-c-text-4: #b9b6b0;
+  --rp-c-link: var(--rp-c-brand);
+
+  --rp-home-background-bg: linear-gradient(135deg, #1b1b1a 0%, #343634 100%);
+  --rp-home-feature-bg: linear-gradient(135deg, #1b1b1a 0%, #2f3131 100%);
+  --rp-home-hero-secondary-color: #ffb4a3;
+  --rp-home-hero-title-bg: linear-gradient(90deg, #ffb4a3 0%, #ffdad2 100%);
 
   --rp-code-block-bg: #1b1b1a;    /* --color-ink */
 }

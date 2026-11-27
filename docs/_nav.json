@@ -1,0 +1,7 @@
+[
+  { "text": "Guide", "link": "/guide/", "activeMatch": "^/guide/" },
+  { "text": "For Everyone", "link": "/for-everyone/", "activeMatch": "^/for-everyone/" },
+  { "text": "Docs", "link": "/docs/", "activeMatch": "^/docs/" },
+  { "text": "Pages", "link": "/pages/", "activeMatch": "^/pages/" },
+  { "text": "Changelog", "link": "/changelog/", "activeMatch": "^/changelog/" }
+]

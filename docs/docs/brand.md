@@ -63,7 +63,7 @@ flowchart LR
 
 `editorial.css` is unlayered and imported last, so its classes decide the final look. Its direction is paper, ink and one red: restrained typography, clear section rhythm, and no gradients or glass effects. See [Styling](/docs/styling) for the class families.
 
-The documentation site uses the same palette: `docs/theme.css` maps these tokens onto Rspress's `--rp-c-brand*` variables through `globalStyles` in `rspress.config.ts`.
+The documentation site uses the same palette: `docs/theme.css` maps these tokens onto Rspress's `--rp-c-*` and `--rp-home-*` variables through `globalStyles` in `rspress.config.ts`. That covers the navbar, page surfaces and the home page hero and feature cards.
 
 ## Usage rules
 

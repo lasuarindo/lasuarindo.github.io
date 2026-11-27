@@ -10,16 +10,16 @@ This section explains every page of the Lasuarindo Group website. Each page star
 | [About Us](/pages/about-us) | Who we are, what we believe, our leaders and our timeline. |
 | [Businesses](/pages/businesses) | The six areas of business the group works in. |
 | [Ecosystems & Units](/pages/ecosystems-and-units) | The T46 district and the twelve businesses inside it. |
-| [Engagement Pages](/pages/engagement) | Three ways to work with us: partnership, investor relations and collaboration. |
+| [Engagement](/pages/engagement) | Three ways to work with us: partnership, investor relations and collaboration. |
 | [Contact](/pages/contact) | How to reach us and send a message. |
-| [Licensing & Legal](/pages/licence-and-legal) | Basic legal information and the site's policy documents. |
-| [FAQ Center](/pages/faq) | Short answers to common questions. |
+| [Licensing](/pages/licence-and-legal) | Basic legal information and the site's policy documents. |
+| [FAQ](/pages/faq) | Short answers to common questions. |
 | [Privacy Policy](/pages/privacy-policy) | How we handle personal information. |
 | [Terms & Conditions](/pages/terms) | The rules for using the site. |
 
 ## How to use this section
 
-Open a page above to see what a visitor can find there, where the page links to, and anything worth knowing before you write or change its content. Read the first part for the simple explanation and the "For maintainers" part for the route, copy bundle, data and behaviour. For a version with no technical detail, use [For Everyone](/for-everyone/). For code and configuration, use the [Project Documentation](/docs/) section.
+Open a page above to see what a visitor can find there, where the page links to, and anything worth knowing before you write or change its content. Read the first part for the simple explanation and the "For maintainers" part for the route, copy bundle, data and behaviour. For a version with no technical detail, use [For Everyone](/for-everyone/). For code and configuration, use the [Documentation](/docs/) section.
 
 ## A note on draft labels
 

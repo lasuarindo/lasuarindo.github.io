@@ -5,7 +5,7 @@ titleSuffix: Documentation for the group website
 hero:
   name: Lasuarindo Docs
   text: The group's website, explained.
-  tagline: Start with Using the Docs, read the simple version, or go into the technical details.
+  tagline: Start with the Guide, read the simple version, or go into the technical details.
   actions:
     - theme: brand
       text: Read the guide
@@ -14,7 +14,7 @@ hero:
       text: Read the simple version
       link: /for-everyone/
 features:
-  - title: Using the Docs
+  - title: Guide
     details: How this documentation site is organised and how to read it.
     icon: 🧭
     link: /guide/

@@ -1,0 +1,4 @@
+[
+  { "type": "section-header", "label": "History" },
+  { "type": "file", "name": "index", "label": "Overview" }
+]

@@ -1,4 +1,4 @@
-# Using the Docs
+# Guide
 
 A short guide to this documentation site. It explains the sections, how to move between them, and what the labels mean. You do not need any technical background for this part.
 
@@ -6,11 +6,12 @@ A short guide to this documentation site. It explains the sections, how to move 
 
 | Section | For whom | What it contains |
 |---|---|---|
-| Using the Docs | New readers | How to use this documentation site |
+| Guide | New readers | How to use this documentation site |
 | For Everyone | General visitors | The website explained in everyday language |
 | Docs | Developers and designers | Technical project documentation |
 | Pages | Writers and maintainers | Every page, with plain notes and technical notes together |
 | Changelog | Everyone | What changed and when |
+| GitHub | Everyone | The Lasuarindo organisation on GitHub |
 
 The home page opens from the logo in the top bar.
 

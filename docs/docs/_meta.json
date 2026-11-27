@@ -1,0 +1,22 @@
+[
+  { "type": "section-header", "label": "Welcome" },
+  { "type": "file", "name": "index", "label": "Overview" },
+  { "type": "file", "name": "introduction", "label": "Introduction" },
+  { "type": "file", "name": "getting-started", "label": "Getting Started" },
+  { "type": "divider" },
+  { "type": "section-header", "label": "Project" },
+  { "type": "file", "name": "project-structure", "label": "Structure" },
+  { "type": "file", "name": "architecture", "label": "Architecture" },
+  { "type": "file", "name": "configuration", "label": "Configuration" },
+  { "type": "file", "name": "deployment", "label": "Deployment" },
+  { "type": "divider" },
+  { "type": "section-header", "label": "Design" },
+  { "type": "file", "name": "brand", "label": "Brand" },
+  { "type": "file", "name": "styling", "label": "Styling" },
+  { "type": "divider" },
+  { "type": "section-header", "label": "More" },
+  { "type": "custom-link", "link": "/guide/", "label": "Guide" },
+  { "type": "custom-link", "link": "/for-everyone/", "label": "For Everyone" },
+  { "type": "custom-link", "link": "/pages/", "label": "Pages" },
+  { "type": "custom-link", "link": "/changelog/", "label": "Changelog" }
+]

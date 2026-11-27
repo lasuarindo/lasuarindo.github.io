@@ -1,0 +1,11 @@
+[
+  { "type": "section-header", "label": "Introduction" },
+  { "type": "file", "name": "index", "label": "Website" },
+  { "type": "divider" },
+  { "type": "section-header", "label": "Topics" },
+  { "type": "file", "name": "the-group", "label": "Group" },
+  { "type": "file", "name": "businesses-and-t46", "label": "Businesses & T46" },
+  { "type": "file", "name": "working-with-us", "label": "Work with us" },
+  { "type": "file", "name": "legal-and-privacy", "label": "Legal & privacy" },
+  { "type": "file", "name": "contact-and-help", "label": "Contact" }
+]

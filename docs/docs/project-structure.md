@@ -1,4 +1,4 @@
-# Project Structure
+# Structure
 
 The app and the docs are two separate builds in the same repository. The app uses Vite and lives in `src/`; the docs use Rspress and live in `docs/`.
 

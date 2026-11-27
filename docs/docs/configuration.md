@@ -51,13 +51,17 @@ No `.env` file is required. `BASE_PATH` is the only build-time variable and is s
 
 ## Docs (Rspress)
 
-`rspress.config.ts` at the repository root uses `defineConfig` from `@rspress/core` (v2):
+`rspress.config.ts` at the repository root keeps site-level settings only. It uses `defineConfig` from `@rspress/core` (v2):
 
 - `root: 'docs'`, `title: 'Lasuarindo Docs'`, `lang: 'en'`.
 - `plugins: [rspressPluginMermaid()]`, which renders the Mermaid diagrams used in these pages.
-- `globalStyles: docs/theme.css`, which overrides Rspress's `--rp-c-brand*` variables with the site's brand tokens.
-- `themeConfig.nav`: Using the Docs, For Everyone, Docs, Pages, Changelog. The home page opens from the logo. Each destination opens a section with its own sidebar.
-- `themeConfig.sidebar`: five keys, `/guide/` for using this site, `/docs/` for technical project documentation, `/for-everyone/` for plain-language explanations, `/pages/` for combined page notes, and `/changelog/` for the change record. See [Navigation](/guide/navigation) for the grouping and collapsible rule.
-- Output is `doc_build/`, which is gitignored.
+- `globalStyles: docs/theme.css`, which maps the site's brand tokens onto Rspress's `--rp-c-*` and `--rp-home-*` variables.
+- `themeConfig.socialLinks`: GitHub with the built-in GitHub icon, pointing to `https://github.com/lasuarindo`.
 
-A new or renamed docs page must be registered under the matching sidebar key, and in `themeConfig.nav` if it is meant to be a top-level destination.
+Navigation is file-based:
+
+- `docs/_nav.json` defines the navbar: Guide, For Everyone, Docs, Pages, Changelog. The home page opens from the logo.
+- Each section folder has its own `_meta.json`. Section headers group links; files and custom links carry the short labels.
+- Auto navigation only works while `themeConfig.nav` and `themeConfig.sidebar` stay out of `rspress.config.ts`.
+
+Output is `doc_build/`, which is gitignored. A new or renamed docs page must be added to its folder's `_meta.json`. A new section needs an entry in `_nav.json` and its own `_meta.json`.

@@ -22,7 +22,7 @@ This repository is the public website for **PT Lasuarindo Group**, an integrated
 - Check basic licensing information and the legal documents.
 - Use the FAQ and the contact form to start a partnership, investor or collaboration conversation.
 
-The three engagement topics have their own pages, described in [Engagement Pages](/pages/engagement).
+The three engagement topics have their own pages, described in [Engagement](/pages/engagement).
 
 ## How the site is built
 
@@ -36,7 +36,7 @@ flowchart LR
     B --> S["dist/ on GitHub Pages"]
 ```
 
-Each part of that diagram has a dedicated page. Start with [Architecture](/docs/architecture) for the runtime view and [Project Structure](/docs/project-structure) for the file view.
+Each part of that diagram has a dedicated page. Start with [Architecture](/docs/architecture) for the runtime view and [Structure](/docs/project-structure) for the file view.
 
 ## Key features
 
@@ -51,10 +51,10 @@ Each part of that diagram has a dedicated page. Start with [Architecture](/docs/
 
 | I want to... | Go to |
 |---|---|
-| Understand how this documentation site works | [Using the Docs](/guide/) |
+| Understand how this documentation site works | [Guide](/guide/) |
 | Read about the website in everyday language | [For Everyone](/for-everyone/) |
 | Run a local copy and learn the checks | [Getting Started](/docs/getting-started) |
-| Map responsibilities to files | [Project Structure](/docs/project-structure) |
+| Map responsibilities to files | [Structure](/docs/project-structure) |
 | Understand routing, i18n, metadata and bundling | [Architecture](/docs/architecture) |
 | Change configuration or validate translations | [Configuration](/docs/configuration) |
 | Work on colours, type or layout | [Brand](/docs/brand), [Styling](/docs/styling) |
@@ -64,7 +64,7 @@ Each part of that diagram has a dedicated page. Start with [Architecture](/docs/
 ```mermaid
 flowchart TD
     A["Introduction"] --> B["Getting Started"]
-    B --> C["Project Structure"]
+    B --> C["Structure"]
     C --> D["Architecture"]
     D --> E["Configuration"]
     D --> F["Styling"]
