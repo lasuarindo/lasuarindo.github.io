@@ -22,12 +22,12 @@
   --rp-c-text-4: #6b665f;
   --rp-c-link: var(--rp-c-brand);
 
-  --rp-home-background-bg: linear-gradient(135deg, #fbfaf8 0%, #f2f0ec 100%);
-  --rp-home-feature-bg: linear-gradient(135deg, #ffffff 0%, #fbfaf8 100%);
+  --rp-home-background-bg: #fbfaf8;          /* --color-paper */
+  --rp-home-feature-bg: #ffffff;             /* --color-surface-container-lowest */
   --rp-home-feature-gap: 15px;
-  --rp-home-hero-secondary-color: #d83910;
-  --rp-home-hero-title-bg: linear-gradient(90deg, #b12600 0%, #d83910 100%);
-  --rp-home-hero-title-color: transparent;
+  --rp-home-hero-secondary-color: #d83910;   /* decorative dot only */
+  --rp-home-hero-title-bg: #b12600;          /* --color-primary; white CTA = 6.67:1 */
+  --rp-home-hero-title-color: #b12600;       /* one red on paper = 6.40:1 */
 
   --rp-font-family-base: Inter, sans-serif;
   --rp-code-block-bg: #2f3131;    /* --color-inverse-surface */
@@ -54,10 +54,20 @@ html.dark {
   --rp-c-text-4: #b9b6b0;
   --rp-c-link: var(--rp-c-brand);
 
-  --rp-home-background-bg: linear-gradient(135deg, #1b1b1a 0%, #343634 100%);
-  --rp-home-feature-bg: linear-gradient(135deg, #1b1b1a 0%, #2f3131 100%);
-  --rp-home-hero-secondary-color: #ffb4a3;
-  --rp-home-hero-title-bg: linear-gradient(90deg, #ffb4a3 0%, #ffdad2 100%);
+  --rp-home-background-bg: #1b1b1a;          /* --color-ink */
+  --rp-home-feature-bg: #2f3131;             /* --color-inverse-surface */
+  --rp-home-hero-secondary-color: #ffb4a3;   /* --color-primary-fixed-dim, decorative dot */
+  --rp-home-hero-title-bg: #b12600;          /* keeps white CTA text at 6.67:1 */
+  --rp-home-hero-title-color: #ffb4a3;       /* accent text on ink, not a CTA background */
 
   --rp-code-block-bg: #1b1b1a;    /* --color-ink */
+}
+
+/* Rspress clips the hero label with a gradient and hardcodes a transparent
+   text fill. The editorial system uses one flat red, and the brand CTA keeps
+   white text, so override the BEM hook instead of coupling both to one variable. */
+html .rp-home-hero__title-brand {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--rp-home-hero-title-color);
 }

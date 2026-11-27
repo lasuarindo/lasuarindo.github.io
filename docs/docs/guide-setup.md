@@ -82,8 +82,9 @@ The other section folders follow the same pattern with their own files: `for-eve
   --rp-c-text-0: #1b1b1a;         /* --color-ink */
   --rp-c-link: var(--rp-c-brand);
 
-  --rp-home-background-bg: linear-gradient(135deg, #fbfaf8 0%, #f2f0ec 100%);
-  --rp-home-hero-title-bg: linear-gradient(90deg, #b12600 0%, #d83910 100%);
+  --rp-home-background-bg: #fbfaf8;          /* --color-paper */
+  --rp-home-hero-title-bg: #b12600;          /* --color-primary */
+  --rp-home-hero-title-color: #b12600;
 }
 
 html.rp-dark,
@@ -92,11 +93,13 @@ html.dark {
   --rp-c-bg: #1b1b1a;
   --rp-c-text-0: #f7f5f1;
   --rp-c-link: var(--rp-c-brand);
-  --rp-home-background-bg: linear-gradient(135deg, #1b1b1a 0%, #343634 100%);
+  --rp-home-background-bg: #1b1b1a;          /* --color-ink */
+  --rp-home-hero-title-bg: #b12600;          /* keeps white CTA text at 6.67:1 */
+  --rp-home-hero-title-color: #ffb4a3;       /* accent text on ink */
 }
 ```
 
-The `--rp-c-*` variables style ordinary pages; the `--rp-home-*` variables style the home page's hero and feature cards. The dark selector swaps both families at once.
+The `--rp-c-*` variables style ordinary pages; the `--rp-home-*` variables style the home page's hero and feature cards. The dark selector swaps both families at once. A small `.rp-home-hero__title-brand` override removes Rspress's gradient clip and hardcoded transparent text fill, so the hero label uses the flat colour independently of the brand CTA background.
 
 ```mermaid
 flowchart LR
