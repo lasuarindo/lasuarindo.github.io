@@ -6,6 +6,9 @@ export default defineConfig({
   root: 'docs',
   title: 'Lasuarindo Docs',
   lang: 'en',
+  // Published as a subpath of the same GitHub Pages site as the application.
+  base: '/docs/',
+  siteOrigin: 'https://lasuarindo.github.io',
   // Symbol-only mark from public/favicon.png; it stays visible on light and dark.
   logo: { light: '/logo.png', dark: '/logo.png', width: 28, height: 28 },
   // Same two families the application loads in index.html.

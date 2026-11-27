@@ -53,6 +53,13 @@ jobs:
         # keeps deep links (e.g. /about-us, /businesses) working as an SPA.
         run: cp dist/index.html dist/404.html
 
+      - name: Build docs
+        run: npm run docs:build
+
+      - name: Merge docs into the Pages artifact
+        # One Pages site: app at /, docs at /docs/ from the same artifact.
+        run: mkdir -p dist/docs && cp -R doc_build/. dist/docs/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

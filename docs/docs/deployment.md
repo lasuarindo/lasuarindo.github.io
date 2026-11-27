@@ -102,6 +102,6 @@ npx npm@10 ci --dry-run --ignore-scripts
 
 ## Docs site
 
-The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`. They are not part of the GitHub Pages workflow. `doc_build/` is gitignored. See [Quick start](/docs/quick-start) for the full script list.
+The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`. `doc_build/` is gitignored. The deploy workflow also builds them and copies the output into `dist/docs/`, so one GitHub Pages artifact serves the app at `/` and the docs at `/docs/`. Rspress uses `base: '/docs/'` and `siteOrigin: 'https://lasuarindo.github.io'` for asset URLs and generated links. See [Quick start](/docs/quick-start) for the full script list.
 
 Next: [Troubleshooting](/docs/troubleshooting).

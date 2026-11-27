@@ -5,8 +5,23 @@ import { useFrontmatter, useSite, socialLinks as socialLinkIcons } from '@rspres
 import {
   HomeLayout as BasicHomeLayout,
   Layout as BasicLayout,
-  Link,
+  Link as BasicLink,
 } from '@rspress/core/theme-original';
+
+/**
+ * Rspress's withBase() skips URLs that already start with the base path. Docs
+ * section routes also start with /docs/, so prefix them here before handing
+ * the link to the built-in component. Other sections are handled by Rspress.
+ */
+export function Link(props: ComponentProps<typeof BasicLink>) {
+  const href = props.href;
+  const fixedHref =
+    typeof href === 'string' && href.startsWith('/docs/') && !href.startsWith('/docs/docs/')
+      ? `/docs${href}`
+      : href;
+
+  return <BasicLink {...props} href={fixedHref} />;
+}
 
 type HeroCopy = {
   name?: string;
