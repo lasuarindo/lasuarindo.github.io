@@ -38,7 +38,7 @@ Deep links such as `/about-us` work because GitHub Pages serves `404.html` for u
 
 ## Static SEO assets
 
-`robots.txt` and `sitemap.xml` are served as-is from `public/`. They are not generated from the route table, so a new public route must be added to the sitemap by hand. The sitemap uses `www.lasuarindo.co.id` as its host and does not include the engagement routes; the site is served at `https://lasuarindo.github.io/`. See [Limitations](/docs/limitations).
+`robots.txt` and `sitemap.xml` are served as-is from `public/`. They are not generated from the route table, so a new public route must be added to the sitemap by hand. The sitemap uses `www.lasuarindo.co.id` as its host and does not include the engagement routes; the site is served at `https://lasuarindo.github.io/`. See [Troubleshooting](/docs/troubleshooting).
 
 ## Lock file
 
@@ -56,4 +56,4 @@ npx npm@10 ci --dry-run --ignore-scripts
 
 ## Docs site
 
-The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`. They are not part of the GitHub Pages workflow. `doc_build/` is gitignored. See [Getting Started](/docs/getting-started) for the full script list.
+The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`. They are not part of the GitHub Pages workflow. `doc_build/` is gitignored. See [Quick start](/docs/quick-start) for the full script list.

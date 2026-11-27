@@ -4,7 +4,7 @@ A short record of work already shipped on the website. Entries below are summari
 
 ## 2026-11-27
 
-- Restructured the documentation into Guide, Docs, For Everyone, Pages and Changelog sections.
+- Restructured the documentation into Docs Guide, Docs, For Everyone, Pages and Changelog sections.
 - Moved navigation and sidebars into Rspress `_nav.json` and `_meta.json` files.
 
 ## 2026-11-26

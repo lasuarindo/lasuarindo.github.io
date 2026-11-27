@@ -20,7 +20,7 @@ This page answers the question "who are we?". It explains what the group believe
 
 **Timeline status.**
 
-The four milestones are illustrative and marked draft. They should not be read as confirmed company history. See the [draft label definition](/guide/reading-a-page#draft-labels).
+The four milestones are illustrative and marked draft. They should not be read as confirmed company history. See the [draft label definition](/docs/guide-contributing#draft-labels).
 
 ## For maintainers
 

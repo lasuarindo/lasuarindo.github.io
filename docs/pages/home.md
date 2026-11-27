@@ -21,7 +21,7 @@ The home page is the first page most visitors see. It introduces Lasuarindo Grou
 
 **Draft figures.**
 
-The impact section shows three numbers: the unit count, the business-line count, and one placeholder. The placeholder is marked draft until a verified value is available. See the [draft label definition](/guide/reading-a-page#draft-labels).
+The impact section shows three numbers: the unit count, the business-line count, and one placeholder. The placeholder is marked draft until a verified value is available. See the [draft label definition](/docs/guide-contributing#draft-labels).
 
 ## For maintainers
 

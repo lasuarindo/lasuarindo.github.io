@@ -19,6 +19,6 @@
   { "type": "file", "name": "terms", "label": "Terms and Conditions" },
   { "type": "divider" },
   { "type": "section-header", "label": "More" },
-  { "type": "custom-link", "link": "/guide/", "label": "Guide" },
+  { "type": "custom-link", "link": "/docs/guide-overview", "label": "Docs Guide" },
   { "type": "custom-link", "link": "/for-everyone/", "label": "For Everyone" }
 ]

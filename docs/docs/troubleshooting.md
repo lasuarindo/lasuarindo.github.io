@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Solutions to the failures that come up most often in this repository.
+Solutions to failures that come up in the application, plus the known limitations still open in the repository. For documentation-site problems, see [Docs Guide contributing](/docs/guide-contributing#docs-site-troubleshooting).
 
 ## `npm ci` fails with EUSAGE
 
@@ -17,17 +17,13 @@ The dry run must exit 0 before you push.
 
 `npm run check:parity` compares flattened keys in `src/i18n/locales/id` and `en`. The error names the file and key. Add the missing side of the pair, or remove the stray key. It also rejects draft markers and the strings `undefined` and `NaN`.
 
-## A docs page does not appear in the sidebar
-
-Navigation is file-based. Add the page to the `_meta.json` of its folder. A new section also needs an entry in `docs/_nav.json`. `rspress.config.ts` no longer registers pages.
-
 ## A deep link returns 404
 
 The deploy workflow copies `dist/index.html` to `dist/404.html` so GitHub Pages can serve unknown paths to the SPA. Local `npm run preview` does not reproduce that fallback; check deep links after deploying.
 
 ## The table of contents stops sticking
 
-An ancestor with `overflow-x: hidden` or `auto` becomes the scroll container and breaks `position: sticky`. Use `overflow-x: clip` on `html`, `body` and `.page`, as described in [Styling](/docs/styling):
+An ancestor with `overflow-x: hidden` or `auto` becomes the scroll container and breaks `position: sticky`. Use `overflow-x: clip` on `html`, `body` and `.page`, as described in [Design system](/docs/design-system):
 
 ```css
 html,
@@ -37,18 +33,16 @@ body,
 }
 ```
 
-## Dark mode uses the wrong colours
+## Known limitations
 
-`docs/theme.css` defines overrides under `html.rp-dark` and `html.dark`. Check that the `--rp-c-*` and `--rp-home-*` variables there still use tokens from `src/constants/theme.js`:
+- **Engagement metadata.** `resolvePageMetaKey` in `src/data/pageMeta.js` has no cases for `/partnership`, `/investor` or `/collaboration`, so those pages use the `notFound` title and description. Status: open. No owner assigned.
+- **Static sitemap.** `public/sitemap.xml` uses `www.lasuarindo.co.id` as its host and does not list the engagement routes. The repository is served at `https://lasuarindo.github.io/`. Status: open. No owner assigned.
+- **Contact form.** `ContactForm` validates entries in the browser and shows a success status. It makes no network request. Status: current behaviour.
 
-```css
-html.rp-dark,
-html.dark {
-  --rp-c-brand: #ffb4a3;
-  --rp-home-hero-secondary-color: #ffb4a3;
-}
-```
+## Completed migrations
 
-## The docs home page still looks like default Rspress
+- `/services` was retired in favour of `/businesses`; it is no longer registered.
+- Locale namespaces moved from `services.*` to `businesses.*`; no `services.*` keys remain.
+- Legacy language keys `app_language` and `lasuarindo_lang_pref` are migrated to `lasuarindo-language` on load.
 
-The hero and feature cards use separate `--rp-home-*` variables. Overriding only `--rp-c-brand` is not enough; see `docs/theme.css` for the full set.
+Add a short summary here when work moves from open to done, and keep the status and owner fields explicit.

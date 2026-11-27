@@ -21,7 +21,7 @@ This page describes the six areas of business that make up the group and the com
 
 **Draft content.**
 
-An older page called Services has been retired; this page is its replacement. The working-steps section and some project descriptions are illustrative and marked draft. See the [draft label definition](/guide/reading-a-page#draft-labels).
+An older page called Services has been retired; this page is its replacement. The working-steps section and some project descriptions are illustrative and marked draft. See the [draft label definition](/docs/guide-contributing#draft-labels).
 
 ## For maintainers
 

@@ -52,39 +52,12 @@ Vite 8 bundles with Rolldown. Chunks are declared under `build.rolldownOptions.o
 
 `npm run check:parity` runs `scripts/check-i18n-parity.mjs`. For every bundle in `src/i18n/locales/id/`, it requires a matching `en/` file and the same flattened keys in both languages. It also rejects the markers `[DRAFT:`, `[NEED:`, `undefined` and `NaN` in string values. CI runs the check before the app build.
 
-This is why a copy change should always touch both locale files. See [Getting Started](/docs/getting-started).
+This is why a copy change should always touch both locale files. See [Quick start](/docs/quick-start).
 
 ## Environment
 
 No `.env` file is required. `BASE_PATH` is the only build-time variable and is set by the deploy workflow. Nothing secret is needed to build or run the app.
 
-## Docs (Rspress)
+## Documentation site
 
-`rspress.config.ts` at the repository root keeps site-level settings only. It uses `defineConfig` from `@rspress/core` (v2):
-
-- `root: 'docs'`, `title: 'Lasuarindo Docs'`, `lang: 'en'`.
-- `plugins: [rspressPluginMermaid()]`, which renders the Mermaid diagrams used in these pages.
-- `globalStyles: docs/theme.css`, which maps the site's brand tokens onto Rspress's `--rp-c-*` and `--rp-home-*` variables.
-- `themeConfig.socialLinks`: GitHub with the built-in GitHub icon, pointing to `https://github.com/lasuarindo`:
-
-  ```ts
-  socialLinks: [
-    { icon: 'github', mode: 'link', content: 'https://github.com/lasuarindo' },
-  ],
-  ```
-
-Navigation is file-based:
-
-- `docs/_nav.json` defines the navbar: Guide, For Everyone, Docs, Pages, Changelog. The home page opens from the logo.
-- Each section folder has its own `_meta.json`. Section headers group links; files and custom links carry the short labels.
-- Auto navigation only works while `themeConfig.nav` and `themeConfig.sidebar` stay out of `rspress.config.ts`.
-
-Output is `doc_build/`, which is gitignored. A new or renamed docs page must be added to its folder's `_meta.json`. A new section needs an entry in `_nav.json` and its own `_meta.json`.
-
-```mermaid
-flowchart LR
-    N["_nav.json"] --> B["Rspress build"]
-    M["_meta.json files"] --> B
-    T["theme.css"] --> B
-    B --> D["doc_build/"]
-```
+The Rspress setup, file-based navigation and theme live in the [Docs Guide](/docs/guide-overview) section.

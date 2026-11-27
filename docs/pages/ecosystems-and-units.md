@@ -18,7 +18,7 @@ These pages show where the group's businesses operate and introduce each one ind
 
 **Draft entries.**
 
-The planned district is marked draft, and some unit entries carry draft markers for illustrative copy. See the [draft label definition](/guide/reading-a-page#draft-labels). The directory contains twelve units in three categories: directly managed, partnerships and the district ecosystem.
+The planned district is marked draft, and some unit entries carry draft markers for illustrative copy. See the [draft label definition](/docs/guide-contributing#draft-labels). The directory contains twelve units in three categories: directly managed, partnerships and the district ecosystem.
 
 ## For maintainers
 

@@ -23,4 +23,4 @@ Open a page above to see what a visitor can find there, where the page links to,
 
 **A note on draft labels.**
 
-Some content is marked draft, including planned districts and engagement details. See the [draft label definition](/guide/reading-a-page#draft-labels) for what the label means and when it can be removed.
+Some content is marked draft, including planned districts and engagement details. See the [draft label definition](/docs/guide-contributing#draft-labels) for what the label means and when it can be removed.
