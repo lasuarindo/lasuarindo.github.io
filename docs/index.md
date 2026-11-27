@@ -32,4 +32,38 @@ features:
   - title: Changelog
     details: Shipped work grouped by date and summarised from commits.
     link: /changelog/
+specs:
+  eyebrow: Under the hood
+  title: The tools behind the pages.
+  note: CI checks locale parity, builds the app, then publishes to GitHub Pages.
+  groups:
+    - label: Stack
+      items:
+        - term: Docs
+          value: Rspress v2 + Mermaid
+        - term: App
+          value: React 19 + React Router 7
+        - term: Build
+          value: Vite 8 + Tailwind CSS 4
+        - term: Copy
+          value: i18next — id / en
+        - term: Checks
+          value: oxlint
+    - label: Environment
+      items:
+        - term: Node
+          value: 22
+        - term: npm
+          value: 10
+        - term: App out
+          value: dist/
+        - term: Docs out
+          value: doc_build/
+        - term: Host
+          value: GitHub Pages
+        - term: Source
+          value: github.com/lasuarindo
+  action:
+    text: Full setup
+    link: /docs/quick-start
 ---

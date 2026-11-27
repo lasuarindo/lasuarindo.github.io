@@ -1,13 +1,22 @@
+import type { ComponentProps } from 'react';
 import type { Feature, SocialLink as ISocialLink } from '@rspress/core';
 import '@rspress/core/dist/theme/components/SocialLinks/index.css';
 import { useFrontmatter, useSite, socialLinks as socialLinkIcons } from '@rspress/core/runtime';
-import { Link } from '@rspress/core/theme-original';
+import { HomeLayout as BasicHomeLayout, Link } from '@rspress/core/theme-original';
 
 type HeroCopy = {
   name?: string;
   text?: string;
   tagline?: string;
   actions?: { text: string; link: string }[];
+};
+
+type Specs = {
+  eyebrow?: string;
+  title?: string;
+  note?: string;
+  groups?: { label: string; items: { term: string; value: string }[] }[];
+  action?: { text: string; link: string };
 };
 
 /**
@@ -74,6 +83,50 @@ export function HomeFeature({ features: featuresProp }: { features?: Feature[] }
       </ol>
     </section>
   );
+}
+
+/** Third home section: verifiable stack facts from package.json and the deploy workflow. */
+function HomeStack() {
+  const { frontmatter } = useFrontmatter();
+  const specs = (frontmatter?.specs ?? {}) as Specs;
+  const groups = specs.groups ?? [];
+
+  return (
+    <section className="docs-stack">
+      <div className="docs-stack__head">
+        <span className="docs-stack__eyebrow">{specs.eyebrow}</span>
+        <h2 className="docs-stack__title">{specs.title}</h2>
+        <p className="docs-stack__note">{specs.note}</p>
+      </div>
+      <div className="docs-stack__grid">
+        {groups.map(group => (
+          <section className="docs-stack__group" key={group.label}>
+            <h3 className="docs-stack__label">{group.label}</h3>
+            <dl className="docs-stack__list">
+              {group.items.map(item => (
+                <div className="docs-stack__row" key={item.term}>
+                  <dt className="docs-stack__term">{item.term}</dt>
+                  <dd className="docs-stack__value">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        ))}
+      </div>
+      {specs.action ? (
+        <div className="docs-stack__foot">
+          <Link href={specs.action.link} className="docs-stack__link">
+            {specs.action.text}
+          </Link>
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
+/** One extra home section via Rspress's documented slot, leaving the rest built-in. */
+export function HomeLayout(props: ComponentProps<typeof BasicHomeLayout>) {
+  return <BasicHomeLayout {...props} afterFeatures={<HomeStack />} />;
 }
 
 /** The GitHub icon link needs an accessible name; Rspress omits one by default. */
