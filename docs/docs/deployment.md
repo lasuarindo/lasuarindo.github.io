@@ -102,6 +102,6 @@ npx npm@10 ci --dry-run --ignore-scripts
 
 ## Docs site
 
-The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`; both pass `--base /`. `doc_build/` is gitignored. The deploy workflow uses `npm run docs:build:pages`, which keeps the `/docs/` base from `rspress.config.ts`, then copies the output into `dist/docs/`. One GitHub Pages artifact serves the app at `/` and the docs at `/docs/`. `siteOrigin: 'https://lasuarindo.github.io'` stays fixed for generated URLs. See [Quick start](/docs/quick-start) for the full script list.
+The docs are built locally with `npm run docs:build` and previewed with `npm run docs:preview`; both pass `--base /`. `doc_build/` is gitignored. The deploy workflow uses `npm run docs:build:pages`, then runs `scripts/fix-docs-pages-paths.mjs` and copies the output into `dist/docs/`. The fix step rewrites generated absolute URLs so Docs-section entries in `llms.txt`, `llms-full.txt` and page metadata point to `/docs/docs/<page>.md` instead of `/docs/<page>.md`; it also mirrors the section's markdown one level up so the Copy Markdown button can fetch it. One GitHub Pages artifact serves the app at `/` and the docs at `/docs/`. See [Quick start](/docs/quick-start) for the full script list.
 
 Next: [Troubleshooting](/docs/troubleshooting).

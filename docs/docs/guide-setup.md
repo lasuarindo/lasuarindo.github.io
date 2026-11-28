@@ -21,7 +21,7 @@ Navigation is file-based:
 - Each section folder has its own `_meta.json`. Section headers group links; files and custom links carry the short labels.
 - Auto navigation only works while `themeConfig.nav` and `themeConfig.sidebar` stay out of `rspress.config.ts`.
 
-Output is `doc_build/`, which is gitignored. In CI the deploy workflow copies it into `dist/docs/`, so the docs are served at `/docs/` alongside the app. `rspress.config.ts` keeps `base: '/docs/'` for that published location; the local `docs:dev`, `docs:build` and `docs:preview` scripts override it with `--base /`. `siteOrigin` stays `https://lasuarindo.github.io`. A new or renamed docs page must be added to its folder's `_meta.json`. A new section needs an entry in `_nav.json` and its own `_meta.json`.
+Output is `doc_build/`, which is gitignored. In CI the deploy workflow runs `scripts/fix-docs-pages-paths.mjs` on that output, then copies it into `dist/docs/`, so the docs are served at `/docs/` alongside the app. The fix script is needed because Rspress v2.1.4 keeps `siteData.base` at `/`, which makes generated `llms.txt` and markdown-metadata URLs omit the second `/docs` segment. `rspress.config.ts` keeps `base: '/docs/'`; the local `docs:dev`, `docs:build` and `docs:preview` scripts override it with `--base /`. A new or renamed docs page must be added to its folder's `_meta.json`. A new section needs an entry in `_nav.json` and its own `_meta.json`.
 
 ### Static assets and home markup
 

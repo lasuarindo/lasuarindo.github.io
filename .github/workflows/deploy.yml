@@ -58,6 +58,9 @@ jobs:
           DOCS_BASE_PATH: /docs/
         run: npm run docs:build:pages
 
+      - name: Fix generated Docs section paths
+        run: node scripts/fix-docs-pages-paths.mjs
+
       - name: Merge docs into the Pages artifact
         # One Pages site: app at /, docs at /docs/ from the same artifact.
         run: mkdir -p dist/docs && cp -R doc_build/. dist/docs/
